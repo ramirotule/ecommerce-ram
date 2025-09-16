@@ -1,0 +1,164 @@
+/* Animaciones para el e-commerce */
+
+/* Animación de entrada para las cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de rotación para el loading */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animación de pulso para elementos destacados */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animación de deslizamiento suave */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Efecto shimmer para loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+/* Hover effects para botones */
+@keyframes buttonHover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Glow effect para elementos premium */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+}
+
+/* Gradient animation para fondos dinámicos */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Bounce effect para notificaciones */
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0,0,0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -10px, 0);
+  }
+  70% {
+    transform: translate3d(0, -5px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+/* Shake animation para errores */
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* Flip animation para cards */
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  100% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+}
+
+/* Classes utilitarias */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+.shimmer {
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+  background-size: 800px 104px;
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.gradient-shift {
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}

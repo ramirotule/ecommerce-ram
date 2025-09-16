@@ -1,0 +1,16 @@
+{
+  "name": "RAM Informática",
+  "short_name": "RAM Info",
+  "description": "Tienda de informática y tecnología",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#00F100",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "/"
+}
