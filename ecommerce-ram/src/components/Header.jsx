@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { COLORS } from '../utils/colors';
+import '../fonts.css';
 
 const Header = () => {
   const [dolarBlue, setDolarBlue] = useState(null);
