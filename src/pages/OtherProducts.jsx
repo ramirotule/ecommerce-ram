@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { COLORS } from '../utils/colors';
 
 const OtherProducts = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
   const productCategories = [
     {
       icon: '🚁',
@@ -63,7 +74,7 @@ const OtherProducts = () => {
       <div style={{
         width: '100%',
         margin: '0 auto',
-        padding: '0 20px'
+        padding: isMobile ? '0 10px' : '0 20px'
       }}>
         {/* Header Section */}
         <div style={{
@@ -107,7 +118,7 @@ const OtherProducts = () => {
           background: 'rgba(255, 255, 255, 0.03)',
           backdropFilter: 'blur(10px)',
           borderRadius: '15px',
-          padding: '50px 40px',
+          padding: isMobile ? '30px 15px' : '50px 40px',
           border: '1px solid rgba(255, 255, 255, 0.08)',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)'
         }}>
@@ -115,9 +126,12 @@ const OtherProducts = () => {
         {/* Categories Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+          gridTemplateColumns: isMobile 
+            ? '1fr' 
+            : 'repeat(auto-fit, minmax(350px, 1fr))',
           gap: '25px',
-          marginBottom: '50px'
+          marginBottom: '50px',
+          justifyItems: isMobile ? 'center' : 'stretch'
         }}>
           {productCategories.map((category, index) => (
             <div
@@ -129,7 +143,9 @@ const OtherProducts = () => {
                 boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',
                 border: '1px solid rgba(0, 241, 0, 0.2)',
                 transition: 'all 0.3s ease',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                width: isMobile ? '100%' : 'auto',
+                maxWidth: isMobile ? '350px' : 'none'
               }}
               onMouseOver={(e) => {
                 e.currentTarget.style.transform = 'translateY(-5px)';
@@ -234,7 +250,9 @@ const OtherProducts = () => {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gridTemplateColumns: isMobile 
+              ? '1fr' 
+              : 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '20px',
             marginBottom: '30px',
             maxWidth: '600px',
