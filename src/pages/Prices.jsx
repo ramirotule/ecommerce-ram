@@ -16,6 +16,19 @@ const Prices = () => {
   const [sortDir, setSortDir] = useState('asc'); // por defecto ascendente
   const [dolarBlue, setDolarBlue] = useState(null);
   const [ultimaActualizacion, setUltimaActualizacion] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Hook para detectar el tamaño de pantalla
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
 
   useEffect(() => {
     fetch("/productos_ram.json")
@@ -115,7 +128,7 @@ const Prices = () => {
       <div style={{
         width: '100%',
         margin: '0 auto',
-        padding: '0 20px'
+        padding: isMobile ? '0 15px' : '0 20px'
       }}>
         {/* Header Section */}
         <div style={{
@@ -125,12 +138,12 @@ const Prices = () => {
           flexDirection: 'column',
         }}>
           <h1 style={{
-            fontSize: '55px',
+            fontSize: isMobile ? '36px' : '55px',
             fontWeight: '700',
             color: 'black',
             textShadow: '0 2px 4px rgba(0,241,0,0.3)',
             fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
-            letterSpacing: '2px',
+            letterSpacing: isMobile ? '1px' : '2px',
             margin: '0 0 20px 0',
             textAlign: 'left' 
           }}>
@@ -174,12 +187,12 @@ const Prices = () => {
           <button
             onClick={handleDownload}
             style={{
-              padding: '15px 30px',
+              padding: isMobile ? '12px 24px' : '15px 30px',
               borderRadius: '25px',
               border: 'none',
               background: 'linear-gradient(135deg, #00F100 0%, #00cc00 100%)',
               color: '#000',
-              fontSize: '18px',
+              fontSize: isMobile ? '16px' : '18px',
               fontWeight: '600',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
@@ -187,9 +200,8 @@ const Prices = () => {
               alignItems: 'center',
               gap: '10px',
               boxShadow: '0 5px 15px rgba(0, 241, 0, 0.3)',
-                            width: 'fit-content',
-
-              
+              width: isMobile ? '100%' : 'fit-content',
+              justifyContent: 'center'
             }}
             onMouseOver={(e) => {
               e.target.style.transform = 'translateY(-3px)';
@@ -236,15 +248,28 @@ const Prices = () => {
           <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '20px', color: '#000000', textAlign: 'left' }}>
             Buscar y Filtrar Productos
           </h2>
-          <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', marginBottom: '20px' }}>
+          <div style={{ 
+            display: 'flex', 
+            gap: '20px', 
+            flexWrap: 'wrap', 
+            marginBottom: '20px',
+            flexDirection: isMobile ? 'column' : 'row'
+          }}>
             <input
               type="text"
               value={busqueda}
               onChange={e => setBusqueda(e.target.value)}
               placeholder="Buscar por nombre..."
-              style={{ padding: '10px', borderRadius: '8px', border: '1px solid #ccc', minWidth: '220px', fontSize: '16px' }}
+              style={{ 
+                padding: '10px', 
+                borderRadius: '8px', 
+                border: '1px solid #ccc', 
+                minWidth: isMobile ? '100%' : '220px', 
+                fontSize: '16px',
+                flex: isMobile ? 'none' : '1'
+              }}
             />
-            <div style={{ minWidth: '220px', flex: 1 }}>
+            <div style={{ minWidth: isMobile ? '100%' : '220px', flex: 1 }}>
               <Select
                 options={categoriaOptions}
                 value={categoriaOptions.find(opt => opt.value === categoria)}
@@ -273,7 +298,7 @@ const Prices = () => {
                 })}
               />
             </div>
-            <div style={{ minWidth: '220px', flex: 1 }}>
+            <div style={{ minWidth: isMobile ? '100%' : '220px', flex: 1 }}>
               <Select
                 options={ordenOptions}
                 value={ordenOptions.find(opt => opt.value === orden)}
@@ -318,14 +343,20 @@ const Prices = () => {
                 fontSize: '16px',
                 cursor: 'pointer',
                 boxShadow: '0 2px 8px rgba(0,241,0,0.08)',
-                marginLeft: '10px',
+                marginLeft: isMobile ? '0' : '10px',
                 transition: 'all 0.2s',
+                width: isMobile ? '100%' : 'auto',
+                marginTop: isMobile ? '0' : '0'
               }}
             >
               Borrar filtros
             </button>
           </div>
-          <div style={{ overflowX: 'auto' }}>
+          {/* Vista de escritorio - tabla */}
+          <div style={{ 
+            display: !isMobile ? 'block' : 'none',
+            overflowX: 'auto' 
+          }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '15px', tableLayout: 'fixed' }}>
               <colgroup>
                 <col style={{ width: '40%' }} />
@@ -394,6 +425,98 @@ const Prices = () => {
                 )}
               </tbody>
             </table>
+          </div>
+
+          {/* Vista móvil - tarjetas */}
+          <div style={{ 
+            display: isMobile ? 'block' : 'none'
+          }}>
+            {filtrados.length > 0 ? filtrados.map((prod, idx) => (
+              <div 
+                key={prod.producto + idx} 
+                style={{
+                  background: '#fff',
+                  borderRadius: '12px',
+                  padding: '16px',
+                  marginBottom: '12px',
+                  border: '1px solid #e0e0e0',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                }}
+              >
+                <div style={{
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  color: '#222',
+                  marginBottom: '8px',
+                  lineHeight: '1.3'
+                }}>
+                  {prod.producto}
+                </div>
+                
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: '12px'
+                }}>
+                  <span style={{
+                    backgroundColor: '#f0f2f5',
+                    color: '#666',
+                    padding: '4px 8px',
+                    borderRadius: '6px',
+                    fontSize: '13px',
+                    fontWeight: '500'
+                  }}>
+                    {prod.categoria}
+                  </span>
+                </div>
+
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  paddingTop: '12px',
+                  borderTop: '1px solid #f0f0f0'
+                }}>
+                  <div>
+                    <div style={{
+                      fontSize: '18px',
+                      fontWeight: '700',
+                      color: '#000'
+                    }}>
+                      U$S {prod.precio_usd}
+                    </div>
+                  </div>
+                  
+                  <div style={{ textAlign: 'right' }}>
+                    <div style={{
+                      fontSize: '12px',
+                      color: '#666',
+                      marginBottom: '2px'
+                    }}>
+                      Precio en pesos
+                    </div>
+                    <div style={{
+                      fontSize: '16px',
+                      fontWeight: '700',
+                      color: '#009e00'
+                    }}>
+                      {dolarBlue ? `$${(prod.precio_usd * dolarBlue).toLocaleString('es-AR', { maximumFractionDigits: 0 })}` : '...'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )) : (
+              <div style={{
+                textAlign: 'center',
+                padding: '40px 20px',
+                color: '#888',
+                background: '#f8f9fa',
+                borderRadius: '12px'
+              }}>
+                No se encontraron productos
+              </div>
+            )}
           </div>
         </div>
       </div>

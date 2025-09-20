@@ -313,10 +313,28 @@ const Header = () => {
                 textDecoration: 'none',
                 color: COLORS.text.white,
                 padding: '12px 0',
+                marginLeft: '20px',
                 fontWeight: '600'
               }}
             >
               🏠 Inicio
+            </Link>
+             <Link
+              to="/other-products"
+              onClick={() => {
+                setIsMenuOpen(false);
+                scrollToTop();
+              }}
+              style={{
+                display: 'block',
+                textDecoration: 'none',
+                color: COLORS.text.white,
+                padding: '12px 0',
+                marginLeft: '20px',
+                fontWeight: '600'
+              }}
+            >
+              🛍️ Otros Productos
             </Link>
             <Link
               to="/about"
@@ -329,6 +347,7 @@ const Header = () => {
                 textDecoration: 'none',
                 color: COLORS.text.white,
                 padding: '12px 0',
+                marginLeft: '20px',
                 fontWeight: '600'
               }}
             >
@@ -345,12 +364,15 @@ const Header = () => {
                 textDecoration: 'none',
                 color: COLORS.text.white,
                 padding: '12px 0',
+                marginLeft: '20px',
                 fontWeight: '600'
               }}
             >
               🛒 Cómo Comprar
             </Link>
-            <Link
+           
+           
+             <Link
               to="/prices"
               onClick={() => {
                 setIsMenuOpen(false);
@@ -361,26 +383,11 @@ const Header = () => {
                 textDecoration: 'none',
                 color: COLORS.text.white,
                 padding: '12px 0',
+                marginLeft: '20px',
                 fontWeight: '600'
               }}
             >
               📋 Lista de Precios PDF
-            </Link>
-            <Link
-              to="/other-products"
-              onClick={() => {
-                setIsMenuOpen(false);
-                scrollToTop();
-              }}
-              style={{
-                display: 'block',
-                textDecoration: 'none',
-                color: COLORS.text.white,
-                padding: '12px 0',
-                fontWeight: '600'
-              }}
-            >
-              🛍️ Otros Productos
             </Link>
           </div>
         )}

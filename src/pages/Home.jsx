@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BannerSlider from "../components/BannerSlider";
 import { COLORS } from '../utils/colors';
 import { Link } from 'react-router-dom';
 
 
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <div style={{
       minHeight: '100vh',
@@ -28,16 +38,16 @@ const Home = () => {
         <BannerSlider />
       </div>
       <div style={{
-        marginTop: '40px',
+        marginTop: isMobile ? '20px' : '40px',
         textAlign: 'center',
         color: COLORS.text.primary,
-        fontSize: '25px',
+        fontSize: isMobile ? '20px' : '25px',
         fontWeight: '500'
       }}>
 
         <p>
           Para ver precios y buscar productos, dirigite a la sección <b>Lista de Precios PDF</b> en el menú.<br/>
-          <span style={{fontSize: '22px', color: COLORS.primary[500]}}>
+          <span style={{fontSize: isMobile ? '18px' : '22px', color: COLORS.primary[500]}}>
              <Link to="/prices" style={{color: COLORS.primary[500], textDecoration: 'underline', fontWeight: '600', cursor: 'pointer'}}>haz click aquí para verla</Link>
           </span>
         </p>

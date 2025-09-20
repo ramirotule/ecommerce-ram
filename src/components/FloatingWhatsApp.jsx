@@ -2,8 +2,17 @@ import { useEffect, useState } from 'react';
 
 const FloatingWhatsApp = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Detectar si es móvil
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
     // Manejar el scroll
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -47,6 +56,7 @@ const FloatingWhatsApp = () => {
     document.head.appendChild(style);
 
     return () => {
+      window.removeEventListener('resize', checkIsMobile);
       window.removeEventListener('scroll', handleScroll);
       document.head.removeChild(style);
     };
@@ -56,11 +66,19 @@ const FloatingWhatsApp = () => {
     <div
       style={{
         position: 'fixed',
-        top: `${15 + scrollY * 0.1}px`, // Empieza en 20px y baja lentamente con el scroll
-        right: '20px',
+        ...(isMobile 
+          ? {
+              bottom: '5px',  // En móvil, posicionado en la parte inferior
+              right: '20px'
+            }
+          : {
+              top: `${15 + scrollY * 0.1}px`, // En desktop mantiene la posición original en la parte superior
+              right: '20px'
+            }
+        ),
         zIndex: 9999,
         cursor: 'pointer',
-        transition: 'top 0.1s ease-out'
+        transition: isMobile ? 'none' : 'top 0.1s ease-out'
       }}
     >
       <a
@@ -72,8 +90,8 @@ const FloatingWhatsApp = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          width: window.innerWidth <= 768 ? '55px' : '60px',
-          height: window.innerWidth <= 768 ? '55px' : '60px',
+          width: isMobile ? '55px' : '60px',
+          height: isMobile ? '55px' : '60px',
           backgroundColor: '#25d366',
           borderRadius: '50%',
           boxShadow: '0 4px 20px rgba(37, 211, 102, 0.4)',
@@ -95,8 +113,8 @@ const FloatingWhatsApp = () => {
           src="/whatsapp-logo.png" 
           alt="WhatsApp" 
           style={{
-            width: window.innerWidth <= 768 ? '30px' : '35px',
-            height: window.innerWidth <= 768 ? '30px' : '35px',
+            width: isMobile ? '30px' : '35px',
+            height: isMobile ? '30px' : '35px',
             objectFit: 'contain',
             pointerEvents: 'none' // Evitar problemas con el hover
           }}
