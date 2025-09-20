@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { COLORS } from '../utils/colors';
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
+// import { Document, Page } from "react-pdf";
+// import 'react-pdf/dist/Page/AnnotationLayer.css';
+// import 'react-pdf/dist/Page/TextLayer.css';
 import Select from 'react-select';
 
-// Configuración del worker de PDF.js
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
 
 // Por ahora usaremos una URL de ejemplo hasta que tengas tu PDF
-const pdfFile = "/assets/precios_ram.pdf"; // Ruta pública del PDF
 
 const Prices = () => {
   const [width, setWidth] = useState(1200);
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
 
   // Tabla interactiva
   const [productos, setProductos] = useState([]);
@@ -123,12 +120,13 @@ const Prices = () => {
     <div style={{
       minHeight: '100vh',
       background: 'white',
-      padding: '40px 20px',
+      padding: '40px 0',
       color: COLORS.text.white
     }}>
       <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto'
+        width: '100%',
+        margin: '0 auto',
+        padding: '0 20px'
       }}>
         {/* Header Section */}
         <div style={{
@@ -209,27 +207,12 @@ const Prices = () => {
           </p>
         </div>
 
-        {/* PDF Viewer */}
-        <div style={{
-          borderRadius: '10px',
-          overflow: 'hidden',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-        }}>
-          <Document
-            file={pdfFile}
-            onLoadSuccess={onDocumentLoadSuccess}
-            style={{ width: '100%' }}
-          >
-            <Page pageNumber={pageNumber} width={width} />
-          </Document>
-        </div>
-
         {/* Tabla interactiva de productos */}
         <div style={{
           background: 'rgba(255,255,255,0.8)',
           borderRadius: '20px',
           boxShadow: COLORS.shadow.lg,
-          // padding: '30px',
+          padding: '30px',
           color: '#222'
         }}>
           <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '20px', color: '#000000', textAlign: 'left' }}>
@@ -325,7 +308,13 @@ const Prices = () => {
             </button>
           </div>
           <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '15px' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '15px', tableLayout: 'fixed' }}>
+              <colgroup>
+                <col style={{ width: '40%' }} />
+                <col style={{ width: '25%' }} />
+                <col style={{ width: '17.5%' }} />
+                <col style={{ width: '17.5%' }} />
+              </colgroup>
               <thead>
                 <tr style={{ background: '#f4f6f8', color: '#222', borderBottom: '2px solid #e0e0e0' }}>
                   <th
@@ -365,7 +354,13 @@ const Prices = () => {
               <tbody>
                 {filtrados.length > 0 ? filtrados.map((prod, idx) => (
                   <tr key={prod.producto + idx} style={{ background: idx % 2 === 0 ? '#f8f9fa' : '#fff' }}>
-                    <td style={{ padding: '10px', fontWeight: '600' }}>{prod.producto}</td>
+                    <td style={{ 
+                      padding: '10px', 
+                      fontWeight: '600', 
+                      wordWrap: 'break-word',
+                      hyphens: 'auto',
+                      lineHeight: '1.3'
+                    }}>{prod.producto}</td>
                     <td style={{ padding: '10px' }}>{prod.categoria}</td>
                     <td style={{ padding: '10px', color: '#000000', fontWeight: '700', textAlign: 'center' }}>{`U$S ${prod.precio_usd}`}</td>
                     <td style={{ padding: '10px', color: '#009e00', fontWeight: '700', textAlign: 'center', background: '#f4fff4' }}>

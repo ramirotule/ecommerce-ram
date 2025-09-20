@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const FloatingWhatsApp = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -92,7 +92,7 @@ const FloatingWhatsApp = () => {
         title="¡Contáctanos por WhatsApp!"
       >
         <img 
-          src="/assets/whatsapp-logo.png" 
+          src="src/assets/whatsapp-logo.png" 
           alt="WhatsApp" 
           style={{
             width: window.innerWidth <= 768 ? '30px' : '35px',

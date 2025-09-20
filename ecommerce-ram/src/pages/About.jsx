@@ -6,12 +6,13 @@ const About = () => {
     <div style={{
       minHeight: '100vh',
       background: COLORS.background.dark,
-      padding: '40px 20px',
+      padding: '40px 0',
       color: COLORS.text.white
     }}>
       <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto'
+        width: '100%',
+        margin: '0 auto',
+        padding: '0 20px'
       }}>
         {/* Header Section */}
         <div style={{

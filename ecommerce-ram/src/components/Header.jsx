@@ -20,19 +20,11 @@ const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
 
-  // Cargar la fuente Circuit Board
+  // Cargar estilos hover para navegación
   useEffect(() => {
-    // Agregar CSS para la fuente con codificación URL y estilos hover
+    // Agregar CSS para estilos hover
     const style = document.createElement('style');
     style.textContent = `
-      @font-face {
-        font-family: 'CircuitBoard';
-        src: url('/assets/101!%20Circuit%20Board%20Regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
-
       .nav-link-hover:hover:not(.nav-link-active) {
         background: rgba(37, 211, 102, 0.3) !important;
         transform: translateY(-2px) !important;
