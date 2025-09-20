@@ -1,968 +1,944 @@
 [
   {
-    "producto": "⌚ XIAOMI SMART BAND 9 PRO NEGRO",
+    "producto": "IPHONE 13 128 GB SIM",
+    "precio_usd": 500,
+    "categoria": "CELULARES",
+    "imagen": "iphone_13_128_gb_sim.png"
+  },
+  {
+    "producto": "IPHONE 14 128 GB SIM/ESIM",
+    "precio_usd": 570,
+    "categoria": "CELULARES",
+    "imagen": "iphone_14_128_gb_simesim.png"
+  },
+  {
+    "producto": "IPHONE 15 128 GB SIM/ESIM",
+    "precio_usd": 680,
+    "categoria": "CELULARES",
+    "imagen": "iphone_15_128_gb_simesim.png"
+  },
+  {
+    "producto": "IPHONE 16e 256 GB ESIM",
+    "precio_usd": 640,
+    "categoria": "CELULARES",
+    "imagen": "iphone_16e_256_gb_esim.png"
+  },
+  {
+    "producto": "IPHONE 16 128 GB ESIM/SIM",
+    "precio_usd": 760,
+    "categoria": "CELULARES",
+    "imagen": "iphone_16_128_gb_esimsim.png"
+  },
+  {
+    "producto": "IPHONE 16 PRO 128 GB ESIM",
+    "precio_usd": 940,
+    "categoria": "CELULARES",
+    "imagen": "iphone_16_pro_128_gb_esim.png"
+  },
+  {
+    "producto": "IPHONE 16 PRO 256 GB ESIM",
+    "precio_usd": 1095,
+    "categoria": "CELULARES",
+    "imagen": "iphone_16_pro_256_gb_esim.png"
+  },
+  {
+    "producto": "IPHONE 16 PRO MAX 256 GB ESIM",
+    "precio_usd": 1120,
+    "categoria": "CELULARES",
+    "imagen": "iphone_16_pro_max_256_gb_esim.png"
+  },
+  {
+    "producto": "IPHONE 16 PRO MAX 1 TB ESIM",
+    "precio_usd": 1530,
+    "categoria": "CELULARES",
+    "imagen": "iphone_16_pro_max_1_tb_esim.png"
+  },
+  {
+    "producto": "IPHONE 13 256 GB SIM RED GRADO A",
+    "precio_usd": 395,
+    "categoria": "CELULARES",
+    "imagen": "iphone_13_256_gb_sim_red_grado_a.png"
+  },
+  {
+    "producto": "IPHONE 15 128 GB SIM PINK GRADO A",
+    "precio_usd": 545,
+    "categoria": "CELULARES",
+    "imagen": "iphone_15_128_gb_sim_pink_grado_a.png"
+  },
+  {
+    "producto": "IPHONE 15 128 GB BLACK AS IS",
+    "precio_usd": 550,
+    "categoria": "CELULARES",
+    "imagen": "iphone_15_128_gb_black_as_is.png"
+  },
+  {
+    "producto": "IPHONE 14 PRO MAX 128 GB SIM",
+    "precio_usd": 815,
+    "categoria": "CELULARES",
+    "imagen": "iphone_14_pro_max_128_gb_sim.png"
+  },
+  {
+    "producto": "SAMSUNG A06 4/64 GB",
+    "precio_usd": 105,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a06_464_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A06 4/128 GB",
+    "precio_usd": 110,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a06_4128_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A07 4/128 GB",
+    "precio_usd": 140,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a07_4128_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A16 4/128 GB",
+    "precio_usd": 135,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a16_4128_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A16 6/128 GB",
+    "precio_usd": 165,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a16_6128_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A16 8/256 GB",
+    "precio_usd": 190,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a16_8256_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A16 5G 4/128 GB",
+    "precio_usd": 150,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a16_5g_4128_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A16 5G 6/128 GB",
+    "precio_usd": 175,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a16_5g_6128_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A17 5G 6/128 GB",
+    "precio_usd": 225,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a17_5g_6128_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A17 5G 8/256 GB",
+    "precio_usd": 250,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a17_5g_8256_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A26 5G 6/128 GB",
+    "precio_usd": 215,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a26_5g_6128_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A26 5G 8/256 GB",
+    "precio_usd": 230,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a26_5g_8256_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A36 5G 6/128 GB",
+    "precio_usd": 275,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a36_5g_6128_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A56 5G 8/256 GB",
+    "precio_usd": 375,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a56_5g_8256_gb.png"
+  },
+  {
+    "producto": "SAMSUNG A56 5G 12/256 GB",
+    "precio_usd": 385,
+    "categoria": "CELULARES",
+    "imagen": "samsung_a56_5g_12256_gb.png"
+  },
+  {
+    "producto": "SAMSUNG S24 FE 8/256 GB",
+    "precio_usd": 490,
+    "categoria": "CELULARES",
+    "imagen": "samsung_s24_fe_8256_gb.png"
+  },
+  {
+    "producto": "SAMSUNG S24 ULTRA 12/512 GB",
+    "precio_usd": 935,
+    "categoria": "CELULARES",
+    "imagen": "samsung_s24_ultra_12512_gb.png"
+  },
+  {
+    "producto": "SAMSUNG S25 12/256 GB",
+    "precio_usd": 715,
+    "categoria": "CELULARES",
+    "imagen": "samsung_s25_12256_gb.png"
+  },
+  {
+    "producto": "SAMSUNG S25 PLUS 12/256 GB",
+    "precio_usd": 825,
+    "categoria": "CELULARES",
+    "imagen": "samsung_s25_plus_12256_gb.png"
+  },
+  {
+    "producto": "SAMSUNG S25 PLUS 12/512 GB",
+    "precio_usd": 875,
+    "categoria": "CELULARES",
+    "imagen": "samsung_s25_plus_12512_gb.png"
+  },
+  {
+    "producto": "SAMSUNG S25 ULTRA 12/256 GB",
+    "precio_usd": 945,
+    "categoria": "CELULARES",
+    "imagen": "samsung_s25_ultra_12256_gb.png"
+  },
+  {
+    "producto": "SAMSUNG S25 ULTRA 12/512 GB",
+    "precio_usd": 1040,
+    "categoria": "CELULARES",
+    "imagen": "samsung_s25_ultra_12512_gb.png"
+  },
+  {
+    "producto": "SAMSUNG S25 ULTRA 12/1 TB",
+    "precio_usd": 1150,
+    "categoria": "CELULARES",
+    "imagen": "samsung_s25_ultra_121_tb.png"
+  },
+  {
+    "producto": "SAMSUNG Z FLIP 7 12/512 GB",
+    "precio_usd": 1015,
+    "categoria": "CELULARES",
+    "imagen": "samsung_z_flip_7_12512_gb.png"
+  },
+  {
+    "producto": "MOTOROLA E15 2/64 GB",
+    "precio_usd": 85,
+    "categoria": "CELULARES",
+    "imagen": "motorola_e15_264_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G04S 4/128 GB",
+    "precio_usd": 105,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g04s_4128_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G05 4/256 GB",
+    "precio_usd": 125,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g05_4256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G15 4/128 GB",
+    "precio_usd": 115,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g15_4128_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G15 4/512 GB",
+    "precio_usd": 165,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g15_4512_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G15 8/256 GB",
+    "precio_usd": 150,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g15_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G15 POWER 8/256 GB",
+    "precio_usd": 155,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g15_power_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G24 4/256 GB",
+    "precio_usd": 135,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g24_4256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G35 5G 4/128 GB",
+    "precio_usd": 125,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g35_5g_4128_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G35 5G 8/256 GB",
+    "precio_usd": 150,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g35_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G54 5G 8/256 GB",
+    "precio_usd": 180,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g54_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G54 POWER 5G 8/256 GB",
+    "precio_usd": 175,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g54_power_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G55 5G 8/256 GB",
+    "precio_usd": 170,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g55_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G55 5G 8/256 GB",
+    "precio_usd": 180,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g55_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G56 5G 8/256 GB",
+    "precio_usd": 230,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g56_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G75 5G 8/256 GB",
+    "precio_usd": 210,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g75_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G84 5G 8/256 GB",
+    "precio_usd": 180,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g84_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G85 5G 8/256 GB",
+    "precio_usd": 205,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g85_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA G85 5G 8/256 GB",
+    "precio_usd": 220,
+    "categoria": "CELULARES",
+    "imagen": "motorola_g85_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA EDGE 50 5G *12/256 GB",
+    "precio_usd": 290,
+    "categoria": "CELULARES",
+    "imagen": "motorola_edge_50_5g_12256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA EDGE 50 5G 12/512 GB",
+    "precio_usd": 310,
+    "categoria": "CELULARES",
+    "imagen": "motorola_edge_50_5g_12512_gb.png"
+  },
+  {
+    "producto": "MOTOROLA EDGE 50 FUSION 5G 8/256 GB",
+    "precio_usd": 235,
+    "categoria": "CELULARES",
+    "imagen": "motorola_edge_50_fusion_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA EDGE 50 FUSION 5G 12/256 GB",
+    "precio_usd": 260,
+    "categoria": "CELULARES",
+    "imagen": "motorola_edge_50_fusion_5g_12256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
+    "precio_usd": 275,
+    "categoria": "CELULARES",
+    "imagen": "motorola_edge_50_fusion_5g_12512_gb.png"
+  },
+  {
+    "producto": "MOTOROLA EDGE 50 NEO 5G 8/256 GB",
+    "precio_usd": 280,
+    "categoria": "CELULARES",
+    "imagen": "motorola_edge_50_neo_5g_8256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA EDGE 50 PRO 5G 12/512 GB",
+    "precio_usd": 415,
+    "categoria": "CELULARES",
+    "imagen": "motorola_edge_50_pro_5g_12512_gb.png"
+  },
+  {
+    "producto": "MOTOROLA EDGE 60 FUSION 5G 12/256 GB",
+    "precio_usd": 300,
+    "categoria": "CELULARES",
+    "imagen": "motorola_edge_60_fusion_5g_12256_gb.png"
+  },
+  {
+    "producto": "MOTOROLA RAZR 50 ULTRA 5G 12/512 GB",
+    "precio_usd": 815,
+    "categoria": "CELULARES",
+    "imagen": "motorola_razr_50_ultra_5g_12512_gb.png"
+  },
+  {
+    "producto": "INFINIX HOT 50 PRO+ 8/256 GB",
+    "precio_usd": 180,
+    "categoria": "CELULARES",
+    "imagen": "infinix_hot_50_pro_8256_gb.png"
+  },
+  {
+    "producto": "INFINIX HOT 60i 8/256 GB",
+    "precio_usd": 135,
+    "categoria": "CELULARES",
+    "imagen": "infinix_hot_60i_8256_gb.png"
+  },
+  {
+    "producto": "INFINIX HOT 60 PRO 8/256 GB",
+    "precio_usd": 180,
+    "categoria": "CELULARES",
+    "imagen": "infinix_hot_60_pro_8256_gb.png"
+  },
+  {
+    "producto": "INFINIX HOT 60 PRO+ 8/256 GB",
+    "precio_usd": 210,
+    "categoria": "CELULARES",
+    "imagen": "infinix_hot_60_pro_8256_gb.png"
+  },
+  {
+    "producto": "INFINIX NOTE 50 PRO NFC 8/256 GB",
+    "precio_usd": 250,
+    "categoria": "CELULARES",
+    "imagen": "infinix_note_50_pro_nfc_8256_gb.png"
+  },
+  {
+    "producto": "INFINIX GT 30 PRO 5G 12/256 GB",
+    "precio_usd": 365,
+    "categoria": "CELULARES",
+    "imagen": "infinix_gt_30_pro_5g_12256_gb.png"
+  },
+  {
+    "producto": "INFINIX GT 30 PRO 5G 12/256 GB",
+    "precio_usd": 380,
+    "categoria": "CELULARES",
+    "imagen": "infinix_gt_30_pro_5g_12256_gb.png"
+  },
+  {
+    "producto": "ITEL A90 4/256 GB",
     "precio_usd": 105,
     "categoria": "OTROS",
-    "imagen": "_xiaomi_smart_band_9_pro_negro.jpg"
+    "imagen": "itel_a90_4256_gb.png"
   },
   {
-    "producto": "📱 INFINIX GT 30 PRO 5G 12/256 GB",
-    "precio_usd": 455,
-    "categoria": "OTROS",
-    "imagen": "_infinix_gt_30_pro_5g_12256_gb.jpg"
+    "producto": "XIAOMI REDMI A5 3/64 GB",
+    "precio_usd": 90,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_redmi_a5_364_gb.png"
   },
   {
-    "producto": "📱 INFINIX GT 30 PRO 5G 12/256 GB  DARK FLARE-KIT GAMER",
-    "precio_usd": 470,
-    "categoria": "OTROS",
-    "imagen": "_infinix_gt_30_pro_5g_12256_gb_dark_flare-kit_gamer.jpg"
+    "producto": "XIAOMI REDMI A5 4/128 GB",
+    "precio_usd": 100,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_redmi_a5_4128_gb.png"
   },
   {
-    "producto": "📱 INFINIX HOT 50 PRO+ 8/256 GB",
-    "precio_usd": 235,
-    "categoria": "OTROS",
-    "imagen": "_infinix_hot_50_pro_8256_gb.jpg"
+    "producto": "XIAOMI REDMI 13 8/256 GB",
+    "precio_usd": 135,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_redmi_13_8256_gb.png"
   },
   {
-    "producto": "📱 INFINIX HOT 60 PRO 8/256 GB",
-    "precio_usd": 235,
-    "categoria": "OTROS",
-    "imagen": "_infinix_hot_60_pro_8256_gb.jpg"
+    "producto": "XIAOMI REDMI 13X 8/256 GB",
+    "precio_usd": 135,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_redmi_13x_8256_gb.png"
   },
   {
-    "producto": "📱 INFINIX HOT 60 PRO+ 8/256 GB",
-    "precio_usd": 270,
-    "categoria": "OTROS",
-    "imagen": "_infinix_hot_60_pro_8256_gb.jpg"
+    "producto": "XIAOMI REDMI 14C 4/256 GB",
+    "precio_usd": 120,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_redmi_14c_4256_gb.png"
   },
   {
-    "producto": "📱 INFINIX HOT 60i 8/256 GB",
-    "precio_usd": 180,
-    "categoria": "OTROS",
-    "imagen": "_infinix_hot_60i_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 INFINIX NOTE 50 PRO NFC 8/256 GB",
-    "precio_usd": 315,
-    "categoria": "OTROS",
-    "imagen": "_infinix_note_50_pro_nfc_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 13 128 GB SIM",
-    "precio_usd": 610,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_13_128_gb_sim.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 13 256 GB SIM RED GRADO A",
-    "precio_usd": 490,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_13_256_gb_sim_red_grado_a.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 14 128 GB SIM/ESIM",
-    "precio_usd": 695,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_14_128_gb_simesim.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 14 PRO MAX 128 GB SIM",
-    "precio_usd": 985,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_14_pro_max_128_gb_sim.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 15 128 GB BLACK AS IS",
-    "precio_usd": 670,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_15_128_gb_black_as_is.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 15 128 GB SIM PINK GRADO A",
-    "precio_usd": 665,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_15_128_gb_sim_pink_grado_a.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 15 128 GB SIM/ESIM",
-    "precio_usd": 825,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_15_128_gb_simesim.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 16 128 GB ESIM/SIM",
-    "precio_usd": 920,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_16_128_gb_esimsim.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 16 PRO 128 GB ESIM",
-    "precio_usd": 1130,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_16_pro_128_gb_esim.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 16 PRO 256 GB ESIM",
-    "precio_usd": 1315,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_16_pro_256_gb_esim.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 16 PRO MAX 1 TB ESIM",
-    "precio_usd": 1830,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_16_pro_max_1_tb_esim.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 16 PRO MAX 256 GB ESIM",
-    "precio_usd": 1345,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_16_pro_max_256_gb_esim.jpg"
-  },
-  {
-    "producto": "📱 IPHONE 16e 256 GB ESIM",
-    "precio_usd": 780,
-    "categoria": "IPHONE",
-    "imagen": "_iphone_16e_256_gb_esim.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA E15 2/64 GB",
+    "producto": "XIAOMI REDMI 14C 8/256 GB",
     "precio_usd": 125,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_e15_264_gb.jpg"
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_redmi_14c_8256_gb.png"
   },
   {
-    "producto": "📱 MOTOROLA EDGE 50 5G *12/256 GB",
-    "precio_usd": 365,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_edge_50_5g_12256_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA EDGE 50 5G 12/512 GB  S/CARG",
-    "precio_usd": 390,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_edge_50_5g_12512_gb_scarg.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA EDGE 50 FUSION 5G 12/256 GB",
-    "precio_usd": 330,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_edge_50_fusion_5g_12256_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
-    "precio_usd": 345,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_edge_50_fusion_5g_12512_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA EDGE 50 FUSION 5G 8/256 GB",
-    "precio_usd": 300,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_edge_50_fusion_5g_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA EDGE 50 NEO 5G 8/256 GB",
-    "precio_usd": 355,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_edge_50_neo_5g_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA EDGE 50 PRO 5G 12/512 GB",
-    "precio_usd": 510,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_edge_50_pro_5g_12512_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA EDGE 60 FUSION 5G 12/256 GB  S/CARG",
-    "precio_usd": 375,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_edge_60_fusion_5g_12256_gb_scarg.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G04S 4/128 GB",
-    "precio_usd": 145,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g04s_4128_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G05 4/256 GB",
-    "precio_usd": 170,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g05_4256_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G15 4/128 GB",
+    "producto": "XIAOMI REDMI 15 6/128 GB",
     "precio_usd": 160,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g15_4128_gb.jpg"
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_redmi_15_6128_gb.png"
   },
   {
-    "producto": "📱 MOTOROLA G15 4/512 GB",
-    "precio_usd": 215,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g15_4512_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G15 8/256 GB  S/CARG",
-    "precio_usd": 200,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g15_8256_gb_scarg.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G15 POWER 8/256 GB  S/CARG",
-    "precio_usd": 205,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g15_power_8256_gb_scarg.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G24 4/256 GB",
-    "precio_usd": 180,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g24_4256_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G35 5G 4/128 GB  S/CARG",
+    "producto": "XIAOMI REDMI 15 8/256 GB",
     "precio_usd": 170,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g35_5g_4128_gb_scarg.jpg"
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_redmi_15_8256_gb.png"
   },
   {
-    "producto": "📱 MOTOROLA G35 5G 8/256 GB",
-    "precio_usd": 200,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g35_5g_8256_gb.jpg"
+    "producto": "XIAOMI REDMI 15C 4/128 GB",
+    "precio_usd": 135,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_redmi_15c_4128_gb.png"
   },
   {
-    "producto": "📱 MOTOROLA G54 5G 8/256 GB  S/CARG",
-    "precio_usd": 235,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g54_5g_8256_gb_scarg.jpg"
+    "producto": "XIAOMI REDMI 15C 8/256 GB",
+    "precio_usd": 155,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_redmi_15c_8256_gb.png"
   },
   {
-    "producto": "📱 MOTOROLA G54 POWER 5G 8/256 GB  S/CARG",
-    "precio_usd": 230,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g54_power_5g_8256_gb_scarg.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G55 5G 8/256 GB",
-    "precio_usd": 235,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g55_5g_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G55 5G 8/256 GB  S/CARG",
+    "producto": "XIAOMI NOTE 13 5G 8/256 GB",
     "precio_usd": 225,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g55_5g_8256_gb_scarg.jpg"
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_13_5g_8256_gb.png"
   },
   {
-    "producto": "📱 MOTOROLA G56 5G 8/256 GB",
-    "precio_usd": 295,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g56_5g_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G75 5G 8/256 GB",
-    "precio_usd": 270,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g75_5g_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G84 5G 8/256 GB  S/CARG",
-    "precio_usd": 235,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g84_5g_8256_gb_scarg.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G85 5G 8/256 GB",
-    "precio_usd": 280,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g85_5g_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA G85 5G 8/256 GB  S/CARG",
-    "precio_usd": 265,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_g85_5g_8256_gb_scarg.jpg"
-  },
-  {
-    "producto": "📱 MOTOROLA RAZR 50 ULTRA 5G 12/512 GB",
-    "precio_usd": 985,
-    "categoria": "MOTOROLA",
-    "imagen": "_motorola_razr_50_ultra_5g_12512_gb.jpg"
-  },
-  {
-    "producto": "📱 SAMSUNG A06 4/128 GB",
-    "precio_usd": 150,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a06_4128_gb.jpg"
-  },
-  {
-    "producto": "📱 SAMSUNG A06 4/64 GB",
-    "precio_usd": 145,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a06_464_gb.jpg"
-  },
-  {
-    "producto": "📱 SAMSUNG A07 4/128 GB",
-    "precio_usd": 190,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a07_4128_gb.jpg"
-  },
-  {
-    "producto": "📱 SAMSUNG A16 4/128 GB",
-    "precio_usd": 180,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a16_4128_gb.jpg"
-  },
-  {
-    "producto": "📱 SAMSUNG A16 5G 4/128 GB",
-    "precio_usd": 200,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a16_5g_4128_gb.jpg"
-  },
-  {
-    "producto": "📱 SAMSUNG A16 5G 6/128 GB",
+    "producto": "XIAOMI NOTE 13 5G 12/512 GB",
     "precio_usd": 230,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a16_5g_6128_gb.jpg"
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_13_5g_12512_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG A16 6/128 GB",
-    "precio_usd": 215,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a16_6128_gb.jpg"
+    "producto": "XIAOMI NOTE 13 PRO 5G 8/256 GB",
+    "precio_usd": 255,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_13_pro_5g_8256_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG A16 8/256 GB",
-    "precio_usd": 245,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a16_8256_gb.jpg"
+    "producto": "XIAOMI NOTE 14 6/128 GB",
+    "precio_usd": 160,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14_6128_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG A17 5G 6/128 GB",
-    "precio_usd": 290,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a17_5g_6128_gb.jpg"
+    "producto": "XIAOMI NOTE 14 8/256 GB",
+    "precio_usd": 150,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14_8256_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG A17 5G 8/256 GB",
-    "precio_usd": 315,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a17_5g_8256_gb.jpg"
+    "producto": "XIAOMI NOTE 14 8/256 GB",
+    "precio_usd": 180,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14_8256_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG A26 5G 6/128 GB",
+    "producto": "XIAOMI NOTE 14 5G 8/256 GB",
+    "precio_usd": 230,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14_5g_8256_gb.png"
+  },
+  {
+    "producto": "XIAOMI NOTE 14s 8/256 GB",
+    "precio_usd": 210,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14s_8256_gb.png"
+  },
+  {
+    "producto": "XIAOMI NOTE 14s 12/512 GB",
+    "precio_usd": 255,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14s_12512_gb.png"
+  },
+  {
+    "producto": "XIAOMI NOTE 14 PRO 8/256 GB",
+    "precio_usd": 225,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14_pro_8256_gb.png"
+  },
+  {
+    "producto": "XIAOMI NOTE 14 PRO 12/512 GB",
     "precio_usd": 275,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a26_5g_6128_gb.jpg"
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14_pro_12512_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG A26 5G 8/256 GB",
-    "precio_usd": 295,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a26_5g_8256_gb.jpg"
+    "producto": "XIAOMI NOTE 14 PRO 5G 8/256 GB",
+    "precio_usd": 275,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14_pro_5g_8256_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG A36 5G 6/128 GB",
-    "precio_usd": 345,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a36_5g_6128_gb.jpg"
+    "producto": "XIAOMI NOTE 14 PRO 5G 12/512 GB",
+    "precio_usd": 330,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14_pro_5g_12512_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG A56 5G 12/256 GB",
-    "precio_usd": 475,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a56_5g_12256_gb.jpg"
+    "producto": "XIAOMI NOTE 14 PRO + 5G 8/256 GB",
+    "precio_usd": 330,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14_pro_5g_8256_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG A56 5G 8/256 GB",
-    "precio_usd": 465,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_a56_5g_8256_gb.jpg"
+    "producto": "XIAOMI NOTE 14 PRO + 5G 12/512 GB",
+    "precio_usd": 385,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_note_14_pro_5g_12512_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG S24 FE 8/256 GB",
-    "precio_usd": 600,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_s24_fe_8256_gb.jpg"
+    "producto": "XIAOMI POCO C71 4/128 GB",
+    "precio_usd": 100,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_c71_4128_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG S24 ULTRA 12/512 GB  UNICO",
-    "precio_usd": 1125,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_s24_ultra_12512_gb_unico.jpg"
+    "producto": "XIAOMI POCO C75 8/256 GB",
+    "precio_usd": 135,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_c75_8256_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG S25 12/256 GB",
-    "precio_usd": 865,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_s25_12256_gb.jpg"
+    "producto": "XIAOMI POCO C85 6/128 GB",
+    "precio_usd": 140,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_c85_6128_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG S25 PLUS 12/256 GB",
-    "precio_usd": 995,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_s25_plus_12256_gb.jpg"
+    "producto": "XIAOMI POCO C85 8/256 GB",
+    "precio_usd": 150,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_c85_8256_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG S25 PLUS 12/512 GB",
-    "precio_usd": 1055,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_s25_plus_12512_gb.jpg"
+    "producto": "XIAOMI POCO M5s 4/128 GB",
+    "precio_usd": 130,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_m5s_4128_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG S25 ULTRA 12/1 TB",
-    "precio_usd": 1380,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_s25_ultra_121_tb.jpg"
+    "producto": "XIAOMI POCO M5s 8/256 GB",
+    "precio_usd": 140,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_m5s_8256_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG S25 ULTRA 12/256 GB",
-    "precio_usd": 1140,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_s25_ultra_12256_gb.jpg"
+    "producto": "XIAOMI POCO M6 8/256 GB",
+    "precio_usd": 150,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_m6_8256_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG S25 ULTRA 12/512 GB",
-    "precio_usd": 1250,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_s25_ultra_12512_gb.jpg"
+    "producto": "XIAOMI POCO M7 8/256 GB",
+    "precio_usd": 170,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_m7_8256_gb.png"
   },
   {
-    "producto": "📱 SAMSUNG Z FLIP 7 12/512 GB",
-    "precio_usd": 1220,
-    "categoria": "SAMSUNG",
-    "imagen": "_samsung_z_flip_7_12512_gb.jpg"
+    "producto": "XIAOMI POCO M7 PRO 5G 12/256 GB",
+    "precio_usd": 215,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_m7_pro_5g_12256_gb.png"
   },
   {
-    "producto": "📱 XIAOMI 14 5G 12/512 GB",
+    "producto": "XIAOMI POCO M7 PRO 5G 12/512 GB",
+    "precio_usd": 235,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_m7_pro_5g_12512_gb.png"
+  },
+  {
+    "producto": "XIAOMI POCO X7 5G 12/512 GB",
+    "precio_usd": 285,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_x7_5g_12512_gb.png"
+  },
+  {
+    "producto": "XIAOMI POCO X7 PRO 5G 8/256 GB",
+    "precio_usd": 310,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_x7_pro_5g_8256_gb.png"
+  },
+  {
+    "producto": "XIAOMI POCO X7 PRO 5G 12/512 GB",
+    "precio_usd": 355,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_x7_pro_5g_12512_gb.png"
+  },
+  {
+    "producto": "XIAOMI POCO F6 PRO 5G 12/256 GB",
+    "precio_usd": 360,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_poco_f6_pro_5g_12256_gb.png"
+  },
+  {
+    "producto": "XIAOMI 14T 5G 12/512 GB",
+    "precio_usd": 460,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_14t_5g_12512_gb.png"
+  },
+  {
+    "producto": "XIAOMI 14T PRO 5G 12/512 GB",
+    "precio_usd": 590,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_14t_pro_5g_12512_gb.png"
+  },
+  {
+    "producto": "XIAOMI 14T PRO 5G 12/512 GB",
+    "precio_usd": 605,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_14t_pro_5g_12512_gb.png"
+  },
+  {
+    "producto": "XIAOMI 14 5G 12/512 GB",
+    "precio_usd": 635,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_14_5g_12512_gb.png"
+  },
+  {
+    "producto": "XIAOMI 15 5G 12/512 GB",
+    "precio_usd": 815,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_15_5g_12512_gb.png"
+  },
+  {
+    "producto": "XIAOMI SMART BAND 9 PRO NEGRO",
+    "precio_usd": 70,
+    "categoria": "CELULARES",
+    "imagen": "xiaomi_smart_band_9_pro_negro.png"
+  },
+  {
+    "producto": "CARGADOR APPLE 20W USB-C ORIGINAL",
+    "precio_usd": 30,
+    "categoria": "CARGADORES",
+    "imagen": "cargador_apple_20w_usbc_original.png"
+  },
+  {
+    "producto": "AIRPODS PRO 2DA MTJV3LL/A USB-C",
+    "precio_usd": 215,
+    "categoria": "OTROS",
+    "imagen": "airpods_pro_2da_mtjv3lla_usbc.png"
+  },
+  {
+    "producto": "AIRPODS 4",
+    "precio_usd": 160,
+    "categoria": "OTROS",
+    "imagen": "airpods_4.png"
+  },
+  {
+    "producto": "AIRPODS 4 NOISE CANCELING",
+    "precio_usd": 210,
+    "categoria": "OTROS",
+    "imagen": "airpods_4_noise_canceling.png"
+  },
+  {
+    "producto": "AIRPODS MAX USB-C",
+    "precio_usd": 590,
+    "categoria": "OTROS",
+    "imagen": "airpods_max_usbc.png"
+  },
+  {
+    "producto": "WATCH 10 46MM",
+    "precio_usd": 385,
+    "categoria": "SMARTWATCH",
+    "imagen": "watch_10_46mm.png"
+  },
+  {
+    "producto": "WATCH 10 46MM CELL",
+    "precio_usd": 510,
+    "categoria": "SMARTWATCH",
+    "imagen": "watch_10_46mm_cell.png"
+  },
+  {
+    "producto": "WATCH 10 ULTRA 2",
     "precio_usd": 770,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_14_5g_12512_gb.jpg"
+    "categoria": "SMARTWATCH",
+    "imagen": "watch_10_ultra_2.png"
   },
   {
-    "producto": "📱 XIAOMI 14T 5G 12/512 GB",
-    "precio_usd": 565,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_14t_5g_12512_gb.jpg"
+    "producto": "IPAD 11 A16 10.2 128 GB",
+    "precio_usd": 430,
+    "categoria": "IPAD",
+    "imagen": "ipad_11_a16_102_128_gb.png"
   },
   {
-    "producto": "📱 XIAOMI 14T PRO 5G 12/512 GB",
+    "producto": "IPAD 11 A16 10.2 256 GB",
+    "precio_usd": 540,
+    "categoria": "IPAD",
+    "imagen": "ipad_11_a16_102_256_gb.png"
+  },
+  {
+    "producto": "IPAD MINI 7 128 GB",
+    "precio_usd": 530,
+    "categoria": "IPAD",
+    "imagen": "ipad_mini_7_128_gb.png"
+  },
+  {
+    "producto": "IPAD AIR 11” M3 128 GB",
+    "precio_usd": 630,
+    "categoria": "IPAD",
+    "imagen": "ipad_air_11_m3_128_gb.png"
+  },
+  {
+    "producto": "IPAD AIR 11” M3 256 GB",
+    "precio_usd": 730,
+    "categoria": "IPAD",
+    "imagen": "ipad_air_11_m3_256_gb.png"
+  },
+  {
+    "producto": "IPAD PRO 11 M4 256 GB",
+    "precio_usd": 1030,
+    "categoria": "IPAD",
+    "imagen": "ipad_pro_11_m4_256_gb.png"
+  },
+  {
+    "producto": "IPAD PRO 13 M4 512 GB",
+    "precio_usd": 1585,
+    "categoria": "IPAD",
+    "imagen": "ipad_pro_13_m4_512_gb.png"
+  },
+  {
+    "producto": "MACBOOK AIR M1 13” 8/256 GB",
+    "precio_usd": 815,
+    "categoria": "MACBOOKS",
+    "imagen": "macbook_air_m1_13_8256_gb.png"
+  },
+  {
+    "producto": "MAC MINI M4 16/256 GB",
     "precio_usd": 735,
     "categoria": "OTROS",
-    "imagen": "_xiaomi_14t_pro_5g_12512_gb.jpg"
+    "imagen": "mac_mini_m4_16256_gb.png"
   },
   {
-    "producto": "📱 XIAOMI 14T PRO 5G 12/512 GB  S/CARG",
-    "precio_usd": 720,
+    "producto": "MAC MINI M4 16/512 GB",
+    "precio_usd": 1045,
     "categoria": "OTROS",
-    "imagen": "_xiaomi_14t_pro_5g_12512_gb_scarg.jpg"
+    "imagen": "mac_mini_m4_16512_gb.png"
   },
   {
-    "producto": "📱 XIAOMI 15 5G 12/512 GB",
-    "precio_usd": 985,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_15_5g_12512_gb.jpg"
+    "producto": "MACBOOK AIR M4 13” 16/256 GB",
+    "precio_usd": 990,
+    "categoria": "MACBOOKS",
+    "imagen": "macbook_air_m4_13_16256_gb.png"
   },
   {
-    "producto": "📱 XIAOMI NOTE 13 5G 12/512 GB",
-    "precio_usd": 295,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_13_5g_12512_gb.jpg"
+    "producto": "MACBOOK AIR M4 13” 16/512 GB",
+    "precio_usd": 1285,
+    "categoria": "MACBOOKS",
+    "imagen": "macbook_air_m4_13_16512_gb.png"
   },
   {
-    "producto": "📱 XIAOMI NOTE 13 5G 8/256 GB",
-    "precio_usd": 290,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_13_5g_8256_gb.jpg"
+    "producto": "MACBOOK PRO M4 14” 16/1 TB",
+    "precio_usd": 1955,
+    "categoria": "MACBOOKS",
+    "imagen": "macbook_pro_m4_14_161_tb.png"
   },
   {
-    "producto": "📱 XIAOMI NOTE 13 PRO 5G 8/256 GB",
-    "precio_usd": 325,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_13_pro_5g_8256_gb.jpg"
+    "producto": "MACBOOK PRO M4 PRO 14” 24/512 GB",
+    "precio_usd": 2125,
+    "categoria": "MACBOOKS",
+    "imagen": "macbook_pro_m4_pro_14_24512_gb.png"
   },
   {
-    "producto": "📱 XIAOMI NOTE 14 5G 8/256 GB",
-    "precio_usd": 295,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14_5g_8256_gb.jpg"
+    "producto": "MACBOOK PRO M4 PRO 14” 24/1 TB",
+    "precio_usd": 2555,
+    "categoria": "MACBOOKS",
+    "imagen": "macbook_pro_m4_pro_14_241_tb.png"
   },
   {
-    "producto": "📱 XIAOMI NOTE 14 6/128 GB",
-    "precio_usd": 210,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14_6128_gb.jpg"
+    "producto": "75” Smart TV UHD 4K Samsung UN75DU7000GCZB",
+    "precio_usd": 1100,
+    "categoria": "TELEVISORES",
+    "imagen": "75_smart_tv_uhd_4k_samsung_un75du7000gczb.png"
   },
   {
-    "producto": "📱 XIAOMI NOTE 14 8/256 GB",
-    "precio_usd": 235,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI NOTE 14 8/256 GB  S/CAJA - S/ACC",
-    "precio_usd": 200,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14_8256_gb_scaja_-_sacc.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI NOTE 14 PRO + 5G 12/512 GB",
-    "precio_usd": 475,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14_pro_5g_12512_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI NOTE 14 PRO + 5G 8/256 GB",
-    "precio_usd": 410,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14_pro_5g_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI NOTE 14 PRO 12/512 GB",
-    "precio_usd": 345,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14_pro_12512_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI NOTE 14 PRO 5G 12/512 GB",
-    "precio_usd": 410,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14_pro_5g_12512_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI NOTE 14 PRO 5G 8/256 GB",
-    "precio_usd": 345,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14_pro_5g_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI NOTE 14 PRO 8/256 GB",
-    "precio_usd": 290,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14_pro_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI NOTE 14s 12/512 GB",
-    "precio_usd": 325,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14s_12512_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI NOTE 14s 8/256 GB",
-    "precio_usd": 270,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_note_14s_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO C71 4/128 GB",
-    "precio_usd": 140,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_c71_4128_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO C75 8/256 GB",
-    "precio_usd": 180,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_c75_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO C85 6/128 GB",
-    "precio_usd": 190,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_c85_6128_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO C85 8/256 GB",
-    "precio_usd": 200,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_c85_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO F6 PRO 5G 12/256 GB",
-    "precio_usd": 445,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_f6_pro_5g_12256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO M5s 4/128 GB",
-    "precio_usd": 175,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_m5s_4128_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO M5s 8/256 GB",
-    "precio_usd": 190,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_m5s_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO M6 8/256 GB",
-    "precio_usd": 200,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_m6_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO M7 8/256 GB",
-    "precio_usd": 225,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_m7_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO M7 PRO 5G 12/256 GB",
-    "precio_usd": 275,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_m7_pro_5g_12256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO M7 PRO 5G 12/512 GB",
-    "precio_usd": 300,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_m7_pro_5g_12512_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO X7 5G 12/512 GB",
-    "precio_usd": 360,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_x7_5g_12512_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO X7 PRO 5G 12/512 GB",
-    "precio_usd": 440,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_x7_pro_5g_12512_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI POCO X7 PRO 5G 8/256 GB",
-    "precio_usd": 390,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_poco_x7_pro_5g_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI REDMI 13 8/256 GB",
-    "precio_usd": 180,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_redmi_13_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI REDMI 13X 8/256 GB",
-    "precio_usd": 180,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_redmi_13x_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI REDMI 14C 4/256 GB",
-    "precio_usd": 165,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_redmi_14c_4256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI REDMI 14C 8/256 GB",
-    "precio_usd": 170,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_redmi_14c_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI REDMI 15 6/128 GB",
-    "precio_usd": 210,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_redmi_15_6128_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI REDMI 15 8/256 GB",
-    "precio_usd": 225,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_redmi_15_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI REDMI 15C 4/128 GB",
-    "precio_usd": 180,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_redmi_15c_4128_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI REDMI 15C 8/256 GB",
-    "precio_usd": 205,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_redmi_15c_8256_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI REDMI A5 3/64 GB",
-    "precio_usd": 130,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_redmi_a5_364_gb.jpg"
-  },
-  {
-    "producto": "📱 XIAOMI REDMI A5 4/128 GB",
-    "precio_usd": 140,
-    "categoria": "OTROS",
-    "imagen": "_xiaomi_redmi_a5_4128_gb.jpg"
-  },
-  {
-    "producto": "📺 32” Smart TV HD Samsung UN32T4300A",
-    "precio_usd": 235,
-    "categoria": "SAMSUNG",
-    "imagen": "_32_smart_tv_hd_samsung_un32t4300a.jpg"
-  },
-  {
-    "producto": "📺 43” Smart TV UHD 4K Samsung  UN43DU7000GCZB",
-    "precio_usd": 375,
-    "categoria": "SAMSUNG",
-    "imagen": "_43_smart_tv_uhd_4k_samsung_un43du7000gczb.jpg"
-  },
-  {
-    "producto": "📺 50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
-    "precio_usd": 470,
-    "categoria": "SAMSUNG",
-    "imagen": "_50_smart_tv_uhd_4k_samsung_un50du7000gczb.jpg"
-  },
-  {
-    "producto": "📺 55” Smart TV Samsung 4K QLED Q65D",
-    "precio_usd": 705,
-    "categoria": "SAMSUNG",
-    "imagen": "_55_smart_tv_samsung_4k_qled_q65d.jpg"
-  },
-  {
-    "producto": "📺 55” Smart TV UHD 4K Samsung UN55DU7000GCZB",
-    "precio_usd": 575,
-    "categoria": "SAMSUNG",
-    "imagen": "_55_smart_tv_uhd_4k_samsung_un55du7000gczb.jpg"
-  },
-  {
-    "producto": "📺 65” Smart TV QLED 4K Samsung DU7000",
+    "producto": "65” Smart TV QLED 4K Samsung QN65Q65DAGCZB",
     "precio_usd": 850,
-    "categoria": "SAMSUNG",
-    "imagen": "_65_smart_tv_qled_4k_samsung_du7000.jpg"
+    "categoria": "TELEVISORES",
+    "imagen": "65_smart_tv_qled_4k_samsung_qn65q65dagczb.png"
   },
   {
-    "producto": "📺 65” Smart TV QLED 4K Samsung QN65Q65DAGCZB",
-    "precio_usd": 1025,
-    "categoria": "SAMSUNG",
-    "imagen": "_65_smart_tv_qled_4k_samsung_qn65q65dagczb.jpg"
+    "producto": "65” Smart TV QLED 4K Samsung DU7000",
+    "precio_usd": 700,
+    "categoria": "TELEVISORES",
+    "imagen": "65_smart_tv_qled_4k_samsung_du7000.png"
   },
   {
-    "producto": "📺 75” Smart TV UHD 4K Samsung UN75DU7000GCZB",
-    "precio_usd": 1320,
-    "categoria": "SAMSUNG",
-    "imagen": "_75_smart_tv_uhd_4k_samsung_un75du7000gczb.jpg"
+    "producto": "55” Smart TV Samsung 4K QLED Q65D",
+    "precio_usd": 580,
+    "categoria": "TELEVISORES",
+    "imagen": "55_smart_tv_samsung_4k_qled_q65d.png"
   },
   {
-    "producto": "💻 MACBOOK AIR M1 13” 8/256 GB",
-    "precio_usd": 985,
-    "categoria": "MACBOOK",
-    "imagen": "_macbook_air_m1_13_8256_gb.jpg"
+    "producto": "55” Smart TV UHD 4K Samsung UN55DU7000GCZB",
+    "precio_usd": 470,
+    "categoria": "TELEVISORES",
+    "imagen": "55_smart_tv_uhd_4k_samsung_un55du7000gczb.png"
   },
   {
-    "producto": "💻 MACBOOK AIR M4 13” 16/256 GB",
-    "precio_usd": 1190,
-    "categoria": "MACBOOK",
-    "imagen": "_macbook_air_m4_13_16256_gb.jpg"
+    "producto": "55” Tv Led Philips UHD 55PUD7309/77",
+    "precio_usd": 420,
+    "categoria": "TELEVISORES",
+    "imagen": "55_tv_led_philips_uhd_55pud730977.png"
   },
   {
-    "producto": "💻 MACBOOK AIR M4 13” 16/512 GB",
-    "precio_usd": 1540,
-    "categoria": "MACBOOK",
-    "imagen": "_macbook_air_m4_13_16512_gb.jpg"
+    "producto": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
+    "precio_usd": 380,
+    "categoria": "TELEVISORES",
+    "imagen": "50_smart_tv_uhd_4k_samsung_un50du7000gczb.png"
   },
   {
-    "producto": "💻 MACBOOK PRO M4 14” 16/1 TB",
-    "precio_usd": 2330,
-    "categoria": "MACBOOK",
-    "imagen": "_macbook_pro_m4_14_161_tb.jpg"
+    "producto": "43” Smart TV UHD 4K Samsung  UN43DU7000GCZB",
+    "precio_usd": 300,
+    "categoria": "TELEVISORES",
+    "imagen": "43_smart_tv_uhd_4k_samsung_un43du7000gczb.png"
   },
   {
-    "producto": "💻 MACBOOK PRO M4 PRO 14” 24/1 TB",
-    "precio_usd": 3035,
-    "categoria": "MACBOOK",
-    "imagen": "_macbook_pro_m4_pro_14_241_tb.jpg"
+    "producto": "32” Smart TV HD Samsung UN32T4300A",
+    "precio_usd": 180,
+    "categoria": "TELEVISORES",
+    "imagen": "32_smart_tv_hd_samsung_un32t4300a.png"
   },
   {
-    "producto": "💻 MACBOOK PRO M4 PRO 14” 24/512 GB",
-    "precio_usd": 2530,
-    "categoria": "MACBOOK",
-    "imagen": "_macbook_pro_m4_pro_14_24512_gb.jpg"
+    "producto": "JOYSTICK PS5 COSMIC RED/ WHITE",
+    "precio_usd": 85,
+    "categoria": "VIDEO JUEGOS",
+    "imagen": "joystick_ps5_cosmic_red_white.png"
   },
   {
-    "producto": "📺 55” Tv Led Philips UHD 55PUD7309/77",
+    "producto": "JOYSTICK PS5 CHROMA ÍNDIGO/CHROMA TEAL/COBALT BLUE",
+    "precio_usd": 90,
+    "categoria": "VIDEO JUEGOS",
+    "imagen": "joystick_ps5_chroma_índigochroma_tealcobalt_blue.png"
+  },
+  {
+    "producto": "PS5 SLIM 1 TB DIGITAL",
     "precio_usd": 520,
-    "categoria": "TV",
-    "imagen": "_55_tv_led_philips_uhd_55pud730977.jpg"
+    "categoria": "VIDEO JUEGOS",
+    "imagen": "ps5_slim_1_tb_digital.png"
   },
   {
-    "producto": "📦 XBOX S 512 GB",
-    "precio_usd": 530,
-    "categoria": "CONSOLA",
-    "imagen": "_xbox_s_512_gb.jpg"
+    "producto": "PS5 SLIM 1 TB C/LECTORA",
+    "precio_usd": 580,
+    "categoria": "VIDEO JUEGOS",
+    "imagen": "ps5_slim_1_tb_clectora.png"
   },
   {
-    "producto": "🕹️ JOYSTICK PS5 CHROMA ÍNDIGO/CHROMA TEAL/COBALT BLUE",
-    "precio_usd": 130,
-    "categoria": "CONSOLA",
-    "imagen": "_joystick_ps5_chroma_indigochroma_tealcobalt_blue.jpg"
+    "producto": "PS5 SLIM 1 TB C/LECTORA FC25",
+    "precio_usd": 630,
+    "categoria": "VIDEO JUEGOS",
+    "imagen": "ps5_slim_1_tb_clectora_fc25.png"
   },
   {
-    "producto": "🕹️ JOYSTICK PS5 COSMIC RED/ WHITE",
-    "precio_usd": 125,
-    "categoria": "CONSOLA",
-    "imagen": "_joystick_ps5_cosmic_red_white.jpg"
-  },
-  {
-    "producto": "🕹️ NINTENDO SWITCH 2 LCD 256 GB HK",
-    "precio_usd": 755,
-    "categoria": "CONSOLA",
-    "imagen": "_nintendo_switch_2_lcd_256_gb_hk.jpg"
-  },
-  {
-    "producto": "🕹️ NINTENDO SWITCH 2 LCD 256 GB MARIO KART HK",
-    "precio_usd": 780,
-    "categoria": "CONSOLA",
-    "imagen": "_nintendo_switch_2_lcd_256_gb_mario_kart_hk.jpg"
-  },
-  {
-    "producto": "🕹️ NINTENDO SWITCH 2 LCD 256 GB USA",
-    "precio_usd": 790,
-    "categoria": "CONSOLA",
-    "imagen": "_nintendo_switch_2_lcd_256_gb_usa.jpg"
-  },
-  {
-    "producto": "🕹️ PS5 PRO 2 TB",
-    "precio_usd": 1080,
-    "categoria": "CONSOLA",
-    "imagen": "_ps5_pro_2_tb.jpg"
-  },
-  {
-    "producto": "🕹️ PS5 SLIM 1 TB C/LECTORA",
-    "precio_usd": 705,
-    "categoria": "CONSOLA",
-    "imagen": "_ps5_slim_1_tb_clectora.jpg"
-  },
-  {
-    "producto": "🕹️ PS5 SLIM 1 TB C/LECTORA CALL OF DUTY 6",
-    "precio_usd": 790,
-    "categoria": "CONSOLA",
-    "imagen": "_ps5_slim_1_tb_clectora_call_of_duty_6.jpg"
-  },
-  {
-    "producto": "🕹️ PS5 SLIM 1 TB C/LECTORA FC25",
-    "precio_usd": 765,
-    "categoria": "CONSOLA",
-    "imagen": "_ps5_slim_1_tb_clectora_fc25.jpg"
-  },
-  {
-    "producto": "🕹️ PS5 SLIM 1 TB DIGITAL",
-    "precio_usd": 635,
-    "categoria": "CONSOLA",
-    "imagen": "_ps5_slim_1_tb_digital.jpg"
-  },
-  {
-    "producto": "🔌 CARGADOR APPLE 20W USB-C ORIGINAL",
-    "precio_usd": 60,
-    "categoria": "ACCESORIO",
-    "imagen": "_cargador_apple_20w_usb-c_original.jpg"
-  },
-  {
-    "producto": "📦 AIRPODS 4",
-    "precio_usd": 210,
-    "categoria": "AUDIO",
-    "imagen": "_airpods_4.jpg"
-  },
-  {
-    "producto": "📦 AIRPODS 4 NOISE CANCELING",
-    "precio_usd": 270,
-    "categoria": "AUDIO",
-    "imagen": "_airpods_4_noise_canceling.jpg"
-  },
-  {
-    "producto": "📦 AIRPODS MAX USB-C",
-    "precio_usd": 720,
-    "categoria": "AUDIO",
-    "imagen": "_airpods_max_usb-c.jpg"
-  },
-  {
-    "producto": "📦 AIRPODS PRO 2DA MTJV3LL/A USB-C",
-    "precio_usd": 275,
-    "categoria": "AUDIO",
-    "imagen": "_airpods_pro_2da_mtjv3lla_usb-c.jpg"
-  },
-  {
-    "producto": "📦 ITEL A90 4/256 GB",
-    "precio_usd": 145,
-    "categoria": "OTROS",
-    "imagen": "_itel_a90_4256_gb.jpg"
-  },
-  {
-    "producto": "📦 MAC MINI M4 16/256 GB",
-    "precio_usd": 890,
-    "categoria": "OTROS",
-    "imagen": "_mac_mini_m4_16256_gb.jpg"
-  },
-  {
-    "producto": "📦 MAC MINI M4 16/512 GB",
-    "precio_usd": 1255,
-    "categoria": "OTROS",
-    "imagen": "_mac_mini_m4_16512_gb.jpg"
-  },
-  {
-    "producto": "⌚ WATCH 10 46MM",
-    "precio_usd": 475,
-    "categoria": "SMARTWATCH",
-    "imagen": "_watch_10_46mm.jpg"
-  },
-  {
-    "producto": "⌚ WATCH 10 46MM CELL",
-    "precio_usd": 625,
-    "categoria": "SMARTWATCH",
-    "imagen": "_watch_10_46mm_cell.jpg"
-  },
-  {
-    "producto": "⌚ WATCH 10 ULTRA 2",
-    "precio_usd": 930,
-    "categoria": "SMARTWATCH",
-    "imagen": "_watch_10_ultra_2.jpg"
-  },
-  {
-    "producto": "📦 IPAD 11 A16 10.2 128 GB",
-    "precio_usd": 530,
-    "categoria": "IPAD",
-    "imagen": "_ipad_11_a16_102_128_gb.jpg"
-  },
-  {
-    "producto": "📦 IPAD 11 A16 10.2 256 GB",
-    "precio_usd": 660,
-    "categoria": "IPAD",
-    "imagen": "_ipad_11_a16_102_256_gb.jpg"
-  },
-  {
-    "producto": "📦 IPAD AIR 11” M3 128 GB",
-    "precio_usd": 765,
-    "categoria": "IPAD",
-    "imagen": "_ipad_air_11_m3_128_gb.jpg"
-  },
-  {
-    "producto": "📦 IPAD AIR 11” M3 256 GB",
-    "precio_usd": 885,
-    "categoria": "IPAD",
-    "imagen": "_ipad_air_11_m3_256_gb.jpg"
-  },
-  {
-    "producto": "📦 IPAD MINI 7 128 GB",
+    "producto": "PS5 SLIM 1 TB C/LECTORA CALL OF DUTY 6",
     "precio_usd": 650,
-    "categoria": "IPAD",
-    "imagen": "_ipad_mini_7_128_gb.jpg"
+    "categoria": "VIDEO JUEGOS",
+    "imagen": "ps5_slim_1_tb_clectora_call_of_duty_6.png"
   },
   {
-    "producto": "📦 IPAD PRO 11 M4 256 GB",
-    "precio_usd": 1240,
-    "categoria": "IPAD",
-    "imagen": "_ipad_pro_11_m4_256_gb.jpg"
-  },
-  {
-    "producto": "📦 IPAD PRO 13 M4 512 GB",
-    "precio_usd": 1895,
-    "categoria": "IPAD",
-    "imagen": "_ipad_pro_13_m4_512_gb.jpg"
+    "producto": "PS5 PRO 2 TB",
+    "precio_usd": 895,
+    "categoria": "VIDEO JUEGOS",
+    "imagen": "ps5_pro_2_tb.png"
   }
 ]
