@@ -3,6 +3,8 @@ import { COLORS } from '../utils/colors';
 
 const BannerSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  
   const banners = [
     { id: 5, image: '/banners/ipads.png' },
     { id: 1, image: '/banners/consolas.png' },
@@ -12,21 +14,33 @@ const BannerSlider = () => {
   ];
 
   useEffect(() => {
+    // Detectar si es móvil
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % banners.length);
     }, 5000);
-    return () => clearInterval(interval);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', checkIsMobile);
+    };
   }, [banners.length]);
 
   return (
     <div style={{
       position: 'relative',
       width: '100%',
-      height: '650px',
-      borderRadius: '20px',
+      height: isMobile ? '400px' : '650px', // Altura más grande en móvil
+      borderRadius: isMobile ? '15px' : '20px',
       overflow: 'hidden',
-      margin: '20px 0',
-      boxShadow: COLORS.shadow.xl
+      margin: isMobile ? '15px 0' : '20px 0', // Menos margen en móvil para acercarlo al header
+      boxShadow: COLORS.shadow.xl,
     }}>
       {banners.map((banner, index) => (
         <img
@@ -39,7 +53,7 @@ const BannerSlider = () => {
             left: 0,
             width: '100%',
             height: '100%',
-            objectFit: 'contain',
+            objectFit: isMobile ? 'cover' : 'contain', // Cover en móvil para llenar mejor el espacio
             opacity: currentSlide === index ? 1 : 0,
             transition: 'opacity 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)',
             zIndex: currentSlide === index ? 2 : 1
