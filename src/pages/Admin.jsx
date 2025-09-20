@@ -1,5 +1,5 @@
 // src/pages/Admin.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { normalizeName } from "../utils/normalizeName";
 import { COLORS } from "../utils/colors";
@@ -8,6 +8,24 @@ const Admin = () => {
   const [archivo, setArchivo] = useState(null);
   const [productos, setProductos] = useState([]);
   const navigate = useNavigate();
+
+  // Cargar productos automáticamente desde el JSON existente
+  useEffect(() => {
+    const cargarProductos = async () => {
+      try {
+        const response = await fetch("/productos_ram.json");
+        if (response.ok) {
+          const data = await response.json();
+          setProductos(data);
+          console.log(`✅ Productos cargados automáticamente: ${data.length} productos`);
+        }
+      } catch (error) {
+        console.error("Error al cargar productos:", error);
+      }
+    };
+    
+    cargarProductos();
+  }, []);
 
   const handleLogout = () => {
     // Limpiar datos de autenticación
@@ -130,7 +148,9 @@ const Admin = () => {
       const loadingAlert = '⏳ Actualizando productos en GitHub...';
       console.log(loadingAlert);
 
+console.log("El valor de los productos es:", productos);
       const jsonContent = JSON.stringify(productos, null, 2);
+      console.log("el valor de jsonContent:",   jsonContent);
       const encodedContent = btoa(unescape(encodeURIComponent(jsonContent)));
 
       // Detectar la rama actual (dev o main)
@@ -246,6 +266,128 @@ const Admin = () => {
       }
     }
   };
+
+  const commitAutomaticoMain = async () => {
+    const fechaHoy = new Date().toLocaleDateString('es-AR');
+    const confirmacion = window.confirm(
+      '¿Estás seguro de hacer commit del archivo productos_ram.json actualizado?\n\n' +
+      'Esto hará commit del archivo que tu script de Python actualizó automáticamente.\n' +
+      `Mensaje del commit: "Actualización de productos - ${fechaHoy}"\n\n` +
+      'Se subirá a la rama main y activará GitHub Actions.'
+    );
+    
+    if (!confirmacion) return;
+
+    try {
+      // Obtener el token de GitHub
+      let githubToken = import.meta.env.VITE_GITHUB_TOKEN;
+      
+      if (!githubToken) {
+        githubToken = localStorage.getItem('github_token');
+        
+        if (!githubToken) {
+          githubToken = prompt(
+            '🔑 Ingresa tu GitHub Personal Access Token:\n\n' +
+            'IMPORTANTE: Necesitas permisos de "repo" para hacer commits\n\n' +
+            'Si no tienes uno:\n' +
+            '1. Ve a GitHub → Settings → Developer settings → Personal access tokens\n' +
+            '2. Generate new token (classic)\n' +
+            '3. Marca el scope "repo"\n' +
+            '4. Copia y pega el token aquí'
+          );
+          
+          if (!githubToken) {
+            alert('❌ Token requerido para hacer commit automático');
+            return;
+          }
+          
+          const guardarToken = window.confirm('¿Quieres guardar el token para futuras operaciones?');
+          if (guardarToken) {
+            localStorage.setItem('github_token', githubToken);
+          }
+        }
+      }
+
+      alert('⏳ Haciendo commit del archivo productos_ram.json actualizado...');
+
+      // Leer el archivo productos_ram.json actual
+      const response = await fetch("/productos_ram.json");
+      if (!response.ok) {
+        throw new Error('No se pudo leer el archivo productos_ram.json');
+      }
+      const productosData = await response.json();
+      const jsonContent = JSON.stringify(productosData, null, 2);
+      const encodedContent = btoa(unescape(encodeURIComponent(jsonContent)));
+
+      // Obtener el SHA actual del archivo en main
+      const getFileResponse = await fetch(
+        'https://api.github.com/repos/ramirotule/ecommerce-ram/contents/public/productos_ram.json?ref=main',
+        {
+          headers: {
+            'Authorization': `token ${githubToken}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        }
+      );
+
+      let sha = null;
+      if (getFileResponse.ok) {
+        const fileData = await getFileResponse.json();
+        sha = fileData.sha;
+      } else if (getFileResponse.status === 404) {
+        console.log('Archivo no existe en main, se creará uno nuevo');
+      } else {
+        throw new Error(`Error al obtener archivo: ${getFileResponse.status}`);
+      }
+
+      // Actualizar el archivo en main
+      const commitMessage = `Actualización de productos - ${fechaHoy}`;
+      const updateResponse = await fetch(
+        'https://api.github.com/repos/ramirotule/ecommerce-ram/contents/public/productos_ram.json',
+        {
+          method: 'PUT',
+          headers: {
+            'Authorization': `token ${githubToken}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: commitMessage,
+            content: encodedContent,
+            ...(sha && { sha }),
+            branch: 'main'
+          })
+        }
+      );
+
+      if (updateResponse.ok) {
+        const result = await updateResponse.json();
+        
+        // Actualizar el estado local con los datos más recientes
+        setProductos(productosData);
+        
+        alert(
+          `✅ ¡Archivo productos_ram.json actualizado en main!\n\n` +
+          `📝 Mensaje: "${commitMessage}"\n` +
+          `📊 ${productosData.length} productos\n` +
+          `🔗 Commit: ${result.commit.html_url}\n` +
+          `🚀 GitHub Actions se ejecutará automáticamente`
+        );
+
+        const abrirCommit = window.confirm('¿Quieres ver el commit en GitHub?');
+        if (abrirCommit) {
+          window.open(result.commit.html_url, '_blank');
+        }
+      } else {
+        const error = await updateResponse.json();
+        throw new Error(`Error al actualizar: ${error.message || 'Error desconocido'}`);
+      }
+
+    } catch (error) {
+      console.error('Error:', error);
+      alert(`❌ Error al crear commit: ${error.message}`);
+    }
+  };
  
   return (
     <div style={{ 
@@ -335,52 +477,9 @@ const Admin = () => {
         padding: '20px',
         backdropFilter: 'blur(10px)'
       }}>
-        <h3 style={{ color: COLORS.text.white, marginBottom: '20px' }}>
-          📁 Cargar archivo de productos
-        </h3>
-        
-        <input 
-          type="file" 
-          accept=".txt" 
-          onChange={handleArchivo}
-          style={{
-            padding: '10px',
-            borderRadius: '8px',
-            border: '1px solid rgba(255, 255, 255, 0.3)',
-            background: 'rgba(255, 255, 255, 0.1)',
-            color: COLORS.text.white,
-            cursor: 'pointer'
-          }}
-        />
-        
-        {productos.length > 0 && (
+     
           <div style={{ marginTop: '30px' }}>
-            <button 
-              onClick={descargarJSON}
-              style={{
-                padding: '12px 24px',
-                borderRadius: '8px',
-                border: 'none',
-                background: 'linear-gradient(135deg, #00F100 0%, #00cc00 100%)',
-                color: '#000',
-                fontSize: '16px',
-                fontWeight: '600',
-                cursor: 'pointer',
-                marginBottom: '20px',
-                marginRight: '15px',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseOver={(e) => {
-                e.target.style.transform = 'translateY(-2px)';
-                e.target.style.boxShadow = '0 5px 15px rgba(0, 241, 0, 0.4)';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.transform = 'translateY(0)';
-                e.target.style.boxShadow = 'none';
-              }}
-            >
-              📥 Descargar JSON
-            </button>
+          
 
             <button 
               onClick={actualizarJSONAutomatico}
@@ -394,6 +493,7 @@ const Admin = () => {
                 fontWeight: '600',
                 cursor: 'pointer',
                 marginBottom: '20px',
+                marginRight: '15px',
                 transition: 'all 0.3s ease'
               }}
               onMouseOver={(e) => {
@@ -408,6 +508,33 @@ const Admin = () => {
               🔄 Actualizar GitHub (Automático)
             </button>
 
+            <button 
+              onClick={commitAutomaticoMain}
+              style={{
+                padding: '12px 24px',
+                borderRadius: '8px',
+                border: 'none',
+                background: 'linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%)',
+                color: '#fff',
+                fontSize: '16px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                marginBottom: '20px',
+                marginRight: '15px',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 5px 15px rgba(142, 68, 173, 0.4)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+              }}
+            >
+              🚀 Commit a Main + GitHub Actions
+            </button>
+
             <div style={{ 
               background: 'rgba(0, 241, 0, 0.1)', 
               border: '1px solid rgba(0, 241, 0, 0.3)',
@@ -416,16 +543,20 @@ const Admin = () => {
               marginBottom: '20px',
               color: '#00F100'
             }}>
-              <strong>🚀 GitHub API - Actualización Automática:</strong><br/>
+              <strong>🚀 GitHub API - Opciones de Actualización:</strong><br/>
               <br/>
               <strong>🔧 Configuración inicial:</strong><br/>
               1. Click en "🔑 Gestionar Token" (arriba) para guardar tu GitHub token<br/>
-              2. Una vez configurado, solo click en "🔄 Actualizar GitHub"<br/>
+              2. Una vez configurado, tienes 3 opciones:<br/>
               <br/>
-              <strong>📋 Proceso manual (alternativo):</strong><br/>
-              1. Click en "📥 Descargar JSON"<br/>
-              2. Ve a GitHub → public/productos_ram.json → Editar<br/>
-              3. Pega el contenido y haz commit<br/>
+              <strong>📋 Opciones disponibles:</strong><br/>
+              • <strong>📥 Descargar JSON:</strong> Descarga el archivo para revisión manual<br/>
+              • <strong>🔄 Actualizar GitHub:</strong> Sube cambios a la rama dev (desarrollo)<br/>
+              • <strong>🚀 Commit a Main:</strong> Crea commit en rama main y activa GitHub Actions<br/>
+              <br/>
+              <strong>💡 Flujo recomendado:</strong><br/>
+              1. Usar "🔄 Actualizar GitHub" para pruebas en dev<br/>
+              2. Usar "🚀 Commit a Main" para despliegue final<br/>
               <br/>
               <small>💡 El token se guarda localmente y es seguro</small>
             </div>
@@ -457,7 +588,6 @@ const Admin = () => {
               ))}
             </ul>
           </div>
-        )}
       </div>
     </div>
   );

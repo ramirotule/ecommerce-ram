@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { COLORS } from '../utils/colors';
 import { AiOutlineDownload } from "react-icons/ai";
-// import { Document, Page } from "react-pdf";
-// import 'react-pdf/dist/Page/AnnotationLayer.css';
-// import 'react-pdf/dist/Page/TextLayer.css';
 import Select from 'react-select';
 
 // Ruta del PDF para descarga
@@ -18,10 +15,18 @@ const Prices = () => {
   const [sortBy, setSortBy] = useState('categoria'); // por defecto categoría
   const [sortDir, setSortDir] = useState('asc'); // por defecto ascendente
   const [dolarBlue, setDolarBlue] = useState(null);
+  const [ultimaActualizacion, setUltimaActualizacion] = useState(null);
 
   useEffect(() => {
     fetch("/productos_ram.json")
-      .then(res => res.json())
+      .then(res => {
+        // Obtener la fecha de última modificación del header
+        const lastModified = res.headers.get('Last-Modified');
+        if (lastModified) {
+          setUltimaActualizacion(new Date(lastModified));
+        }
+        return res.json();
+      })
       .then(data => setProductos(data));
   }, []);
 
@@ -114,8 +119,10 @@ const Prices = () => {
       }}>
         {/* Header Section */}
         <div style={{
-          textAlign: 'left', // Cambiado de center a left
-          marginBottom: '40px'
+          textAlign: 'left',
+          marginBottom: '40px',
+          display: 'flex',
+          flexDirection: 'column',
         }}>
           <h1 style={{
             fontSize: '55px',
@@ -125,20 +132,43 @@ const Prices = () => {
             fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
             letterSpacing: '2px',
             margin: '0 0 20px 0',
-            textAlign: 'left' // Alineado a la izquierda
+            textAlign: 'left' 
           }}>
             📋 Lista de Precios
           </h1>
-          <p style={{
-            fontSize: '16px',
-            fontWeight: '400',
-            color: 'rgba(0, 0, 0, 0.8)',
-            fontFamily: 'Arial, sans-serif',
-            margin: '0 0 30px 0',
-            textAlign: 'left' // Alineado a la izquierda
-          }}>
-            Esta lista se actualiza de Lunes a Viernes después de las 10:30 AM
-          </p>
+          
+             {/* Información de última actualización */}
+          {ultimaActualizacion && (
+            <div style={{
+              padding: '12px 20px',
+              background: 'linear-gradient(135deg, rgba(0, 241, 0, 0.1) 0%, rgba(0, 204, 0, 0.05) 100%)',
+              border: '1px solid rgba(0, 241, 0, 0.3)',
+              borderRadius: '12px',
+              marginBottom: '20px',
+              width: 'fit-content',
+            }}>
+              <p style={{
+                margin: 0,
+                fontSize: '14px',
+                color: 'rgba(0, 0, 0, 0.8)',
+                fontWeight: '500'
+              }}>
+                <span style={{ color: '#00aa00', fontWeight: '600' }}>✅ Última actualización:</span>{' '}
+                {ultimaActualizacion.toLocaleDateString('es-AR', {
+                  weekday: 'long',
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}{' '}
+                a las {ultimaActualizacion.toLocaleTimeString('es-AR', {
+                  hour: '2-digit',
+                  minute: '2-digit'
+                })}
+              </p>
+            </div>
+          )}
+
+       
 
           {/* Botón de descarga principal */}
           <button
@@ -156,7 +186,10 @@ const Prices = () => {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '10px',
-              boxShadow: '0 5px 15px rgba(0, 241, 0, 0.3)'
+              boxShadow: '0 5px 15px rgba(0, 241, 0, 0.3)',
+                            width: 'fit-content',
+
+              
             }}
             onMouseOver={(e) => {
               e.target.style.transform = 'translateY(-3px)';
@@ -183,10 +216,10 @@ const Prices = () => {
         }}>
           <p style={{
             color: 'rgba(0, 0, 0, 0.7)',
-            fontSize: '14px',
+            fontSize: '21px',
             margin: 0
           }}>
-            💡 Los precios están sujetos a cambios sin previo aviso. 
+            💡 Los precios están <strong>sujetos a cambios</strong> sin previo aviso. 
             Para consultas específicas, contactanos por WhatsApp.
           </p>
         </div>
@@ -197,7 +230,8 @@ const Prices = () => {
           borderRadius: '20px',
           boxShadow: COLORS.shadow.lg,
           padding: '30px',
-          color: '#222'
+          color: '#222',
+          
         }}>
           <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '20px', color: '#000000', textAlign: 'left' }}>
             Buscar y Filtrar Productos
