@@ -4,12 +4,11 @@ import { COLORS } from '../utils/colors';
 const BannerSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const banners = [
-    { id: 5, image: 'src/assets/banners/ipads.png' },
-    { id: 1, image: 'src/assets/banners/consolas.png' },
-    { id: 2, image: 'src/assets/banners/notebooks.png' },
-    { id: 3, image: 'src/assets/banners/smartwatch.png' },
-    { id: 4, image: 'src/assets/banners/televisores.png' },
-
+    { id: 5, image: '/banners/ipads.png' },
+    { id: 1, image: '/banners/consolas.png' },
+    { id: 2, image: '/banners/notebooks.png' },
+    { id: 3, image: '/banners/smartwatch.png' },
+    { id: 4, image: '/banners/televisores.png' },
   ];
 
   useEffect(() => {

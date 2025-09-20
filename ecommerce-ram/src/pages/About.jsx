@@ -101,7 +101,7 @@ const About = () => {
                 marginBottom: '25px'
               }}>
                 <img 
-                  src="src/assets/local.jpg" 
+                  src="/local.jpg" 
                   alt="RAM Informática - Local en Calle Ayala 604, Santa Rosa, La Pampa"
                   style={{
                     maxWidth: '100%',

@@ -92,7 +92,7 @@ const FloatingWhatsApp = () => {
         title="¡Contáctanos por WhatsApp!"
       >
         <img 
-          src="src/assets/whatsapp-logo.png" 
+          src="/whatsapp-logo.png" 
           alt="WhatsApp" 
           style={{
             width: window.innerWidth <= 768 ? '30px' : '35px',

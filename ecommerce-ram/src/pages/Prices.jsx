@@ -6,12 +6,10 @@ import { AiOutlineDownload } from "react-icons/ai";
 // import 'react-pdf/dist/Page/TextLayer.css';
 import Select from 'react-select';
 
-
-// Por ahora usaremos una URL de ejemplo hasta que tengas tu PDF
+// Ruta del PDF para descarga
+const pdfFile = "/precios_ram.pdf";
 
 const Prices = () => {
-  const [width, setWidth] = useState(1200);
-
   // Tabla interactiva
   const [productos, setProductos] = useState([]);
   const [busqueda, setBusqueda] = useState("");
@@ -20,16 +18,6 @@ const Prices = () => {
   const [sortBy, setSortBy] = useState('categoria'); // por defecto categoría
   const [sortDir, setSortDir] = useState('asc'); // por defecto ascendente
   const [dolarBlue, setDolarBlue] = useState(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-    
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     fetch("/productos_ram.json")
@@ -93,10 +81,6 @@ const Prices = () => {
     if (orden === "precio_asc") filtrados.sort((a, b) => a.precio_usd - b.precio_usd);
     if (orden === "precio_desc") filtrados.sort((a, b) => b.precio_usd - a.precio_usd);
   }
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
 
   const handleDownload = () => {
     // Crear un enlace temporal para descargar el PDF
