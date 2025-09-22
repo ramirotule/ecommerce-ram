@@ -206,7 +206,7 @@ const HowToBuy = () => {
                     margin: '0 0 8px 0',
                     fontWeight: '600'
                   }}>
-                    💸 1 Cuota (Sin Interés)
+                    💸 1 Cuota
                   </h5>
                   <p style={{
                     margin: '0',
@@ -229,7 +229,7 @@ const HowToBuy = () => {
                     margin: '0 0 8px 0',
                     fontWeight: '600'
                   }}>
-                    💳 3 Cuotas (Sin Interés)
+                    💳 3 Cuotas
                   </h5>
                   <p style={{
                     margin: '0',
@@ -252,7 +252,7 @@ const HowToBuy = () => {
                     margin: '0 0 8px 0',
                     fontWeight: '600'
                   }}>
-                    🏦 6 Cuotas (Sin Interés)
+                    🏦 6 Cuotas
                   </h5>
                   <p style={{
                     margin: '0',
