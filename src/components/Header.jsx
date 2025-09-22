@@ -6,8 +6,13 @@ import '../fonts.css';
 const Header = () => {
   const [dolarBlue, setDolarBlue] = useState(null);
   const [dolarBlueTime, setDolarBlueTime] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    // Cargar dólar blue
     fetch('https://dolarapi.com/v1/dolares/blue')
       .then(res => res.json())
       .then(data => {
@@ -15,9 +20,20 @@ const Header = () => {
         setDolarBlueTime(data.fechaActualizacion);
       })
       .catch(() => setDolarBlue(null));
+
+    // Cargar productos para búsqueda
+    fetch('/productos_ram.json')
+      .then(res => res.json())
+      .then(data => {
+        setProducts(data);
+      })
+      .catch(error => {
+        console.error('Error cargando productos:', error);
+      });
   }, []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const location = useLocation();
 
   // Cargar estilos hover para navegación
@@ -55,7 +71,9 @@ const Header = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      const width = window.innerWidth;
+      setIsMobile(width <= 768);
+      setWindowWidth(width);
     };
     
     handleResize();
@@ -69,6 +87,46 @@ const Header = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Función para manejar la búsqueda
+  const handleSearch = (value) => {
+    setSearchTerm(value);
+    if (value.length > 2) {
+      const filtered = products.filter(product =>
+        product.producto.toLowerCase().includes(value.toLowerCase()) ||
+        product.categoria.toLowerCase().includes(value.toLowerCase())
+      );
+      setSearchResults(filtered); // Mostrar todos los resultados
+      setShowResults(true);
+    } else {
+      setSearchResults([]);
+      setShowResults(false);
+    }
+  };
+
+  // Función para obtener gap y padding responsivos basado en el ancho actual
+  const getResponsiveNavStyles = () => {
+    const width = windowWidth;
+    
+    if (width >= 1400) {
+      return { gap: '20px', padding: '12px 30px', fontSize: '16px' };
+    } else if (width >= 1300) {
+      return { gap: '16px', padding: '10px 24px', fontSize: '15px' };
+    } else if (width >= 1200) {
+      return { gap: '12px', padding: '8px 20px', fontSize: '14px' };
+    } else if (width >= 1100) {
+      return { gap: '8px', padding: '6px 16px', fontSize: '13px' };
+    } else if (width >= 1000) {
+      return { gap: '6px', padding: '5px 12px', fontSize: '12px' };
+    } else if (width >= 900) {
+      return { gap: '4px', padding: '4px 10px', fontSize: '11px' };
+    } else {
+      return { gap: '2px', padding: '3px 8px', fontSize: '10px' };
+    }
+  };
+
+  // Obtener estilos actuales
+  const navStyles = getResponsiveNavStyles();
 
   return (
     <>
@@ -90,11 +148,12 @@ const Header = () => {
         width: '100%',
         padding: '0'
       }}>
+  {/* Fila superior - Logo y navegación */}
   <nav style={{
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          height: '80px',
+          height: '70px', // Reducimos un poco para la segunda fila
           paddingLeft: '20px',
           paddingRight: '20px'
         }}>
@@ -149,24 +208,25 @@ const Header = () => {
             <span style={{
               marginLeft: '18px',
               color: '#00F100',
-              fontSize: '18px',
+              fontSize: isMobile ? '14px' : '18px',
               fontWeight: '700',
               background: 'rgba(0,241,0,0.08)',
               borderRadius: '8px',
-              padding: '4px 12px',
+              padding: isMobile ? '3px 8px' : '4px 12px',
               boxShadow: '0 2px 8px rgba(0,241,0,0.08)',
-              letterSpacing: '1px',
+              letterSpacing: isMobile ? '0.5px' : '1px',
+              textAlign: isMobile ? 'center' : 'left',
               display: 'inline-block',
               verticalAlign: 'middle'
             }}>
-              {dolarBlue ? `Dólar Blue: $${dolarBlue}` : 'Cargando dólar blue...'}
+              {/* {dolarBlue ? `Dólar Blue: $${dolarBlue}` : 'Cargando dólar blue...'} */}
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div style={{
             display: isMobile ? 'none' : 'flex',
-            gap: '20px',
+            gap: navStyles.gap,
             alignItems: 'center',
             position: 'absolute',
             left: '50%',
@@ -180,10 +240,10 @@ const Header = () => {
               style={{
                 textDecoration: 'none',
                 color: COLORS.text.white,
-                padding: '12px 30px',
+                padding: navStyles.padding,
                 borderRadius: '25px',
                 fontWeight: '600',
-                fontSize: '16px',
+                fontSize: navStyles.fontSize,
                 transition: 'all 0.3s ease',
                 background: isActive('/') ? 'rgba(255,255,255,0.2)' : 'transparent',
                 backdropFilter: isActive('/') ? 'blur(10px)' : 'none',
@@ -200,10 +260,10 @@ const Header = () => {
               style={{
                 textDecoration: 'none',
                 color: COLORS.text.white,
-                padding: '12px 30px',
+                padding: navStyles.padding,
                 borderRadius: '25px',
                 fontWeight: '600',
-                fontSize: '16px',
+                fontSize: navStyles.fontSize,
                 transition: 'all 0.3s ease',
                 background: isActive('/other-products') ? 'rgba(255,255,255,0.2)' : 'transparent',
                 backdropFilter: isActive('/other-products') ? 'blur(10px)' : 'none',
@@ -221,10 +281,10 @@ const Header = () => {
               style={{
                 textDecoration: 'none',
                 color: COLORS.text.white,
-                padding: '12px 30px',
+                padding: navStyles.padding,
                 borderRadius: '25px',
                 fontWeight: '600',
-                fontSize: '16px',
+                fontSize: navStyles.fontSize,
                 transition: 'all 0.3s ease',
                 background: isActive('/about') ? 'rgba(255,255,255,0.2)' : 'transparent',
                 backdropFilter: isActive('/about') ? 'blur(10px)' : 'none',
@@ -242,10 +302,10 @@ const Header = () => {
               style={{
                 textDecoration: 'none',
                 color: COLORS.text.white,
-                padding: '12px 30px',
+                padding: navStyles.padding,
                 borderRadius: '25px',
                 fontWeight: '600',
-                fontSize: '16px',
+                fontSize: navStyles.fontSize,
                 transition: 'all 0.3s ease',
                 background: isActive('/how-to-buy') ? 'rgba(255,255,255,0.2)' : 'transparent',
                 backdropFilter: isActive('/how-to-buy') ? 'blur(10px)' : 'none',
@@ -263,10 +323,10 @@ const Header = () => {
               style={{
                 textDecoration: 'none',
                 color: COLORS.text.white,
-                padding: '12px 30px',
+                padding: navStyles.padding,
                 borderRadius: '25px',
                 fontWeight: '600',
-                fontSize: '16px',
+                fontSize: navStyles.fontSize,
                 transition: 'all 0.3s ease',
                 background: isActive('/prices') ? 'rgba(255,255,255,0.2)' : 'transparent',
                 backdropFilter: isActive('/prices') ? 'blur(10px)' : 'none',
@@ -295,6 +355,193 @@ const Header = () => {
             {isMenuOpen ? '✕' : '☰'}
           </button>
         </nav>
+
+        {/* Fila inferior - Buscador y cotización (solo desktop) */}
+        {!isMobile && (
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: '50px',
+            paddingLeft: '20px',
+            paddingRight: '20px',
+            borderTop: '1px solid rgba(255,255,255,0.1)'
+          }}>
+            {/* Espaciador izquierdo */}
+            <div style={{ width: '200px' }}></div>
+            
+            {/* Buscador centrado */}
+            <div style={{
+              flex: '1',
+              display: 'flex',
+              justifyContent: 'center',
+              maxWidth: '500px',
+              position: 'relative'
+            }}>
+              <input
+                type="text"
+                placeholder="Buscar productos..."
+                value={searchTerm}
+                onChange={(e) => handleSearch(e.target.value)}
+                onBlur={(e) => {
+                  setTimeout(() => {
+                    setShowResults(false);
+                    setSearchTerm(''); // Limpiar el texto de búsqueda
+                    setSearchResults([]); // Limpiar los resultados
+                  }, 1500); // Tiempo suficiente para interactuar con resultados
+                  e.target.style.border = '1px solid rgba(0, 241, 0, 0.3)';
+                  e.target.style.boxShadow = 'none';
+                }}
+                onFocus={(e) => {
+                  if (searchTerm.length > 2) setShowResults(true);
+                  e.target.style.border = '1px solid rgba(0, 241, 0, 0.6)';
+                  e.target.style.boxShadow = '0 0 10px rgba(0, 241, 0, 0.3)';
+                }}
+                style={{
+                  width: '100%',
+                  maxWidth: '400px',
+                  padding: '8px 15px',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(0, 241, 0, 0.3)',
+                  background: 'rgba(255,255,255,0.1)',
+                  color: COLORS.text.white,
+                  fontSize: '14px',
+                  outline: 'none',
+                  backdropFilter: 'blur(10px)',
+                  marginBottom: '10px',
+                }}
+              />
+              
+              {/* Resultados de búsqueda */}
+              {showResults && searchResults.length > 0 && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '100%',
+                  maxWidth: '400px',
+                  background: 'rgb(0, 0, 0)',
+                  border: '1px solid rgba(0, 241, 0, 0.3)',
+                  borderRadius: '10px',
+                  marginTop: '5px',
+                  zIndex: 1001,
+                  maxHeight: '400px', // Aumentamos la altura para mostrar más resultados
+                  overflowY: 'auto',
+                  boxShadow: '0 8px 25px rgba(0, 241, 0, 0.3)' // Agregamos una sombra verde
+                }}>
+                  {/* Header con contador de resultados */}
+                  <div style={{
+                    padding: '8px 15px',
+                    borderBottom: '1px solid rgba(255,255,255,0.2)',
+                    background: 'rgba(0, 241, 0, 0.1)',
+                    borderRadius: '10px 10px 0 0',
+                    fontSize: '12px',
+                    color: '#00F100',
+                    fontWeight: '600',
+                    textAlign: 'center'
+                  }}>
+                    {searchResults.length} producto{searchResults.length !== 1 ? 's' : ''} encontrado{searchResults.length !== 1 ? 's' : ''}
+                  </div>
+                  
+                  {searchResults.map((product, index) => {
+                    // Calcular precio en pesos usando el dólar blue
+                    const precioEnPesos = dolarBlue ? (product.precio_usd * dolarBlue).toFixed(0) : 'N/A';
+                    // Formatear número con separadores de miles
+                    const formatearNumero = (numero) => {
+                      return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                    };
+                    
+                    return (
+                      <div
+                        key={index}
+                        style={{
+                          padding: '10px 15px',
+                          borderBottom: index < searchResults.length - 1 ? '1px solid rgba(255,255,255,0.1)' : 'none',
+                          cursor: 'pointer',
+                          transition: 'background 0.2s'
+                        }}
+                        onMouseOver={(e) => e.currentTarget.style.background = 'rgba(0, 241, 0, 0.1)'}
+                        onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
+                        onClick={() => {
+                          // Aquí podrías redirigir a la página de precios con el producto
+                          setShowResults(false);
+                          setSearchTerm('');
+                        }}
+                      >
+                        <div style={{ color: COLORS.text.white, fontSize: '14px', fontWeight: '500', marginBottom: '4px' }}>
+                          {product.producto}
+                        </div>
+                        <div style={{ color: '#00F100', fontSize: '12px', marginBottom: '2px' }}>
+                          🏷️ {product.categoria}
+                        </div>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                          <span style={{ color: '#FFD700', fontSize: '12px', fontWeight: '600' }}>
+                            💵 US$ {product.precio_usd}
+                          </span>
+                          {dolarBlue && (
+                            <span style={{ color: '#87CEEB', fontSize: '12px', fontWeight: '600' }}>
+                              💰 $ {formatearNumero(precioEnPesos)} ARS
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+              
+              {/* Mensaje cuando no hay resultados */}
+              {showResults && searchResults.length === 0 && searchTerm.length > 2 && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '100%',
+                  maxWidth: '400px',
+                  background: 'rgb(0, 0, 0)',
+                  border: '1px solid rgba(255, 100, 100, 0.3)',
+                  borderRadius: '10px',
+                  marginTop: '5px',
+                  zIndex: 1001,
+                  boxShadow: '0 8px 25px rgba(255, 100, 100, 0.2)'
+                }}>
+                  <div style={{
+                    padding: '15px',
+                    textAlign: 'center',
+                    fontSize: '14px',
+                    color: '#FF6464',
+                    fontWeight: '500'
+                  }}>
+                    🔍 No hay resultados de la búsqueda
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Cotización del dólar a la derecha */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'flex-end',
+              width: '200px'
+            }}>
+              <span style={{
+                color: '#00F100',
+                fontSize: '16px',
+                fontWeight: '700',
+                background: 'rgba(0,241,0,0.08)',
+                borderRadius: '15px',
+                padding: '6px 15px',
+                boxShadow: '0 2px 8px rgba(0,241,0,0.08)',
+                letterSpacing: '0.5px',
+                whiteSpace: 'nowrap'
+              }}>
+                {dolarBlue ? `Dólar Blue: $${dolarBlue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}` : 'Cargando...'}
+              </span>
+            </div>
+          </div>
+        )}
 
         {/* Mobile Menu */}
         {isMenuOpen && isMobile && (

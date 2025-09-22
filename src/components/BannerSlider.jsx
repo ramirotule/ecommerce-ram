@@ -6,12 +6,43 @@ const BannerSlider = () => {
   const [isMobile, setIsMobile] = useState(false);
   
   const banners = [
-    { id: 5, image: '/banners/ipads.png' },
-    { id: 1, image: '/banners/consolas.png' },
-    { id: 2, image: '/banners/notebooks.png' },
-    { id: 3, image: '/banners/smartwatch.png' },
-    { id: 4, image: '/banners/televisores.png' },
+    { 
+      id: 0, 
+      image: '/banners/celulares.png',
+      mobileImage: '/banners/celulares-mobile.png' // No tiene versión móvil específica
+    },
+
+    { 
+      id: 5, 
+      image: '/banners/ipads.png',
+      mobileImage: '/banners/ipads-mobile.png' // No tiene versión móvil específica
+    },
+    { 
+      id: 1, 
+      image: '/banners/consolas.png',
+      mobileImage: '/banners/consolas-mobile.png'
+    },
+    { 
+      id: 2, 
+      image: '/banners/notebooks.png',
+      mobileImage: '/banners/notebooks-mobile.png' // No tiene versión móvil específica
+    },
+    { 
+      id: 3, 
+      image: '/banners/smartwatch.png',
+      mobileImage: '/banners/smartwatch-mobile.png'
+    },
+    { 
+      id: 4, 
+      image: '/banners/televisores.png',
+      mobileImage: '/banners/televisores-mobile.png' // No tiene versión móvil específica
+    },
   ];
+
+  // Función para obtener la imagen correcta según el dispositivo
+  const getImageSrc = (banner) => {
+    return isMobile ? banner.mobileImage : banner.image;
+  };
 
   useEffect(() => {
     // Detectar si es móvil
@@ -45,7 +76,7 @@ const BannerSlider = () => {
       {banners.map((banner, index) => (
         <img
           key={banner.id}
-          src={banner.image}
+          src={getImageSrc(banner)}
           alt={`Banner ${banner.id}`}
           style={{
             position: 'absolute',
