@@ -60,15 +60,24 @@ def generar_nombre_imagen(descripcion):
     return f"{nombre}.png"
 
 def calcular_precio_final(precio_base):
-    """Calcular precio final aplicando 18% de ganancia + 20 dólares"""
+    """Calcular precio final aplicando 18% de ganancia + 20 dólares, redondeado a múltiplo de 5"""
     # Aplicar 18% de ganancia
     precio_con_ganancia = precio_base * 1.18
     
     # Sumar 20 dólares adicionales
     precio_final = precio_con_ganancia + 20
     
-    # Redondear a entero
-    return int(round(precio_final))
+    # Redondear a entero y luego al múltiplo de 5 más cercano
+    precio_redondeado = int(round(precio_final))
+    
+    # Calcular el múltiplo de 5 más cercano
+    resto = precio_redondeado % 5
+    if resto == 0:
+        return precio_redondeado  # Ya es múltiplo de 5
+    elif resto < 2.5:
+        return precio_redondeado - resto  # Redondear hacia abajo
+    else:
+        return precio_redondeado + (5 - resto)  # Redondear hacia arriba
 
 # Convertir a JSON
 productos_json = []
@@ -148,12 +157,6 @@ txt_output_path = f"output/difusion_ram_{fecha_archivo}.txt"
 contenido = [
     "🏪 LISTA DE PRECIOS RAM INFORMATICA",
     "",
-    "⚠️ CONSULTAS Y PEDIDOS SE TOMAN DESDE EL MOMENTO QUE ENVIAMOS LA LISTA HASTA LAS 13 HS.",
-    "UNA VEZ CONFIRMADO EL PEDIDO SE RETIRA POR MI DOMICILIO",
-    "",
-    "💰 ACLARACION IMPORTANTE",
-    "PARA CONFIRMAR LA COMPRA SE REQUIERE EL PAGO DEL 50% DEL PRODUCTO (CON PRECIO ABIERTO SI PAGA EN PESOS POR VARIACION DEL DOLAR) O PAGO TOTAL PARA CONGELAR EL PRECIO.",
-    "",
     "⛔ NO ⛔ SE ACEPTAN DÓLARES CARA CHICA, MANCHADOS, ROTOS, ESCRITOS. NO SE ACEPTA CAMBIO EN CANTIDAD - MAYOR A 50. SIN EXCEPCIÓN",
     "",
     "🛒 PRODUCTOS DISPONIBLES",
@@ -216,5 +219,5 @@ print("Archivo listo para difusión en WhatsApp!")
 
 # El archivo JSON ya se genera directamente en public/
 print("="*50)
-print("🎉 Archivo JSON generado directamente en public/productos_ram.json")
-print("🎉 El ecommerce ahora tiene los productos actualizados!")
+print("✓ Archivo JSON generado directamente en public/productos_ram.json")
+print("✓ El ecommerce ahora tiene los productos actualizados!")
