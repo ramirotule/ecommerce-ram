@@ -82,6 +82,9 @@ def calcular_precio_final(precio_base):
 # Convertir a JSON
 productos_json = []
 
+# Obtener fecha actual para incluir en el JSON
+fecha_actualizacion = datetime.now().isoformat()
+
 for index, row in df.iterrows():
     descripcion = row['Descripción']
     precio_base = int(row['Precio Venta'])  # Precio del proveedor
@@ -111,12 +114,23 @@ for index, row in df.iterrows():
 # Crear directorio output si no existe
 os.makedirs("output", exist_ok=True)
 
+# Crear estructura JSON con metadatos
+json_data = {
+    "metadatos": {
+        "fecha_actualizacion": fecha_actualizacion,
+        "total_productos": len(productos_json),
+        "version": "1.0"
+    },
+    "productos": productos_json
+}
+
 # Guardar JSON
 with open(json_output_path, 'w', encoding='utf-8') as f:
-    json.dump(productos_json, f, ensure_ascii=False, indent=2)
+    json.dump(json_data, f, ensure_ascii=False, indent=2)
 
 print(f"\nArchivo JSON generado: {json_output_path}")
 print(f"Total productos: {len(productos_json)}")
+print(f"Fecha de actualización: {fecha_actualizacion}")
 
 # Estadísticas por categoría
 categorias_stats = {}
