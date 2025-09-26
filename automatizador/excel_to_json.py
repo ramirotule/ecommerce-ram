@@ -200,8 +200,6 @@ contenido = [
     "",
     "🌐 www.raminformatica.com.ar",
     "",
-    "⛔ NO ⛔ SE ACEPTAN DÓLARES CARA CHICA, MANCHADOS, ROTOS, ESCRITOS. NO SE ACEPTA CAMBIO EN CANTIDAD - MAYOR A 50. SIN EXCEPCIÓN",
-    "",
     "🛒 PRODUCTOS DISPONIBLES",
     "="*50,
     ""
@@ -246,9 +244,7 @@ for categoria, items in productos_por_categoria.items():
 # Agregar pie de página
 contenido.extend([
     "="*50,
-    f"📅 Lista actualizada: {fecha_actual}",
-    "",
-    "💬 Para consultas y pedidos, responder a este mensaje",
+    "💬 Para consultas y pedidos mandanos un Whatsapp",
 ])
 
 # Guardar archivo TXT de difusión
