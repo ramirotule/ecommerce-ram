@@ -32,15 +32,22 @@ const Prices = () => {
 
   useEffect(() => {
     fetch("/productos_ram.json")
-      .then(res => {
-        // Obtener la fecha de última modificación del header
-        const lastModified = res.headers.get('Last-Modified');
-        if (lastModified) {
-          setUltimaActualizacion(new Date(lastModified));
+      .then(res => res.json())
+      .then(data => {
+        // Verificar si el JSON tiene la nueva estructura con metadatos
+        if (data.metadatos && data.productos) {
+          setProductos(data.productos);
+          setUltimaActualizacion(new Date(data.metadatos.fecha_actualizacion));
+        } else {
+          // Formato antiguo sin metadatos
+          setProductos(data);
+          setUltimaActualizacion(null);
         }
-        return res.json();
       })
-      .then(data => setProductos(data));
+      .catch(error => {
+        console.error('Error cargando productos:', error);
+        setProductos([]);
+      });
   }, []);
 
   useEffect(() => {

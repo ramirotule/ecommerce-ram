@@ -64,9 +64,9 @@ class AutomatizadorWSP:
             return False
     
     def ir_al_final_del_chat(self):
-        """Ir directamente al final del chat para obtener los mensajes más recientes"""
+        """Ir directamente al final del chat para obtener SOLO los mensajes más recientes (hoy)"""
         try:
-            print("📍 Yendo al final del chat para buscar mensajes recientes...")
+            print("📍 Yendo al final del chat para buscar SOLO mensajes de hoy...")
             
             # Encontrar el contenedor del chat
             chat_container = None
@@ -90,16 +90,17 @@ class AutomatizadorWSP:
                 print("   ⚠️ No se pudo encontrar el contenedor del chat")
                 return False
             
-            # Ir al final del chat
+            # Ir al final del chat (mensajes más recientes)
             self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight;", chat_container)
             time.sleep(2)
-            print("   ✅ Posicionado al final del chat")
+            print("   ✅ Posicionado al final del chat (mensajes más recientes)")
             
-            # Hacer un pequeño scroll hacia arriba para cargar algunos mensajes previos
-            for i in range(3):
-                self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollTop - 500;", chat_container)
-                time.sleep(0.5)
+            # NO hacer scroll hacia arriba - mantener solo en la zona más reciente
+            # Solo un pequeño ajuste para asegurar que los mensajes estén completamente visibles
+            self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollTop - 100;", chat_container)
+            time.sleep(1)
             
+            print("   🎯 Enfocado en mensajes más recientes (zona de hoy)")
             return True
             
         except Exception as e:
@@ -271,6 +272,58 @@ class AutomatizadorWSP:
                 mensajes_filtrados.append(texto)
         return mensajes_filtrados
     
+    def verificar_chat_tiene_mensajes_hoy(self):
+        """Verificar rápidamente si el chat tiene mensajes de hoy sin procesarlo completamente"""
+        try:
+            print("🔍 Verificando si hay mensajes de hoy...")
+            
+            # Primero, buscar texto que contenga la fecha de hoy en el contenido de los mensajes
+            fecha_hoy_texto = datetime.now().strftime("VIERNES %d DE SEPTIEMBRE").upper()  # Ejemplo: "VIERNES 26 DE SEPTIEMBRE"
+            fecha_hoy_corta = datetime.now().strftime("%d DE SEPTIEMBRE").upper()  # Ejemplo: "26 DE SEPTIEMBRE"
+            fecha_hoy_numero = datetime.now().strftime("%d/%m/%Y")  # Ejemplo: "26/09/2025"
+            
+            print(f"   🔍 Buscando: '{fecha_hoy_texto}' o '{fecha_hoy_corta}' o '{fecha_hoy_numero}'")
+            
+            # Buscar en el contenido de los mensajes visibles
+            try:
+                # Buscar todos los elementos de mensaje que podrían contener la fecha de hoy
+                elementos_mensaje = self.driver.find_elements(By.XPATH, 
+                    '//div[contains(@class, "message") or contains(@class, "copyable-text")]//span[contains(text(), "LISTA") or contains(text(), "HOY") or contains(text(), "SEPTIEMBRE")]')
+                
+                for elemento in elementos_mensaje:
+                    texto_elemento = elemento.text.upper()
+                    if (fecha_hoy_texto in texto_elemento or 
+                        fecha_hoy_corta in texto_elemento or
+                        fecha_hoy_numero in texto_elemento or
+                        ("LISTA DE HOY" in texto_elemento and "SEPTIEMBRE" in texto_elemento)):
+                        print(f"   ✅ Encontrado mensaje con fecha de hoy: '{texto_elemento[:100]}...'")
+                        return True
+            except Exception as e:
+                print(f"   ⚠️ Error buscando en contenido de mensajes: {e}")
+            
+            # Método alternativo: buscar la etiqueta "Hoy" del DOM
+            selectores_hoy = [
+                '//span[contains(@class, "x140p0ai") and contains(@class, "x1gufx9m") and text()="Hoy"]',
+                '//span[contains(@class, "x140p0ai") and text()="Hoy"]',
+                '//span[text()="Hoy"]'
+            ]
+            
+            for selector in selectores_hoy:
+                try:
+                    elementos_hoy = self.driver.find_elements(By.XPATH, selector)
+                    if elementos_hoy:
+                        print(f"   ✅ Encontrada etiqueta DOM 'Hoy'")
+                        return True
+                except:
+                    continue
+            
+            print(f"   ⚠️ No se encontró fecha de hoy ni etiqueta 'Hoy' - Chat sin mensajes de hoy")
+            return False
+            
+        except Exception as e:
+            print(f"   ❌ Error verificando mensajes de hoy: {e}")
+            return False
+
     def buscar_y_abrir_chat(self, nombre_proveedor, config):
         """Buscar y abrir el chat del proveedor con búsqueda flexible"""
         try:
@@ -333,35 +386,157 @@ class AutomatizadorWSP:
             print(f"❌ Error abriendo chat {nombre_proveedor}: {e}")
             return False
     
+    def extraer_mensajes_por_contenido(self):
+        """Extraer mensajes basándose en el contenido de texto de hoy"""
+        try:
+            print("📝 Extrayendo mensajes por análisis de contenido...")
+            
+            # Fecha de hoy en diferentes formatos
+            fecha_hoy_texto = datetime.now().strftime("VIERNES %d DE SEPTIEMBRE").upper()
+            fecha_hoy_corta = datetime.now().strftime("%d DE SEPTIEMBRE").upper()
+            
+            textos_encontrados = []
+            
+            # Buscar todos los elementos de mensaje en el área visible
+            selectores_mensaje = [
+                '//div[contains(@class, "message-in")]//span[contains(@class, "selectable-text")]',
+                '//div[contains(@class, "copyable-text")]//span',
+                '//span[@class="selectable-text copyable-text"]',
+                '//div[@data-testid="msg-container"]//span'
+            ]
+            
+            for selector in selectores_mensaje:
+                try:
+                    elementos = self.driver.find_elements(By.XPATH, selector)
+                    for elemento in elementos:
+                        texto = elemento.text.strip()
+                        if texto and len(texto) > 20:  # Solo textos significativos
+                            texto_upper = texto.upper()
+                            
+                            # Si encontramos el mensaje con la fecha de hoy, empezar a capturar
+                            if (fecha_hoy_texto in texto_upper or 
+                                fecha_hoy_corta in texto_upper or
+                                ("LISTA DE HOY" in texto_upper and "SEPTIEMBRE" in texto_upper)):
+                                
+                                print(f"   🎯 Mensaje de hoy encontrado: '{texto[:100]}...'")
+                                textos_encontrados.append(texto)
+                                
+                                # Buscar más mensajes cercanos que podrían ser parte de la lista
+                                parent = elemento
+                                try:
+                                    # Subir en el DOM para encontrar el contenedor del mensaje
+                                    for _ in range(5):
+                                        parent = parent.find_element(By.XPATH, '..')
+                                        
+                                    # Buscar elementos hermanos que podrían contener más parte del mensaje
+                                    hermanos = parent.find_elements(By.XPATH, './/span[contains(@class, "selectable-text")]')
+                                    for hermano in hermanos:
+                                        texto_hermano = hermano.text.strip()
+                                        if texto_hermano and len(texto_hermano) > 10 and texto_hermano != texto:
+                                            textos_encontrados.append(texto_hermano)
+                                            
+                                except:
+                                    pass
+                                
+                                break
+                                
+                    if textos_encontrados:
+                        break
+                        
+                except Exception as e:
+                    print(f"   ⚠️ Error con selector {selector}: {e}")
+                    continue
+            
+            if textos_encontrados:
+                print(f"   ✅ Encontrados {len(textos_encontrados)} segmentos de mensaje")
+                # Unir todos los textos encontrados
+                texto_completo = '\n'.join(textos_encontrados)
+                return [texto_completo] if texto_completo else []
+            else:
+                print("   ⚠️ No se encontraron mensajes de hoy por contenido")
+                return []
+                
+        except Exception as e:
+            print(f"   ❌ Error extrayendo mensajes por contenido: {e}")
+            return []
+
     def extraer_mensajes_desde_ultima_etiqueta(self):
-        """Extraer mensajes desde la última etiqueta de fecha encontrada"""
+        """Extraer mensajes desde la última etiqueta de fecha encontrada - CON MÉTODO MEJORADO"""
+        try:
+            print("📝 Buscando mensajes de hoy con método inteligente...")
+            
+            # MÉTODO 1: Buscar por contenido de texto (más confiable)
+            mensajes_contenido = self.extraer_mensajes_por_contenido()
+            if mensajes_contenido:
+                print("   ✅ Mensajes encontrados por análisis de contenido")
+                return mensajes_contenido
+            
+            print("   ⚠️ Método de contenido no encontró mensajes, intentando método de etiquetas DOM...")
+            
+            # MÉTODO 2: Buscar por etiquetas DOM (fallback)
+            return self.extraer_mensajes_por_etiquetas_dom()
+            
+        except Exception as e:
+            print(f"❌ Error en extracción de mensajes: {e}")
+            return []
+    
+    def extraer_mensajes_por_etiquetas_dom(self):
+        """Método original de extracción por etiquetas DOM"""
         try:
             print("� Buscando última etiqueta de fecha...")
             
             # Buscar todas las etiquetas de fecha (Hoy, Ayer, fechas específicas)
+            # Incluir el selector específico proporcionado para el elemento "Hoy"
             selectores_fecha = [
+                # Selector específico para el elemento "Hoy" con las clases exactas
+                '//span[contains(@class, "x140p0ai") and contains(@class, "x1gufx9m") and contains(@class, "x1s928wv") and text()="Hoy"]',
+                # Selector más general pero específico para "Hoy"
+                '//span[contains(@class, "x140p0ai") and text()="Hoy"]',
+                # Selectores originales como fallback
                 '//span[contains(@class, "x140p0ai") and (text()="Hoy" or text()="Ayer" or text()="Today" or text()="Yesterday")]',
                 '//span[text()="Hoy" or text()="Ayer" or text()="Today" or text()="Yesterday"]',
                 '//div[contains(@class, "x1n2onr6")]//span[contains(@class, "x140p0ai")]'
             ]
             
             ultima_etiqueta = None
+            etiqueta_hoy_encontrada = False
             
             for selector in selectores_fecha:
                 try:
                     etiquetas = self.driver.find_elements(By.XPATH, selector)
                     if etiquetas:
-                        # Tomar la última etiqueta encontrada (más reciente)
-                        ultima_etiqueta = etiquetas[-1]
-                        texto_etiqueta = ultima_etiqueta.text
-                        print(f"   ✅ Última etiqueta encontrada: '{texto_etiqueta}'")
-                        break
+                        # Priorizar específicamente la etiqueta "Hoy"
+                        for etiqueta in reversed(etiquetas):  # Empezar por las más recientes
+                            texto_etiqueta = etiqueta.text.strip()
+                            if texto_etiqueta in ["Hoy", "Today"]:
+                                ultima_etiqueta = etiqueta
+                                etiqueta_hoy_encontrada = True
+                                print(f"   🎯 Etiqueta 'Hoy' encontrada: '{texto_etiqueta}'")
+                                break
+                        
+                        # Si encontramos "Hoy", salir del bucle principal
+                        if etiqueta_hoy_encontrada:
+                            break
+                            
+                        # Si no encontramos "Hoy", usar la última etiqueta como fallback
+                        if not ultima_etiqueta:
+                            ultima_etiqueta = etiquetas[-1]
+                            texto_etiqueta = ultima_etiqueta.text
+                            print(f"   ✅ Última etiqueta encontrada (fallback): '{texto_etiqueta}'")
                 except:
                     continue
             
             if not ultima_etiqueta:
                 print("   ⚠️ No se encontró ninguna etiqueta de fecha")
                 return []
+            
+            # Verificar si realmente encontramos la etiqueta "Hoy"
+            texto_final = ultima_etiqueta.text.strip()
+            if not etiqueta_hoy_encontrada:
+                print(f"   ⚠️ ADVERTENCIA: No se encontró etiqueta 'Hoy', usando '{texto_final}' como fallback")
+                print("   💡 Esto podría significar que no hay mensajes de hoy o que la estructura del DOM cambió")
+            else:
+                print(f"   ✅ Confirmado: Procesando mensajes desde etiqueta 'Hoy'")
             
             # Buscar todos los mensajes que están después de esta etiqueta
             textos = []
@@ -540,6 +715,13 @@ class AutomatizadorWSP:
         if not self.buscar_y_abrir_chat(nombre_proveedor, config):
             return False
         
+        # NUEVA VERIFICACIÓN: Comprobar si hay mensajes de hoy antes de procesar
+        if not self.verificar_chat_tiene_mensajes_hoy():
+            print(f"⏭️  SALTANDO {nombre_proveedor}: No tiene mensajes de hoy")
+            return False
+        
+        print(f"✅ Confirmado: {nombre_proveedor} tiene mensajes de hoy - Continuando procesamiento...")
+        
         # Ir al final del chat y expandir mensajes
         if not self.ir_al_final_del_chat():
             return False
@@ -577,15 +759,38 @@ class AutomatizadorWSP:
         """Procesar solo el proveedor GcGroup automáticamente"""
         print("🚀 INICIANDO AUTOMATIZACIÓN DE WHATSAPP SOLO PARA GcGroup")
         print("="*70)
+        
+        # Estadísticas de eficiencia
+        chats_procesados = 0
+        chats_saltados = 0
+        
         # Configurar navegador
         if not self.configurar_navegador():
             return False
+        
         resultados = {}
         try:
             nombre_proveedor = "GcGroup"
             config = self.proveedores[nombre_proveedor]
+            
+            # Intentar procesar proveedor
             exito = self.procesar_proveedor(nombre_proveedor, config)
+            
+            if exito:
+                chats_procesados += 1
+            else:
+                chats_saltados += 1
+                
             resultados[nombre_proveedor] = exito
+            
+            # Mostrar estadísticas de eficiencia
+            print(f"\n{'='*70}")
+            print("📊 ESTADÍSTICAS DE EFICIENCIA")
+            print(f"{'='*70}")
+            print(f"✅ Chats procesados (con mensajes de hoy): {chats_procesados}")
+            print(f"⏭️  Chats saltados (sin mensajes de hoy): {chats_saltados}")
+            print(f"⚡ Eficiencia: Se evitó procesar {chats_saltados} chat(s) innecesario(s)")
+            
             # Mostrar resumen final
             self.mostrar_resumen(resultados)
             # Si fue exitoso, ejecutar procesamiento automático
