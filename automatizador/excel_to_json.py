@@ -159,17 +159,46 @@ for i, producto in enumerate(productos_json[:3]):
 print("="*50)
 print("Generando archivo de difusión para WhatsApp...")
 
-# Obtener fecha actual en formato DD/MM/YYYY
+# Obtener fecha actual en diferentes formatos
 from datetime import datetime
+import locale
+
+# Configurar locale para español (si está disponible)
+try:
+    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+except:
+    try:
+        locale.setlocale(locale.LC_TIME, 'es_ES')
+    except:
+        # Si no hay locale español disponible, usar diccionario manual
+        pass
+
 fecha_actual = datetime.now().strftime("%d/%m/%Y")
 fecha_archivo = datetime.now().strftime("%d-%m-%Y")
+
+# Crear fecha para encabezado en español
+meses_espanol = {
+    'January': 'ENERO', 'February': 'FEBRERO', 'March': 'MARZO', 'April': 'ABRIL',
+    'May': 'MAYO', 'June': 'JUNIO', 'July': 'JULIO', 'August': 'AGOSTO',
+    'September': 'SEPTIEMBRE', 'October': 'OCTUBRE', 'November': 'NOVIEMBRE', 'December': 'DICIEMBRE'
+}
+
+fecha_temp = datetime.now().strftime("%d DE %B")
+for ingles, espanol in meses_espanol.items():
+    fecha_temp = fecha_temp.replace(ingles.upper(), espanol)
+
+fecha_encabezado = fecha_temp.upper()  # Ejemplo: "26 DE SEPTIEMBRE"
 
 # Configuración del archivo de difusión
 txt_output_path = f"output/difusion_ram_{fecha_archivo}.txt"
 
 # Crear el encabezado
 contenido = [
+    f"🙋🏻 BUEN DIA LES DEJO LA LISTA DE PRECIOS DEL DIA {fecha_encabezado}",
+    "",
     "🏪 LISTA DE PRECIOS RAM INFORMATICA",
+    "",
+    "🌐 www.raminformatica.com.ar",
     "",
     "⛔ NO ⛔ SE ACEPTAN DÓLARES CARA CHICA, MANCHADOS, ROTOS, ESCRITOS. NO SE ACEPTA CAMBIO EN CANTIDAD - MAYOR A 50. SIN EXCEPCIÓN",
     "",
