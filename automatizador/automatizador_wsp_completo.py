@@ -816,10 +816,10 @@ class AutomatizadorWSP:
         print(f"{'='*70}")
         
         scripts_a_ejecutar = [
-            # {
-            #     "nombre": "gcgroup_completo.py",
-            #     "descripcion": "Procesamiento de GcGroup con colores"
-            # },
+            {
+                "nombre": "procesar_gcgroup.py",
+                "descripcion": "Procesamiento de GcGroup con colores"
+            },
             {
                 "nombre": "excel_to_json.py", 
                 "descripcion": "Conversión a JSON y generación de difusión"

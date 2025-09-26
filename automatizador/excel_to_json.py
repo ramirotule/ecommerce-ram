@@ -220,7 +220,6 @@ contenido.extend([
     f"📅 Lista actualizada: {fecha_actual}",
     "",
     "💬 Para consultas y pedidos, responder a este mensaje",
-    "🚚 Entregas coordinadas por domicilio propio"
 ])
 
 # Guardar archivo TXT de difusión
