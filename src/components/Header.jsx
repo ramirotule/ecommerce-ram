@@ -184,23 +184,24 @@ const Header = () => {
               <span style={{
                 margin: 0,
                 color: '#00F100',
-                fontSize: '30px',
+                fontSize: isMobile ? '25px' : '45px', // Reducido de 45px a 32px en móvil
                 textShadow: '0 2px 4px rgba(0,241,0,0.3)',
                 fontFamily: 'CircuitBoard, monospace',
-                letterSpacing: '2px',
-                lineHeight: '1'
+                letterSpacing: isMobile ? '1px' : '2px', // También reducimos el spacing en móvil
+                lineHeight: '1',
+                marginTop: isMobile ? '5px' : '50px', // Reducimos el margen superior en móvil
               }}>
                 RAM
               </span>
               <span style={{    
                 margin: 0,
                 color: COLORS.text.white,
-                fontSize: '24px',
+                fontSize: isMobile ? '25px' : '44px', // Reducido de 44px a 30px en móvil
                 fontWeight: '600',
                 textShadow: '0 2px 4px rgba(0,0,0,0.3)',
                 fontFamily: 'Arial, sans-serif',
                 lineHeight: '1',
-                marginTop: '10px',
+                marginTop: isMobile ? '5px' : '10px', // Reducimos el margen superior en móvil
               }}>
                 Informática
               </span>
