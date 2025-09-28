@@ -48,7 +48,7 @@ const Home = () => {
         <p>
           Para ver precios y buscar productos, dirigite a la sección <b>Lista de Precios PDF</b> en el menú.<br/>
           <span style={{fontSize: isMobile ? '18px' : '22px', color: COLORS.primary[500]}}>
-             <Link to="/prices" style={{color: COLORS.primary[500], textDecoration: 'underline', fontWeight: '600', cursor: 'pointer'}}>haz click aquí para verla</Link>
+             <Link to="/precios" style={{color: COLORS.primary[500], textDecoration: 'underline', fontWeight: '600', cursor: 'pointer'}}>haz click aquí para verla</Link>
           </span>
         </p>
       </div>

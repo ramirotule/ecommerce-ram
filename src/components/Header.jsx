@@ -255,9 +255,9 @@ const Header = () => {
               🏠 Inicio
             </Link>
               <Link
-              to="/other-products"
+              to="/otros-productos"
               onClick={scrollToTop}
-              className={`nav-link-hover ${isActive('/other-products') ? 'nav-link-active' : ''}`}
+              className={`nav-link-hover ${isActive('/otros-productos') ? 'nav-link-active' : ''}`}
               style={{
                 textDecoration: 'none',
                 color: COLORS.text.white,
@@ -266,9 +266,9 @@ const Header = () => {
                 fontWeight: '600',
                 fontSize: navStyles.fontSize,
                 transition: 'all 0.3s ease',
-                background: isActive('/other-products') ? 'rgba(255,255,255,0.2)' : 'transparent',
-                backdropFilter: isActive('/other-products') ? 'blur(10px)' : 'none',
-                border: isActive('/other-products') ? '1px solid rgba(255,255,255,0.3)' : '1px solid transparent',
+                background: isActive('/otros-productos') ? 'rgba(255,255,255,0.2)' : 'transparent',
+                backdropFilter: isActive('/otros-productos') ? 'blur(10px)' : 'none',
+                border: isActive('/otros-productos') ? '1px solid rgba(255,255,255,0.3)' : '1px solid transparent',
                 whiteSpace: 'nowrap'
               }}
             >
@@ -276,9 +276,9 @@ const Header = () => {
             </Link>
             
             <Link
-              to="/about"
+              to="/nosotros"
               onClick={scrollToTop}
-              className={`nav-link-hover ${isActive('/about') ? 'nav-link-active' : ''}`}
+              className={`nav-link-hover ${isActive('/nosotros') ? 'nav-link-active' : ''}`}
               style={{
                 textDecoration: 'none',
                 color: COLORS.text.white,
@@ -287,9 +287,9 @@ const Header = () => {
                 fontWeight: '600',
                 fontSize: navStyles.fontSize,
                 transition: 'all 0.3s ease',
-                background: isActive('/about') ? 'rgba(255,255,255,0.2)' : 'transparent',
-                backdropFilter: isActive('/about') ? 'blur(10px)' : 'none',
-                border: isActive('/about') ? '1px solid rgba(255,255,255,0.3)' : '1px solid transparent',
+                background: isActive('/nosotros') ? 'rgba(255,255,255,0.2)' : 'transparent',
+                backdropFilter: isActive('/nosotros') ? 'blur(10px)' : 'none',
+                border: isActive('/nosotros') ? '1px solid rgba(255,255,255,0.3)' : '1px solid transparent',
                 whiteSpace: 'nowrap'
               }}
             >
@@ -297,9 +297,9 @@ const Header = () => {
             </Link>
 
             <Link
-              to="/how-to-buy"
+              to="/como-comprar"
               onClick={scrollToTop}
-              className={`nav-link-hover ${isActive('/how-to-buy') ? 'nav-link-active' : ''}`}
+              className={`nav-link-hover ${isActive('/como-comprar') ? 'nav-link-active' : ''}`}
               style={{
                 textDecoration: 'none',
                 color: COLORS.text.white,
@@ -308,9 +308,9 @@ const Header = () => {
                 fontWeight: '600',
                 fontSize: navStyles.fontSize,
                 transition: 'all 0.3s ease',
-                background: isActive('/how-to-buy') ? 'rgba(255,255,255,0.2)' : 'transparent',
-                backdropFilter: isActive('/how-to-buy') ? 'blur(10px)' : 'none',
-                border: isActive('/how-to-buy') ? '1px solid rgba(255,255,255,0.3)' : '1px solid transparent',
+                background: isActive('/como-comprar') ? 'rgba(255,255,255,0.2)' : 'transparent',
+                backdropFilter: isActive('/como-comprar') ? 'blur(10px)' : 'none',
+                border: isActive('/como-comprar') ? '1px solid rgba(255,255,255,0.3)' : '1px solid transparent',
                 whiteSpace: 'nowrap'
               }}
             >
@@ -318,9 +318,9 @@ const Header = () => {
             </Link>
 
             <Link
-              to="/prices"
+              to="/precios"
               onClick={scrollToTop}
-              className={`nav-link-hover ${isActive('/prices') ? 'nav-link-active' : ''}`}
+              className={`nav-link-hover ${isActive('/precios') ? 'nav-link-active' : ''}`}
               style={{
                 textDecoration: 'none',
                 color: COLORS.text.white,
@@ -329,9 +329,9 @@ const Header = () => {
                 fontWeight: '600',
                 fontSize: navStyles.fontSize,
                 transition: 'all 0.3s ease',
-                background: isActive('/prices') ? 'rgba(255,255,255,0.2)' : 'transparent',
-                backdropFilter: isActive('/prices') ? 'blur(10px)' : 'none',
-                border: isActive('/prices') ? '1px solid rgba(255,255,255,0.3)' : '1px solid transparent',
+                background: isActive('/precios') ? 'rgba(255,255,255,0.2)' : 'transparent',
+                backdropFilter: isActive('/precios') ? 'blur(10px)' : 'none',
+                border: isActive('/precios') ? '1px solid rgba(255,255,255,0.3)' : '1px solid transparent',
                 whiteSpace: 'nowrap'
               }}
             >
@@ -568,7 +568,7 @@ const Header = () => {
               🏠 Inicio
             </Link>
              <Link
-              to="/other-products"
+              to="/otros-productos"
               onClick={() => {
                 setIsMenuOpen(false);
                 scrollToTop();
@@ -585,7 +585,7 @@ const Header = () => {
               🛍️ Otros Productos
             </Link>
             <Link
-              to="/about"
+              to="/nosotros"
               onClick={() => {
                 setIsMenuOpen(false);
                 scrollToTop();
@@ -602,7 +602,7 @@ const Header = () => {
               ℹ️ Quiénes Somos
             </Link>
             <Link
-              to="/how-to-buy"
+              to="/como-comprar"
               onClick={() => {
                 setIsMenuOpen(false);
                 scrollToTop();
@@ -621,7 +621,7 @@ const Header = () => {
            
            
              <Link
-              to="/prices"
+              to="/precios"
               onClick={() => {
                 setIsMenuOpen(false);
                 scrollToTop();

@@ -24,11 +24,11 @@ function App() {
         {/* Rutas */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/how-to-buy" element={<HowToBuy />} />
+          <Route path="/nosotros" element={<About />} />
+          <Route path="/como-comprar" element={<HowToBuy />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/prices" element={<Prices />} />
-          <Route path="/other-products" element={<OtherProducts />} />
+          <Route path="/precios" element={<Prices />} />
+          <Route path="/otros-productos" element={<OtherProducts />} />
 
           <Route path="/admin" element={
 
