@@ -72,7 +72,8 @@ const FloatingWhatsApp = () => {
               right: '20px'
             }
           : {
-              top: `${15 + scrollY * 0.1}px`, // En desktop mantiene la posición original en la parte superior
+              position: 'fixed',
+              bottom: `${15 + scrollY * 0.1}px`, // En desktop mantiene la posición original en la parte superior
               right: '20px'
             }
         ),
