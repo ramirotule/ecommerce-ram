@@ -9,6 +9,15 @@ excel_input_path = "output/lista_gcgroup_procesada.xlsx"
 json_output_path = "../public/productos_ram.json"
 
 # Verificar que existe el archivo Excel
+
+# Borrar JSON anterior si existe
+if os.path.exists(json_output_path):
+    try:
+        os.remove(json_output_path)
+        print(f"🧹 Archivo anterior eliminado: {json_output_path}")
+    except Exception as e:
+        print(f"⚠️ No se pudo eliminar el archivo anterior: {e}")
+
 if not os.path.exists(excel_input_path):
     raise FileNotFoundError(f"No se encontró el archivo Excel: {excel_input_path}")
 
@@ -54,10 +63,9 @@ def generar_nombre_imagen(descripcion):
     # Remover caracteres especiales y reemplazar espacios
     nombre = re.sub(r'[^\w\s]', '', nombre)  # Solo letras, números y espacios
     nombre = re.sub(r'\s+', '_', nombre)     # Espacios por guiones bajos
-    nombre = re.sub(r'_+', '_', nombre)      # Múltiples guiones por uno solo
-    nombre = nombre.strip('_')               # Quitar guiones del inicio/final
-    
     return f"{nombre}.png"
+        nombre = re.sub(r'_+', '_', nombre)      # Múltiples guiones por uno solo
+        descripcion_texto = re.sub(r'[^\w\s$.-]', '', descripcion)  # Remover emojis para mostrar en terminal
 
 def calcular_precio_final(precio_base):
     """Calcular precio final aplicando 18% de ganancia + 20 dólares, redondeado a múltiplo de 5"""
@@ -204,8 +212,8 @@ contenido = [
     "="*50,
     ""
 ]
-
-# Agrupar productos por categoría
+    print("Archivo JSON generado directamente en public/productos_ram.json")
+    print("El ecommerce ahora tiene los productos actualizados!")
 productos_por_categoria = {}
 for producto in productos_json:
     categoria = producto['categoria']

@@ -483,60 +483,57 @@ class AutomatizadorWSP:
     def extraer_mensajes_por_etiquetas_dom(self):
         """Método original de extracción por etiquetas DOM"""
         try:
-            print("� Buscando última etiqueta de fecha...")
-            
+            print("Buscando última etiqueta de fecha...")
             # Buscar todas las etiquetas de fecha (Hoy, Ayer, fechas específicas)
-            # Incluir el selector específico proporcionado para el elemento "Hoy"
             selectores_fecha = [
-                # Selector específico para el elemento "Hoy" con las clases exactas
-                '//span[contains(@class, "x140p0ai") and contains(@class, "x1gufx9m") and contains(@class, "x1s928wv") and text()="Hoy"]',
-                # Selector más general pero específico para "Hoy"
-                '//span[contains(@class, "x140p0ai") and text()="Hoy"]',
-                # Selectores originales como fallback
-                '//span[contains(@class, "x140p0ai") and (text()="Hoy" or text()="Ayer" or text()="Today" or text()="Yesterday")]',
+                '//span[contains(@class, "x140p0ai") and contains(@class, "x1gufx9m") and contains(@class, "x1s928wv") and (text()="Hoy" or text()="Ayer")]',
+                '//span[contains(@class, "x140p0ai") and (text()="Hoy" or text()="Ayer")]',
                 '//span[text()="Hoy" or text()="Ayer" or text()="Today" or text()="Yesterday"]',
                 '//div[contains(@class, "x1n2onr6")]//span[contains(@class, "x140p0ai")]'
             ]
-            
             ultima_etiqueta = None
             etiqueta_hoy_encontrada = False
-            
+            etiqueta_ayer_encontrada = False
             for selector in selectores_fecha:
                 try:
                     etiquetas = self.driver.find_elements(By.XPATH, selector)
                     if etiquetas:
-                        # Priorizar específicamente la etiqueta "Hoy"
-                        for etiqueta in reversed(etiquetas):  # Empezar por las más recientes
+                        # Buscar primero 'Hoy', si no, buscar 'Ayer'
+                        for etiqueta in reversed(etiquetas):
                             texto_etiqueta = etiqueta.text.strip()
                             if texto_etiqueta in ["Hoy", "Today"]:
                                 ultima_etiqueta = etiqueta
                                 etiqueta_hoy_encontrada = True
                                 print(f"   🎯 Etiqueta 'Hoy' encontrada: '{texto_etiqueta}'")
                                 break
-                        
-                        # Si encontramos "Hoy", salir del bucle principal
-                        if etiqueta_hoy_encontrada:
+                        if not etiqueta_hoy_encontrada:
+                            for etiqueta in reversed(etiquetas):
+                                texto_etiqueta = etiqueta.text.strip()
+                                if texto_etiqueta in ["Ayer", "Yesterday"]:
+                                    ultima_etiqueta = etiqueta
+                                    etiqueta_ayer_encontrada = True
+                                    print(f"   ⚠️ No se encontró etiqueta 'Hoy', usando 'Ayer' como fallback: '{texto_etiqueta}'")
+                                    break
+                        if etiqueta_hoy_encontrada or etiqueta_ayer_encontrada:
                             break
-                            
-                        # Si no encontramos "Hoy", usar la última etiqueta como fallback
+                        # Si no encontramos ninguna, usar la última etiqueta como fallback
                         if not ultima_etiqueta:
                             ultima_etiqueta = etiquetas[-1]
                             texto_etiqueta = ultima_etiqueta.text
                             print(f"   ✅ Última etiqueta encontrada (fallback): '{texto_etiqueta}'")
                 except:
                     continue
-            
             if not ultima_etiqueta:
                 print("   ⚠️ No se encontró ninguna etiqueta de fecha")
                 return []
-            
-            # Verificar si realmente encontramos la etiqueta "Hoy"
             texto_final = ultima_etiqueta.text.strip()
-            if not etiqueta_hoy_encontrada:
-                print(f"   ⚠️ ADVERTENCIA: No se encontró etiqueta 'Hoy', usando '{texto_final}' como fallback")
-                print("   💡 Esto podría significar que no hay mensajes de hoy o que la estructura del DOM cambió")
-            else:
+            if etiqueta_hoy_encontrada:
                 print(f"   ✅ Confirmado: Procesando mensajes desde etiqueta 'Hoy'")
+            elif etiqueta_ayer_encontrada:
+                print(f"   ⚠️ Procesando mensajes desde etiqueta 'Ayer' (no se encontró 'Hoy')")
+            else:
+                print(f"   ⚠️ ADVERTENCIA: No se encontró etiqueta 'Hoy' ni 'Ayer', usando '{texto_final}' como fallback")
+                print("   💡 Esto podría significar que no hay mensajes recientes o que la estructura del DOM cambió")
             
             # Buscar todos los mensajes que están después de esta etiqueta
             textos = []

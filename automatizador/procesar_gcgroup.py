@@ -9,12 +9,18 @@ def procesar_lista_gcgroup():
     # Configuración de archivos
     txt_input_path = "output/lista_gcgroup.txt"
     excel_output_path = "output/lista_gcgroup_procesada.xlsx"
-    
+    # Borrar archivo Excel anterior si existe
+    if os.path.exists(excel_output_path):
+        try:
+            os.remove(excel_output_path)
+            print(f"🧹 Archivo anterior eliminado: {excel_output_path}")
+        except Exception as e:
+            print(f"⚠️ No se pudo eliminar el archivo anterior: {e}")
     # Verificar que existe el archivo TXT
     if not os.path.exists(txt_input_path):
         raise FileNotFoundError(f"No se encontró el archivo TXT: {txt_input_path}")
     
-    print(f"🔄 Procesando lista de GCGroup...")
+    print("Procesando lista de GCGroup...")
     print("="*50)
     
     # Leer el archivo TXT
@@ -63,12 +69,12 @@ def procesar_lista_gcgroup():
     os.makedirs("output", exist_ok=True)
     df.to_excel(excel_output_path, index=False)
     
-    print(f"✅ Archivo procesado exitosamente: {excel_output_path}")
-    print(f"📊 Productos procesados: {len(df)} productos")
+    print(f"Archivo procesado exitosamente: {excel_output_path}")
+    print(f"Productos procesados: {len(df)} productos")
     
     # Mostrar muestra de los primeros productos
     if len(df) > 0:
-        print("\n📋 Muestra de productos procesados:")
+        print("\nMuestra de productos procesados:")
         print("-" * 50)
         for i, row in df.head(5).iterrows():
             print(f"   {row['Descripción'][:60]}...")
@@ -79,4 +85,4 @@ if __name__ == "__main__":
     try:
         procesar_lista_gcgroup()
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"Error: {e}")
