@@ -937,6 +937,10 @@ class AutomatizadorWSP:
                 "descripcion": "Conversión a JSON para productos"
             },
             {
+                "nombre": "generar_pdf.py",
+                "descripcion": "Generación de PDF de lista de precios"
+            },
+            {
                 "nombre": "generar_difusion.py",
                 "descripcion": "Generación de archivo de difusión para WhatsApp"
             }
@@ -990,12 +994,12 @@ class AutomatizadorWSP:
         print(f"\n{'='*70}")
         print("🎉 PROCESAMIENTO AUTOMÁTICO COMPLETADO")
         print(f"{'='*70}")
-        print("📁 Revisa la carpeta 'output/' para ver todos los archivos generados:")
-        print("   • Lista extraída de WhatsApp (TXT)")
-        print("   • Lista procesada con colores (Excel)")
-        print("   • Productos categorizados (JSON) para la web")
-        print("   • Archivo de difusión para WhatsApp (TXT)")
-        print("   • Archivo JSON con productos para el ecommerce")
+        print("📁 Revisa los archivos generados:")
+        print("   • Lista extraída de WhatsApp (TXT) - en output/")
+        print("   • Lista procesada con colores (Excel) - en output/")
+        print("   • Productos categorizados (JSON) - en public/")
+        print("   • Lista de precios (PDF) - en public/")
+        print("   • Archivo de difusión para WhatsApp (TXT) - en output/")
 
     def mostrar_resumen(self, resultados):
         """Mostrar resumen de la ejecución"""
