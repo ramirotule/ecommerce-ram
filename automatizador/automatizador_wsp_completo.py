@@ -15,6 +15,8 @@ class AutomatizadorWSP:
     def __init__(self):
         """Inicializar el automatizador con configuración de Selenium"""
         self.driver = None
+        self.mensaje_buen_dia_encontrado = False
+        self.elemento_mensaje_buen_dia = None
         self.proveedores = {
             "Rodrigo Provee": {
                 "archivo_salida": "output/lista_rodrigo.txt",
@@ -258,18 +260,26 @@ class AutomatizadorWSP:
             print("   ℹ️ Continuando con la extracción...")
     
     def filtrar_mensajes_del_dia(self, textos, filtro_inicio):
-        """Filtrar SOLO mensajes recibidos el día de hoy (estricto)"""
+        """Filtrar mensajes recibidos el día de hoy o mensajes 'BUEN DIA'"""
         fecha_hoy = datetime.now().strftime("%d/%m/%Y")  # Formato dd/mm/yyyy
         fecha_hoy_alt = datetime.now().strftime("%d/%m/%y")  # Formato dd/mm/yy
         palabras_hoy = ["hoy", "today"]
         mensajes_filtrados = []
+        
         for texto in textos:
             texto_lower = texto.lower()
-            # Solo aceptar si contiene la fecha de hoy, la fecha alternativa, o la palabra 'hoy' explícita
-            if fecha_hoy in texto or fecha_hoy_alt in texto:
+            texto_upper = texto.upper()
+            
+            # Aceptar si:
+            # 1. Contiene la fecha de hoy
+            # 2. Contiene la palabra 'hoy' explícita
+            # 3. Comienza con "BUEN DIA TE DEJO LA LISTA DE HOY" (NUEVO)
+            if (fecha_hoy in texto or fecha_hoy_alt in texto or
+                any(palabra in texto_lower for palabra in palabras_hoy) or
+                texto_upper.startswith("BUEN DIA TE DEJO LA LISTA DE HOY") or
+                texto_upper.startswith("BUEN DÍA TE DEJO LA LISTA DE HOY")):
                 mensajes_filtrados.append(texto)
-            elif any(palabra in texto_lower for palabra in palabras_hoy):
-                mensajes_filtrados.append(texto)
+                
         return mensajes_filtrados
     
     def verificar_chat_tiene_mensajes_hoy(self):
@@ -278,9 +288,22 @@ class AutomatizadorWSP:
             print("🔍 Verificando si hay mensajes de hoy...")
             
             # Primero, buscar texto que contenga la fecha de hoy en el contenido de los mensajes
-            fecha_hoy_texto = datetime.now().strftime("VIERNES %d DE SEPTIEMBRE").upper()  # Ejemplo: "VIERNES 26 DE SEPTIEMBRE"
-            fecha_hoy_corta = datetime.now().strftime("%d DE SEPTIEMBRE").upper()  # Ejemplo: "26 DE SEPTIEMBRE"
-            fecha_hoy_numero = datetime.now().strftime("%d/%m/%Y")  # Ejemplo: "26/09/2025"
+            # Solución genérica para cualquier mes
+            meses_es = {
+                1: "ENERO", 2: "FEBRERO", 3: "MARZO", 4: "ABRIL", 5: "MAYO", 6: "JUNIO",
+                7: "JULIO", 8: "AGOSTO", 9: "SEPTIEMBRE", 10: "OCTUBRE", 11: "NOVIEMBRE", 12: "DICIEMBRE"
+            }
+            dias_es = {
+                0: "LUNES", 1: "MARTES", 2: "MIÉRCOLES", 3: "JUEVES", 4: "VIERNES", 5: "SÁBADO", 6: "DOMINGO"
+            }
+            
+            hoy = datetime.now()
+            mes_actual = meses_es[hoy.month]
+            dia_semana = dias_es[hoy.weekday()]
+            
+            fecha_hoy_texto = f"{dia_semana} {hoy.day} DE {mes_actual}"
+            fecha_hoy_corta = f"{hoy.day} DE {mes_actual}"
+            fecha_hoy_numero = hoy.strftime("%d/%m/%Y")
             
             print(f"   🔍 Buscando: '{fecha_hoy_texto}' o '{fecha_hoy_corta}' o '{fecha_hoy_numero}'")
             
@@ -288,14 +311,14 @@ class AutomatizadorWSP:
             try:
                 # Buscar todos los elementos de mensaje que podrían contener la fecha de hoy
                 elementos_mensaje = self.driver.find_elements(By.XPATH, 
-                    '//div[contains(@class, "message") or contains(@class, "copyable-text")]//span[contains(text(), "LISTA") or contains(text(), "HOY") or contains(text(), "SEPTIEMBRE")]')
+                    f'//div[contains(@class, "message") or contains(@class, "copyable-text")]//span[contains(text(), "LISTA") or contains(text(), "HOY") or contains(text(), "{mes_actual}")]')
                 
                 for elemento in elementos_mensaje:
                     texto_elemento = elemento.text.upper()
                     if (fecha_hoy_texto in texto_elemento or 
                         fecha_hoy_corta in texto_elemento or
                         fecha_hoy_numero in texto_elemento or
-                        ("LISTA DE HOY" in texto_elemento and "SEPTIEMBRE" in texto_elemento)):
+                        ("LISTA DE HOY" in texto_elemento and mes_actual in texto_elemento)):
                         print(f"   ✅ Encontrado mensaje con fecha de hoy: '{texto_elemento[:100]}...'")
                         return True
             except Exception as e:
@@ -317,11 +340,68 @@ class AutomatizadorWSP:
                 except:
                     continue
             
-            print(f"   ⚠️ No se encontró fecha de hoy ni etiqueta 'Hoy' - Chat sin mensajes de hoy")
-            return False
+            print(f"   ⚠️ No se encontró fecha de hoy ni etiqueta 'Hoy'")
+            
+            # NUEVO: Si no hay mensajes de hoy, buscar el último mensaje con "BUEN DIA TE DEJO LA LISTA DE HOY"
+            print("🔍 Buscando último mensaje con 'BUEN DIA TE DEJO LA LISTA DE HOY'...")
+            return self.buscar_ultimo_mensaje_buen_dia()
             
         except Exception as e:
             print(f"   ❌ Error verificando mensajes de hoy: {e}")
+            return False
+
+    def buscar_ultimo_mensaje_buen_dia(self):
+        """Buscar el último mensaje que inicie con 'BUEN DIA TE DEJO LA LISTA DE HOY'"""
+        try:
+            print("   🔍 Buscando mensaje que inicie con 'BUEN DIA TE DEJO LA LISTA DE HOY'...")
+            
+            # Hacer scroll hacia arriba para cargar más mensajes históricos
+            chat_container = None
+            selectores_chat = [
+                '//div[@data-testid="chat-history"]',
+                '//div[@data-testid="conversation-panel-messages"]', 
+                '//div[contains(@class, "copyable-area")]'
+            ]
+            
+            for selector in selectores_chat:
+                try:
+                    chat_container = self.driver.find_element(By.XPATH, selector)
+                    break
+                except:
+                    continue
+            
+            if chat_container:
+                print("   📜 Cargando mensajes históricos...")
+                # Hacer varios scrolls hacia arriba para cargar más mensajes
+                for i in range(10):  # Cargar hasta 10 "páginas" de mensajes anteriores
+                    self.driver.execute_script("arguments[0].scrollTop = 0;", chat_container)
+                    time.sleep(1)
+                    
+                    # Buscar el mensaje en cada iteración
+                    mensajes_encontrados = self.driver.find_elements(By.XPATH, 
+                        '//div[contains(@class, "message") or contains(@class, "copyable-text")]//span[contains(@class, "selectable-text")]')
+                    
+                    for mensaje in reversed(mensajes_encontrados):  # Revisar desde el más reciente
+                        try:
+                            texto_mensaje = mensaje.text.strip().upper()
+                            if texto_mensaje.startswith("BUEN DIA TE DEJO LA LISTA DE HOY") or texto_mensaje.startswith("BUEN DÍA TE DEJO LA LISTA DE HOY"):
+                                print(f"   ✅ Encontrado mensaje: '{texto_mensaje[:100]}...'")
+                                # Marcar que encontramos el mensaje para procesamiento posterior
+                                self.mensaje_buen_dia_encontrado = True
+                                self.elemento_mensaje_buen_dia = mensaje
+                                return True
+                        except:
+                            continue
+                    
+                    # Si encontramos algo en esta iteración, no necesitamos cargar más
+                    if hasattr(self, 'mensaje_buen_dia_encontrado'):
+                        break
+            
+            print("   ⚠️ No se encontró mensaje con 'BUEN DIA TE DEJO LA LISTA DE HOY'")
+            return False
+            
+        except Exception as e:
+            print(f"   ❌ Error buscando mensaje 'BUEN DIA': {e}")
             return False
 
     def buscar_y_abrir_chat(self, nombre_proveedor, config):
@@ -387,15 +467,41 @@ class AutomatizadorWSP:
             return False
     
     def extraer_mensajes_por_contenido(self):
-        """Extraer mensajes basándose en el contenido de texto de hoy"""
+        """Extraer mensajes basándose en el contenido de texto de hoy o mensaje 'BUEN DIA'"""
         try:
             print("📝 Extrayendo mensajes por análisis de contenido...")
             
-            # Fecha de hoy en diferentes formatos
-            fecha_hoy_texto = datetime.now().strftime("VIERNES %d DE SEPTIEMBRE").upper()
-            fecha_hoy_corta = datetime.now().strftime("%d DE SEPTIEMBRE").upper()
+            # Fecha de hoy en diferentes formatos - SOLUCIÓN GENÉRICA
+            meses_es = {
+                1: "ENERO", 2: "FEBRERO", 3: "MARZO", 4: "ABRIL", 5: "MAYO", 6: "JUNIO",
+                7: "JULIO", 8: "AGOSTO", 9: "SEPTIEMBRE", 10: "OCTUBRE", 11: "NOVIEMBRE", 12: "DICIEMBRE"
+            }
+            dias_es = {
+                0: "LUNES", 1: "MARTES", 2: "MIÉRCOLES", 3: "JUEVES", 4: "VIERNES", 5: "SÁBADO", 6: "DOMINGO"
+            }
+            
+            hoy = datetime.now()
+            mes_actual = meses_es[hoy.month]
+            dia_semana = dias_es[hoy.weekday()]
+            
+            fecha_hoy_texto = f"{dia_semana} {hoy.day} DE {mes_actual}"
+            fecha_hoy_corta = f"{hoy.day} DE {mes_actual}"
             
             textos_encontrados = []
+            
+            # Verificar si tenemos un mensaje "BUEN DIA" marcado
+            if hasattr(self, 'mensaje_buen_dia_encontrado') and hasattr(self, 'elemento_mensaje_buen_dia'):
+                print("   🎯 Usando mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' encontrado anteriormente")
+                try:
+                    texto_completo = self.elemento_mensaje_buen_dia.text.strip()
+                    if texto_completo:
+                        textos_encontrados.append(texto_completo)
+                        print(f"   ✅ Mensaje extraído: '{texto_completo[:100]}...'")
+                        return textos_encontrados
+                except Exception as e:
+                    print(f"   ⚠️ Error extrayendo mensaje 'BUEN DIA': {e}")
+            
+            # Si no hay mensaje "BUEN DIA", buscar por fecha de hoy como antes
             
             # Buscar todos los elementos de mensaje en el área visible
             selectores_mensaje = [
@@ -413,10 +519,12 @@ class AutomatizadorWSP:
                         if texto and len(texto) > 20:  # Solo textos significativos
                             texto_upper = texto.upper()
                             
-                            # Si encontramos el mensaje con la fecha de hoy, empezar a capturar
+                            # Si encontramos el mensaje con la fecha de hoy o "BUEN DIA", empezar a capturar
                             if (fecha_hoy_texto in texto_upper or 
                                 fecha_hoy_corta in texto_upper or
-                                ("LISTA DE HOY" in texto_upper and "SEPTIEMBRE" in texto_upper)):
+                                ("LISTA DE HOY" in texto_upper and mes_actual in texto_upper) or
+                                texto_upper.startswith("BUEN DIA TE DEJO LA LISTA DE HOY") or
+                                texto_upper.startswith("BUEN DÍA TE DEJO LA LISTA DE HOY")):
                                 
                                 print(f"   🎯 Mensaje de hoy encontrado: '{texto[:100]}...'")
                                 textos_encontrados.append(texto)
@@ -699,6 +807,10 @@ class AutomatizadorWSP:
             search_box.send_keys('\ue017')  # Delete
             time.sleep(0.5)
             
+            # Limpiar variables del mensaje "BUEN DIA" para el siguiente proveedor
+            self.mensaje_buen_dia_encontrado = False
+            self.elemento_mensaje_buen_dia = None
+            
         except Exception as e:
             print(f"⚠️ Error limpiando búsqueda: {e}")
 
@@ -712,12 +824,15 @@ class AutomatizadorWSP:
         if not self.buscar_y_abrir_chat(nombre_proveedor, config):
             return False
         
-        # NUEVA VERIFICACIÓN: Comprobar si hay mensajes de hoy antes de procesar
+        # NUEVA VERIFICACIÓN: Comprobar si hay mensajes de hoy o mensaje "BUEN DIA" antes de procesar
         if not self.verificar_chat_tiene_mensajes_hoy():
-            print(f"⏭️  SALTANDO {nombre_proveedor}: No tiene mensajes de hoy")
+            print(f"⏭️  SALTANDO {nombre_proveedor}: No tiene mensajes de hoy ni mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY'")
             return False
         
-        print(f"✅ Confirmado: {nombre_proveedor} tiene mensajes de hoy - Continuando procesamiento...")
+        if hasattr(self, 'mensaje_buen_dia_encontrado') and self.mensaje_buen_dia_encontrado:
+            print(f"✅ Confirmado: {nombre_proveedor} tiene mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' - Continuando procesamiento...")
+        else:
+            print(f"✅ Confirmado: {nombre_proveedor} tiene mensajes de hoy - Continuando procesamiento...")
         
         # Ir al final del chat y expandir mensajes
         if not self.ir_al_final_del_chat():
@@ -819,7 +934,11 @@ class AutomatizadorWSP:
             },
             {
                 "nombre": "excel_to_json.py", 
-                "descripcion": "Conversión a JSON y generación de difusión"
+                "descripcion": "Conversión a JSON para productos"
+            },
+            {
+                "nombre": "generar_difusion.py",
+                "descripcion": "Generación de archivo de difusión para WhatsApp"
             }
         ]
         
@@ -840,6 +959,7 @@ class AutomatizadorWSP:
                     capture_output=True, 
                     text=True,
                     encoding='utf-8',
+                    errors='replace',  # Reemplazar caracteres problemáticos en lugar de fallar
                     cwd=os.getcwd()
                 )
                 
@@ -873,8 +993,9 @@ class AutomatizadorWSP:
         print("📁 Revisa la carpeta 'output/' para ver todos los archivos generados:")
         print("   • Lista extraída de WhatsApp (TXT)")
         print("   • Lista procesada con colores (Excel)")
-        print("   • Productos categorizados (JSON)")
+        print("   • Productos categorizados (JSON) para la web")
         print("   • Archivo de difusión para WhatsApp (TXT)")
+        print("   • Archivo JSON con productos para el ecommerce")
 
     def mostrar_resumen(self, resultados):
         """Mostrar resumen de la ejecución"""

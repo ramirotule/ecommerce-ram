@@ -14,9 +14,9 @@ json_output_path = "../public/productos_ram.json"
 if os.path.exists(json_output_path):
     try:
         os.remove(json_output_path)
-        print(f"🧹 Archivo anterior eliminado: {json_output_path}")
+        print(f"Archivo anterior eliminado: {json_output_path}")
     except Exception as e:
-        print(f"⚠️ No se pudo eliminar el archivo anterior: {e}")
+        print(f"No se pudo eliminar el archivo anterior: {e}")
 
 if not os.path.exists(excel_input_path):
     raise FileNotFoundError(f"No se encontró el archivo Excel: {excel_input_path}")
@@ -27,45 +27,39 @@ print("="*50)
 # Leer el Excel
 df = pd.read_excel(excel_input_path)
 
+# Debug: Mostrar las primeras filas y columnas del Excel
+print(f"Columnas del Excel: {df.columns.tolist()}")
+print(f"Primeras 3 filas del Excel:")
+print(df.head(3))
+print("="*50)
+
 def determinar_categoria(descripcion):
-    """Determinar la categoría basada en la descripción"""
-    descripcion_upper = descripcion.upper()
+    """Determinar la categoría basándose en la descripción del producto"""
+    descripcion = descripcion.upper()
     
-    # Remover emoji inicial para analizar mejor
-    descripcion_limpia = re.sub(r'^[^\w\s]+\s*', '', descripcion_upper)
-    
-    # Categorías específicas - SMART TV y TV tienen prioridad sobre marcas
-    if "SMART TV" in descripcion_limpia or "TV" in descripcion_limpia:
-        return "TELEVISORES"
-    elif "IPAD" in descripcion_limpia:
-        return "IPAD"
-    elif any(marca in descripcion_limpia for marca in ["IPHONE", "SAMSUNG", "MOTOROLA", "XIAOMI", "OPPO", "INFINIX"]):
+    if any(palabra in descripcion for palabra in ['IPHONE', 'SAMSUNG', 'XIAOMI', 'MOTOROLA', 'HUAWEI', 'CELULAR']):
         return "CELULARES"
-    elif "CARGADOR" in descripcion_limpia:
-        return "CARGADORES"
-    elif any(palabra in descripcion_limpia for palabra in ["RELOJ", "WATCH", "BAND"]):
-        return "SMARTWATCH"
-    elif "MACBOOK" in descripcion_limpia:
+    elif any(palabra in descripcion for palabra in ['MACBOOK', 'LAPTOP', 'NOTEBOOK']):
         return "MACBOOKS"
-    elif any(palabra in descripcion_limpia for palabra in ["JOYSTICK", "PS5", "NINTENDO", "XBOX", "SONY"]):
+    elif any(palabra in descripcion for palabra in ['TV', 'TELEVISOR', 'SMART TV']):
+        return "TELEVISORES"
+    elif any(palabra in descripcion for palabra in ['PS4', 'PS5', 'XBOX', 'NINTENDO', 'JOYSTICK']):
         return "VIDEO JUEGOS"
+    elif any(palabra in descripcion for palabra in ['CARGADOR', 'CABLE', 'AURICULAR', 'FUNDA', 'PROTECTOR']):
+        return "CARGADORES"
     else:
         return "OTROS"
 
 def generar_nombre_imagen(descripcion):
-    """Generar nombre de imagen a partir de la descripción"""
-    # Remover emoji inicial
-    descripcion_limpia = re.sub(r'^[^\w\s]+\s*', '', descripcion)
-    
-    # Convertir a lowercase
-    nombre = descripcion_limpia.lower()
+    """Generar nombre de archivo de imagen basado en la descripción"""
+    # Limpiar y normalizar la descripción
+    nombre = descripcion.lower()
     
     # Remover caracteres especiales y reemplazar espacios
     nombre = re.sub(r'[^\w\s]', '', nombre)  # Solo letras, números y espacios
     nombre = re.sub(r'\s+', '_', nombre)     # Espacios por guiones bajos
+    nombre = re.sub(r'_+', '_', nombre)      # Múltiples guiones por uno solo
     return f"{nombre}.png"
-        nombre = re.sub(r'_+', '_', nombre)      # Múltiples guiones por uno solo
-        descripcion_texto = re.sub(r'[^\w\s$.-]', '', descripcion)  # Remover emojis para mostrar en terminal
 
 def calcular_precio_final(precio_base):
     """Calcular precio final aplicando 18% de ganancia + 20 dólares, redondeado a múltiplo de 5"""
@@ -81,43 +75,69 @@ def calcular_precio_final(precio_base):
     # Calcular el múltiplo de 5 más cercano
     resto = precio_redondeado % 5
     if resto == 0:
-        return precio_redondeado  # Ya es múltiplo de 5
-    elif resto < 2.5:
-        return precio_redondeado - resto  # Redondear hacia abajo
+        return precio_redondeado
+    elif resto <= 2:
+        return precio_redondeado - resto
     else:
-        return precio_redondeado + (5 - resto)  # Redondear hacia arriba
+        return precio_redondeado + (5 - resto)
 
-# Convertir a JSON
+# Procesar los datos
 productos_json = []
-
-# Obtener fecha actual para incluir en el JSON
 fecha_actualizacion = datetime.now().isoformat()
 
+print(f"Procesando {len(df)} productos del Excel...")
+
 for index, row in df.iterrows():
-    descripcion = row['Descripción']
-    precio_base = int(row['Precio Venta'])  # Precio del proveedor
-    
-    # Calcular precio final con ganancia
-    precio_final = calcular_precio_final(precio_base)
-    
-    # Determinar categoría
-    categoria = determinar_categoria(descripcion)
-    
-    # Generar nombre de imagen
-    imagen = generar_nombre_imagen(descripcion)
-    
-    producto = {
-        "producto": descripcion,
-        "precio_usd": precio_final,  # Precio con ganancia aplicada
-        "precio_base": precio_base,  # Precio original del proveedor (para referencia)
-        "categoria": categoria,
-        "imagen": imagen
-    }
-    
-    productos_json.append(producto)
-    
-    # Remover emojis de descripción para mostrar en terminal
-    descripcion_texto = re.sub(r'[^\w\s$.-]', '', descripcion)
+    try:
+        # Obtener datos usando los nombres de columnas (más robusto)
+        producto = str(row['Descripción']).strip()
+        precio_str = str(row['Precio Venta']).strip()
+        
+        # Limpiar el precio y convertir a float
+        if precio_str and precio_str != 'nan' and precio_str != '':
+            # Remover caracteres no numéricos excepto puntos y comas
+            precio_limpio = re.sub(r'[^\d.,]', '', precio_str)
+            
+            # Manejar diferentes formatos de decimal
+            if ',' in precio_limpio and '.' in precio_limpio:
+                # Si tiene ambos, asumir que la coma es miles y punto es decimal
+                precio_limpio = precio_limpio.replace(',', '')
+            elif ',' in precio_limpio:
+                # Si solo tiene coma, podría ser decimal o miles
+                partes = precio_limpio.split(',')
+                if len(partes) == 2 and len(partes[1]) <= 2:
+                    # Probablemente decimal
+                    precio_limpio = precio_limpio.replace(',', '.')
+                else:
+                    # Probablemente miles
+                    precio_limpio = precio_limpio.replace(',', '')
+            
+            try:
+                precio_base = float(precio_limpio)
+                precio_usd = calcular_precio_final(precio_base)
+                
+                # Crear objeto del producto
+                producto_obj = {
+                    "producto": producto,
+                    "precio_usd": precio_usd,
+                    "categoria": determinar_categoria(producto),
+                    "imagen": generar_nombre_imagen(producto)
+                }
+                
+                productos_json.append(producto_obj)
+                
+            except ValueError:
+                print(f"Precio inválido en fila {index + 2}: {precio_str}")
+                continue
+        else:
+            print(f"Sin precio en fila {index + 2}")
+            continue
+            
+    except Exception as e:
+        print(f"Error procesando fila {index + 2}: {e}")
+        continue
+
+print(f"Procesados {len(productos_json)} productos válidos")
 
 # Crear directorio output si no existe
 os.makedirs("output", exist_ok=True)
@@ -163,107 +183,6 @@ for i, producto in enumerate(productos_json[:3]):
     print(f"   Imagen: {producto['imagen']}")
     print()
 
-# Generar archivo de difusión para WhatsApp
 print("="*50)
-print("Generando archivo de difusión para WhatsApp...")
-
-# Obtener fecha actual en diferentes formatos
-from datetime import datetime
-import locale
-
-# Configurar locale para español (si está disponible)
-try:
-    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
-except:
-    try:
-        locale.setlocale(locale.LC_TIME, 'es_ES')
-    except:
-        # Si no hay locale español disponible, usar diccionario manual
-        pass
-
-fecha_actual = datetime.now().strftime("%d/%m/%Y")
-fecha_archivo = datetime.now().strftime("%d-%m-%Y")
-
-# Crear fecha para encabezado en español
-meses_espanol = {
-    'January': 'ENERO', 'February': 'FEBRERO', 'March': 'MARZO', 'April': 'ABRIL',
-    'May': 'MAYO', 'June': 'JUNIO', 'July': 'JULIO', 'August': 'AGOSTO',
-    'September': 'SEPTIEMBRE', 'October': 'OCTUBRE', 'November': 'NOVIEMBRE', 'December': 'DICIEMBRE'
-}
-
-fecha_temp = datetime.now().strftime("%d DE %B")
-for ingles, espanol in meses_espanol.items():
-    fecha_temp = fecha_temp.replace(ingles.upper(), espanol)
-
-fecha_encabezado = fecha_temp.upper()  # Ejemplo: "26 DE SEPTIEMBRE"
-
-# Configuración del archivo de difusión
-txt_output_path = f"output/difusion_ram_{fecha_archivo}.txt"
-
-# Crear el encabezado
-contenido = [
-    f"🙋🏻 BUEN DIA LES DEJO LA LISTA DE PRECIOS DEL DIA {fecha_encabezado}",
-    "",
-    "🏪 LISTA DE PRECIOS RAM INFORMATICA",
-    "",
-    "🌐 www.raminformatica.com.ar",
-    "",
-    "🛒 PRODUCTOS DISPONIBLES",
-    "="*50,
-    ""
-]
-    print("Archivo JSON generado directamente en public/productos_ram.json")
-    print("El ecommerce ahora tiene los productos actualizados!")
-productos_por_categoria = {}
-for producto in productos_json:
-    categoria = producto['categoria']
-    if categoria not in productos_por_categoria:
-        productos_por_categoria[categoria] = []
-    productos_por_categoria[categoria].append(producto)
-
-# Ordenar categorías
-orden_categorias = ["CELULARES", "MACBOOKS", "TELEVISORES", "VIDEO JUEGOS", "CARGADORES", "OTROS"]
-
-# Agregar productos por categoría
-for categoria in orden_categorias:
-    if categoria in productos_por_categoria:
-        items = productos_por_categoria[categoria]
-        
-        # Agregar productos de la categoría
-        for item in items:
-            producto_texto = item['producto']
-            precio = item['precio_usd']
-            
-            contenido.append(f"{producto_texto}")
-            contenido.append(f"U$S {precio}")
-            contenido.append("")
-
-# Agregar categorías restantes que no estén en el orden predefinido
-for categoria, items in productos_por_categoria.items():
-    if categoria not in orden_categorias:
-        for item in items:
-            producto_texto = item['producto']
-            precio = item['precio_usd']
-            
-            contenido.append(f"{producto_texto}")
-            contenido.append(f"U$S {precio}")
-            contenido.append("")
-
-# Agregar pie de página
-contenido.extend([
-    "="*50,
-    "💬 Para consultas y pedidos mandanos un Whatsapp",
-])
-
-# Guardar archivo TXT de difusión
-with open(txt_output_path, 'w', encoding='utf-8') as f:
-    f.write('\n'.join(contenido))
-
-print(f"Archivo de difusión generado: {txt_output_path}")
-print(f"Fecha: {fecha_actual}")
-print("Archivo listo para difusión en WhatsApp!")
-
-# El archivo JSON ya se genera directamente en public/
-print("="*50)
-print("✓ Archivo JSON generado directamente en public/productos_ram.json")
-print("✓ El ecommerce ahora tiene los productos actualizados!")
+print("Conversión a JSON completada exitosamente!")
+print("Archivo listo para el ecommerce")

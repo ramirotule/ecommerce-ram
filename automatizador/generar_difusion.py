@@ -22,7 +22,16 @@ def generar_difusion_txt():
     
     # Leer el JSON
     with open(json_input_path, 'r', encoding='utf-8') as f:
-        productos = json.load(f)
+        data = json.load(f)
+    
+    # Extraer la lista de productos de la estructura correcta
+    if isinstance(data, dict) and 'productos' in data:
+        productos = data['productos']
+        print(f"Procesando {len(productos)} productos desde estructura con metadatos")
+    else:
+        # Fallback para estructura antigua
+        productos = data if isinstance(data, list) else []
+        print(f"Procesando {len(productos)} productos desde estructura simple")
     
     # Crear el encabezado
     contenido = [
