@@ -111,7 +111,7 @@ const Prices = () => {
     // Crear un enlace temporal para descargar el PDF
     const link = document.createElement('a');
     link.href = pdfFile;
-    link.download = 'RAM_Informatica_Lista_Precios.pdf';
+    link.download = 'precios_ram.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
