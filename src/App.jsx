@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
@@ -9,9 +10,19 @@ import HowToBuy from "./pages/HowToBuy";
 import Login from "./pages/Login";
 import Prices from "./pages/Prices";
 import OtherProducts from "./pages/OtherProducts";
+  import ReactGA from 'react-ga4';
+
 import "./animations.css";
 
 function App() {
+  ReactGA.initialize("G-EJS5RRQKC8"); // Reemplaza con tu ID de seguimiento
+  ReactGA.send("pageview");
+
+ useEffect(() => {
+     ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+   }, []);
+  
+
   return (
     <Router>
       <div style={{ 
