@@ -1,9 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { COLORS } from '../utils/colors';
 
+// Función para enviar eventos a Google Analytics
+const trackEvent = (eventName, eventCategory, eventLabel = '', eventValue = '') => {
+  // Verificar si gtag está disponible (Google Analytics 4)
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', eventName, {
+      event_category: eventCategory,
+      event_label: eventLabel,
+      value: eventValue
+    });
+  }
+  
+  // Backup para Google Analytics Universal (ga)
+  if (typeof window !== 'undefined' && window.ga) {
+    window.ga('send', 'event', eventCategory, eventName, eventLabel, eventValue);
+  }
+  
+  // Log para desarrollo
+  console.log('📊 Analytics Event:', { eventName, eventCategory, eventLabel, eventValue });
+};
+
 const ProductSlider = ({ productos }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [isAutoPlay] = useState(true); // Solo lectura, sin setter
 
   // Seleccionar productos destacados (productos más caros o con ofertas)
   const productosDestacados = productos
@@ -137,6 +157,7 @@ const ProductSlider = ({ productos }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ textDecoration: 'none' }}
+                    onClick={() => trackEvent('whatsapp_click', 'Products', `Featured_Product: ${producto.producto}`, producto.precio_usd)}
                   >
                     <button style={{
                       background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',

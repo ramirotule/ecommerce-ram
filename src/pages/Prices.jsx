@@ -6,6 +6,26 @@ import Select from 'react-select';
 // Ruta del PDF para descarga
 const pdfFile = "/precios_ram.pdf";
 
+// Función para enviar eventos a Google Analytics
+const trackEvent = (eventName, eventCategory, eventLabel = '', eventValue = '') => {
+  // Verificar si gtag está disponible (Google Analytics 4)
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', eventName, {
+      event_category: eventCategory,
+      event_label: eventLabel,
+      value: eventValue
+    });
+  }
+  
+  // Backup para Google Analytics Universal (ga)
+  if (typeof window !== 'undefined' && window.ga) {
+    window.ga('send', 'event', eventCategory, eventName, eventLabel, eventValue);
+  }
+  
+  // Log para desarrollo
+  console.log('📊 Analytics Event:', { eventName, eventCategory, eventLabel, eventValue });
+};
+
 const Prices = () => {
   // Tabla interactiva
   const [productos, setProductos] = useState([]);
@@ -17,6 +37,70 @@ const Prices = () => {
   const [dolarBlue, setDolarBlue] = useState(null);
   const [ultimaActualizacion, setUltimaActualizacion] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+
+  // Función para manejar búsqueda con tracking avanzado
+  const handleBusqueda = (valor) => {
+    setBusqueda(valor);
+    
+    // Trackear búsqueda cuando hay texto significativo
+    if (valor.length >= 3) {
+      const palabrasBuscadas = valor.toLowerCase().trim();
+      
+      // Calcular resultados que tendría esta búsqueda
+      const resultadosBusqueda = productos.filter(p => {
+        const categoriaMatch = categoria === "TODOS" || p.categoria === categoria;
+        const busquedaMatch = p.producto.toLowerCase().includes(palabrasBuscadas);
+        return categoriaMatch && busquedaMatch;
+      }).length;
+      
+      // Trackear la búsqueda con detalles
+      trackEvent('search_query', 'Lista_Precios', palabrasBuscadas, resultadosBusqueda);
+      
+      // Trackear palabras clave individuales (para análisis de tendencias)
+      const palabras = palabrasBuscadas.split(' ').filter(p => p.length >= 3);
+      palabras.forEach(palabra => {
+        trackEvent('search_keyword', 'Lista_Precios', palabra, 1);
+      });
+      
+      // Trackear si no hay resultados (productos potencialmente faltantes)
+      if (resultadosBusqueda === 0) {
+        trackEvent('search_no_results', 'Lista_Precios', palabrasBuscadas, 0);
+      }
+      
+      // Trackear categorías de términos buscados
+      const esCelular = /celular|phone|iphone|samsung|xiaomi|motorola|huawei/.test(palabrasBuscadas);
+      const esNotebook = /notebook|laptop|macbook|lenovo|dell|hp|asus/.test(palabrasBuscadas);
+      const esTv = /tv|televisor|smart|lg|samsung|tcl/.test(palabrasBuscadas);
+      const esGaming = /gaming|gamer|play|xbox|nintendo|ps5|ps4/.test(palabrasBuscadas);
+      const esCargador = /cargador|cable|usb|type/.test(palabrasBuscadas);
+      
+      if (esCelular) trackEvent('search_category_intent', 'Lista_Precios', 'CELULARES', 1);
+      if (esNotebook) trackEvent('search_category_intent', 'Lista_Precios', 'NOTEBOOKS', 1);
+      if (esTv) trackEvent('search_category_intent', 'Lista_Precios', 'TELEVISORES', 1);
+      if (esGaming) trackEvent('search_category_intent', 'Lista_Precios', 'VIDEO_JUEGOS', 1);
+      if (esCargador) trackEvent('search_category_intent', 'Lista_Precios', 'CARGADORES', 1);
+    }
+  };
+
+  // Función para manejar cambio de categoría con tracking
+  const handleCategoriaChange = (valor) => {
+    setCategoria(valor);
+    trackEvent('filter_category', 'Lista_Precios', `Categoria: ${valor}`, 1);
+  };
+
+  // Función para manejar ordenamiento con tracking
+  const handleSort = (columna) => {
+    let nuevaDireccion = 'asc';
+    if (sortBy === columna) {
+      nuevaDireccion = sortDir === 'asc' ? 'desc' : 'asc';
+    }
+    
+    setSortBy(columna);
+    setSortDir(nuevaDireccion);
+    
+    // Trackear ordenamiento
+    trackEvent('sort_column', 'Lista_Precios', `${columna}_${nuevaDireccion}`, 1);
+  };
 
   // Hook para detectar el tamaño de pantalla
   useEffect(() => {
@@ -59,6 +143,48 @@ const Prices = () => {
 
   const categorias = ["TODOS", ...Array.from(new Set(productos.map(p => p.categoria)))];
 
+  // Hook para trackear resultados de filtrado y patrones de búsqueda
+  useEffect(() => {
+    if (productos.length > 0) {
+      const totalFiltrados = productos.filter(p => {
+        const categoriaMatch = categoria === "TODOS" || p.categoria === categoria;
+        const busquedaMatch = p.producto.toLowerCase().includes(busqueda.toLowerCase());
+        return categoriaMatch && busquedaMatch;
+      }).length;
+      
+      // Solo trackear si hay filtros activos
+      if (busqueda || categoria !== "TODOS") {
+        trackEvent('filter_results', 'Lista_Precios', `Resultados: ${totalFiltrados}`, totalFiltrados);
+        
+        // Analytics avanzado de patrones de búsqueda
+        if (busqueda.length >= 3) {
+          const busquedaLower = busqueda.toLowerCase();
+          
+          // Trackear rangos de precios buscados
+          const esBarato = /barato|económico|barata|low|menor/.test(busquedaLower);
+          const esCaro = /caro|premium|pro|max|ultra|flagship/.test(busquedaLower);
+          const esMarcas = /apple|samsung|xiaomi|motorola|lg|sony|nintendo|ps5|xbox/.test(busquedaLower);
+          
+          if (esBarato) trackEvent('search_intent', 'Lista_Precios', 'precio_bajo', 1);
+          if (esCaro) trackEvent('search_intent', 'Lista_Precios', 'precio_alto', 1);
+          if (esMarcas) trackEvent('search_intent', 'Lista_Precios', 'marca_especifica', 1);
+          
+          // Trackear si buscan productos específicos vs genéricos
+          const esEspecifico = busquedaLower.includes('pro') || busquedaLower.includes('max') || /\d/.test(busquedaLower);
+          const esGenerico = /celular(?!\w)|notebook(?!\w)|tv(?!\w)|cargador(?!\w)/.test(busquedaLower);
+          
+          if (esEspecifico) trackEvent('search_type', 'Lista_Precios', 'producto_especifico', 1);
+          if (esGenerico) trackEvent('search_type', 'Lista_Precios', 'categoria_generica', 1);
+          
+          // Trackear tiempo de búsqueda activa (si buscan mucho)
+          if (busqueda.length > 10) {
+            trackEvent('search_behavior', 'Lista_Precios', 'busqueda_detallada', busqueda.length);
+          }
+        }
+      }
+    }
+  }, [busqueda, categoria, productos]);
+
   // Función para borrar filtros
   const resetFiltros = () => {
     setBusqueda("");
@@ -66,6 +192,9 @@ const Prices = () => {
     setOrden("categoria_az");
     setSortBy('categoria');
     setSortDir('asc');
+    
+    // Trackear reset de filtros
+    trackEvent('reset_filters', 'Lista_Precios', 'Borrar_Filtros', 1);
   };
 
   let filtrados = productos.filter(p => {
@@ -108,6 +237,9 @@ const Prices = () => {
   }
 
   const handleDownload = () => {
+    // Trackear el evento de descarga
+    trackEvent('pdf_download', 'Lista_Precios', 'Descarga_PDF', 1);
+    
     // Crear un enlace temporal para descargar el PDF
     const link = document.createElement('a');
     link.href = pdfFile;
@@ -265,7 +397,18 @@ const Prices = () => {
             <input
               type="text"
               value={busqueda}
-              onChange={e => setBusqueda(e.target.value)}
+              onChange={e => handleBusqueda(e.target.value)}
+              onKeyDown={e => {
+                if (e.key === 'Enter' && busqueda.length >= 3) {
+                  // Trackear búsqueda intencional (Enter)
+                  const resultados = productos.filter(p => {
+                    const categoriaMatch = categoria === "TODOS" || p.categoria === categoria;
+                    const busquedaMatch = p.producto.toLowerCase().includes(busqueda.toLowerCase());
+                    return categoriaMatch && busquedaMatch;
+                  }).length;
+                  trackEvent('search_enter', 'Lista_Precios', busqueda.toLowerCase(), resultados);
+                }
+              }}
               placeholder="Buscar por nombre..."
               style={{ 
                 padding: '10px', 
@@ -280,7 +423,7 @@ const Prices = () => {
               <Select
                 options={categoriaOptions}
                 value={categoriaOptions.find(opt => opt.value === categoria)}
-                onChange={opt => setCategoria(opt.value)}
+                onChange={opt => handleCategoriaChange(opt.value)}
                 placeholder="Filtrar por categoría..."
                 styles={{
                   control: (base) => ({ ...base, borderRadius: 8, borderColor: '#ccc', fontSize: 16, minHeight: 44 }),
@@ -375,28 +518,19 @@ const Prices = () => {
                 <tr style={{ background: '#f4f6f8', color: '#222', borderBottom: '2px solid #e0e0e0' }}>
                   <th
                     style={{ padding: '10px', borderRadius: '8px 0 0 8px', fontWeight: '700', letterSpacing: '0.5px', textAlign: 'left', cursor: 'pointer', userSelect: 'none' }}
-                    onClick={() => {
-                      if (sortBy === 'producto') setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
-                      setSortBy('producto');
-                    }}
+                    onClick={() => handleSort('producto')}
                   >
                     Producto {sortBy === 'producto' ? (sortDir === 'asc' ? '▲' : '▼') : ''}
                   </th>
                   <th
                     style={{ padding: '10px', fontWeight: '700', letterSpacing: '0.5px', textAlign: 'left', cursor: 'pointer', userSelect: 'none' }}
-                    onClick={() => {
-                      if (sortBy === 'categoria') setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
-                      setSortBy('categoria');
-                    }}
+                    onClick={() => handleSort('categoria')}
                   >
                     Categoría {sortBy === 'categoria' ? (sortDir === 'asc' ? '▲' : '▼') : ''}
                   </th>
                   <th
                     style={{ padding: '10px', fontWeight: '700', letterSpacing: '0.5px', textAlign: 'center', cursor: 'pointer', userSelect: 'none' }}
-                    onClick={() => {
-                      if (sortBy === 'precio_usd') setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
-                      setSortBy('precio_usd');
-                    }}
+                    onClick={() => handleSort('precio_usd')}
                   >
                     Precio USD {sortBy === 'precio_usd' ? (sortDir === 'asc' ? '▲' : '▼') : ''}
                   </th>
@@ -409,7 +543,28 @@ const Prices = () => {
               </thead>
               <tbody>
                 {filtrados.length > 0 ? filtrados.map((prod, idx) => (
-                  <tr key={prod.producto + idx} style={{ background: idx % 2 === 0 ? '#f8f9fa' : '#fff' }}>
+                  <tr 
+                    key={prod.producto + idx} 
+                    style={{ 
+                      background: idx % 2 === 0 ? '#f8f9fa' : '#fff',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.2s ease'
+                    }}
+                    onClick={() => {
+                      // Trackear click en producto
+                      if (busqueda.length >= 3) {
+                        trackEvent('search_to_product_click', 'Lista_Precios', `${busqueda} -> ${prod.producto}`, prod.precio_usd);
+                      } else {
+                        trackEvent('product_click', 'Lista_Precios', prod.producto, prod.precio_usd);
+                      }
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.backgroundColor = '#e8f5e8';
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.backgroundColor = idx % 2 === 0 ? '#f8f9fa' : '#fff';
+                    }}
+                  >
                     <td style={{ 
                       padding: '10px', 
                       fontWeight: '600', 
@@ -447,7 +602,25 @@ const Prices = () => {
                   padding: '16px',
                   marginBottom: '12px',
                   border: '1px solid #e0e0e0',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onClick={() => {
+                  // Trackear click en producto móvil
+                  if (busqueda.length >= 3) {
+                    trackEvent('search_to_product_click_mobile', 'Lista_Precios', `${busqueda} -> ${prod.producto}`, prod.precio_usd);
+                  } else {
+                    trackEvent('product_click_mobile', 'Lista_Precios', prod.producto, prod.precio_usd);
+                  }
+                }}
+                onTouchStart={(e) => {
+                  e.currentTarget.style.transform = 'scale(0.98)';
+                  e.currentTarget.style.backgroundColor = '#f0f8f0';
+                }}
+                onTouchEnd={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.backgroundColor = '#fff';
                 }}
               >
                 <div style={{

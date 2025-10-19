@@ -1,8 +1,33 @@
 import { useEffect, useState } from 'react';
 
+// Función para enviar eventos a Google Analytics
+const trackEvent = (eventName, eventCategory, eventLabel = '', eventValue = '') => {
+  // Verificar si gtag está disponible (Google Analytics 4)
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', eventName, {
+      event_category: eventCategory,
+      event_label: eventLabel,
+      value: eventValue
+    });
+  }
+  
+  // Backup para Google Analytics Universal (ga)
+  if (typeof window !== 'undefined' && window.ga) {
+    window.ga('send', 'event', eventCategory, eventName, eventLabel, eventValue);
+  }
+  
+  // Log para desarrollo
+  console.log('📊 Analytics Event:', { eventName, eventCategory, eventLabel, eventValue });
+};
+
 const FloatingWhatsApp = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+
+  // Función para manejar click en WhatsApp
+  const handleWhatsAppClick = () => {
+    trackEvent('whatsapp_click', 'Contact', 'FloatingWhatsApp_Button', 1);
+  };
 
   useEffect(() => {
     // Detectar si es móvil
@@ -87,6 +112,7 @@ const FloatingWhatsApp = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="floating-whatsapp"
+        onClick={handleWhatsAppClick}
         style={{
           display: 'flex',
           alignItems: 'center',

@@ -1,6 +1,26 @@
 import React from 'react';
 import { COLORS } from '../utils/colors';
 
+// Función para enviar eventos a Google Analytics
+const trackEvent = (eventName, eventCategory, eventLabel = '', eventValue = '') => {
+  // Verificar si gtag está disponible (Google Analytics 4)
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', eventName, {
+      event_category: eventCategory,
+      event_label: eventLabel,
+      value: eventValue
+    });
+  }
+  
+  // Backup para Google Analytics Universal (ga)
+  if (typeof window !== 'undefined' && window.ga) {
+    window.ga('send', 'event', eventCategory, eventName, eventLabel, eventValue);
+  }
+  
+  // Log para desarrollo
+  console.log('📊 Analytics Event:', { eventName, eventCategory, eventLabel, eventValue });
+};
+
 const About = () => {
   return (
     <div style={{
@@ -255,6 +275,7 @@ const About = () => {
             href="https://wa.me/+5492954227622?text=Hola,%20estoy%20interesado%20en%20conocer%20más%20sobre%20RAM%20Informática"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('whatsapp_click', 'Contact', 'About_WhatsApp', 1)}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
