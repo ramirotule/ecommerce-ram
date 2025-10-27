@@ -1,1023 +1,1092 @@
 {
   "metadatos": {
-    "fecha_actualizacion": "2025-10-18T09:54:56.213303",
-    "total_productos": 169,
-    "version": "1.0"
+    "fecha_extraccion": "27/10/2025 14:03",
+    "proveedor": "GcGroup",
+    "total_productos": 175,
+    "formula_precio": "(costo + 18%) + $20, redondeado a múltiplo de 5"
   },
-  "productos": [
-    {
-      "producto": "IPHONE 13 128 GB SIM",
-      "precio_usd": 590,
-      "categoria": "CELULARES",
-      "imagen": "iphone_13_128_gb_sim.png"
-    },
-    {
-      "producto": "IPHONE 14 128 GB SIM/ESIM",
-      "precio_usd": 655,
-      "categoria": "CELULARES",
-      "imagen": "iphone_14_128_gb_simesim.png"
-    },
-    {
-      "producto": "IPHONE 15 128 GB SIM/ESIM",
-      "precio_usd": 730,
-      "categoria": "CELULARES",
-      "imagen": "iphone_15_128_gb_simesim.png"
-    },
-    {
-      "producto": "IPHONE 16 128 GB ESIM",
-      "precio_usd": 850,
-      "categoria": "CELULARES",
-      "imagen": "iphone_16_128_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 16 256 GB ESIM",
-      "precio_usd": 1025,
-      "categoria": "CELULARES",
-      "imagen": "iphone_16_256_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 16 PLUS 128 GB ESIM",
-      "precio_usd": 1030,
-      "categoria": "CELULARES",
-      "imagen": "iphone_16_plus_128_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 16 PLUS 256 GB ESIM",
-      "precio_usd": 1145,
-      "categoria": "CELULARES",
-      "imagen": "iphone_16_plus_256_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 16 PRO 128 GB ESIM",
-      "precio_usd": 1275,
-      "categoria": "CELULARES",
-      "imagen": "iphone_16_pro_128_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 16 PRO MAX 256 GB ESIM",
-      "precio_usd": 1440,
-      "categoria": "CELULARES",
-      "imagen": "iphone_16_pro_max_256_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 17 256 GB ESIM",
-      "precio_usd": 1175,
-      "categoria": "CELULARES",
-      "imagen": "iphone_17_256_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE AIR 256 GB ESIM",
-      "precio_usd": 1125,
-      "categoria": "CELULARES",
-      "imagen": "iphone_air_256_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 17 PRO 256 GB ESIM",
-      "precio_usd": 1570,
-      "categoria": "CELULARES",
-      "imagen": "iphone_17_pro_256_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 17 PRO 512 GB ESIM",
-      "precio_usd": 1810,
-      "categoria": "CELULARES",
-      "imagen": "iphone_17_pro_512_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 17 PRO MAX 256 GB ESIM",
-      "precio_usd": 1795,
-      "categoria": "CELULARES",
-      "imagen": "iphone_17_pro_max_256_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 17 PRO MAX 512 GB ESIM",
-      "precio_usd": 2020,
-      "categoria": "CELULARES",
-      "imagen": "iphone_17_pro_max_512_gb_esim.png"
-    },
-    {
-      "producto": "IPHONE 11 128 GB BAT 100%",
-      "precio_usd": 325,
-      "categoria": "CELULARES",
-      "imagen": "iphone_11_128_gb_bat_100.png"
-    },
-    {
-      "producto": "IPHONE 12 PRO 128 GB BAT 85%",
-      "precio_usd": 390,
-      "categoria": "CELULARES",
-      "imagen": "iphone_12_pro_128_gb_bat_85.png"
-    },
-    {
-      "producto": "IPHONE 12 PRO 256 GB BAT 80%",
-      "precio_usd": 425,
-      "categoria": "CELULARES",
-      "imagen": "iphone_12_pro_256_gb_bat_80.png"
-    },
-    {
-      "producto": "IPHONE 12 PRO MAX 256 GB BAT 78%",
-      "precio_usd": 600,
-      "categoria": "CELULARES",
-      "imagen": "iphone_12_pro_max_256_gb_bat_78.png"
-    },
-    {
-      "producto": "IPHONE 14 128 GB BAT 100% - 94% - 91% - 88% - 87%",
-      "precio_usd": 510,
-      "categoria": "CELULARES",
-      "imagen": "iphone_14_128_gb_bat_100_94_91_88_87.png"
-    },
-    {
-      "producto": "IPHONE 14 PRO MAX 128 GB BAT 87%",
-      "precio_usd": 780,
-      "categoria": "CELULARES",
-      "imagen": "iphone_14_pro_max_128_gb_bat_87.png"
-    },
-    {
-      "producto": "IPHONE 14 PRO MAX 256 GB BAT 86%",
-      "precio_usd": 815,
-      "categoria": "CELULARES",
-      "imagen": "iphone_14_pro_max_256_gb_bat_86.png"
-    },
-    {
-      "producto": "IPHONE 16 PRO MAX 256 GB BAT 100%",
-      "precio_usd": 1245,
-      "categoria": "CELULARES",
-      "imagen": "iphone_16_pro_max_256_gb_bat_100.png"
-    },
-    {
-      "producto": "IPHONE 15 128 GB BLACK AS IS",
-      "precio_usd": 655,
-      "categoria": "CELULARES",
-      "imagen": "iphone_15_128_gb_black_as_is.png"
-    },
-    {
-      "producto": "IPHONE 16 128 GB BLACK/WHITE AS IS",
-      "precio_usd": 780,
-      "categoria": "CELULARES",
-      "imagen": "iphone_16_128_gb_blackwhite_as_is.png"
-    },
-    {
-      "producto": "IPHONE 16 256 GB ULTRA/PINK AS IS",
-      "precio_usd": 895,
-      "categoria": "CELULARES",
-      "imagen": "iphone_16_256_gb_ultrapink_as_is.png"
-    },
-    {
-      "producto": "SAMSUNG A06 4/64 GB",
-      "precio_usd": 145,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a06_464_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A06 4/128 GB",
-      "precio_usd": 150,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a06_4128_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A07 4/64 GB",
-      "precio_usd": 160,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a07_464_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A07 8/256 GB",
-      "precio_usd": 210,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a07_8256_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A16 4/128 GB",
-      "precio_usd": 180,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a16_4128_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A16 8/256 GB",
-      "precio_usd": 230,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a16_8256_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A17 4/128 GB",
-      "precio_usd": 245,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a17_4128_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A17 8/256 GB",
-      "precio_usd": 285,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a17_8256_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A17 5G 6/128 GB",
-      "precio_usd": 280,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a17_5g_6128_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A17 5G 8/256 GB",
-      "precio_usd": 295,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a17_5g_8256_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A26 5G 6/128 GB",
-      "precio_usd": 275,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a26_5g_6128_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A36 5G 8/128 GB",
-      "precio_usd": 325,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a36_5g_8128_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A56 5G 8/128 GB",
-      "precio_usd": 415,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a56_5g_8128_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A56 5G 8/256 GB",
-      "precio_usd": 455,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a56_5g_8256_gb.png"
-    },
-    {
-      "producto": "SAMSUNG A56 5G 12/256 GB",
-      "precio_usd": 460,
-      "categoria": "CELULARES",
-      "imagen": "samsung_a56_5g_12256_gb.png"
-    },
-    {
-      "producto": "SAMSUNG S24 8/128 GB",
-      "precio_usd": 645,
-      "categoria": "CELULARES",
-      "imagen": "samsung_s24_8128_gb.png"
-    },
-    {
-      "producto": "SAMSUNG S24 FE 8/256 GB",
-      "precio_usd": 600,
-      "categoria": "CELULARES",
-      "imagen": "samsung_s24_fe_8256_gb.png"
-    },
-    {
-      "producto": "SAMSUNG S25 12/256 GB",
-      "precio_usd": 840,
-      "categoria": "CELULARES",
-      "imagen": "samsung_s25_12256_gb.png"
-    },
-    {
-      "producto": "SAMSUNG S25 PLUS 12/256 GB",
-      "precio_usd": 980,
-      "categoria": "CELULARES",
-      "imagen": "samsung_s25_plus_12256_gb.png"
-    },
-    {
-      "producto": "SAMSUNG S25 PLUS 12/512 GB",
-      "precio_usd": 1040,
-      "categoria": "CELULARES",
-      "imagen": "samsung_s25_plus_12512_gb.png"
-    },
-    {
-      "producto": "SAMSUNG S25 ULTRA 12/256 GB",
-      "precio_usd": 1115,
-      "categoria": "CELULARES",
-      "imagen": "samsung_s25_ultra_12256_gb.png"
-    },
-    {
-      "producto": "SAMSUNG S25 ULTRA 12/512 GB",
-      "precio_usd": 1220,
-      "categoria": "CELULARES",
-      "imagen": "samsung_s25_ultra_12512_gb.png"
-    },
-    {
-      "producto": "SAMSUNG S25 ULTRA 12/1 TB",
-      "precio_usd": 1350,
-      "categoria": "CELULARES",
-      "imagen": "samsung_s25_ultra_121_tb.png"
-    },
-    {
-      "producto": "SAMSUNG Z FLIP 7 12/512 GB",
-      "precio_usd": 1160,
-      "categoria": "CELULARES",
-      "imagen": "samsung_z_flip_7_12512_gb.png"
-    },
-    {
-      "producto": "MOTOROLA E15 2/64 GB",
-      "precio_usd": 120,
-      "categoria": "CELULARES",
-      "imagen": "motorola_e15_264_gb.png"
-    },
-    {
-      "producto": "MOTOROLA G14 4/128 GB",
-      "precio_usd": 155,
-      "categoria": "CELULARES",
-      "imagen": "motorola_g14_4128_gb.png"
-    },
-    {
-      "producto": "MOTOROLA G15 8/512 GB",
-      "precio_usd": 220,
-      "categoria": "CELULARES",
-      "imagen": "motorola_g15_8512_gb.png"
-    },
-    {
-      "producto": "MOTOROLA G35 5G 4/256 GB",
-      "precio_usd": 190,
-      "categoria": "CELULARES",
-      "imagen": "motorola_g35_5g_4256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA G54 POWER 5G 12/256 GB",
-      "precio_usd": 230,
-      "categoria": "CELULARES",
-      "imagen": "motorola_g54_power_5g_12256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA G55 5G 8/256 GB",
-      "precio_usd": 230,
-      "categoria": "CELULARES",
-      "imagen": "motorola_g55_5g_8256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA G75 5G 8/256 GB",
-      "precio_usd": 260,
-      "categoria": "CELULARES",
-      "imagen": "motorola_g75_5g_8256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA G84 5G 8/256 GB",
-      "precio_usd": 230,
-      "categoria": "CELULARES",
-      "imagen": "motorola_g84_5g_8256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA G85 5G 8/256 GB",
-      "precio_usd": 270,
-      "categoria": "CELULARES",
-      "imagen": "motorola_g85_5g_8256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA G86 5G 8/256 GB",
-      "precio_usd": 325,
-      "categoria": "CELULARES",
-      "imagen": "motorola_g86_5g_8256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA DEFY 4/64 GB",
-      "precio_usd": 190,
-      "categoria": "CELULARES",
-      "imagen": "motorola_defy_464_gb.png"
-    },
-    {
-      "producto": "MOTOROLA THINKPHONE 5G 8/256 GB",
-      "precio_usd": 370,
-      "categoria": "CELULARES",
-      "imagen": "motorola_thinkphone_5g_8256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA EDGE 40 NEO 12/256 GB",
-      "precio_usd": 295,
-      "categoria": "CELULARES",
-      "imagen": "motorola_edge_40_neo_12256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA EDGE 50 5G 12/512 GB",
-      "precio_usd": 385,
-      "categoria": "CELULARES",
-      "imagen": "motorola_edge_50_5g_12512_gb.png"
-    },
-    {
-      "producto": "MOTOROLA EDGE 50 FUSION 5G 8/256 GB",
-      "precio_usd": 295,
-      "categoria": "CELULARES",
-      "imagen": "motorola_edge_50_fusion_5g_8256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
-      "precio_usd": 340,
-      "categoria": "CELULARES",
-      "imagen": "motorola_edge_50_fusion_5g_12512_gb.png"
-    },
-    {
-      "producto": "MOTOROLA EDGE 50 NEO 5G 8/256 GB",
-      "precio_usd": 315,
-      "categoria": "CELULARES",
-      "imagen": "motorola_edge_50_neo_5g_8256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA EDGE 50 NEO 5G 12/512 GB",
-      "precio_usd": 360,
-      "categoria": "CELULARES",
-      "imagen": "motorola_edge_50_neo_5g_12512_gb.png"
-    },
-    {
-      "producto": "MOTOROLA EDGE 50 ULTRA 5G 16/1 TB",
-      "precio_usd": 770,
-      "categoria": "CELULARES",
-      "imagen": "motorola_edge_50_ultra_5g_161_tb.png"
-    },
-    {
-      "producto": "MOTOROLA EDGE 60 FUSION 5G 8/256 GB",
-      "precio_usd": 355,
-      "categoria": "CELULARES",
-      "imagen": "motorola_edge_60_fusion_5g_8256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA EDGE 60 FUSION 5G 12/256 GB",
-      "precio_usd": 320,
-      "categoria": "CELULARES",
-      "imagen": "motorola_edge_60_fusion_5g_12256_gb.png"
-    },
-    {
-      "producto": "MOTOROLA RAZR 50 ULTRA 5G 12/512 GB",
-      "precio_usd": 865,
-      "categoria": "CELULARES",
-      "imagen": "motorola_razr_50_ultra_5g_12512_gb.png"
-    },
-    {
-      "producto": "INFINIX HOT 60i 8/256 GB",
-      "precio_usd": 180,
-      "categoria": "OTROS",
-      "imagen": "infinix_hot_60i_8256_gb.png"
-    },
-    {
-      "producto": "INFINIX HOT 60 PRO 8/256 GB",
-      "precio_usd": 230,
-      "categoria": "OTROS",
-      "imagen": "infinix_hot_60_pro_8256_gb.png"
-    },
-    {
-      "producto": "INFINIX HOT 60 PRO+ 8/256 GB",
-      "precio_usd": 270,
-      "categoria": "OTROS",
-      "imagen": "infinix_hot_60_pro_8256_gb.png"
-    },
-    {
-      "producto": "INFINIX NOTE 50 PRO NFC 8/256 GB",
-      "precio_usd": 315,
-      "categoria": "OTROS",
-      "imagen": "infinix_note_50_pro_nfc_8256_gb.png"
-    },
-    {
-      "producto": "INFINIX GT 30 PRO 5G 12/256 GB",
-      "precio_usd": 420,
-      "categoria": "OTROS",
-      "imagen": "infinix_gt_30_pro_5g_12256_gb.png"
-    },
-    {
-      "producto": "INFINIX GT 30 PRO 5G 12/256 GB",
-      "precio_usd": 435,
-      "categoria": "OTROS",
-      "imagen": "infinix_gt_30_pro_5g_12256_gb.png"
-    },
-    {
-      "producto": "ITEL A90 4/256 GB",
-      "precio_usd": 145,
-      "categoria": "OTROS",
-      "imagen": "itel_a90_4256_gb.png"
-    },
-    {
-      "producto": "XIAOMI REDMI A5 3/64 GB",
-      "precio_usd": 125,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_redmi_a5_364_gb.png"
-    },
-    {
-      "producto": "XIAOMI REDMI A5 4/128 GB",
-      "precio_usd": 140,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_redmi_a5_4128_gb.png"
-    },
-    {
-      "producto": "XIAOMI REDMI 13C 8/256 GB",
-      "precio_usd": 175,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_redmi_13c_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI REDMI 13X 8/256 GB",
-      "precio_usd": 180,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_redmi_13x_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI REDMI 14C 6/128 GB",
-      "precio_usd": 160,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_redmi_14c_6128_gb.png"
-    },
-    {
-      "producto": "XIAOMI REDMI 15 6/128 GB",
-      "precio_usd": 195,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_redmi_15_6128_gb.png"
-    },
-    {
-      "producto": "XIAOMI REDMI 15 8/256 GB",
-      "precio_usd": 210,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_redmi_15_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI REDMI 15C 4/128 GB",
-      "precio_usd": 170,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_redmi_15c_4128_gb.png"
-    },
-    {
-      "producto": "XIAOMI REDMI 15C 8/256 GB",
-      "precio_usd": 185,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_redmi_15c_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 13 PRO 5G 8/256 GB",
-      "precio_usd": 305,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_13_pro_5g_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 13 PRO + 5G 8/256 GB",
-      "precio_usd": 310,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_13_pro_5g_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 13 PRO + 5G 12/512 GB",
-      "precio_usd": 405,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_13_pro_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 14 6/128 GB",
-      "precio_usd": 210,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_14_6128_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 14 8/256 GB",
-      "precio_usd": 230,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_14_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 14s 8/256 GB",
-      "precio_usd": 260,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_14s_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 14s 12/512 GB",
-      "precio_usd": 310,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_14s_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 14 5G 8/256 GB",
-      "precio_usd": 285,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_14_5g_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 14 PRO 8/256 GB",
-      "precio_usd": 285,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_14_pro_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 14 PRO 12/512 GB",
-      "precio_usd": 345,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_14_pro_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 14 PRO 5G 12/512 GB",
-      "precio_usd": 415,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_14_pro_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 14 PRO + 5G 8/256 GB",
-      "precio_usd": 405,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_14_pro_5g_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI NOTE 14 PRO + 5G 12/512 GB",
-      "precio_usd": 475,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_note_14_pro_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO C71 3/64 GB",
-      "precio_usd": 125,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_c71_364_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO C71 4/128 GB",
-      "precio_usd": 140,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_c71_4128_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO C75 8/256 GB",
-      "precio_usd": 185,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_c75_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO C85 6/128 GB",
-      "precio_usd": 170,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_c85_6128_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO M5s 4/128 GB",
-      "precio_usd": 175,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_m5s_4128_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO M5s 8/256 GB",
-      "precio_usd": 185,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_m5s_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO M6 8/256 GB",
-      "precio_usd": 195,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_m6_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO M7 8/256 GB",
-      "precio_usd": 210,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_m7_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO M7 PRO 5G 12/512 GB",
-      "precio_usd": 310,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_m7_pro_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO X7 5G 12/512 GB",
-      "precio_usd": 355,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_x7_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO X7 PRO 5G 8/256 GB",
-      "precio_usd": 380,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_x7_pro_5g_8256_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO X7 PRO 5G 12/512 GB",
-      "precio_usd": 440,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_x7_pro_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO F6 PRO 5G 12/512 GB",
-      "precio_usd": 445,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_f6_pro_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO F7 5G 12/512 GB",
-      "precio_usd": 520,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_f7_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI POCO F7 PRO 5G 12/512 GB",
-      "precio_usd": 630,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_poco_f7_pro_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI 14 5G 12/512 GB",
-      "precio_usd": 770,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_14_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI 14T 5G 12/512 GB",
-      "precio_usd": 580,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_14t_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI 14T PRO 5G 12/512 GB",
-      "precio_usd": 685,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_14t_pro_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI 15T 5G 12/512 GB",
-      "precio_usd": 735,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_15t_5g_12512_gb.png"
-    },
-    {
-      "producto": "XIAOMI 15T PRO 5G 12/512 GB",
-      "precio_usd": 935,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_15t_pro_5g_12512_gb.png"
-    },
-    {
-      "producto": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED",
-      "precio_usd": 65,
-      "categoria": "OTROS",
-      "imagen": "jbl_go_4_bluetooth_42_watts_blackbluered.png"
-    },
-    {
-      "producto": "JBL CHARGE 6 45 WATTS BLACK/RED",
-      "precio_usd": 190,
-      "categoria": "OTROS",
-      "imagen": "jbl_charge_6_45_watts_blackred.png"
-    },
-    {
-      "producto": "JBL FLIP 7 35 WATTS BLACK/BLUE/PINK/CAMUFLADO",
-      "precio_usd": 150,
-      "categoria": "OTROS",
-      "imagen": "jbl_flip_7_35_watts_blackbluepinkcamuflado.png"
-    },
-    {
-      "producto": "JBL BOOMBOX 3 180 WATTS 2V BLACK/CAMUFLADO",
-      "precio_usd": 490,
-      "categoria": "OTROS",
-      "imagen": "jbl_boombox_3_180_watts_2v_blackcamuflado.png"
-    },
-    {
-      "producto": "JBL PARTYBOX ENCORE ESSENTIAL 2 USB-C 100 WATTS 2VPR",
-      "precio_usd": 360,
-      "categoria": "OTROS",
-      "imagen": "jbl_partybox_encore_essential_2_usbc_100_watts_2vpr.png"
-    },
-    {
-      "producto": "JBL BARRA DE SONIDO CINEMA SB180 2.1 SOUNDBAR USB 229 WATTS 2V",
-      "precio_usd": 240,
-      "categoria": "OTROS",
-      "imagen": "jbl_barra_de_sonido_cinema_sb180_21_soundbar_usb_229_watts_2v.png"
-    },
-    {
-      "producto": "XIAOMI SMART BAND 9 PRO NEGRO",
-      "precio_usd": 105,
-      "categoria": "CELULARES",
-      "imagen": "xiaomi_smart_band_9_pro_negro.png"
-    },
-    {
-      "producto": "CARGADOR APPLE 20W USB-C ORIGINAL",
-      "precio_usd": 50,
-      "categoria": "CARGADORES",
-      "imagen": "cargador_apple_20w_usbc_original.png"
-    },
-    {
-      "producto": "WATCH 11 42MM",
-      "precio_usd": 640,
-      "categoria": "OTROS",
-      "imagen": "watch_11_42mm.png"
-    },
-    {
-      "producto": "WATCH 11 46MM",
-      "precio_usd": 675,
-      "categoria": "OTROS",
-      "imagen": "watch_11_46mm.png"
-    },
-    {
-      "producto": "WATCH 11 + CELL 42MM",
-      "precio_usd": 815,
-      "categoria": "OTROS",
-      "imagen": "watch_11_cell_42mm.png"
-    },
-    {
-      "producto": "WATCH 11 + CELL 46MM",
-      "precio_usd": 850,
-      "categoria": "OTROS",
-      "imagen": "watch_11_cell_46mm.png"
-    },
-    {
-      "producto": "WATCH 10 ULTRA 2",
-      "precio_usd": 940,
-      "categoria": "OTROS",
-      "imagen": "watch_10_ultra_2.png"
-    },
-    {
-      "producto": "IPAD 11 A16 10.2 128 GB",
-      "precio_usd": 540,
-      "categoria": "OTROS",
-      "imagen": "ipad_11_a16_102_128_gb.png"
-    },
-    {
-      "producto": "IPAD 11 A16 10.2 256 GB",
-      "precio_usd": 655,
-      "categoria": "OTROS",
-      "imagen": "ipad_11_a16_102_256_gb.png"
-    },
-    {
-      "producto": "IPAD MINI 7 128 GB",
-      "precio_usd": 655,
-      "categoria": "OTROS",
-      "imagen": "ipad_mini_7_128_gb.png"
-    },
-    {
-      "producto": "IPAD AIR 11” M3 128 GB",
-      "precio_usd": 765,
-      "categoria": "OTROS",
-      "imagen": "ipad_air_11_m3_128_gb.png"
-    },
-    {
-      "producto": "IPAD AIR 11” M3 256 GB",
-      "precio_usd": 880,
-      "categoria": "OTROS",
-      "imagen": "ipad_air_11_m3_256_gb.png"
-    },
-    {
-      "producto": "IPAD PRO 11 M4 256 GB",
-      "precio_usd": 1210,
-      "categoria": "OTROS",
-      "imagen": "ipad_pro_11_m4_256_gb.png"
-    },
-    {
-      "producto": "MAC MINI M4 16/256 GB",
-      "precio_usd": 845,
-      "categoria": "OTROS",
-      "imagen": "mac_mini_m4_16256_gb.png"
-    },
-    {
-      "producto": "MAC MINI M4 16/512 GB",
-      "precio_usd": 1130,
-      "categoria": "OTROS",
-      "imagen": "mac_mini_m4_16512_gb.png"
-    },
-    {
-      "producto": "MACBOOK AIR M4 13” 16/256 GB",
-      "precio_usd": 1165,
-      "categoria": "MACBOOKS",
-      "imagen": "macbook_air_m4_13_16256_gb.png"
-    },
-    {
-      "producto": "MACBOOK AIR M4 13” 16/512 GB",
-      "precio_usd": 1530,
-      "categoria": "MACBOOKS",
-      "imagen": "macbook_air_m4_13_16512_gb.png"
-    },
-    {
-      "producto": "MACBOOK PRO M4 14” 16/512 GB",
-      "precio_usd": 1955,
-      "categoria": "MACBOOKS",
-      "imagen": "macbook_pro_m4_14_16512_gb.png"
-    },
-    {
-      "producto": "MACBOOK PRO M4 14” 16/1 TB",
-      "precio_usd": 2260,
-      "categoria": "MACBOOKS",
-      "imagen": "macbook_pro_m4_14_161_tb.png"
-    },
-    {
-      "producto": "MACBOOK PRO M4 PRO 14” 24/512 GB",
-      "precio_usd": 2535,
-      "categoria": "MACBOOKS",
-      "imagen": "macbook_pro_m4_pro_14_24512_gb.png"
-    },
-    {
-      "producto": "MACBOOK PRO M4 PRO 14” 24/1 TB",
-      "precio_usd": 3005,
-      "categoria": "MACBOOKS",
-      "imagen": "macbook_pro_m4_pro_14_241_tb.png"
-    },
-    {
-      "producto": "JOYSTICK PS5 MIDNIGHT/ WHITE/ GRAY CAMO/ VOLCANIC RED/ GALACTIC PURPLE/ STAR BLUE",
-      "precio_usd": 120,
-      "categoria": "VIDEO JUEGOS",
-      "imagen": "joystick_ps5_midnight_white_gray_camo_volcanic_red_galactic_purple_star_blue.png"
-    },
-    {
-      "producto": "JOYSTICK PS5 CHROMA ÍNDIGO/CHROMA TEAL/COBALT BLUE/ CHROMA PEARL",
-      "precio_usd": 125,
-      "categoria": "VIDEO JUEGOS",
-      "imagen": "joystick_ps5_chroma_índigochroma_tealcobalt_blue_chroma_pearl.png"
-    },
-    {
-      "producto": "SONY VR2 HORIZON BUNDLE",
-      "precio_usd": 685,
-      "categoria": "OTROS",
-      "imagen": "sony_vr2_horizon_bundle.png"
-    },
-    {
-      "producto": "PS5 SLIM 1 TB DIGITAL",
-      "precio_usd": 635,
-      "categoria": "VIDEO JUEGOS",
-      "imagen": "ps5_slim_1_tb_digital.png"
-    },
-    {
-      "producto": "PS5 SLIM 1 TB DIGITAL CALL OF DUTY",
-      "precio_usd": 670,
-      "categoria": "VIDEO JUEGOS",
-      "imagen": "ps5_slim_1_tb_digital_call_of_duty.png"
-    },
-    {
-      "producto": "PS5 SLIM 1 TB DIGITAL FORNITE",
-      "precio_usd": 670,
-      "categoria": "VIDEO JUEGOS",
-      "imagen": "ps5_slim_1_tb_digital_fornite.png"
-    },
-    {
-      "producto": "PS5 SLIM 1 TB C/LECTORA",
-      "precio_usd": 705,
-      "categoria": "VIDEO JUEGOS",
-      "imagen": "ps5_slim_1_tb_clectora.png"
-    },
-    {
-      "producto": "PS5 SLIM 1 TB C/LECTORA CALL OF DUTY 6",
-      "precio_usd": 785,
-      "categoria": "VIDEO JUEGOS",
-      "imagen": "ps5_slim_1_tb_clectora_call_of_duty_6.png"
-    },
-    {
-      "producto": "PS5 PRO 2 TB",
-      "precio_usd": 1075,
-      "categoria": "VIDEO JUEGOS",
-      "imagen": "ps5_pro_2_tb.png"
-    },
-    {
-      "producto": "XBOX S 512 GB",
-      "precio_usd": 525,
-      "categoria": "VIDEO JUEGOS",
-      "imagen": "xbox_s_512_gb.png"
-    },
-    {
-      "producto": "85” Smart TV Samsung 4K QLED Q70D",
-      "precio_usd": 2500,
-      "categoria": "CELULARES",
-      "imagen": "85_smart_tv_samsung_4k_qled_q70d.png"
-    },
-    {
-      "producto": "75” Smart TV UHD 4K Samsung UN75DU7000GCZB",
-      "precio_usd": 1320,
-      "categoria": "CELULARES",
-      "imagen": "75_smart_tv_uhd_4k_samsung_un75du7000gczb.png"
-    },
-    {
-      "producto": "70” Smart TV LED Samsung UN70CU7000GCFV",
-      "precio_usd": 1190,
-      "categoria": "CELULARES",
-      "imagen": "70_smart_tv_led_samsung_un70cu7000gcfv.png"
-    },
-    {
-      "producto": "65” Smart TV QLED 4K Samsung QN65Q65DAGCZB",
-      "precio_usd": 1070,
-      "categoria": "CELULARES",
-      "imagen": "65_smart_tv_qled_4k_samsung_qn65q65dagczb.png"
-    },
-    {
-      "producto": "65” Smart TV LED 4K Samsung DU7000",
-      "precio_usd": 860,
-      "categoria": "CELULARES",
-      "imagen": "65_smart_tv_led_4k_samsung_du7000.png"
-    },
-    {
-      "producto": "55” Smart TV Samsung 4K QLED Q65D",
-      "precio_usd": 680,
-      "categoria": "CELULARES",
-      "imagen": "55_smart_tv_samsung_4k_qled_q65d.png"
-    },
-    {
-      "producto": "55” Smart TV UHD 4K Samsung UN55DU7000GCZB",
-      "precio_usd": 555,
-      "categoria": "CELULARES",
-      "imagen": "55_smart_tv_uhd_4k_samsung_un55du7000gczb.png"
-    },
-    {
-      "producto": "55” Tv Led Philips UHD 55PUD7309/77",
-      "precio_usd": 515,
-      "categoria": "TELEVISORES",
-      "imagen": "55_tv_led_philips_uhd_55pud730977.png"
-    },
-    {
-      "producto": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
-      "precio_usd": 475,
-      "categoria": "CELULARES",
-      "imagen": "50_smart_tv_uhd_4k_samsung_un50du7000gczb.png"
-    },
-    {
-      "producto": "43” Smart TV UHD 4K Samsung  UN43DU7000GCZB",
-      "precio_usd": 350,
-      "categoria": "CELULARES",
-      "imagen": "43_smart_tv_uhd_4k_samsung_un43du7000gczb.png"
-    },
-    {
-      "producto": "32” Smart TV HD Samsung UN32T4300A",
-      "precio_usd": 230,
-      "categoria": "CELULARES",
-      "imagen": "32_smart_tv_hd_samsung_un32t4300a.png"
-    }
-  ]
+  "productos": {
+    "IPHONE NEW - GTIA OFICIAL 12 MESES": [
+      {
+        "nombre": "IPHONE 13 128 GB SIM",
+        "precio": 585,
+        "precio_costo": 475.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 14 128 GB SIM/ESIM",
+        "precio": 655,
+        "precio_costo": 535.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 15 128 GB SIM/ESIM",
+        "precio": 700,
+        "precio_costo": 575.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 15 256 GB SIM/ESIM",
+        "precio": 860,
+        "precio_costo": 710.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 16 128 GB ESIM",
+        "precio": 825,
+        "precio_costo": 680.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 16 256 GB ESIM",
+        "precio": 1015,
+        "precio_costo": 840.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 16 PLUS 128 GB ESIM",
+        "precio": 905,
+        "precio_costo": 750.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 16 PLUS 256 GB ESIM",
+        "precio": 1150,
+        "precio_costo": 955.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 17 256 GB ESIM",
+        "precio": 1165,
+        "precio_costo": 970.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE AIR 256 GB ESIM",
+        "precio": 1075,
+        "precio_costo": 890.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 17 PRO 256 GB ESIM BLUE/ORANG",
+        "precio": 1480,
+        "precio_costo": 1235.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 17 PRO 256 GB ESIM SILVER",
+        "precio": 1515,
+        "precio_costo": 1265.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 17 PRO 512 GB ESIM BLUE/ORANG",
+        "precio": 1740,
+        "precio_costo": 1455.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 17 PRO 512 GB ESIM SILVER",
+        "precio": 1765,
+        "precio_costo": 1475.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 17 PRO MAX 256 GB ESIM",
+        "precio": 1625,
+        "precio_costo": 1360.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 17 PRO MAX 512 GB ESIM ORANGE",
+        "precio": 1945,
+        "precio_costo": 1630.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      },
+      {
+        "nombre": "IPHONE 17 PRO MAX 512 GB ESIM SILVER",
+        "precio": 2025,
+        "precio_costo": 1695.0,
+        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+      }
+    ],
+    "IPHONE TESTER - GTIA 1 MES": [
+      {
+        "nombre": "IPHONE 11 128 GB BAT 100%",
+        "precio": 330,
+        "precio_costo": 260.0,
+        "categoria": "IPHONE TESTER - GTIA 1 MES"
+      },
+      {
+        "nombre": "IPHONE 11 PRO 64 GB BAT 100%",
+        "precio": 445,
+        "precio_costo": 360.0,
+        "categoria": "IPHONE TESTER - GTIA 1 MES"
+      },
+      {
+        "nombre": "IPHONE 12 64 GB BAT 80%",
+        "precio": 265,
+        "precio_costo": 205.0,
+        "categoria": "IPHONE TESTER - GTIA 1 MES"
+      },
+      {
+        "nombre": "IPHONE 12 PRO 256 GB BAT 80%",
+        "precio": 430,
+        "precio_costo": 345.0,
+        "categoria": "IPHONE TESTER - GTIA 1 MES"
+      },
+      {
+        "nombre": "IPHONE 12 PRO MAX 256 GB BAT 78%",
+        "precio": 600,
+        "precio_costo": 490.0,
+        "categoria": "IPHONE TESTER - GTIA 1 MES"
+      },
+      {
+        "nombre": "IPHONE 14 PRO MAX 128 GB BAT 87%",
+        "precio": 785,
+        "precio_costo": 645.0,
+        "categoria": "IPHONE TESTER - GTIA 1 MES"
+      },
+      {
+        "nombre": "IPHONE 14 PRO MAX 256 GB BAT 86%",
+        "precio": 820,
+        "precio_costo": 675.0,
+        "categoria": "IPHONE TESTER - GTIA 1 MES"
+      },
+      {
+        "nombre": "IPHONE 16 PRO MAX 256 GB BAT 100%",
+        "precio": 1250,
+        "precio_costo": 1040.0,
+        "categoria": "IPHONE TESTER - GTIA 1 MES"
+      }
+    ],
+    "IPHONE AS IS - GTIA 1 MES": [
+      {
+        "nombre": "IPHONE 15 128 GB BLACK AS IS",
+        "precio": 650,
+        "precio_costo": 530.0,
+        "categoria": "IPHONE AS IS - GTIA 1 MES"
+      },
+      {
+        "nombre": "IPHONE 16 128 GB BLACK/WHITE AS IS",
+        "precio": 785,
+        "precio_costo": 645.0,
+        "categoria": "IPHONE AS IS - GTIA 1 MES"
+      },
+      {
+        "nombre": "IPHONE 16 256 GB ULTRA/PINK AS IS",
+        "precio": 890,
+        "precio_costo": 735.0,
+        "categoria": "IPHONE AS IS - GTIA 1 MES"
+      }
+    ],
+    "SAMSUNG - GTIA 3 MESES": [
+      {
+        "nombre": "SAMSUNG A06 4/64 GB",
+        "precio": 145,
+        "precio_costo": 105.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A06 4/128 GB",
+        "precio": 150,
+        "precio_costo": 110.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A07 4/64 GB",
+        "precio": 165,
+        "precio_costo": 120.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A07 4/128 GB",
+        "precio": 175,
+        "precio_costo": 130.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A16 4/128 GB",
+        "precio": 180,
+        "precio_costo": 135.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A17 4/128 GB",
+        "precio": 245,
+        "precio_costo": 190.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A17 8/256 GB",
+        "precio": 290,
+        "precio_costo": 225.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A17 5G 8/256 GB",
+        "precio": 300,
+        "precio_costo": 235.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A26 5G 6/128 GB",
+        "precio": 275,
+        "precio_costo": 215.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A26 5G 8/256 GB",
+        "precio": 295,
+        "precio_costo": 230.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A36 5G 6/128 GB",
+        "precio": 345,
+        "precio_costo": 275.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A36 5G 8/256 GB",
+        "precio": 370,
+        "precio_costo": 295.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A56 5G 8/128 GB",
+        "precio": 420,
+        "precio_costo": 335.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A56 5G 8/256 GB",
+        "precio": 460,
+        "precio_costo": 370.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG A56 5G 12/256 GB",
+        "precio": 465,
+        "precio_costo": 375.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG S24 8/128 GB",
+        "precio": 650,
+        "precio_costo": 530.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG S24 FE 8/256 GB",
+        "precio": 605,
+        "precio_costo": 495.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG S25 12/256 GB",
+        "precio": 845,
+        "precio_costo": 695.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG S25 PLUS 12/512 GB",
+        "precio": 1045,
+        "precio_costo": 865.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG S25 ULTRA 12/256 GB",
+        "precio": 1120,
+        "precio_costo": 930.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG S25 ULTRA 12/512 GB",
+        "precio": 1210,
+        "precio_costo": 1005.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG S25 ULTRA 12/1 TB",
+        "precio": 1340,
+        "precio_costo": 1115.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      },
+      {
+        "nombre": "SAMSUNG Z FLIP 7 12/512 GB",
+        "precio": 1160,
+        "precio_costo": 965.0,
+        "categoria": "SAMSUNG - GTIA 3 MESES"
+      }
+    ],
+    "MOTOROLA - GTIA 3 MESES": [
+      {
+        "nombre": "MOTOROLA E15 2/64 GB",
+        "precio": 115,
+        "precio_costo": 80.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA G14 4/128 GB",
+        "precio": 160,
+        "precio_costo": 115.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA G15 4/128 GB",
+        "precio": 165,
+        "precio_costo": 120.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA G35 5G 4/256 GB",
+        "precio": 195,
+        "precio_costo": 145.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA G56 5G 8/256 GB",
+        "precio": 275,
+        "precio_costo": 215.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA G75 5G 8/256 GB",
+        "precio": 270,
+        "precio_costo": 210.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA G85 5G 8/256 GB",
+        "precio": 270,
+        "precio_costo": 210.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA DEFY 4/64 GB",
+        "precio": 195,
+        "precio_costo": 145.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA THINKPHONE 5G 8/256 GB",
+        "precio": 370,
+        "precio_costo": 295.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA EDGE 40 NEO 12/256 GB",
+        "precio": 300,
+        "precio_costo": 235.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA EDGE 50 FUSION 5G 8/256 GB",
+        "precio": 300,
+        "precio_costo": 235.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA EDGE 50 NEO 5G 8/256 GB",
+        "precio": 315,
+        "precio_costo": 250.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA EDGE 50 PRO 5G 12/512 GB",
+        "precio": 485,
+        "precio_costo": 390.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA EDGE 50 ULTRA 5G 16/1 TB",
+        "precio": 950,
+        "precio_costo": 785.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA EDGE 60 FUSION 5G 12/256 GB",
+        "precio": 330,
+        "precio_costo": 260.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA EDGE 60 PRO 5G 12/512 GB",
+        "precio": 565,
+        "precio_costo": 460.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
+        "nombre": "MOTOROLA RAZR 50 ULTRA 5G 12/512 GB",
+        "precio": 865,
+        "precio_costo": 715.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      }
+    ],
+    "INFINIX - GTIA 3 MESES": [
+      {
+        "nombre": "INFINIX HOT 50 PRO+ 8/256 GB",
+        "precio": 235,
+        "precio_costo": 180.0,
+        "categoria": "INFINIX - GTIA 3 MESES"
+      },
+      {
+        "nombre": "INFINIX HOT 60i 8/256 GB",
+        "precio": 180,
+        "precio_costo": 135.0,
+        "categoria": "INFINIX - GTIA 3 MESES"
+      },
+      {
+        "nombre": "INFINIX HOT 60 PRO 8/256 GB",
+        "precio": 235,
+        "precio_costo": 180.0,
+        "categoria": "INFINIX - GTIA 3 MESES"
+      },
+      {
+        "nombre": "INFINIX HOT 60 PRO+ 8/256 GB",
+        "precio": 270,
+        "precio_costo": 210.0,
+        "categoria": "INFINIX - GTIA 3 MESES"
+      },
+      {
+        "nombre": "INFINIX NOTE 50 PRO NFC 8/256 GB",
+        "precio": 315,
+        "precio_costo": 250.0,
+        "categoria": "INFINIX - GTIA 3 MESES"
+      },
+      {
+        "nombre": "INFINIX ZERO 40 8/512 GB",
+        "precio": 265,
+        "precio_costo": 205.0,
+        "categoria": "INFINIX - GTIA 3 MESES"
+      },
+      {
+        "nombre": "INFINIX GT 30 PRO 5G 12/256 GB",
+        "precio": 425,
+        "precio_costo": 340.0,
+        "categoria": "INFINIX - GTIA 3 MESES"
+      }
+    ],
+    "ITEL - GTIA 3 MESES": [
+      {
+        "nombre": "ITEL A90 4/256 GB",
+        "precio": 135,
+        "precio_costo": 95.0,
+        "categoria": "ITEL - GTIA 3 MESES"
+      }
+    ],
+    "XIAOMI - GTIA 3 MESES": [
+      {
+        "nombre": "XIAOMI REDMI A5 3/64 GB",
+        "precio": 130,
+        "precio_costo": 90.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI REDMI A5 4/128 GB",
+        "precio": 140,
+        "precio_costo": 100.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI REDMI 13X 8/256 GB",
+        "precio": 180,
+        "precio_costo": 135.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI REDMI 14C 4/128 GB",
+        "precio": 160,
+        "precio_costo": 115.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI REDMI 14C 6/128 GB",
+        "precio": 165,
+        "precio_costo": 120.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI REDMI 15 6/128 GB",
+        "precio": 200,
+        "precio_costo": 150.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI REDMI 15 8/256 GB",
+        "precio": 210,
+        "precio_costo": 160.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI REDMI 15C 4/128 GB",
+        "precio": 165,
+        "precio_costo": 120.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI REDMI 15C 8/256 GB",
+        "precio": 190,
+        "precio_costo": 140.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 12 PRO + 5G 8/256 GB",
+        "precio": 305,
+        "precio_costo": 240.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 13 PRO 5G 8/256 GB",
+        "precio": 325,
+        "precio_costo": 255.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 13 PRO + 5G 8/256 GB",
+        "precio": 310,
+        "precio_costo": 245.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14 6/128 GB",
+        "precio": 210,
+        "precio_costo": 160.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14 8/256 GB",
+        "precio": 235,
+        "precio_costo": 180.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14s 8/256 GB",
+        "precio": 265,
+        "precio_costo": 205.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14s 12/512 GB",
+        "precio": 310,
+        "precio_costo": 245.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14 5G 8/256 GB",
+        "precio": 290,
+        "precio_costo": 225.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14 5G 12/512 GB",
+        "precio": 330,
+        "precio_costo": 260.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14 PRO 8/256 GB",
+        "precio": 290,
+        "precio_costo": 225.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14 PRO 12/512 GB",
+        "precio": 345,
+        "precio_costo": 275.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14 PRO 5G 12/512 GB",
+        "precio": 420,
+        "precio_costo": 335.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14 PRO + 5G 8/256 GB",
+        "precio": 405,
+        "precio_costo": 325.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI NOTE 14 PRO + 5G 12/512 GB",
+        "precio": 475,
+        "precio_costo": 385.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO C71 3/64 GB",
+        "precio": 130,
+        "precio_costo": 90.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO C71 4/128 GB",
+        "precio": 140,
+        "precio_costo": 100.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO C75 8/256 GB",
+        "precio": 190,
+        "precio_costo": 140.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO C85 6/128 GB",
+        "precio": 170,
+        "precio_costo": 125.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO C85 8/256 GB",
+        "precio": 190,
+        "precio_costo": 140.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO M5s 4/128 GB",
+        "precio": 175,
+        "precio_costo": 130.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO M6 8/256 GB",
+        "precio": 200,
+        "precio_costo": 150.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO M7 8/256 GB",
+        "precio": 210,
+        "precio_costo": 160.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO M7 PRO 5G 8/256 GB",
+        "precio": 275,
+        "precio_costo": 215.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO M7 PRO 5G 12/256 GB",
+        "precio": 280,
+        "precio_costo": 220.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO M7 PRO 5G 12/512 GB",
+        "precio": 300,
+        "precio_costo": 235.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO X7 5G 12/512 GB",
+        "precio": 360,
+        "precio_costo": 285.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO X7 PRO 5G 8/256 GB",
+        "precio": 380,
+        "precio_costo": 305.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO X7 PRO 5G 12/512 GB",
+        "precio": 435,
+        "precio_costo": 350.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO F7 5G 12/512 GB",
+        "precio": 525,
+        "precio_costo": 425.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI POCO F7 PRO 5G 12/512 GB",
+        "precio": 640,
+        "precio_costo": 525.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI 13T PRO 5G 12/512 GB",
+        "precio": 590,
+        "precio_costo": 480.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI 14 5G 12/512 GB",
+        "precio": 770,
+        "precio_costo": 635.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI 14T 5G 12/512 GB",
+        "precio": 770,
+        "precio_costo": 635.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI 14T PRO 5G 12/512 GB",
+        "precio": 735,
+        "precio_costo": 605.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI 14T PRO 5G 12/1 TB",
+        "precio": 845,
+        "precio_costo": 695.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI 15 5G 12/512 GB",
+        "precio": 945,
+        "precio_costo": 780.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI 15T 5G 12/512 GB",
+        "precio": 735,
+        "precio_costo": 605.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI 15T PRO 5G 12/512 GB",
+        "precio": 890,
+        "precio_costo": 735.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI 15T PRO 5G 12/1 TB",
+        "precio": 960,
+        "precio_costo": 795.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI 15 ULTRA 5G 16/1 TB",
+        "precio": 1935,
+        "precio_costo": 1620.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      }
+    ],
+    "PARLANTES JBL": [
+      {
+        "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED",
+        "precio": 70,
+        "precio_costo": 40.0,
+        "categoria": "PARLANTES JBL"
+      },
+      {
+        "nombre": "JBL CHARGE 6 45 WATTS BLACK/BLUE/RED",
+        "precio": 195,
+        "precio_costo": 145.0,
+        "categoria": "PARLANTES JBL"
+      },
+      {
+        "nombre": "JBL FLIP 7 35 WATTS BLUE/PINK/CAMUFLADO",
+        "precio": 150,
+        "precio_costo": 110.0,
+        "categoria": "PARLANTES JBL"
+      },
+      {
+        "nombre": "JBL BOOMBOX 3 180 WATTS 2V CAMUFLADO",
+        "precio": 495,
+        "precio_costo": 400.0,
+        "categoria": "PARLANTES JBL"
+      },
+      {
+        "nombre": "JBL BARRA DE SONIDO CINEMA SB180 2.1 SOUNDBAR USB 229 WATTS 2V",
+        "precio": 240,
+        "precio_costo": 185.0,
+        "categoria": "PARLANTES JBL"
+      }
+    ],
+    "AIRPODS": [
+      {
+        "nombre": "AIRPODS PRO 3RA USBC",
+        "precio": 390,
+        "precio_costo": 310.0,
+        "categoria": "AIRPODS"
+      },
+      {
+        "nombre": "AIRPODS 4",
+        "precio": 215,
+        "precio_costo": 165.0,
+        "categoria": "AIRPODS"
+      },
+      {
+        "nombre": "AIRPODS 4 NOISE CANCELING",
+        "precio": 275,
+        "precio_costo": 215.0,
+        "categoria": "AIRPODS"
+      }
+    ],
+    "APPLE WATCH": [
+      {
+        "nombre": "WATCH 11 42MM",
+        "precio": 640,
+        "precio_costo": 525.0,
+        "categoria": "APPLE WATCH"
+      },
+      {
+        "nombre": "WATCH 11 46MM",
+        "precio": 675,
+        "precio_costo": 555.0,
+        "categoria": "APPLE WATCH"
+      },
+      {
+        "nombre": "WATCH 11 + CELL 42MM",
+        "precio": 820,
+        "precio_costo": 675.0,
+        "categoria": "APPLE WATCH"
+      },
+      {
+        "nombre": "WATCH 10 ULTRA 2",
+        "precio": 945,
+        "precio_costo": 780.0,
+        "categoria": "APPLE WATCH"
+      }
+    ],
+    "IPAD": [
+      {
+        "nombre": "IPAD 11 A16 10.2 128 GB",
+        "precio": 495,
+        "precio_costo": 400.0,
+        "categoria": "IPAD"
+      },
+      {
+        "nombre": "IPAD 11 A16 10.2 256 GB",
+        "precio": 650,
+        "precio_costo": 530.0,
+        "categoria": "IPAD"
+      },
+      {
+        "nombre": "IPAD MINI 7 128 GB",
+        "precio": 650,
+        "precio_costo": 530.0,
+        "categoria": "IPAD"
+      },
+      {
+        "nombre": "IPAD AIR 11” M3 128 GB",
+        "precio": 765,
+        "precio_costo": 630.0,
+        "categoria": "IPAD"
+      },
+      {
+        "nombre": "IPAD AIR 11” M3 256 GB",
+        "precio": 885,
+        "precio_costo": 730.0,
+        "categoria": "IPAD"
+      },
+      {
+        "nombre": "IPAD PRO 11 M4 256 GB",
+        "precio": 1190,
+        "precio_costo": 990.0,
+        "categoria": "IPAD"
+      }
+    ],
+    "MACBOOK": [
+      {
+        "nombre": "MAC MINI M4 16/256 GB",
+        "precio": 850,
+        "precio_costo": 700.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MAC MINI M4 16/512 GB",
+        "precio": 1130,
+        "precio_costo": 940.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MACBOOK AIR M4 13” 16/256 GB",
+        "precio": 1165,
+        "precio_costo": 970.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MACBOOK AIR M4 13” 16/512 GB",
+        "precio": 1450,
+        "precio_costo": 1210.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MACBOOK AIR M4 15” 16/256 GB",
+        "precio": 1415,
+        "precio_costo": 1180.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MACBOOK AIR M4 15” 16/512 GB",
+        "precio": 1710,
+        "precio_costo": 1430.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MACBOOK PRO M4 14” 16/512 GB",
+        "precio": 1935,
+        "precio_costo": 1620.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MACBOOK PRO M4 14” 16/1 TB",
+        "precio": 2265,
+        "precio_costo": 1900.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MACBOOK PRO M4 PRO 14” 24/512 GB",
+        "precio": 2500,
+        "precio_costo": 2100.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MACBOOK PRO M4 PRO 14” 24/1 TB",
+        "precio": 3010,
+        "precio_costo": 2530.0,
+        "categoria": "MACBOOK"
+      }
+    ],
+    "PLAYSTATION": [
+      {
+        "nombre": "JOYSTICK PS5 MIDNIGHT/ WHITE/ GRAY CAMO/ VOLCANIC RED/ GALACTIC PURPLE/ STAR BLUE",
+        "precio": 125,
+        "precio_costo": 85.0,
+        "categoria": "PLAYSTATION"
+      },
+      {
+        "nombre": "JOYSTICK PS5 CHROMA ÍNDIGO/CHROMA TEAL/COBALT BLUE/ CHROMA PEARL",
+        "precio": 130,
+        "precio_costo": 90.0,
+        "categoria": "PLAYSTATION"
+      },
+      {
+        "nombre": "PS5 SLIM 1 TB DIGITAL",
+        "precio": 650,
+        "precio_costo": 530.0,
+        "categoria": "PLAYSTATION"
+      },
+      {
+        "nombre": "PS5 SLIM 1 TB DIGITAL CALL OF DUTY",
+        "precio": 670,
+        "precio_costo": 550.0,
+        "categoria": "PLAYSTATION"
+      },
+      {
+        "nombre": "PS5 SLIM 1 TB DIGITAL FORNITE",
+        "precio": 670,
+        "precio_costo": 550.0,
+        "categoria": "PLAYSTATION"
+      },
+      {
+        "nombre": "PS5 SLIM 1 TB C/LECTORA",
+        "precio": 705,
+        "precio_costo": 580.0,
+        "categoria": "PLAYSTATION"
+      },
+      {
+        "nombre": "PS5 SLIM 1 TB C/LECTORA FORNITE",
+        "precio": 755,
+        "precio_costo": 620.0,
+        "categoria": "PLAYSTATION"
+      },
+      {
+        "nombre": "PS5 SLIM 1 TB C/LECTORA CALL OF DUTY 6",
+        "precio": 765,
+        "precio_costo": 630.0,
+        "categoria": "PLAYSTATION"
+      },
+      {
+        "nombre": "PS5 SLIM 1 TB C/LECTORA ASTROBOT",
+        "precio": 765,
+        "precio_costo": 630.0,
+        "categoria": "PLAYSTATION"
+      },
+      {
+        "nombre": "PS5 SLIM 1 TB C/LECTORA FC26",
+        "precio": 825,
+        "precio_costo": 680.0,
+        "categoria": "PLAYSTATION"
+      },
+      {
+        "nombre": "PS5 PRO 2 TB",
+        "precio": 1060,
+        "precio_costo": 880.0,
+        "categoria": "PLAYSTATION"
+      }
+    ],
+    "XBOX": [
+      {
+        "nombre": "XBOX S 512 GB",
+        "precio": 530,
+        "precio_costo": 430.0,
+        "categoria": "XBOX"
+      }
+    ],
+    "TVS - ENTREGA 1 DIA DESPUES": [
+      {
+        "nombre": "85” Smart TV Samsung 4K QLED Q70D",
+        "precio": 2325,
+        "precio_costo": 1950.0,
+        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+      },
+      {
+        "nombre": "75” Smart TV UHD 4K Samsung UN75DU7000GCZB",
+        "precio": 1275,
+        "precio_costo": 1060.0,
+        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+      },
+      {
+        "nombre": "65” Smart TV QLED 4K Samsung QN65Q65DAGCZB",
+        "precio": 1000,
+        "precio_costo": 830.0,
+        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+      },
+      {
+        "nombre": "65” Smart TV LED 4K Samsung DU7000",
+        "precio": 850,
+        "precio_costo": 700.0,
+        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+      },
+      {
+        "nombre": "55” Smart TV Samsung 4K QLED Q65D",
+        "precio": 650,
+        "precio_costo": 530.0,
+        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+      },
+      {
+        "nombre": "55” Smart TV UHD 4K Samsung UN55DU7000GCZB",
+        "precio": 540,
+        "precio_costo": 440.0,
+        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+      },
+      {
+        "nombre": "55” Tv Led Philips UHD 55PUD7309/77",
+        "precio": 520,
+        "precio_costo": 420.0,
+        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+      },
+      {
+        "nombre": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
+        "precio": 445,
+        "precio_costo": 360.0,
+        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+      },
+      {
+        "nombre": "43” Smart TV UHD 4K Samsung  UN43DU7000GCZB",
+        "precio": 375,
+        "precio_costo": 300.0,
+        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+      },
+      {
+        "nombre": "32” Smart TV HD Samsung UN32T4300A",
+        "precio": 225,
+        "precio_costo": 170.0,
+        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+      }
+    ]
+  }
 }

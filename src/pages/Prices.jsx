@@ -426,8 +426,26 @@ const Prices = () => {
                 onChange={opt => handleCategoriaChange(opt.value)}
                 placeholder="Filtrar por categoría..."
                 styles={{
-                  control: (base) => ({ ...base, borderRadius: 8, borderColor: '#ccc', fontSize: 16, minHeight: 44 }),
-                  menu: (base) => ({ ...base, borderRadius: 8 }),
+                  control: (base) => ({ 
+                    ...base, 
+                    borderRadius: 8, 
+                    borderColor: '#ccc', 
+                    fontSize: 16, 
+                    minHeight: 44,
+                    width: isMobile ? '100%' : '220px',
+                    minWidth: isMobile ? '100%' : '220px'
+                  }),
+                  menu: (base) => ({ 
+                    ...base, 
+                    borderRadius: 8,
+                    width: isMobile ? '100%' : '220px',
+                    minWidth: isMobile ? '100%' : '220px'
+                  }),
+                  menuList: (base) => ({
+                    ...base,
+                    width: isMobile ? '100%' : '220px',
+                    minWidth: isMobile ? '100%' : '220px'
+                  }),
                   singleValue: (base) => ({ ...base, color: '#111' }), // color negro al seleccionar
                   option: (base, state) => ({
                     ...base,
@@ -459,8 +477,26 @@ const Prices = () => {
                 }}
                 placeholder="Ordenar por..."
                 styles={{
-                  control: (base) => ({ ...base, borderRadius: 8, borderColor: '#ccc', fontSize: 16, minHeight: 44 }),
-                  menu: (base) => ({ ...base, borderRadius: 8 }),
+                  control: (base) => ({ 
+                    ...base, 
+                    borderRadius: 8, 
+                    borderColor: '#ccc', 
+                    fontSize: 16, 
+                    minHeight: 44,
+                    width: isMobile ? '100%' : '220px',
+                    minWidth: isMobile ? '100%' : '220px'
+                  }),
+                  menu: (base) => ({ 
+                    ...base, 
+                    borderRadius: 8,
+                    width: isMobile ? '100%' : '220px',
+                    minWidth: isMobile ? '100%' : '220px'
+                  }),
+                  menuList: (base) => ({
+                    ...base,
+                    width: isMobile ? '100%' : '220px',
+                    minWidth: isMobile ? '100%' : '220px'
+                  }),
                   singleValue: (base) => ({ ...base, color: '#111' }), // color negro al seleccionar
                   option: (base, state) => ({
                     ...base,
