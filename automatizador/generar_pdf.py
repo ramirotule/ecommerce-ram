@@ -19,10 +19,10 @@ def generar_pdf_precios():
     
     # Verificar que existe el archivo JSON
     if not os.path.exists(json_input_path):
-        print(f"❌ No se encontró el archivo JSON: {json_input_path}")
+        print(f"ERROR: No se encontro el archivo JSON: {json_input_path}")
         return False
     
-    print("📄 Generando PDF de lista de precios...")
+    print("Generando PDF de lista de precios...")
     print("="*50)
     
     # Leer el JSON
@@ -33,11 +33,11 @@ def generar_pdf_precios():
     if isinstance(data, dict) and 'productos' in data:
         productos = data['productos']
         fecha_actualizacion = data['metadatos']['fecha_actualizacion']
-        print(f"📦 Procesando {len(productos)} productos desde JSON con metadatos")
+        print(f"Procesando {len(productos)} productos desde JSON con metadatos")
     else:
         productos = data if isinstance(data, list) else []
         fecha_actualizacion = datetime.now().isoformat()
-        print(f"📦 Procesando {len(productos)} productos desde JSON simple")
+        print(f"Procesando {len(productos)} productos desde JSON simple")
     
     # Crear el PDF
     doc = SimpleDocTemplate(
@@ -83,7 +83,7 @@ def generar_pdf_precios():
             logo.hAlign = 'CENTER'
             story.append(logo)
             story.append(Spacer(1, 20))
-            print(f"✅ Logo agregado al PDF desde: {logo_path}")
+            print(f"Logo agregado al PDF desde: {logo_path}")
         except Exception as e:
             print(f"⚠️ No se pudo cargar el logo: {e}")
     else:
@@ -231,8 +231,8 @@ def generar_pdf_precios():
     # Generar el PDF
     try:
         doc.build(story)
-        print(f"✅ PDF generado exitosamente: {pdf_output_path}")
-        print(f"📊 Total productos en PDF: {len(productos)}")
+        print(f"PDF generado exitosamente: {pdf_output_path}")
+        print(f"Total productos en PDF: {len(productos)}")
         return True
         
     except Exception as e:

@@ -2,13 +2,120 @@ import pandas as pd
 import json
 import re
 import os
+import glob
 from datetime import datetime
 
-# Configuración
-excel_input_path = "output/lista_gcgroup_procesada.xlsx"
-json_output_path = "../public/productos_ram.json"
+def procesar_txt_a_json(txt_file):
+    """Función de fallback para procesar archivo TXT directamente"""
+    productos = []
+    
+    try:
+        with open(txt_file, 'r', encoding='utf-8') as f:
+            contenido = f.read()
+        
+        # Procesar líneas del archivo de difusión
+        lineas = contenido.split('\n')
+        producto_actual = None
+        
+        for i, linea in enumerate(lineas):
+            linea = linea.strip()
+            
+            # Si la línea contiene "U$S" es un precio
+            if re.search(r'U\$S?\s*(\d+)', linea):
+                precio_match = re.search(r'U\$S?\s*(\d+)', linea)
+                if precio_match and producto_actual:
+                    precio = int(precio_match.group(1))
+                    
+                    # Categorizar productos
+                    categoria = categorizar_producto(producto_actual)
+                    
+                    productos.append({
+                        'producto': producto_actual.strip(),
+                        'precio_usd': precio,
+                        'categoria': categoria
+                    })
+                    producto_actual = None
+                    
+            # Si la línea no es vacía, emojis o separadores, puede ser un producto
+            elif linea and not re.match(r'^[🏪⚠️💰⛔🛒=]+', linea) and len(linea) > 5:
+                if not any(word in linea.upper() for word in ['LISTA', 'CONSULTAS', 'PEDIDOS', 'ACLARACION', 'PAGO', 'PRODUCTOS', 'DISPONIBLES']):
+                    producto_actual = linea
+        
+        print(f"Productos extraídos del TXT: {len(productos)}")
+        return productos
+        
+    except Exception as e:
+        print(f"Error procesando TXT: {e}")
+        return []
 
-# Verificar que existe el archivo Excel
+def categorizar_producto(producto):
+    """Categorizar productos basándose en palabras clave"""
+    producto_upper = producto.upper()
+    
+    if any(word in producto_upper for word in ['IPHONE', 'SAMSUNG', 'XIAOMI', 'MOTOROLA', 'HUAWEI', 'CELULAR', 'PHONE']):
+        return 'CELULARES'
+    elif any(word in producto_upper for word in ['MACBOOK', 'NOTEBOOK', 'LAPTOP', 'LENOVO', 'DELL', 'HP', 'ASUS']):
+        return 'MACBOOKS'
+    elif any(word in producto_upper for word in ['TV', 'TELEVISOR', 'SMART', 'LG', 'TCL']):
+        return 'TELEVISORES'
+    elif any(word in producto_upper for word in ['PS5', 'PS4', 'XBOX', 'NINTENDO', 'PLAY', 'GAMING', 'GAMER']):
+        return 'VIDEO JUEGOS'
+    elif any(word in producto_upper for word in ['CARGADOR', 'CABLE', 'USB', 'TYPE']):
+        return 'CARGADORES'
+    else:
+        return 'OTROS'
+
+# Configuración - buscar archivos Excel procesados
+output_dir = "output"
+json_output_path = "../public/productos_ram.json"
+excel_pattern = os.path.join(output_dir, "*procesada*.xlsx")
+excel_files = glob.glob(excel_pattern)
+
+if not excel_files:
+    # Si no hay archivos procesados, buscar cualquier Excel
+    excel_pattern = os.path.join(output_dir, "*.xlsx")
+    excel_files = glob.glob(excel_pattern)
+
+if not excel_files:
+    print(f"INFO: No se encontraron archivos Excel en {output_dir}/")
+    # Buscar archivos TXT como fallback
+    txt_pattern = os.path.join(output_dir, "*.txt")
+    txt_files = glob.glob(txt_pattern)
+    
+    if txt_files:
+        print("Intentando procesar archivo TXT disponible...")
+        txt_file = max(txt_files, key=os.path.getctime)
+        print(f"Usando archivo TXT: {txt_file}")
+        
+        # Procesar archivo TXT (función simplificada)
+        productos_desde_txt = procesar_txt_a_json(txt_file)
+        
+        # Guardar JSON
+        json_data = {
+            "metadatos": {
+                "fecha_actualizacion": datetime.now().isoformat(),
+                "total_productos": len(productos_desde_txt),
+                "fuente": "TXT_fallback"
+            },
+            "productos": productos_desde_txt
+        }
+        
+        with open(json_output_path, 'w', encoding='utf-8') as f:
+            json.dump(json_data, f, ensure_ascii=False, indent=2)
+        
+        print(f"JSON generado desde TXT: {json_output_path}")
+        print(f"Total productos: {len(productos_desde_txt)}")
+        exit(0)
+    else:
+        print(f"ERROR: No se encontraron archivos Excel ni TXT en {output_dir}/")
+        print("Archivos disponibles:")
+        for file in os.listdir(output_dir):
+            print(f"  - {file}")
+        exit(1)
+
+# Usar el archivo Excel más reciente
+excel_input_path = max(excel_files, key=os.path.getctime)
+print(f"Usando archivo Excel: {excel_input_path}")
 
 # Borrar JSON anterior si existe
 if os.path.exists(json_output_path):
@@ -17,9 +124,6 @@ if os.path.exists(json_output_path):
         print(f"Archivo anterior eliminado: {json_output_path}")
     except Exception as e:
         print(f"No se pudo eliminar el archivo anterior: {e}")
-
-if not os.path.exists(excel_input_path):
-    raise FileNotFoundError(f"No se encontró el archivo Excel: {excel_input_path}")
 
 print("Convirtiendo Excel a JSON...")
 print("="*50)

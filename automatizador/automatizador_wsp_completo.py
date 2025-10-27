@@ -260,148 +260,130 @@ class AutomatizadorWSP:
             print("   ℹ️ Continuando con la extracción...")
     
     def filtrar_mensajes_del_dia(self, textos, filtro_inicio):
-        """Filtrar mensajes recibidos el día de hoy o mensajes 'BUEN DIA'"""
-        fecha_hoy = datetime.now().strftime("%d/%m/%Y")  # Formato dd/mm/yyyy
-        fecha_hoy_alt = datetime.now().strftime("%d/%m/%y")  # Formato dd/mm/yy
-        palabras_hoy = ["hoy", "today"]
+        """Filtrar mensajes que contengan 'BUEN DIA TE DEJO LA LISTA DE HOY'"""
         mensajes_filtrados = []
         
-        for texto in textos:
-            texto_lower = texto.lower()
+        print(f"🔍 Filtrando {len(textos)} mensajes buscando 'BUEN DIA TE DEJO LA LISTA DE HOY'...")
+        
+        for i, texto in enumerate(textos):
             texto_upper = texto.upper()
             
-            # Aceptar si:
-            # 1. Contiene la fecha de hoy
-            # 2. Contiene la palabra 'hoy' explícita
-            # 3. Comienza con "BUEN DIA TE DEJO LA LISTA DE HOY" (NUEVO)
-            if (fecha_hoy in texto or fecha_hoy_alt in texto or
-                any(palabra in texto_lower for palabra in palabras_hoy) or
-                texto_upper.startswith("BUEN DIA TE DEJO LA LISTA DE HOY") or
+            # Aceptar mensajes que contengan "BUEN DIA TE DEJO LA LISTA DE HOY" (más flexible)
+            if ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper or 
+                "BUEN DÍA TE DEJO LA LISTA DE HOY" in texto_upper or
+                texto_upper.startswith("BUEN DIA TE DEJO LA LISTA DE HOY") or 
                 texto_upper.startswith("BUEN DÍA TE DEJO LA LISTA DE HOY")):
+                
+                print(f"   ✅ Mensaje {i+1} aceptado: Contiene 'BUEN DIA TE DEJO LA LISTA DE HOY'")
+                print(f"   📝 Longitud: {len(texto)} caracteres")
+                print(f"   📝 Inicio: '{texto[:100]}...'")
                 mensajes_filtrados.append(texto)
+            else:
+                print(f"   ❌ Mensaje {i+1} rechazado: No contiene la frase requerida")
+                print(f"   📝 Vista previa: '{texto[:100]}...'")
+                
+        if not mensajes_filtrados:
+            print("   ⚠️ NINGÚN mensaje pasó el filtro. Aplicando filtro de emergencia...")
+            # Filtro de emergencia: aceptar cualquier mensaje que contenga "LISTA" y sea largo
+            for i, texto in enumerate(textos):
+                texto_upper = texto.upper()
+                if ("LISTA" in texto_upper and len(texto) > 500):  # Mensajes largos con "LISTA"
+                    print(f"   🆘 FILTRO DE EMERGENCIA: Aceptando mensaje {i+1} (contiene LISTA y es largo)")
+                    print(f"   📝 Longitud: {len(texto)} caracteres")
+                    mensajes_filtrados.append(texto)
+                    break  # Solo tomar el primero que encuentre
                 
         return mensajes_filtrados
     
     def verificar_chat_tiene_mensajes_hoy(self):
-        """Verificar rápidamente si el chat tiene mensajes de hoy sin procesarlo completamente"""
+        """Verificar rápidamente si el chat tiene mensajes con la estructura específica de GCGroup"""
         try:
-            print("🔍 Verificando si hay mensajes de hoy...")
+            print("🔍 Verificando mensajes de GCGroup con clase específica...")
             
-            # Primero, buscar texto que contenga la fecha de hoy en el contenido de los mensajes
-            # Solución genérica para cualquier mes
-            meses_es = {
-                1: "ENERO", 2: "FEBRERO", 3: "MARZO", 4: "ABRIL", 5: "MAYO", 6: "JUNIO",
-                7: "JULIO", 8: "AGOSTO", 9: "SEPTIEMBRE", 10: "OCTUBRE", 11: "NOVIEMBRE", 12: "DICIEMBRE"
-            }
-            dias_es = {
-                0: "LUNES", 1: "MARTES", 2: "MIÉRCOLES", 3: "JUEVES", 4: "VIERNES", 5: "SÁBADO", 6: "DOMINGO"
-            }
-            
-            hoy = datetime.now()
-            mes_actual = meses_es[hoy.month]
-            dia_semana = dias_es[hoy.weekday()]
-            
-            fecha_hoy_texto = f"{dia_semana} {hoy.day} DE {mes_actual}"
-            fecha_hoy_corta = f"{hoy.day} DE {mes_actual}"
-            fecha_hoy_numero = hoy.strftime("%d/%m/%Y")
-            
-            print(f"   🔍 Buscando: '{fecha_hoy_texto}' o '{fecha_hoy_corta}' o '{fecha_hoy_numero}'")
-            
-            # Buscar en el contenido de los mensajes visibles
+            # Debug: Mostrar algunos mensajes recientes
             try:
-                # Buscar todos los elementos de mensaje que podrían contener la fecha de hoy
-                elementos_mensaje = self.driver.find_elements(By.XPATH, 
-                    f'//div[contains(@class, "message") or contains(@class, "copyable-text")]//span[contains(text(), "LISTA") or contains(text(), "HOY") or contains(text(), "{mes_actual}")]')
+                print("   🔍 Mostrando algunos mensajes recientes para debug...")
+                all_messages = self.driver.find_elements(By.XPATH, '//div[contains(@class, "message-in") or contains(@class, "message-out")]//span[contains(@class, "selectable-text")]')
+                recent_messages = all_messages[-15:] if len(all_messages) > 15 else all_messages
                 
-                for elemento in elementos_mensaje:
-                    texto_elemento = elemento.text.upper()
-                    if (fecha_hoy_texto in texto_elemento or 
-                        fecha_hoy_corta in texto_elemento or
-                        fecha_hoy_numero in texto_elemento or
-                        ("LISTA DE HOY" in texto_elemento and mes_actual in texto_elemento)):
-                        print(f"   ✅ Encontrado mensaje con fecha de hoy: '{texto_elemento[:100]}...'")
-                        return True
+                for i, msg in enumerate(recent_messages):
+                    try:
+                        text = msg.text.strip()
+                        if text and len(text) > 20:  # Solo mensajes con contenido significativo
+                            print(f"   📝 Mensaje {i+1}: '{text[:150]}...'")
+                    except:
+                        pass
             except Exception as e:
-                print(f"   ⚠️ Error buscando en contenido de mensajes: {e}")
+                print(f"   ⚠️ Error en debug: {e}")
             
-            # Método alternativo: buscar la etiqueta "Hoy" del DOM
-            selectores_hoy = [
-                '//span[contains(@class, "x140p0ai") and contains(@class, "x1gufx9m") and text()="Hoy"]',
-                '//span[contains(@class, "x140p0ai") and text()="Hoy"]',
-                '//span[text()="Hoy"]'
-            ]
-            
-            for selector in selectores_hoy:
-                try:
-                    elementos_hoy = self.driver.find_elements(By.XPATH, selector)
-                    if elementos_hoy:
-                        print(f"   ✅ Encontrada etiqueta DOM 'Hoy'")
-                        return True
-                except:
-                    continue
-            
-            print(f"   ⚠️ No se encontró fecha de hoy ni etiqueta 'Hoy'")
-            
-            # NUEVO: Si no hay mensajes de hoy, buscar el último mensaje con "BUEN DIA TE DEJO LA LISTA DE HOY"
-            print("🔍 Buscando último mensaje con 'BUEN DIA TE DEJO LA LISTA DE HOY'...")
-            return self.buscar_ultimo_mensaje_buen_dia()
-            
-        except Exception as e:
-            print(f"   ❌ Error verificando mensajes de hoy: {e}")
-            return False
-
-    def buscar_ultimo_mensaje_buen_dia(self):
-        """Buscar el último mensaje que inicie con 'BUEN DIA TE DEJO LA LISTA DE HOY'"""
-        try:
-            print("   🔍 Buscando mensaje que inicie con 'BUEN DIA TE DEJO LA LISTA DE HOY'...")
-            
-            # Hacer scroll hacia arriba para cargar más mensajes históricos
-            chat_container = None
-            selectores_chat = [
-                '//div[@data-testid="chat-history"]',
-                '//div[@data-testid="conversation-panel-messages"]', 
-                '//div[contains(@class, "copyable-area")]'
-            ]
-            
-            for selector in selectores_chat:
-                try:
-                    chat_container = self.driver.find_element(By.XPATH, selector)
-                    break
-                except:
-                    continue
-            
-            if chat_container:
-                print("   📜 Cargando mensajes históricos...")
-                # Hacer varios scrolls hacia arriba para cargar más mensajes
-                for i in range(10):  # Cargar hasta 10 "páginas" de mensajes anteriores
-                    self.driver.execute_script("arguments[0].scrollTop = 0;", chat_container)
-                    time.sleep(1)
-                    
-                    # Buscar el mensaje en cada iteración
-                    mensajes_encontrados = self.driver.find_elements(By.XPATH, 
-                        '//div[contains(@class, "message") or contains(@class, "copyable-text")]//span[contains(@class, "selectable-text")]')
-                    
-                    for mensaje in reversed(mensajes_encontrados):  # Revisar desde el más reciente
-                        try:
-                            texto_mensaje = mensaje.text.strip().upper()
-                            if texto_mensaje.startswith("BUEN DIA TE DEJO LA LISTA DE HOY") or texto_mensaje.startswith("BUEN DÍA TE DEJO LA LISTA DE HOY"):
-                                print(f"   ✅ Encontrado mensaje: '{texto_mensaje[:100]}...'")
-                                # Marcar que encontramos el mensaje para procesamiento posterior
+            # PRIMERA BÚSQUEDA: Con la clase CSS específica que mencionaste
+            try:
+                selector_especifico = '//div[contains(@class, "x9f619") and contains(@class, "x1hx0egp") and contains(@class, "x1yrsyyn")]'
+                elementos_especificos = self.driver.find_elements(By.XPATH, selector_especifico)
+                print(f"   🎯 Selector específico encontró: {len(elementos_especificos)} elementos")
+                
+                for elemento in elementos_especificos:
+                    try:
+                        texto = elemento.text.strip()
+                        if len(texto) > 100:  # Solo textos significativos
+                            texto_upper = texto.upper()
+                            
+                            if ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper or
+                                "BUEN DÍA TE DEJO LA LISTA DE HOY" in texto_upper):
+                                
+                                print(f"   ✅ ENCONTRADO con selector específico!")
+                                print(f"   📝 Longitud: {len(texto)} caracteres")
+                                print(f"   📝 Inicio: '{texto[:100]}...'")
+                                
                                 self.mensaje_buen_dia_encontrado = True
-                                self.elemento_mensaje_buen_dia = mensaje
+                                self.elemento_mensaje_buen_dia = elemento
                                 return True
-                        except:
-                            continue
-                    
-                    # Si encontramos algo en esta iteración, no necesitamos cargar más
-                    if hasattr(self, 'mensaje_buen_dia_encontrado'):
-                        break
+                                
+                    except Exception as e:
+                        continue
+                        
+            except Exception as e:
+                print(f"   ⚠️ Error con selector específico: {e}")
             
-            print("   ⚠️ No se encontró mensaje con 'BUEN DIA TE DEJO LA LISTA DE HOY'")
+            # SEGUNDA BÚSQUEDA: Selectores alternativos
+            selectores_alternativos = [
+                '//div[contains(@class, "copyable-text")]//span[contains(@class, "selectable-text")]',
+                '//span[contains(@class, "selectable-text") and contains(@class, "copyable-text")]',
+                '//div[contains(@class, "message")]//span[contains(@class, "selectable-text")]'
+            ]
+            
+            for selector in selectores_alternativos:
+                try:
+                    elementos = self.driver.find_elements(By.XPATH, selector)
+                    print(f"   � Selector alternativo encontró: {len(elementos)} elementos")
+                    
+                    for elemento in elementos:
+                        try:
+                            texto = elemento.text.strip()
+                            if len(texto) > 100:
+                                texto_upper = texto.upper()
+                                
+                                if ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper or
+                                    "BUEN DÍA TE DEJO LA LISTA DE HOY" in texto_upper):
+                                    
+                                    print(f"   ✅ ENCONTRADO con selector alternativo!")
+                                    print(f"   📝 Longitud: {len(texto)} caracteres")
+                                    
+                                    self.mensaje_buen_dia_encontrado = True
+                                    self.elemento_mensaje_buen_dia = elemento
+                                    return True
+                                    
+                        except Exception as e:
+                            continue
+                            
+                except Exception as e:
+                    continue
+            
+            print("   ❌ No se encontró mensaje de GCGroup")
             return False
             
         except Exception as e:
-            print(f"   ❌ Error buscando mensaje 'BUEN DIA': {e}")
+            print(f"   ❌ Error verificando mensajes: {e}")
             return False
 
     def buscar_y_abrir_chat(self, nombre_proveedor, config):
@@ -467,102 +449,99 @@ class AutomatizadorWSP:
             return False
     
     def extraer_mensajes_por_contenido(self):
-        """Extraer mensajes basándose en el contenido de texto de hoy o mensaje 'BUEN DIA'"""
+        """Extraer mensajes basándose en el mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' encontrado"""
         try:
             print("📝 Extrayendo mensajes por análisis de contenido...")
             
-            # Fecha de hoy en diferentes formatos - SOLUCIÓN GENÉRICA
-            meses_es = {
-                1: "ENERO", 2: "FEBRERO", 3: "MARZO", 4: "ABRIL", 5: "MAYO", 6: "JUNIO",
-                7: "JULIO", 8: "AGOSTO", 9: "SEPTIEMBRE", 10: "OCTUBRE", 11: "NOVIEMBRE", 12: "DICIEMBRE"
-            }
-            dias_es = {
-                0: "LUNES", 1: "MARTES", 2: "MIÉRCOLES", 3: "JUEVES", 4: "VIERNES", 5: "SÁBADO", 6: "DOMINGO"
-            }
-            
-            hoy = datetime.now()
-            mes_actual = meses_es[hoy.month]
-            dia_semana = dias_es[hoy.weekday()]
-            
-            fecha_hoy_texto = f"{dia_semana} {hoy.day} DE {mes_actual}"
-            fecha_hoy_corta = f"{hoy.day} DE {mes_actual}"
-            
-            textos_encontrados = []
-            
-            # Verificar si tenemos un mensaje "BUEN DIA" marcado
-            if hasattr(self, 'mensaje_buen_dia_encontrado') and hasattr(self, 'elemento_mensaje_buen_dia'):
+            # Verificar si tenemos un mensaje "BUEN DIA" marcado anteriormente
+            if hasattr(self, 'mensaje_buen_dia_encontrado') and self.mensaje_buen_dia_encontrado and hasattr(self, 'elemento_mensaje_buen_dia') and self.elemento_mensaje_buen_dia:
                 print("   🎯 Usando mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' encontrado anteriormente")
                 try:
                     texto_completo = self.elemento_mensaje_buen_dia.text.strip()
                     if texto_completo:
-                        textos_encontrados.append(texto_completo)
-                        print(f"   ✅ Mensaje extraído: '{texto_completo[:100]}...'")
-                        return textos_encontrados
+                        print(f"   ✅ Mensaje extraído exitosamente: {len(texto_completo)} caracteres")
+                        print(f"   📝 Vista previa: '{texto_completo[:150]}...'")
+                        return [texto_completo]
                 except Exception as e:
                     print(f"   ⚠️ Error extrayendo mensaje 'BUEN DIA': {e}")
             
-            # Si no hay mensaje "BUEN DIA", buscar por fecha de hoy como antes
+            # Si no tenemos el mensaje guardado, buscar nuevamente con BÚSQUEDA EXHAUSTIVA
+            print("   🔍 Buscando mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' en tiempo real...")
             
-            # Buscar todos los elementos de mensaje en el área visible
+            # Hacer scroll hacia arriba para cargar MÁS mensajes históricos
+            try:
+                chat_container = None
+                selectores_chat = [
+                    '//div[@data-testid="chat-history"]',
+                    '//div[@data-testid="conversation-panel-messages"]', 
+                    '//div[contains(@class, "copyable-area")]'
+                ]
+                
+                for selector in selectores_chat:
+                    try:
+                        chat_container = self.driver.find_element(By.XPATH, selector)
+                        break
+                    except:
+                        continue
+                
+                if chat_container:
+                    print("   📜 Cargando TODOS los mensajes históricos disponibles...")
+                    # Hacer muchos más scrolls para cargar mensajes muy antiguos
+                    for i in range(20):  # Incrementado de 5 a 20
+                        self.driver.execute_script("arguments[0].scrollTop = Math.max(0, arguments[0].scrollTop - arguments[0].clientHeight * 2);", chat_container)
+                        time.sleep(0.5)
+                    
+                    print("   ✅ Carga completa de mensajes históricos")
+                    
+            except Exception as e:
+                print(f"   ⚠️ Error cargando mensajes históricos: {e}")
+            
             selectores_mensaje = [
-                '//div[contains(@class, "message-in")]//span[contains(@class, "selectable-text")]',
+                '//div[contains(@class, "message")]//span[contains(@class, "selectable-text")]',
                 '//div[contains(@class, "copyable-text")]//span',
                 '//span[@class="selectable-text copyable-text"]',
-                '//div[@data-testid="msg-container"]//span'
+                '//div[@data-testid="msg-container"]//span',
+                '//span[contains(@class, "selectable-text")]',
+                '//*[contains(@class, "copyable-text")]',
+                '//div[contains(@class, "message")]//div[contains(@class, "copyable-text")]'  # Nuevo selector
             ]
             
-            for selector in selectores_mensaje:
+            total_mensajes_revisados = 0
+            
+            for i, selector in enumerate(selectores_mensaje):
                 try:
+                    print(f"   🔎 Selector {i+1}/{len(selectores_mensaje)}: Buscando mensajes...")
                     elementos = self.driver.find_elements(By.XPATH, selector)
+                    print(f"   📊 Encontrados {len(elementos)} elementos con este selector")
+                    
                     for elemento in elementos:
-                        texto = elemento.text.strip()
-                        if texto and len(texto) > 20:  # Solo textos significativos
-                            texto_upper = texto.upper()
+                        try:
+                            texto = elemento.text.strip()
+                            total_mensajes_revisados += 1
                             
-                            # Si encontramos el mensaje con la fecha de hoy o "BUEN DIA", empezar a capturar
-                            if (fecha_hoy_texto in texto_upper or 
-                                fecha_hoy_corta in texto_upper or
-                                ("LISTA DE HOY" in texto_upper and mes_actual in texto_upper) or
-                                texto_upper.startswith("BUEN DIA TE DEJO LA LISTA DE HOY") or
-                                texto_upper.startswith("BUEN DÍA TE DEJO LA LISTA DE HOY")):
+                            if texto and len(texto) > 20:
+                                texto_upper = texto.upper()
                                 
-                                print(f"   🎯 Mensaje de hoy encontrado: '{texto[:100]}...'")
-                                textos_encontrados.append(texto)
-                                
-                                # Buscar más mensajes cercanos que podrían ser parte de la lista
-                                parent = elemento
-                                try:
-                                    # Subir en el DOM para encontrar el contenedor del mensaje
-                                    for _ in range(5):
-                                        parent = parent.find_element(By.XPATH, '..')
-                                        
-                                    # Buscar elementos hermanos que podrían contener más parte del mensaje
-                                    hermanos = parent.find_elements(By.XPATH, './/span[contains(@class, "selectable-text")]')
-                                    for hermano in hermanos:
-                                        texto_hermano = hermano.text.strip()
-                                        if texto_hermano and len(texto_hermano) > 10 and texto_hermano != texto:
-                                            textos_encontrados.append(texto_hermano)
-                                            
-                                except:
-                                    pass
-                                
-                                break
-                                
-                    if textos_encontrados:
-                        break
-                        
+                                # Buscar mensaje que contenga "BUEN DIA TE DEJO LA LISTA DE HOY" (más flexible)
+                                if ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper or
+                                    "BUEN DÍA TE DEJO LA LISTA DE HOY" in texto_upper):
+                                    
+                                    print(f"   🎯 ¡MENSAJE 'BUEN DIA' ENCONTRADO!")
+                                    print(f"   📊 Longitud: {len(texto)} caracteres")
+                                    print(f"   📝 Primeros 200 caracteres: '{texto[:200]}...'")
+                                    print(f"   📝 Últimos 100 caracteres: '...{texto[-100:]}'")
+                                    return [texto]
+                                    
+                        except Exception as e:
+                            continue
+                            
                 except Exception as e:
-                    print(f"   ⚠️ Error con selector {selector}: {e}")
+                    print(f"   ⚠️ Error con selector {i+1}: {e}")
                     continue
             
-            if textos_encontrados:
-                print(f"   ✅ Encontrados {len(textos_encontrados)} segmentos de mensaje")
-                # Unir todos los textos encontrados
-                texto_completo = '\n'.join(textos_encontrados)
-                return [texto_completo] if texto_completo else []
-            else:
-                print("   ⚠️ No se encontraron mensajes de hoy por contenido")
-                return []
+            print(f"   📊 Total mensajes revisados en extracción: {total_mensajes_revisados}")
+            print("   ⚠️ No se encontró mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' en extracción")
+            return []
                 
         except Exception as e:
             print(f"   ❌ Error extrayendo mensajes por contenido: {e}")
@@ -591,57 +570,60 @@ class AutomatizadorWSP:
     def extraer_mensajes_por_etiquetas_dom(self):
         """Método original de extracción por etiquetas DOM"""
         try:
-            print("Buscando última etiqueta de fecha...")
+            print("� Buscando última etiqueta de fecha...")
+            
             # Buscar todas las etiquetas de fecha (Hoy, Ayer, fechas específicas)
+            # Incluir el selector específico proporcionado para el elemento "Hoy"
             selectores_fecha = [
-                '//span[contains(@class, "x140p0ai") and contains(@class, "x1gufx9m") and contains(@class, "x1s928wv") and (text()="Hoy" or text()="Ayer")]',
-                '//span[contains(@class, "x140p0ai") and (text()="Hoy" or text()="Ayer")]',
+                # Selector específico para el elemento "Hoy" con las clases exactas
+                '//span[contains(@class, "x140p0ai") and contains(@class, "x1gufx9m") and contains(@class, "x1s928wv") and text()="Hoy"]',
+                # Selector más general pero específico para "Hoy"
+                '//span[contains(@class, "x140p0ai") and text()="Hoy"]',
+                # Selectores originales como fallback
+                '//span[contains(@class, "x140p0ai") and (text()="Hoy" or text()="Ayer" or text()="Today" or text()="Yesterday")]',
                 '//span[text()="Hoy" or text()="Ayer" or text()="Today" or text()="Yesterday"]',
                 '//div[contains(@class, "x1n2onr6")]//span[contains(@class, "x140p0ai")]'
             ]
+            
             ultima_etiqueta = None
             etiqueta_hoy_encontrada = False
-            etiqueta_ayer_encontrada = False
+            
             for selector in selectores_fecha:
                 try:
                     etiquetas = self.driver.find_elements(By.XPATH, selector)
                     if etiquetas:
-                        # Buscar primero 'Hoy', si no, buscar 'Ayer'
-                        for etiqueta in reversed(etiquetas):
+                        # Priorizar específicamente la etiqueta "Hoy"
+                        for etiqueta in reversed(etiquetas):  # Empezar por las más recientes
                             texto_etiqueta = etiqueta.text.strip()
                             if texto_etiqueta in ["Hoy", "Today"]:
                                 ultima_etiqueta = etiqueta
                                 etiqueta_hoy_encontrada = True
                                 print(f"   🎯 Etiqueta 'Hoy' encontrada: '{texto_etiqueta}'")
                                 break
-                        if not etiqueta_hoy_encontrada:
-                            for etiqueta in reversed(etiquetas):
-                                texto_etiqueta = etiqueta.text.strip()
-                                if texto_etiqueta in ["Ayer", "Yesterday"]:
-                                    ultima_etiqueta = etiqueta
-                                    etiqueta_ayer_encontrada = True
-                                    print(f"   ⚠️ No se encontró etiqueta 'Hoy', usando 'Ayer' como fallback: '{texto_etiqueta}'")
-                                    break
-                        if etiqueta_hoy_encontrada or etiqueta_ayer_encontrada:
+                        
+                        # Si encontramos "Hoy", salir del bucle principal
+                        if etiqueta_hoy_encontrada:
                             break
-                        # Si no encontramos ninguna, usar la última etiqueta como fallback
+                            
+                        # Si no encontramos "Hoy", usar la última etiqueta como fallback
                         if not ultima_etiqueta:
                             ultima_etiqueta = etiquetas[-1]
                             texto_etiqueta = ultima_etiqueta.text
                             print(f"   ✅ Última etiqueta encontrada (fallback): '{texto_etiqueta}'")
                 except:
                     continue
+            
             if not ultima_etiqueta:
                 print("   ⚠️ No se encontró ninguna etiqueta de fecha")
                 return []
+            
+            # Verificar si realmente encontramos la etiqueta "Hoy"
             texto_final = ultima_etiqueta.text.strip()
-            if etiqueta_hoy_encontrada:
-                print(f"   ✅ Confirmado: Procesando mensajes desde etiqueta 'Hoy'")
-            elif etiqueta_ayer_encontrada:
-                print(f"   ⚠️ Procesando mensajes desde etiqueta 'Ayer' (no se encontró 'Hoy')")
+            if not etiqueta_hoy_encontrada:
+                print(f"   ⚠️ ADVERTENCIA: No se encontró etiqueta 'Hoy', usando '{texto_final}' como fallback")
+                print("   💡 Esto podría significar que no hay mensajes de hoy o que la estructura del DOM cambió")
             else:
-                print(f"   ⚠️ ADVERTENCIA: No se encontró etiqueta 'Hoy' ni 'Ayer', usando '{texto_final}' como fallback")
-                print("   💡 Esto podría significar que no hay mensajes recientes o que la estructura del DOM cambió")
+                print(f"   ✅ Confirmado: Procesando mensajes desde etiqueta 'Hoy'")
             
             # Buscar todos los mensajes que están después de esta etiqueta
             textos = []
@@ -824,15 +806,15 @@ class AutomatizadorWSP:
         if not self.buscar_y_abrir_chat(nombre_proveedor, config):
             return False
         
-        # NUEVA VERIFICACIÓN: Comprobar si hay mensajes de hoy o mensaje "BUEN DIA" antes de procesar
+        # NUEVA VERIFICACIÓN: Comprobar si hay mensajes de hoy antes de procesar
         if not self.verificar_chat_tiene_mensajes_hoy():
-            print(f"⏭️  SALTANDO {nombre_proveedor}: No tiene mensajes de hoy ni mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY'")
+            print(f"⏭️  SALTANDO {nombre_proveedor}: No tiene mensajes con 'BUEN DIA TE DEJO LA LISTA DE HOY'")
             return False
         
         if hasattr(self, 'mensaje_buen_dia_encontrado') and self.mensaje_buen_dia_encontrado:
             print(f"✅ Confirmado: {nombre_proveedor} tiene mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' - Continuando procesamiento...")
         else:
-            print(f"✅ Confirmado: {nombre_proveedor} tiene mensajes de hoy - Continuando procesamiento...")
+            print(f"✅ Confirmado: {nombre_proveedor} tiene mensajes válidos - Continuando procesamiento...")
         
         # Ir al final del chat y expandir mensajes
         if not self.ir_al_final_del_chat():
@@ -929,20 +911,8 @@ class AutomatizadorWSP:
         
         scripts_a_ejecutar = [
             {
-                "nombre": "procesar_gcgroup.py",
-                "descripcion": "Procesamiento de GcGroup con colores"
-            },
-            {
-                "nombre": "excel_to_json.py", 
-                "descripcion": "Conversión a JSON para productos"
-            },
-            {
-                "nombre": "generar_pdf.py",
-                "descripcion": "Generación de PDF de lista de precios"
-            },
-            {
-                "nombre": "generar_difusion.py",
-                "descripcion": "Generación de archivo de difusión para WhatsApp"
+                "nombre": "procesar_gcgroup_refactor.py",
+                "descripcion": "Procesamiento específico de GCGroup con nueva fórmula de precios"
             }
         ]
         
@@ -963,7 +933,6 @@ class AutomatizadorWSP:
                     capture_output=True, 
                     text=True,
                     encoding='utf-8',
-                    errors='replace',  # Reemplazar caracteres problemáticos en lugar de fallar
                     cwd=os.getcwd()
                 )
                 
@@ -994,12 +963,11 @@ class AutomatizadorWSP:
         print(f"\n{'='*70}")
         print("🎉 PROCESAMIENTO AUTOMÁTICO COMPLETADO")
         print(f"{'='*70}")
-        print("📁 Revisa los archivos generados:")
-        print("   • Lista extraída de WhatsApp (TXT) - en output/")
-        print("   • Lista procesada con colores (Excel) - en output/")
-        print("   • Productos categorizados (JSON) - en public/")
-        print("   • Lista de precios (PDF) - en public/")
-        print("   • Archivo de difusión para WhatsApp (TXT) - en output/")
+        print("📁 Revisa la carpeta 'output/' para ver todos los archivos generados:")
+        print("   • Lista extraída de WhatsApp (TXT)")
+        print("   • Lista procesada con colores (Excel)")
+        print("   • Productos categorizados (JSON)")
+        print("   • Archivo de difusión para WhatsApp (TXT)")
 
     def mostrar_resumen(self, resultados):
         """Mostrar resumen de la ejecución"""
