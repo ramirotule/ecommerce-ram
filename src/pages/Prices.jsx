@@ -43,7 +43,7 @@ const Prices = () => {
     setBusqueda(valor);
     
     // Trackear búsqueda cuando hay texto significativo
-    if (valor.length >= 3) {
+    if (valor.length >= 3 && productos && productos.length > 0) {
       const palabrasBuscadas = valor.toLowerCase().trim();
       
       // Calcular resultados que tendría esta búsqueda
@@ -120,8 +120,29 @@ const Prices = () => {
       .then(data => {
         // Verificar si el JSON tiene la nueva estructura con metadatos
         if (data.metadatos && data.productos) {
-          setProductos(data.productos);
-          setUltimaActualizacion(new Date(data.metadatos.fecha_actualizacion));
+          // Nueva estructura: productos está organizado por categorías
+          let productosArray = [];
+          if (typeof data.productos === 'object' && !Array.isArray(data.productos)) {
+            // Aplanar productos de todas las categorías
+            Object.keys(data.productos).forEach(categoria => {
+              const productosCategoria = data.productos[categoria];
+              if (Array.isArray(productosCategoria)) {
+                productosCategoria.forEach(producto => {
+                  productosArray.push({
+                    producto: producto.nombre || producto.producto,
+                    categoria: producto.categoria || categoria,
+                    precio_usd: producto.precio || producto.precio_usd
+                  });
+                });
+              }
+            });
+          } else if (Array.isArray(data.productos)) {
+            // Si productos ya es un array
+            productosArray = data.productos;
+          }
+          
+          setProductos(productosArray);
+          setUltimaActualizacion(new Date(data.metadatos.fecha_extraccion || data.metadatos.fecha_actualizacion));
         } else {
           // Formato antiguo sin metadatos
           setProductos(data);
@@ -141,11 +162,11 @@ const Prices = () => {
       .catch(() => setDolarBlue(null));
   }, []);
 
-  const categorias = ["TODOS", ...Array.from(new Set(productos.map(p => p.categoria)))];
+  const categorias = ["TODOS", ...Array.from(new Set((productos || []).map(p => p.categoria)))];
 
   // Hook para trackear resultados de filtrado y patrones de búsqueda
   useEffect(() => {
-    if (productos.length > 0) {
+    if (productos && productos.length > 0) {
       const totalFiltrados = productos.filter(p => {
         const categoriaMatch = categoria === "TODOS" || p.categoria === categoria;
         const busquedaMatch = p.producto.toLowerCase().includes(busqueda.toLowerCase());
@@ -197,7 +218,7 @@ const Prices = () => {
     trackEvent('reset_filters', 'Lista_Precios', 'Borrar_Filtros', 1);
   };
 
-  let filtrados = productos.filter(p => {
+  let filtrados = (productos || []).filter(p => {
     const categoriaMatch = categoria === "TODOS" || p.categoria === categoria;
     const busquedaMatch = p.producto.toLowerCase().includes(busqueda.toLowerCase());
     return categoriaMatch && busquedaMatch;
@@ -399,7 +420,7 @@ const Prices = () => {
               value={busqueda}
               onChange={e => handleBusqueda(e.target.value)}
               onKeyDown={e => {
-                if (e.key === 'Enter' && busqueda.length >= 3) {
+                if (e.key === 'Enter' && busqueda.length >= 3 && productos) {
                   // Trackear búsqueda intencional (Enter)
                   const resultados = productos.filter(p => {
                     const categoriaMatch = categoria === "TODOS" || p.categoria === categoria;
