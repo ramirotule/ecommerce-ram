@@ -194,10 +194,24 @@ def main():
         print(f"❌ No se encontró el archivo: {archivo_entrada}")
         return False
     
-    # Leer archivo
+    # Leer archivo con manejo robusto de encoding
     try:
-        with open(archivo_entrada, 'r', encoding='utf-8') as f:
-            contenido = f.read()
+        # Intentar diferentes encodings
+        contenido = None
+        encodings_a_probar = ['utf-8', 'utf-8-sig', 'latin-1', 'cp1252', 'iso-8859-1']
+        
+        for encoding in encodings_a_probar:
+            try:
+                with open(archivo_entrada, 'r', encoding=encoding) as f:
+                    contenido = f.read()
+                print(f"✅ Archivo leído exitosamente con encoding: {encoding}")
+                break
+            except UnicodeDecodeError:
+                continue
+        
+        if contenido is None:
+            print(f"❌ No se pudo leer el archivo {archivo_entrada} con ningún encoding")
+            return False
         
         if len(contenido.strip()) == 0:
             print(f"❌ El archivo {archivo_entrada} está vacío")

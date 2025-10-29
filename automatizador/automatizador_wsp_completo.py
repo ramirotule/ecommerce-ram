@@ -58,7 +58,7 @@ class AutomatizadorWSP:
             print("✅ Abriendo WhatsApp Web...")
             self.driver.get("https://web.whatsapp.com")
             print("⏳ Esperando 8 segundos para cargar WhatsApp...")
-            time.sleep(15)
+            time.sleep(30)
             return True
             
         except Exception as e:
