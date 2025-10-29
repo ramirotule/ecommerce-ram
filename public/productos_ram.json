@@ -1,8 +1,8 @@
 {
   "metadatos": {
-    "fecha_extraccion": "27/10/2025 14:03",
+    "fecha_extraccion": "29/10/2025 10:55",
     "proveedor": "GcGroup",
-    "total_productos": 175,
+    "total_productos": 165,
     "formula_precio": "(costo + 18%) + $20, redondeado a múltiplo de 5"
   },
   "productos": {
@@ -63,14 +63,14 @@
       },
       {
         "nombre": "IPHONE AIR 256 GB ESIM",
-        "precio": 1075,
-        "precio_costo": 890.0,
+        "precio": 1065,
+        "precio_costo": 885.0,
         "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
       },
       {
-        "nombre": "IPHONE 17 PRO 256 GB ESIM BLUE/ORANG",
-        "precio": 1480,
-        "precio_costo": 1235.0,
+        "nombre": "IPHONE 17 PRO 256 GB ESIM BLUE/ORANGE",
+        "precio": 1470,
+        "precio_costo": 1225.0,
         "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
       },
       {
@@ -87,8 +87,8 @@
       },
       {
         "nombre": "IPHONE 17 PRO 512 GB ESIM SILVER",
-        "precio": 1765,
-        "precio_costo": 1475.0,
+        "precio": 1770,
+        "precio_costo": 1480.0,
         "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
       },
       {
@@ -104,9 +104,9 @@
         "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
       },
       {
-        "nombre": "IPHONE 17 PRO MAX 512 GB ESIM SILVER",
-        "precio": 2025,
-        "precio_costo": 1695.0,
+        "nombre": "IPHONE 17 PRO MAX 512 GB ESIM BLUE/SILVER",
+        "precio": 1985,
+        "precio_costo": 1665.0,
         "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
       }
     ],
@@ -163,8 +163,8 @@
     "IPHONE AS IS - GTIA 1 MES": [
       {
         "nombre": "IPHONE 15 128 GB BLACK AS IS",
-        "precio": 650,
-        "precio_costo": 530.0,
+        "precio": 635,
+        "precio_costo": 520.0,
         "categoria": "IPHONE AS IS - GTIA 1 MES"
       },
       {
@@ -174,7 +174,7 @@
         "categoria": "IPHONE AS IS - GTIA 1 MES"
       },
       {
-        "nombre": "IPHONE 16 256 GB ULTRA/PINK AS IS",
+        "nombre": "IPHONE 16 256 GB PINK AS IS",
         "precio": 890,
         "precio_costo": 735.0,
         "categoria": "IPHONE AS IS - GTIA 1 MES"
@@ -200,12 +200,6 @@
         "categoria": "SAMSUNG - GTIA 3 MESES"
       },
       {
-        "nombre": "SAMSUNG A07 4/128 GB",
-        "precio": 175,
-        "precio_costo": 130.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
-      },
-      {
         "nombre": "SAMSUNG A16 4/128 GB",
         "precio": 180,
         "precio_costo": 135.0,
@@ -225,8 +219,8 @@
       },
       {
         "nombre": "SAMSUNG A17 5G 8/256 GB",
-        "precio": 300,
-        "precio_costo": 235.0,
+        "precio": 305,
+        "precio_costo": 240.0,
         "categoria": "SAMSUNG - GTIA 3 MESES"
       },
       {
@@ -278,15 +272,9 @@
         "categoria": "SAMSUNG - GTIA 3 MESES"
       },
       {
-        "nombre": "SAMSUNG S24 FE 8/256 GB",
-        "precio": 605,
-        "precio_costo": 495.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
-      },
-      {
         "nombre": "SAMSUNG S25 12/256 GB",
-        "precio": 845,
-        "precio_costo": 695.0,
+        "precio": 850,
+        "precio_costo": 700.0,
         "categoria": "SAMSUNG - GTIA 3 MESES"
       },
       {
@@ -315,8 +303,8 @@
       },
       {
         "nombre": "SAMSUNG Z FLIP 7 12/512 GB",
-        "precio": 1160,
-        "precio_costo": 965.0,
+        "precio": 1150,
+        "precio_costo": 955.0,
         "categoria": "SAMSUNG - GTIA 3 MESES"
       }
     ],
@@ -352,15 +340,15 @@
         "categoria": "MOTOROLA - GTIA 3 MESES"
       },
       {
-        "nombre": "MOTOROLA G75 5G 8/256 GB",
-        "precio": 270,
-        "precio_costo": 210.0,
+        "nombre": "MOTOROLA G85 5G 8/256 GB",
+        "precio": 265,
+        "precio_costo": 205.0,
         "categoria": "MOTOROLA - GTIA 3 MESES"
       },
       {
-        "nombre": "MOTOROLA G85 5G 8/256 GB",
-        "precio": 270,
-        "precio_costo": 210.0,
+        "nombre": "MOTOROLA G86 5G 8/256 GB",
+        "precio": 330,
+        "precio_costo": 260.0,
         "categoria": "MOTOROLA - GTIA 3 MESES"
       },
       {
@@ -388,6 +376,12 @@
         "categoria": "MOTOROLA - GTIA 3 MESES"
       },
       {
+        "nombre": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
+        "precio": 340,
+        "precio_costo": 270.0,
+        "categoria": "MOTOROLA - GTIA 3 MESES"
+      },
+      {
         "nombre": "MOTOROLA EDGE 50 NEO 5G 8/256 GB",
         "precio": 315,
         "precio_costo": 250.0,
@@ -406,21 +400,9 @@
         "categoria": "MOTOROLA - GTIA 3 MESES"
       },
       {
-        "nombre": "MOTOROLA EDGE 60 FUSION 5G 12/256 GB",
-        "precio": 330,
-        "precio_costo": 260.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
-      },
-      {
         "nombre": "MOTOROLA EDGE 60 PRO 5G 12/512 GB",
-        "precio": 565,
-        "precio_costo": 460.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
-      },
-      {
-        "nombre": "MOTOROLA RAZR 50 ULTRA 5G 12/512 GB",
-        "precio": 865,
-        "precio_costo": 715.0,
+        "precio": 560,
+        "precio_costo": 455.0,
         "categoria": "MOTOROLA - GTIA 3 MESES"
       }
     ],
@@ -463,16 +445,16 @@
       },
       {
         "nombre": "INFINIX GT 30 PRO 5G 12/256 GB",
-        "precio": 425,
-        "precio_costo": 340.0,
+        "precio": 410,
+        "precio_costo": 330.0,
         "categoria": "INFINIX - GTIA 3 MESES"
       }
     ],
     "ITEL - GTIA 3 MESES": [
       {
         "nombre": "ITEL A90 4/256 GB",
-        "precio": 135,
-        "precio_costo": 95.0,
+        "precio": 125,
+        "precio_costo": 85.0,
         "categoria": "ITEL - GTIA 3 MESES"
       }
     ],
@@ -505,6 +487,12 @@
         "nombre": "XIAOMI REDMI 14C 6/128 GB",
         "precio": 165,
         "precio_costo": 120.0,
+        "categoria": "XIAOMI - GTIA 3 MESES"
+      },
+      {
+        "nombre": "XIAOMI REDMI 14C 8/256 GB",
+        "precio": 170,
+        "precio_costo": 125.0,
         "categoria": "XIAOMI - GTIA 3 MESES"
       },
       {
@@ -571,12 +559,6 @@
         "nombre": "XIAOMI NOTE 14s 12/512 GB",
         "precio": 310,
         "precio_costo": 245.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI NOTE 14 5G 8/256 GB",
-        "precio": 290,
-        "precio_costo": 225.0,
         "categoria": "XIAOMI - GTIA 3 MESES"
       },
       {
@@ -700,12 +682,6 @@
         "categoria": "XIAOMI - GTIA 3 MESES"
       },
       {
-        "nombre": "XIAOMI POCO F7 5G 12/512 GB",
-        "precio": 525,
-        "precio_costo": 425.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
         "nombre": "XIAOMI POCO F7 PRO 5G 12/512 GB",
         "precio": 640,
         "precio_costo": 525.0,
@@ -725,8 +701,8 @@
       },
       {
         "nombre": "XIAOMI 14T 5G 12/512 GB",
-        "precio": 770,
-        "precio_costo": 635.0,
+        "precio": 585,
+        "precio_costo": 475.0,
         "categoria": "XIAOMI - GTIA 3 MESES"
       },
       {
@@ -767,14 +743,14 @@
       },
       {
         "nombre": "XIAOMI 15 ULTRA 5G 16/1 TB",
-        "precio": 1935,
-        "precio_costo": 1620.0,
+        "precio": 1865,
+        "precio_costo": 1560.0,
         "categoria": "XIAOMI - GTIA 3 MESES"
       }
     ],
     "PARLANTES JBL": [
       {
-        "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED",
+        "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLUE/RED",
         "precio": 70,
         "precio_costo": 40.0,
         "categoria": "PARLANTES JBL"
@@ -786,7 +762,7 @@
         "categoria": "PARLANTES JBL"
       },
       {
-        "nombre": "JBL FLIP 7 35 WATTS BLUE/PINK/CAMUFLADO",
+        "nombre": "JBL FLIP 7 35 WATTS PINK",
         "precio": 150,
         "precio_costo": 110.0,
         "categoria": "PARLANTES JBL"
@@ -806,48 +782,28 @@
     ],
     "AIRPODS": [
       {
+        "nombre": "AIRPODS PRO 2DA USBC",
+        "precio": 270,
+        "precio_costo": 210.0,
+        "categoria": "AIRPODS"
+      },
+      {
         "nombre": "AIRPODS PRO 3RA USBC",
-        "precio": 390,
-        "precio_costo": 310.0,
+        "precio": 365,
+        "precio_costo": 290.0,
         "categoria": "AIRPODS"
       },
       {
         "nombre": "AIRPODS 4",
-        "precio": 215,
-        "precio_costo": 165.0,
+        "precio": 225,
+        "precio_costo": 170.0,
         "categoria": "AIRPODS"
       },
       {
-        "nombre": "AIRPODS 4 NOISE CANCELING",
-        "precio": 275,
-        "precio_costo": 215.0,
+        "nombre": "AIRPODS 4 NOISE CANCELLING",
+        "precio": 245,
+        "precio_costo": 190.0,
         "categoria": "AIRPODS"
-      }
-    ],
-    "APPLE WATCH": [
-      {
-        "nombre": "WATCH 11 42MM",
-        "precio": 640,
-        "precio_costo": 525.0,
-        "categoria": "APPLE WATCH"
-      },
-      {
-        "nombre": "WATCH 11 46MM",
-        "precio": 675,
-        "precio_costo": 555.0,
-        "categoria": "APPLE WATCH"
-      },
-      {
-        "nombre": "WATCH 11 + CELL 42MM",
-        "precio": 820,
-        "precio_costo": 675.0,
-        "categoria": "APPLE WATCH"
-      },
-      {
-        "nombre": "WATCH 10 ULTRA 2",
-        "precio": 945,
-        "precio_costo": 780.0,
-        "categoria": "APPLE WATCH"
       }
     ],
     "IPAD": [
@@ -914,12 +870,6 @@
         "categoria": "MACBOOK"
       },
       {
-        "nombre": "MACBOOK AIR M4 15” 16/256 GB",
-        "precio": 1415,
-        "precio_costo": 1180.0,
-        "categoria": "MACBOOK"
-      },
-      {
         "nombre": "MACBOOK AIR M4 15” 16/512 GB",
         "precio": 1710,
         "precio_costo": 1430.0,
@@ -933,8 +883,8 @@
       },
       {
         "nombre": "MACBOOK PRO M4 14” 16/1 TB",
-        "precio": 2265,
-        "precio_costo": 1900.0,
+        "precio": 2170,
+        "precio_costo": 1820.0,
         "categoria": "MACBOOK"
       },
       {
@@ -965,18 +915,12 @@
       },
       {
         "nombre": "PS5 SLIM 1 TB DIGITAL",
-        "precio": 650,
-        "precio_costo": 530.0,
+        "precio": 625,
+        "precio_costo": 510.0,
         "categoria": "PLAYSTATION"
       },
       {
         "nombre": "PS5 SLIM 1 TB DIGITAL CALL OF DUTY",
-        "precio": 670,
-        "precio_costo": 550.0,
-        "categoria": "PLAYSTATION"
-      },
-      {
-        "nombre": "PS5 SLIM 1 TB DIGITAL FORNITE",
         "precio": 670,
         "precio_costo": 550.0,
         "categoria": "PLAYSTATION"
@@ -1006,12 +950,6 @@
         "categoria": "PLAYSTATION"
       },
       {
-        "nombre": "PS5 SLIM 1 TB C/LECTORA FC26",
-        "precio": 825,
-        "precio_costo": 680.0,
-        "categoria": "PLAYSTATION"
-      },
-      {
         "nombre": "PS5 PRO 2 TB",
         "precio": 1060,
         "precio_costo": 880.0,
@@ -1035,32 +973,32 @@
       },
       {
         "nombre": "75” Smart TV UHD 4K Samsung UN75DU7000GCZB",
-        "precio": 1275,
-        "precio_costo": 1060.0,
+        "precio": 1440,
+        "precio_costo": 1200.0,
         "categoria": "TVS - ENTREGA 1 DIA DESPUES"
       },
       {
         "nombre": "65” Smart TV QLED 4K Samsung QN65Q65DAGCZB",
-        "precio": 1000,
-        "precio_costo": 830.0,
+        "precio": 965,
+        "precio_costo": 800.0,
         "categoria": "TVS - ENTREGA 1 DIA DESPUES"
       },
       {
         "nombre": "65” Smart TV LED 4K Samsung DU7000",
-        "precio": 850,
-        "precio_costo": 700.0,
+        "precio": 870,
+        "precio_costo": 720.0,
         "categoria": "TVS - ENTREGA 1 DIA DESPUES"
       },
       {
         "nombre": "55” Smart TV Samsung 4K QLED Q65D",
-        "precio": 650,
-        "precio_costo": 530.0,
+        "precio": 695,
+        "precio_costo": 570.0,
         "categoria": "TVS - ENTREGA 1 DIA DESPUES"
       },
       {
         "nombre": "55” Smart TV UHD 4K Samsung UN55DU7000GCZB",
-        "precio": 540,
-        "precio_costo": 440.0,
+        "precio": 600,
+        "precio_costo": 490.0,
         "categoria": "TVS - ENTREGA 1 DIA DESPUES"
       },
       {
@@ -1071,20 +1009,20 @@
       },
       {
         "nombre": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
-        "precio": 445,
-        "precio_costo": 360.0,
+        "precio": 495,
+        "precio_costo": 400.0,
         "categoria": "TVS - ENTREGA 1 DIA DESPUES"
       },
       {
         "nombre": "43” Smart TV UHD 4K Samsung  UN43DU7000GCZB",
-        "precio": 375,
-        "precio_costo": 300.0,
+        "precio": 425,
+        "precio_costo": 340.0,
         "categoria": "TVS - ENTREGA 1 DIA DESPUES"
       },
       {
         "nombre": "32” Smart TV HD Samsung UN32T4300A",
-        "precio": 225,
-        "precio_costo": 170.0,
+        "precio": 255,
+        "precio_costo": 195.0,
         "categoria": "TVS - ENTREGA 1 DIA DESPUES"
       }
     ]
