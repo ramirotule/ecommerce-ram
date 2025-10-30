@@ -35,7 +35,7 @@ const Prices = () => {
   const [sortBy, setSortBy] = useState('categoria'); // por defecto categoría
   const [sortDir, setSortDir] = useState('asc'); // por defecto ascendente
   const [dolarBlue, setDolarBlue] = useState(null);
-  const [ultimaActualizacion, setUltimaActualizacion] = useState(null);
+  const [ultimaActualizacion, setUltimaActualizacion] = useState('');
   const [isMobile, setIsMobile] = useState(false);
 
   // Función para manejar búsqueda con tracking avanzado
@@ -142,11 +142,12 @@ const Prices = () => {
           }
           
           setProductos(productosArray);
-          setUltimaActualizacion(new Date(data.metadatos.fecha_extraccion || data.metadatos.fecha_actualizacion));
+          console.log(data.metadatos)
+          setUltimaActualizacion(data.metadatos.fecha_extraccion);
         } else {
           // Formato antiguo sin metadatos
           setProductos(data);
-          setUltimaActualizacion(null);
+          setUltimaActualizacion("Sin datos");
         }
       })
       .catch(error => {
@@ -327,16 +328,7 @@ const Prices = () => {
                 fontWeight: '500'
               }}>
                 <span style={{ color: '#00aa00', fontWeight: '600' }}>✅ Última actualización:</span>{' '}
-                {ultimaActualizacion.toLocaleDateString('es-AR', {
-                  weekday: 'long',
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}{' '}
-                a las {ultimaActualizacion.toLocaleTimeString('es-AR', {
-                  hour: '2-digit',
-                  minute: '2-digit'
-                })}
+                {ultimaActualizacion}
               </p>
             </div>
           )}
