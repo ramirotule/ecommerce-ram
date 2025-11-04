@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { COLORS } from '../utils/colors';
 import { AiOutlineDownload } from "react-icons/ai";
 import Select from 'react-select';
+import FinanciacionModal from '../components/FinanciacionModal';
 
 // Ruta del PDF para descarga
 const pdfFile = "/precios_ram.pdf";
@@ -37,6 +38,9 @@ const Prices = () => {
   const [dolarBlue, setDolarBlue] = useState(null);
   const [ultimaActualizacion, setUltimaActualizacion] = useState('');
   const [isMobile, setIsMobile] = useState(false);
+
+  // Estado para el modal de financiación
+  const [showFinanciacionModal, setShowFinanciacionModal] = useState(false);
 
   // Función para manejar búsqueda con tracking avanzado
   const handleBusqueda = (valor) => {
@@ -333,42 +337,82 @@ const Prices = () => {
             </div>
           )}
 
-       
+          {/* Contenedor de botones */}
+          <div style={{
+            display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
+            gap: '15px',
+            alignItems: isMobile ? 'stretch' : 'flex-start',
+            justifyContent: 'flex-start'
+          }}>
+            {/* Botón de descarga principal */}
+            <button
+              onClick={handleDownload}
+              style={{
+                padding: isMobile ? '12px 24px' : '15px 30px',
+                borderRadius: '25px',
+                border: 'none',
+                background: 'linear-gradient(135deg, #00F100 0%, #00cc00 100%)',
+                color: '#000',
+                fontSize: isMobile ? '16px' : '18px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                boxShadow: '0 5px 15px rgba(0, 241, 0, 0.3)',
+                width: isMobile ? '100%' : 'fit-content',
+                justifyContent: 'center'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.transform = 'translateY(-3px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(0, 241, 0, 0.5)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = '0 5px 15px rgba(0, 241, 0, 0.3)';
+              }}
+            >
+              <AiOutlineDownload size={20} />
+              Descargar Lista de Precios PDF
+            </button>
 
-          {/* Botón de descarga principal */}
-          <button
-            onClick={handleDownload}
-            style={{
-              padding: isMobile ? '12px 24px' : '15px 30px',
-              borderRadius: '25px',
-              border: 'none',
-              background: 'linear-gradient(135deg, #00F100 0%, #00cc00 100%)',
-              color: '#000',
-              fontSize: isMobile ? '16px' : '18px',
-              fontWeight: '600',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '10px',
-              boxShadow: '0 5px 15px rgba(0, 241, 0, 0.3)',
-              width: isMobile ? '100%' : 'fit-content',
-              justifyContent: 'center'
-            }}
-            onMouseOver={(e) => {
-              e.target.style.transform = 'translateY(-3px)';
-              e.target.style.boxShadow = '0 8px 25px rgba(0, 241, 0, 0.5)';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = '0 5px 15px rgba(0, 241, 0, 0.3)';
-            }}
-          >
-            <AiOutlineDownload size={20} />
-            Descargar Lista de Precios PDF
-          </button>
+            {/* Botón de Simulación de Financiación */}
+            <button
+              onClick={() => setShowFinanciacionModal(true)}
+              style={{
+                padding: isMobile ? '12px 24px' : '15px 30px',
+                borderRadius: '25px',
+                border: 'none',
+                background: 'linear-gradient(135deg, #007bff 0%, #0056b3 100%)',
+                color: 'white',
+                fontSize: isMobile ? '16px' : '18px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                boxShadow: '0 5px 15px rgba(0, 123, 255, 0.3)',
+                width: isMobile ? '100%' : 'fit-content',
+                justifyContent: 'center'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.transform = 'translateY(-3px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(0, 123, 255, 0.5)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = '0 5px 15px rgba(0, 123, 255, 0.3)';
+              }}
+            >
+              💳 Simulación de Financiación
+            </button>
+          </div>
+
         </div>
-
+   
 
         {/* Información adicional */}
         <div style={{
@@ -749,6 +793,13 @@ const Prices = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal de Financiación */}
+      <FinanciacionModal
+        isOpen={showFinanciacionModal}
+        onClose={() => setShowFinanciacionModal(false)}
+        isMobile={isMobile}
+      />
     </div>
   );
 };
