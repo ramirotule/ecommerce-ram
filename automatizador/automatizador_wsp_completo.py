@@ -260,26 +260,45 @@ class AutomatizadorWSP:
             print("   ℹ️ Continuando con la extracción...")
     
     def filtrar_mensajes_del_dia(self, textos, filtro_inicio):
-        """Filtrar mensajes que contengan 'BUEN DIA TE DEJO LA LISTA DE HOY'"""
+        """Filtrar mensajes que contengan palabras clave de listas de precios"""
         mensajes_filtrados = []
         
-        print(f"🔍 Filtrando {len(textos)} mensajes buscando 'BUEN DIA TE DEJO LA LISTA DE HOY'...")
+        print(f"🔍 Filtrando {len(textos)} mensajes buscando listas de precios...")
         
         for i, texto in enumerate(textos):
             texto_upper = texto.upper()
             
-            # Aceptar mensajes que contengan "BUEN DIA TE DEJO LA LISTA DE HOY" (más flexible)
-            if ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper or 
-                "BUEN DÍA TE DEJO LA LISTA DE HOY" in texto_upper or
-                texto_upper.startswith("BUEN DIA TE DEJO LA LISTA DE HOY") or 
-                texto_upper.startswith("BUEN DÍA TE DEJO LA LISTA DE HOY")):
-                
-                print(f"   ✅ Mensaje {i+1} aceptado: Contiene 'BUEN DIA TE DEJO LA LISTA DE HOY'")
+            # Buscar diferentes tipos de mensajes de precios
+            criterios_busqueda = [
+                # Mensajes tradicionales
+                "BUEN DIA TE DEJO LA LISTA DE HOY",
+                "BUEN DÍA TE DEJO LA LISTA DE HOY", 
+                # Mensajes de precios específicos
+                "LISTA DE PRECIOS",
+                "PRECIOS DEL DIA",
+                "PRECIOS DEL DÍA",
+                "LISTA ACTUALIZADA",
+                # Mensajes de disponibilidad (también útiles)
+                "LISTA DE MODELOS Y COLORES",
+                "MODELOS DISPONIBLES"
+            ]
+            
+            encontrado = False
+            tipo_mensaje = ""
+            
+            for criterio in criterios_busqueda:
+                if criterio in texto_upper:
+                    encontrado = True
+                    tipo_mensaje = criterio
+                    break
+            
+            if encontrado:
+                print(f"   ✅ Mensaje {i+1} aceptado: Contiene '{tipo_mensaje}'")
                 print(f"   📝 Longitud: {len(texto)} caracteres")
                 print(f"   📝 Inicio: '{texto[:100]}...'")
                 mensajes_filtrados.append(texto)
             else:
-                print(f"   ❌ Mensaje {i+1} rechazado: No contiene la frase requerida")
+                print(f"   ❌ Mensaje {i+1} rechazado: No contiene criterios de búsqueda")
                 print(f"   📝 Vista previa: '{texto[:100]}...'")
                 
         if not mensajes_filtrados:
@@ -933,24 +952,32 @@ class AutomatizadorWSP:
                     capture_output=True, 
                     text=True,
                     encoding='utf-8',
+                    errors='replace',  # Reemplazar caracteres problemáticos en lugar de fallar
                     cwd=os.getcwd()
                 )
                 
                 # Mostrar la salida del script
                 if resultado.stdout:
-                    # Filtrar líneas vacías y limpiar salida
+                    # Filtrar líneas vacías
                     lineas = [linea for linea in resultado.stdout.split('\n') if linea.strip()]
                     for linea in lineas:
-                        # Remover caracteres que pueden causar problemas en terminal Windows
-                        linea_limpia = ''.join(char for char in linea if ord(char) < 127 or char in 'áéíóúüñÁÉÍÓÚÜÑ')
-                        print(f"   {linea_limpia}")
+                        try:
+                            # Intentar imprimir la línea tal como está
+                            print(f"   {linea}")
+                        except UnicodeEncodeError:
+                            # Si hay problemas de encoding, limpiar caracteres problemáticos
+                            linea_limpia = linea.encode('ascii', errors='ignore').decode('ascii')
+                            print(f"   {linea_limpia}")
                 
                 if resultado.stderr:
                     print(f"⚠️ Advertencias/Errores:")
                     lineas_error = [linea for linea in resultado.stderr.split('\n') if linea.strip()]
                     for linea in lineas_error:
-                        linea_limpia = ''.join(char for char in linea if ord(char) < 127 or char in 'áéíóúüñÁÉÍÓÚÜÑ')
-                        print(f"   {linea_limpia}")
+                        try:
+                            print(f"   {linea}")
+                        except UnicodeEncodeError:
+                            linea_limpia = linea.encode('ascii', errors='ignore').decode('ascii')
+                            print(f"   {linea_limpia}")
                 
                 if resultado.returncode == 0:
                     print(f"✅ {script['nombre']} ejecutado exitosamente")

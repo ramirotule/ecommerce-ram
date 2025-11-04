@@ -48,26 +48,47 @@ class ProcesadorGCGroup:
         try:
             print(f"🔍 Procesando texto de {len(texto_completo)} caracteres...")
             
+            # Detectar tipo de mensaje
+            es_lista_precios = "LISTA DE PRECIOS" in texto_completo.upper()
+            es_lista_disponibilidad = "LISTA DE MODELOS Y COLORES" in texto_completo.upper()
+            
+            if es_lista_disponibilidad:
+                print("📋 Detectado: Lista de disponibilidad de modelos y colores")
+                print("⚠️  Solo se procesarán productos que tengan precios explícitos")
+            elif es_lista_precios:
+                print("💰 Detectado: Lista de precios completa")
+            else:
+                print("📄 Tipo de mensaje no reconocido, procesando como lista general")
+            
             # Dividir en líneas para procesar
             lineas = texto_completo.split('\n')
             categoria_actual = "PRODUCTOS"
+            productos_sin_precio = 0
             
             for linea in lineas:
                 linea = linea.strip()
                 
-                # Detectar categorías
-                if linea.startswith('►'):
-                    categoria_actual = linea.replace('►', '').strip()
+                # Skip líneas vacías o de encabezado
+                if not linea or linea.startswith('#') or linea.startswith('='):
+                    continue
+                    
+                # Detectar categorías (líneas que son solo texto en mayúsculas, sin $)
+                if (linea.isupper() and 
+                    '$' not in linea and 
+                    len(linea.split()) <= 3 and
+                    not any(char.isdigit() for char in linea) and
+                    linea not in ['LISTA DE MODELOS Y COLORES DEL DÍA']):
+                    categoria_actual = linea.strip()
                     print(f"   📂 Categoría encontrada: {categoria_actual}")
                     continue
                 
-                # Buscar productos con precios
+                # Buscar productos con precios explícitos
                 match = re.search(self.precio_regex, linea, re.MULTILINE)
                 if match:
                     producto_raw = match.group(1).strip()
                     precio_costo = float(match.group(2))
                     
-                    # Limpiar nombre del producto (eliminar caracteres extra)
+                    # Limpiar nombre del producto
                     producto = producto_raw.strip()
                     
                     # Calcular precio de venta
@@ -75,7 +96,7 @@ class ProcesadorGCGroup:
                     
                     if precio_venta:
                         producto_info = {
-                            'producto': producto,  # Cambiado de 'nombre' a 'producto' para consistencia
+                            'producto': producto,
                             'precio_costo': precio_costo,
                             'precio_venta': precio_venta,
                             'categoria': categoria_actual,
@@ -85,8 +106,25 @@ class ProcesadorGCGroup:
                         
                         self.productos_extraidos.append(producto_info)
                         print(f"   ✅ {producto}: ${precio_costo} → ${precio_venta}")
+                else:
+                    # Para listas de disponibilidad, contar productos sin precio
+                    if (es_lista_disponibilidad and 
+                        linea and 
+                        not linea.isupper() and
+                        'LISTA DE' not in linea and
+                        'DEL DÍA' not in linea):
+                        productos_sin_precio += 1
             
-            print(f"   📊 Total productos extraídos: {len(self.productos_extraidos)}")
+            if productos_sin_precio > 0:
+                print(f"   📋 Productos sin precio (solo disponibilidad): {productos_sin_precio}")
+                print(f"   💡 Para obtener precios, busca un mensaje que diga 'LISTA DE PRECIOS'")
+                        
+            print(f"   📊 Total productos con precios extraídos: {len(self.productos_extraidos)}")
+            
+            if len(self.productos_extraidos) == 0 and productos_sin_precio > 0:
+                print(f"   ⚠️  AVISO: Este mensaje solo contiene disponibilidad, no precios")
+                print(f"   🔍 Busca un mensaje que contenga 'LISTA DE PRECIOS' para obtener los precios")
+                
             return self.productos_extraidos
             
         except Exception as e:
