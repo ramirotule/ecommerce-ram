@@ -1,751 +1,673 @@
 {
   "metadatos": {
-    "fecha_extraccion": "29/10/2025 10:55",
+    "fecha_extraccion": "06/11/2025 12:24",
     "proveedor": "GcGroup",
-    "total_productos": 165,
+    "total_productos": 164,
     "formula_precio": "(costo + 18%) + $20, redondeado a múltiplo de 5"
   },
   "productos": {
-    "IPHONE NEW - GTIA OFICIAL 12 MESES": [
+    "IPHONE NEW": [
       {
         "nombre": "IPHONE 13 128 GB SIM",
         "precio": 585,
         "precio_costo": 475.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "categoria": "IPHONE NEW"
       },
       {
         "nombre": "IPHONE 14 128 GB SIM/ESIM",
         "precio": 655,
         "precio_costo": 535.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "categoria": "IPHONE NEW"
       },
       {
         "nombre": "IPHONE 15 128 GB SIM/ESIM",
-        "precio": 700,
-        "precio_costo": 575.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "precio": 690,
+        "precio_costo": 565.0,
+        "categoria": "IPHONE NEW"
       },
       {
         "nombre": "IPHONE 15 256 GB SIM/ESIM",
-        "precio": 860,
-        "precio_costo": 710.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "precio": 855,
+        "precio_costo": 705.0,
+        "categoria": "IPHONE NEW"
       },
       {
         "nombre": "IPHONE 16 128 GB ESIM",
-        "precio": 825,
-        "precio_costo": 680.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "precio": 815,
+        "precio_costo": 670.0,
+        "categoria": "IPHONE NEW"
       },
       {
         "nombre": "IPHONE 16 256 GB ESIM",
         "precio": 1015,
         "precio_costo": 840.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "categoria": "IPHONE NEW"
       },
       {
         "nombre": "IPHONE 16 PLUS 128 GB ESIM",
-        "precio": 905,
-        "precio_costo": 750.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "precio": 920,
+        "precio_costo": 760.0,
+        "categoria": "IPHONE NEW"
       },
       {
         "nombre": "IPHONE 16 PLUS 256 GB ESIM",
         "precio": 1150,
         "precio_costo": 955.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "categoria": "IPHONE NEW"
+      },
+      {
+        "nombre": "IPHONE 16 PRO MAX 256 GB ESIM",
+        "precio": 1490,
+        "precio_costo": 1245.0,
+        "categoria": "IPHONE NEW"
       },
       {
         "nombre": "IPHONE 17 256 GB ESIM",
         "precio": 1165,
         "precio_costo": 970.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "categoria": "IPHONE NEW"
       },
       {
         "nombre": "IPHONE AIR 256 GB ESIM",
-        "precio": 1065,
-        "precio_costo": 885.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "precio": 1060,
+        "precio_costo": 880.0,
+        "categoria": "IPHONE NEW"
       },
       {
-        "nombre": "IPHONE 17 PRO 256 GB ESIM BLUE/ORANGE",
-        "precio": 1470,
-        "precio_costo": 1225.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "nombre": "IPHONE 17 PRO 256 GB ESIM BLUE/ORANG/SILVER",
+        "precio": 1460,
+        "precio_costo": 1220.0,
+        "categoria": "IPHONE NEW"
       },
       {
-        "nombre": "IPHONE 17 PRO 256 GB ESIM SILVER",
-        "precio": 1515,
-        "precio_costo": 1265.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "nombre": "IPHONE 17 PRO 512 GB ESIM BLUE/ORANG/SILVER",
+        "precio": 1730,
+        "precio_costo": 1445.0,
+        "categoria": "IPHONE NEW"
       },
       {
-        "nombre": "IPHONE 17 PRO 512 GB ESIM BLUE/ORANG",
-        "precio": 1740,
-        "precio_costo": 1455.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "nombre": "IPHONE 17 PRO MAX 256 GB ESIM BLUE",
+        "precio": 1645,
+        "precio_costo": 1375.0,
+        "categoria": "IPHONE NEW"
       },
       {
-        "nombre": "IPHONE 17 PRO 512 GB ESIM SILVER",
-        "precio": 1770,
-        "precio_costo": 1480.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
-      },
-      {
-        "nombre": "IPHONE 17 PRO MAX 256 GB ESIM",
-        "precio": 1625,
-        "precio_costo": 1360.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
-      },
-      {
-        "nombre": "IPHONE 17 PRO MAX 512 GB ESIM ORANGE",
-        "precio": 1945,
-        "precio_costo": 1630.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "nombre": "IPHONE 17 PRO MAX 256 GB ESIM SILVER/ORANGE",
+        "precio": 1670,
+        "precio_costo": 1395.0,
+        "categoria": "IPHONE NEW"
       },
       {
         "nombre": "IPHONE 17 PRO MAX 512 GB ESIM BLUE/SILVER",
-        "precio": 1985,
-        "precio_costo": 1665.0,
-        "categoria": "IPHONE NEW - GTIA OFICIAL 12 MESES"
+        "precio": 1975,
+        "precio_costo": 1655.0,
+        "categoria": "IPHONE NEW"
       }
     ],
-    "IPHONE TESTER - GTIA 1 MES": [
+    "IPHONE TESTER": [
       {
         "nombre": "IPHONE 11 128 GB BAT 100%",
         "precio": 330,
         "precio_costo": 260.0,
-        "categoria": "IPHONE TESTER - GTIA 1 MES"
-      },
-      {
-        "nombre": "IPHONE 11 PRO 64 GB BAT 100%",
-        "precio": 445,
-        "precio_costo": 360.0,
-        "categoria": "IPHONE TESTER - GTIA 1 MES"
-      },
-      {
-        "nombre": "IPHONE 12 64 GB BAT 80%",
-        "precio": 265,
-        "precio_costo": 205.0,
-        "categoria": "IPHONE TESTER - GTIA 1 MES"
-      },
-      {
-        "nombre": "IPHONE 12 PRO 256 GB BAT 80%",
-        "precio": 430,
-        "precio_costo": 345.0,
-        "categoria": "IPHONE TESTER - GTIA 1 MES"
+        "categoria": "IPHONE TESTER"
       },
       {
         "nombre": "IPHONE 12 PRO MAX 256 GB BAT 78%",
         "precio": 600,
         "precio_costo": 490.0,
-        "categoria": "IPHONE TESTER - GTIA 1 MES"
+        "categoria": "IPHONE TESTER"
       },
       {
         "nombre": "IPHONE 14 PRO MAX 128 GB BAT 87%",
         "precio": 785,
         "precio_costo": 645.0,
-        "categoria": "IPHONE TESTER - GTIA 1 MES"
+        "categoria": "IPHONE TESTER"
       },
       {
         "nombre": "IPHONE 14 PRO MAX 256 GB BAT 86%",
         "precio": 820,
         "precio_costo": 675.0,
-        "categoria": "IPHONE TESTER - GTIA 1 MES"
-      },
-      {
-        "nombre": "IPHONE 16 PRO MAX 256 GB BAT 100%",
-        "precio": 1250,
-        "precio_costo": 1040.0,
-        "categoria": "IPHONE TESTER - GTIA 1 MES"
+        "categoria": "IPHONE TESTER"
       }
     ],
-    "IPHONE AS IS - GTIA 1 MES": [
+    "IPHONE AS IS": [
       {
         "nombre": "IPHONE 15 128 GB BLACK AS IS",
         "precio": 635,
         "precio_costo": 520.0,
-        "categoria": "IPHONE AS IS - GTIA 1 MES"
-      },
-      {
-        "nombre": "IPHONE 16 128 GB BLACK/WHITE AS IS",
-        "precio": 785,
-        "precio_costo": 645.0,
-        "categoria": "IPHONE AS IS - GTIA 1 MES"
-      },
-      {
-        "nombre": "IPHONE 16 256 GB PINK AS IS",
-        "precio": 890,
-        "precio_costo": 735.0,
-        "categoria": "IPHONE AS IS - GTIA 1 MES"
+        "categoria": "IPHONE AS IS"
       }
     ],
-    "SAMSUNG - GTIA 3 MESES": [
+    "SAMSUNG": [
       {
         "nombre": "SAMSUNG A06 4/64 GB",
         "precio": 145,
         "precio_costo": 105.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A06 4/128 GB",
         "precio": 150,
         "precio_costo": 110.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A07 4/64 GB",
         "precio": 165,
         "precio_costo": 120.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
+      },
+      {
+        "nombre": "SAMSUNG A07 4/128 GB",
+        "precio": 175,
+        "precio_costo": 130.0,
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A16 4/128 GB",
         "precio": 180,
         "precio_costo": 135.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
-      },
-      {
-        "nombre": "SAMSUNG A17 4/128 GB",
-        "precio": 245,
-        "precio_costo": 190.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A17 8/256 GB",
-        "precio": 290,
-        "precio_costo": 225.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "precio": 280,
+        "precio_costo": 220.0,
+        "categoria": "SAMSUNG"
+      },
+      {
+        "nombre": "SAMSUNG A17 5G 6/128 GB",
+        "precio": 280,
+        "precio_costo": 220.0,
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A17 5G 8/256 GB",
         "precio": 305,
         "precio_costo": 240.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A26 5G 6/128 GB",
         "precio": 275,
         "precio_costo": 215.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A26 5G 8/256 GB",
         "precio": 295,
         "precio_costo": 230.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A36 5G 6/128 GB",
         "precio": 345,
         "precio_costo": 275.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A36 5G 8/256 GB",
         "precio": 370,
         "precio_costo": 295.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A56 5G 8/128 GB",
         "precio": 420,
         "precio_costo": 335.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A56 5G 8/256 GB",
-        "precio": 460,
-        "precio_costo": 370.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "precio": 435,
+        "precio_costo": 350.0,
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG A56 5G 12/256 GB",
         "precio": 465,
         "precio_costo": 375.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG S24 8/128 GB",
         "precio": 650,
         "precio_costo": 530.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
+      },
+      {
+        "nombre": "SAMSUNG S24 FE 8/256 GB",
+        "precio": 595,
+        "precio_costo": 485.0,
+        "categoria": "SAMSUNG"
+      },
+      {
+        "nombre": "SAMSUNG S24 ULTRA 12/256 GB",
+        "precio": 1015,
+        "precio_costo": 840.0,
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG S25 12/256 GB",
-        "precio": 850,
-        "precio_costo": 700.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "precio": 845,
+        "precio_costo": 695.0,
+        "categoria": "SAMSUNG"
+      },
+      {
+        "nombre": "SAMSUNG S25 FE 8/256 GB",
+        "precio": 730,
+        "precio_costo": 600.0,
+        "categoria": "SAMSUNG"
+      },
+      {
+        "nombre": "SAMSUNG S25 PLUS 12/256 GB",
+        "precio": 985,
+        "precio_costo": 815.0,
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG S25 PLUS 12/512 GB",
-        "precio": 1045,
-        "precio_costo": 865.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "precio": 1035,
+        "precio_costo": 860.0,
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG S25 ULTRA 12/256 GB",
-        "precio": 1120,
-        "precio_costo": 930.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "precio": 1115,
+        "precio_costo": 925.0,
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG S25 ULTRA 12/512 GB",
         "precio": 1210,
         "precio_costo": 1005.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG S25 ULTRA 12/1 TB",
-        "precio": 1340,
-        "precio_costo": 1115.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "precio": 1320,
+        "precio_costo": 1100.0,
+        "categoria": "SAMSUNG"
       },
       {
         "nombre": "SAMSUNG Z FLIP 7 12/512 GB",
-        "precio": 1150,
-        "precio_costo": 955.0,
-        "categoria": "SAMSUNG - GTIA 3 MESES"
+        "precio": 1140,
+        "precio_costo": 945.0,
+        "categoria": "SAMSUNG"
       }
     ],
-    "MOTOROLA - GTIA 3 MESES": [
+    "MOTOROLA": [
       {
         "nombre": "MOTOROLA E15 2/64 GB",
         "precio": 115,
         "precio_costo": 80.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA G14 4/128 GB",
         "precio": 160,
         "precio_costo": 115.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
       },
       {
-        "nombre": "MOTOROLA G15 4/128 GB",
-        "precio": 165,
-        "precio_costo": 120.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "nombre": "MOTOROLA G15 4/512 GB",
+        "precio": 195,
+        "precio_costo": 145.0,
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA G35 5G 4/256 GB",
         "precio": 195,
         "precio_costo": 145.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
+      },
+      {
+        "nombre": "MOTOROLA G55 5G 8/256 GB",
+        "precio": 235,
+        "precio_costo": 180.0,
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA G56 5G 8/256 GB",
         "precio": 275,
         "precio_costo": 215.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA G85 5G 8/256 GB",
-        "precio": 265,
-        "precio_costo": 205.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
-      },
-      {
-        "nombre": "MOTOROLA G86 5G 8/256 GB",
-        "precio": 330,
-        "precio_costo": 260.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "precio": 275,
+        "precio_costo": 215.0,
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA DEFY 4/64 GB",
         "precio": 195,
         "precio_costo": 145.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA THINKPHONE 5G 8/256 GB",
         "precio": 370,
         "precio_costo": 295.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA EDGE 40 NEO 12/256 GB",
         "precio": 300,
         "precio_costo": 235.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA EDGE 50 FUSION 5G 8/256 GB",
         "precio": 300,
         "precio_costo": 235.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
+      },
+      {
+        "nombre": "MOTOROLA EDGE 50 FUSION 5G 12/256 GB",
+        "precio": 330,
+        "precio_costo": 260.0,
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
-        "precio": 340,
-        "precio_costo": 270.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "precio": 335,
+        "precio_costo": 265.0,
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA EDGE 50 NEO 5G 8/256 GB",
         "precio": 315,
         "precio_costo": 250.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA EDGE 50 PRO 5G 12/512 GB",
         "precio": 485,
         "precio_costo": 390.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
       },
       {
         "nombre": "MOTOROLA EDGE 50 ULTRA 5G 16/1 TB",
         "precio": 950,
         "precio_costo": 785.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
-      },
-      {
-        "nombre": "MOTOROLA EDGE 60 PRO 5G 12/512 GB",
-        "precio": 560,
-        "precio_costo": 455.0,
-        "categoria": "MOTOROLA - GTIA 3 MESES"
+        "categoria": "MOTOROLA"
       }
     ],
-    "INFINIX - GTIA 3 MESES": [
+    "INFINIX": [
       {
         "nombre": "INFINIX HOT 50 PRO+ 8/256 GB",
         "precio": 235,
         "precio_costo": 180.0,
-        "categoria": "INFINIX - GTIA 3 MESES"
+        "categoria": "INFINIX"
       },
       {
         "nombre": "INFINIX HOT 60i 8/256 GB",
         "precio": 180,
         "precio_costo": 135.0,
-        "categoria": "INFINIX - GTIA 3 MESES"
+        "categoria": "INFINIX"
       },
       {
         "nombre": "INFINIX HOT 60 PRO 8/256 GB",
         "precio": 235,
         "precio_costo": 180.0,
-        "categoria": "INFINIX - GTIA 3 MESES"
+        "categoria": "INFINIX"
       },
       {
         "nombre": "INFINIX HOT 60 PRO+ 8/256 GB",
-        "precio": 270,
-        "precio_costo": 210.0,
-        "categoria": "INFINIX - GTIA 3 MESES"
+        "precio": 265,
+        "precio_costo": 205.0,
+        "categoria": "INFINIX"
       },
       {
         "nombre": "INFINIX NOTE 50 PRO NFC 8/256 GB",
         "precio": 315,
         "precio_costo": 250.0,
-        "categoria": "INFINIX - GTIA 3 MESES"
+        "categoria": "INFINIX"
       },
       {
         "nombre": "INFINIX ZERO 40 8/512 GB",
         "precio": 265,
         "precio_costo": 205.0,
-        "categoria": "INFINIX - GTIA 3 MESES"
+        "categoria": "INFINIX"
       },
       {
         "nombre": "INFINIX GT 30 PRO 5G 12/256 GB",
         "precio": 410,
         "precio_costo": 330.0,
-        "categoria": "INFINIX - GTIA 3 MESES"
+        "categoria": "INFINIX"
       }
     ],
-    "ITEL - GTIA 3 MESES": [
+    "ITEL": [
       {
         "nombre": "ITEL A90 4/256 GB",
         "precio": 125,
         "precio_costo": 85.0,
-        "categoria": "ITEL - GTIA 3 MESES"
+        "categoria": "ITEL"
       }
     ],
-    "XIAOMI - GTIA 3 MESES": [
+    "XIAOMI": [
       {
         "nombre": "XIAOMI REDMI A5 3/64 GB",
         "precio": 130,
         "precio_costo": 90.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI REDMI A5 4/128 GB",
         "precio": 140,
         "precio_costo": 100.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI REDMI 13X 8/256 GB",
-        "precio": 180,
-        "precio_costo": 135.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI REDMI 14C 4/128 GB",
-        "precio": 160,
-        "precio_costo": 115.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI REDMI 14C 6/128 GB",
-        "precio": 165,
-        "precio_costo": 120.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI REDMI 14C 8/256 GB",
-        "precio": 170,
-        "precio_costo": 125.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI REDMI 15 6/128 GB",
         "precio": 200,
         "precio_costo": 150.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI REDMI 15 8/256 GB",
         "precio": 210,
         "precio_costo": 160.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI REDMI 15C 4/128 GB",
         "precio": 165,
         "precio_costo": 120.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI REDMI 15C 8/256 GB",
         "precio": 190,
         "precio_costo": 140.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 12 PRO + 5G 8/256 GB",
         "precio": 305,
         "precio_costo": 240.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 13 PRO 5G 8/256 GB",
         "precio": 325,
         "precio_costo": 255.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI NOTE 13 PRO + 5G 8/256 GB",
-        "precio": 310,
-        "precio_costo": 245.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 14 6/128 GB",
-        "precio": 210,
-        "precio_costo": 160.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "precio": 205,
+        "precio_costo": 155.0,
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 14 8/256 GB",
         "precio": 235,
         "precio_costo": 180.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 14s 8/256 GB",
         "precio": 265,
         "precio_costo": 205.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 14s 12/512 GB",
         "precio": 310,
         "precio_costo": 245.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 14 5G 12/512 GB",
-        "precio": 330,
-        "precio_costo": 260.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "precio": 310,
+        "precio_costo": 245.0,
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 14 PRO 8/256 GB",
-        "precio": 290,
-        "precio_costo": 225.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "precio": 295,
+        "precio_costo": 230.0,
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 14 PRO 12/512 GB",
         "precio": 345,
         "precio_costo": 275.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 14 PRO 5G 12/512 GB",
         "precio": 420,
         "precio_costo": 335.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI NOTE 14 PRO + 5G 8/256 GB",
-        "precio": 405,
-        "precio_costo": 325.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI NOTE 14 PRO + 5G 12/512 GB",
         "precio": 475,
         "precio_costo": 385.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO C71 3/64 GB",
         "precio": 130,
         "precio_costo": 90.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO C71 4/128 GB",
         "precio": 140,
         "precio_costo": 100.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO C75 8/256 GB",
         "precio": 190,
         "precio_costo": 140.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO C85 6/128 GB",
         "precio": 170,
         "precio_costo": 125.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO C85 8/256 GB",
         "precio": 190,
         "precio_costo": 140.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO M5s 4/128 GB",
         "precio": 175,
         "precio_costo": 130.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO M6 8/256 GB",
         "precio": 200,
         "precio_costo": 150.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO M7 8/256 GB",
         "precio": 210,
         "precio_costo": 160.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO M7 PRO 5G 8/256 GB",
         "precio": 275,
         "precio_costo": 215.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI POCO M7 PRO 5G 12/256 GB",
-        "precio": 280,
-        "precio_costo": 220.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO M7 PRO 5G 12/512 GB",
         "precio": 300,
         "precio_costo": 235.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO X7 5G 12/512 GB",
         "precio": 360,
         "precio_costo": 285.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO X7 PRO 5G 8/256 GB",
         "precio": 380,
         "precio_costo": 305.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI POCO X7 PRO 5G 12/512 GB",
         "precio": 435,
         "precio_costo": 350.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI POCO F7 PRO 5G 12/512 GB",
-        "precio": 640,
-        "precio_costo": 525.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI 13T PRO 5G 12/512 GB",
         "precio": 590,
         "precio_costo": 480.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI 14 5G 12/512 GB",
         "precio": 770,
         "precio_costo": 635.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI 14T 5G 12/512 GB",
         "precio": 585,
         "precio_costo": 475.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI 14T PRO 5G 12/512 GB",
         "precio": 735,
         "precio_costo": 605.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI 14T PRO 5G 12/1 TB",
         "precio": 845,
         "precio_costo": 695.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI 15 5G 12/512 GB",
-        "precio": 945,
-        "precio_costo": 780.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI 15T 5G 12/512 GB",
         "precio": 735,
         "precio_costo": 605.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI 15T PRO 5G 12/512 GB",
-        "precio": 890,
-        "precio_costo": 735.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
-      },
-      {
-        "nombre": "XIAOMI 15T PRO 5G 12/1 TB",
-        "precio": 960,
-        "precio_costo": 795.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       },
       {
         "nombre": "XIAOMI 15 ULTRA 5G 16/1 TB",
         "precio": 1865,
         "precio_costo": 1560.0,
-        "categoria": "XIAOMI - GTIA 3 MESES"
+        "categoria": "XIAOMI"
       }
     ],
     "PARLANTES JBL": [
@@ -756,19 +678,25 @@
         "categoria": "PARLANTES JBL"
       },
       {
-        "nombre": "JBL CHARGE 6 45 WATTS BLACK/BLUE/RED",
+        "nombre": "JBL CHARGE 6 45 WATTS BLUE/RED",
         "precio": 195,
         "precio_costo": 145.0,
         "categoria": "PARLANTES JBL"
       },
       {
-        "nombre": "JBL FLIP 7 35 WATTS PINK",
+        "nombre": "JBL FLIP 7 35 WATTS BLUE/BLACK",
         "precio": 150,
         "precio_costo": 110.0,
         "categoria": "PARLANTES JBL"
       },
       {
         "nombre": "JBL BOOMBOX 3 180 WATTS 2V CAMUFLADO",
+        "precio": 470,
+        "precio_costo": 380.0,
+        "categoria": "PARLANTES JBL"
+      },
+      {
+        "nombre": "JBL BOOMBOX 3 WIFI 180 WATTS 2V NEGRO",
         "precio": 495,
         "precio_costo": 400.0,
         "categoria": "PARLANTES JBL"
@@ -795,15 +723,47 @@
       },
       {
         "nombre": "AIRPODS 4",
-        "precio": 225,
-        "precio_costo": 170.0,
+        "precio": 175,
+        "precio_costo": 130.0,
         "categoria": "AIRPODS"
       },
       {
         "nombre": "AIRPODS 4 NOISE CANCELLING",
-        "precio": 245,
-        "precio_costo": 190.0,
+        "precio": 235,
+        "precio_costo": 180.0,
         "categoria": "AIRPODS"
+      }
+    ],
+    "APPLE WATCH": [
+      {
+        "nombre": "WATCH SE 3 GPS 40MM",
+        "precio": 380,
+        "precio_costo": 305.0,
+        "categoria": "APPLE WATCH"
+      },
+      {
+        "nombre": "WATCH 11 42MM GPS",
+        "precio": 535,
+        "precio_costo": 435.0,
+        "categoria": "APPLE WATCH"
+      },
+      {
+        "nombre": "WATCH 11 46MM GPS",
+        "precio": 565,
+        "precio_costo": 460.0,
+        "categoria": "APPLE WATCH"
+      },
+      {
+        "nombre": "WATCH ULTRA 2 CELL 49MM GPS",
+        "precio": 865,
+        "precio_costo": 715.0,
+        "categoria": "APPLE WATCH"
+      },
+      {
+        "nombre": "WATCH ULTRA 3 CELL 49MM GPS",
+        "precio": 1025,
+        "precio_costo": 850.0,
+        "categoria": "APPLE WATCH"
       }
     ],
     "IPAD": [
@@ -826,21 +786,45 @@
         "categoria": "IPAD"
       },
       {
-        "nombre": "IPAD AIR 11” M3 128 GB",
+        "nombre": "IPAD MINI 7 256 GB",
         "precio": 765,
         "precio_costo": 630.0,
         "categoria": "IPAD"
       },
       {
+        "nombre": "IPAD AIR 11” M3 128 GB",
+        "precio": 740,
+        "precio_costo": 610.0,
+        "categoria": "IPAD"
+      },
+      {
         "nombre": "IPAD AIR 11” M3 256 GB",
-        "precio": 885,
-        "precio_costo": 730.0,
+        "precio": 870,
+        "precio_costo": 720.0,
+        "categoria": "IPAD"
+      },
+      {
+        "nombre": "IPAD AIR 13” M3 128 GB",
+        "precio": 1000,
+        "precio_costo": 830.0,
         "categoria": "IPAD"
       },
       {
         "nombre": "IPAD PRO 11 M4 256 GB",
         "precio": 1190,
         "precio_costo": 990.0,
+        "categoria": "IPAD"
+      },
+      {
+        "nombre": "IPAD PRO 11 M5 256 GB",
+        "precio": 1330,
+        "precio_costo": 1110.0,
+        "categoria": "IPAD"
+      },
+      {
+        "nombre": "IPAD PRO 13 M5 256 GB",
+        "precio": 1720,
+        "precio_costo": 1440.0,
         "categoria": "IPAD"
       }
     ],
@@ -859,14 +843,20 @@
       },
       {
         "nombre": "MACBOOK AIR M4 13” 16/256 GB",
-        "precio": 1165,
-        "precio_costo": 970.0,
+        "precio": 1160,
+        "precio_costo": 965.0,
         "categoria": "MACBOOK"
       },
       {
         "nombre": "MACBOOK AIR M4 13” 16/512 GB",
         "precio": 1450,
         "precio_costo": 1210.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MACBOOK AIR M4 15” 16/256 GB",
+        "precio": 1415,
+        "precio_costo": 1180.0,
         "categoria": "MACBOOK"
       },
       {
@@ -877,26 +867,32 @@
       },
       {
         "nombre": "MACBOOK PRO M4 14” 16/512 GB",
-        "precio": 1935,
-        "precio_costo": 1620.0,
+        "precio": 1920,
+        "precio_costo": 1610.0,
         "categoria": "MACBOOK"
       },
       {
         "nombre": "MACBOOK PRO M4 14” 16/1 TB",
-        "precio": 2170,
-        "precio_costo": 1820.0,
+        "precio": 2160,
+        "precio_costo": 1810.0,
         "categoria": "MACBOOK"
       },
       {
         "nombre": "MACBOOK PRO M4 PRO 14” 24/512 GB",
-        "precio": 2500,
-        "precio_costo": 2100.0,
+        "precio": 2490,
+        "precio_costo": 2090.0,
         "categoria": "MACBOOK"
       },
       {
         "nombre": "MACBOOK PRO M4 PRO 14” 24/1 TB",
         "precio": 3010,
         "precio_costo": 2530.0,
+        "categoria": "MACBOOK"
+      },
+      {
+        "nombre": "MACBOOK PRO M5 14” 16/512 GB",
+        "precio": 2170,
+        "precio_costo": 1820.0,
         "categoria": "MACBOOK"
       }
     ],
@@ -932,12 +928,6 @@
         "categoria": "PLAYSTATION"
       },
       {
-        "nombre": "PS5 SLIM 1 TB C/LECTORA FORNITE",
-        "precio": 755,
-        "precio_costo": 620.0,
-        "categoria": "PLAYSTATION"
-      },
-      {
         "nombre": "PS5 SLIM 1 TB C/LECTORA CALL OF DUTY 6",
         "precio": 765,
         "precio_costo": 630.0,
@@ -951,8 +941,8 @@
       },
       {
         "nombre": "PS5 PRO 2 TB",
-        "precio": 1060,
-        "precio_costo": 880.0,
+        "precio": 1035,
+        "precio_costo": 860.0,
         "categoria": "PLAYSTATION"
       }
     ],
@@ -964,66 +954,72 @@
         "categoria": "XBOX"
       }
     ],
-    "TVS - ENTREGA 1 DIA DESPUES": [
+    "TELEVISORES": [
       {
         "nombre": "85” Smart TV Samsung 4K QLED Q70D",
-        "precio": 2325,
-        "precio_costo": 1950.0,
-        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+        "precio": 2255,
+        "precio_costo": 1890.0,
+        "categoria": "TELEVISORES"
       },
       {
         "nombre": "75” Smart TV UHD 4K Samsung UN75DU7000GCZB",
-        "precio": 1440,
-        "precio_costo": 1200.0,
-        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+        "precio": 1260,
+        "precio_costo": 1050.0,
+        "categoria": "TELEVISORES"
       },
       {
         "nombre": "65” Smart TV QLED 4K Samsung QN65Q65DAGCZB",
-        "precio": 965,
-        "precio_costo": 800.0,
-        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+        "precio": 955,
+        "precio_costo": 790.0,
+        "categoria": "TELEVISORES"
       },
       {
         "nombre": "65” Smart TV LED 4K Samsung DU7000",
         "precio": 870,
         "precio_costo": 720.0,
-        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+        "categoria": "TELEVISORES"
+      },
+      {
+        "nombre": "65” ULED Hisense Smart TV 4K Google TV 65U70G",
+        "precio": 600,
+        "precio_costo": 490.0,
+        "categoria": "TELEVISORES"
       },
       {
         "nombre": "55” Smart TV Samsung 4K QLED Q65D",
-        "precio": 695,
-        "precio_costo": 570.0,
-        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+        "precio": 665,
+        "precio_costo": 545.0,
+        "categoria": "TELEVISORES"
       },
       {
         "nombre": "55” Smart TV UHD 4K Samsung UN55DU7000GCZB",
-        "precio": 600,
-        "precio_costo": 490.0,
-        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+        "precio": 565,
+        "precio_costo": 460.0,
+        "categoria": "TELEVISORES"
       },
       {
         "nombre": "55” Tv Led Philips UHD 55PUD7309/77",
-        "precio": 520,
-        "precio_costo": 420.0,
-        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+        "precio": 495,
+        "precio_costo": 400.0,
+        "categoria": "TELEVISORES"
       },
       {
         "nombre": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
-        "precio": 495,
-        "precio_costo": 400.0,
-        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+        "precio": 485,
+        "precio_costo": 390.0,
+        "categoria": "TELEVISORES"
       },
       {
-        "nombre": "43” Smart TV UHD 4K Samsung  UN43DU7000GCZB",
-        "precio": 425,
-        "precio_costo": 340.0,
-        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+        "nombre": "43” Smart TV LED Philips 43PFD6910/77",
+        "precio": 295,
+        "precio_costo": 230.0,
+        "categoria": "TELEVISORES"
       },
       {
         "nombre": "32” Smart TV HD Samsung UN32T4300A",
-        "precio": 255,
-        "precio_costo": 195.0,
-        "categoria": "TVS - ENTREGA 1 DIA DESPUES"
+        "precio": 210,
+        "precio_costo": 160.0,
+        "categoria": "TELEVISORES"
       }
     ]
   }

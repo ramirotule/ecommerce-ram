@@ -17,6 +17,51 @@ class ProcesadorGCGroup:
         self.productos_extraidos = []
         # Regex actualizado para el formato real: "PRODUCTO - $ PRECIO"
         self.precio_regex = r'^([^-]+)\s*-\s*\$\s*(\d+(?:\.\d+)?)$'
+    
+    def normalizar_categoria(self, categoria_raw):
+        """
+        Normalizar categorías según las reglas de negocio:
+        - Remover " - GTIA 3 MESES" de marcas  
+        - Agrupar TV, QLED, ULED en TELEVISORES
+        - Mantener categorías específicas como están
+        """
+        categoria = categoria_raw.strip()
+        
+        # Regla 1: Simplificar categorías que contienen "GTIA 3 MESES"
+        if "GTIA 3 MESES" in categoria:
+            # INFINIX - GTIA 3 MESES --> INFINIX
+            # ITEL - GTIA 3 MESES --> ITEL  
+            # XIAOMI - GTIA 3 MESES --> XIAOMI
+            # SAMSUNG - GTIA 3 MESES --> SAMSUNG
+            categoria = categoria.replace(" - GTIA 3 MESES", "").strip()
+        
+        # Regla 2: Agrupar televisores (TV, QLED, ULED, TVS)
+        palabras_tv = ["TV", "QLED", "ULED", "TVS"]
+        if any(palabra in categoria.upper() for palabra in palabras_tv):
+            return "TELEVISORES"
+        
+        # Regla 3: Mantener categorías específicas tal como están
+        categorias_especiales = [
+            "PARLANTES JBL",
+            "CARGADOR APPLE ORIGINAL"
+        ]
+        if categoria in categorias_especiales:
+            return categoria
+        
+        # Regla 4: Limpiar información adicional de entrega o garantía
+        if " - " in categoria:
+            # Casos como "TVS - ENTREGA 1 DIA DESPUES" → ya manejado arriba como TV
+            # Otros casos donde queremos solo la primera parte
+            partes = categoria.split(" - ")
+            categoria_limpia = partes[0].strip()
+            
+            # Verificar de nuevo si es TV después de limpiar
+            if any(palabra in categoria_limpia.upper() for palabra in palabras_tv):
+                return "TELEVISORES"
+                
+            return categoria_limpia
+        
+        return categoria
         
     def calcular_precio_venta(self, precio_costo):
         """
@@ -72,14 +117,25 @@ class ProcesadorGCGroup:
                 if not linea or linea.startswith('#') or linea.startswith('='):
                     continue
                     
-                # Detectar categorías (líneas que son solo texto en mayúsculas, sin $)
-                if (linea.isupper() and 
-                    '$' not in linea and 
-                    len(linea.split()) <= 3 and
-                    not any(char.isdigit() for char in linea) and
-                    linea not in ['LISTA DE MODELOS Y COLORES DEL DÍA']):
-                    categoria_actual = linea.strip()
-                    print(f"   📂 Categoría encontrada: {categoria_actual}")
+                # Detectar categorías (líneas que empiezan con ► o son texto en mayúsculas sin precios)
+                if ((linea.startswith('►') or 
+                     (linea.isupper() and '$' not in linea and not any(char.isdigit() for char in linea))) and
+                    linea not in ['LISTA DE MODELOS Y COLORES DEL DÍA'] and
+                    'ACEPTAMOS' not in linea and 'NO TOMAMOS' not in linea and 'GARANTÍAS' not in linea and
+                    not linea.startswith('•') and not linea.startswith('PRODUCTOS QUE') and
+                    not linea.startswith('ARTÍCULOS DE') and len(linea) < 80):
+                    
+                    # Limpiar símbolo ► si existe
+                    categoria_original = linea.replace('►', '').strip()
+                    
+                    # Aplicar normalización de categorías
+                    categoria_actual = self.normalizar_categoria(categoria_original)
+                    
+                    # Mostrar mapeo si hubo cambio
+                    if categoria_original != categoria_actual:
+                        print(f"   📂 Categoría mapeada: {categoria_original} → {categoria_actual}")
+                    else:
+                        print(f"   📂 Categoría encontrada: {categoria_actual}")
                     continue
                 
                 # Buscar productos con precios explícitos
@@ -242,23 +298,23 @@ def main():
             try:
                 with open(archivo_entrada, 'r', encoding=encoding) as f:
                     contenido = f.read()
-                print(f"✅ Archivo leído exitosamente con encoding: {encoding}")
+                print(f"[OK] Archivo leido exitosamente con encoding: {encoding}")
                 break
             except UnicodeDecodeError:
                 continue
         
         if contenido is None:
-            print(f"❌ No se pudo leer el archivo {archivo_entrada} con ningún encoding")
+            print(f"ERROR No se pudo leer el archivo {archivo_entrada} con ningún encoding")
             return False
         
         if len(contenido.strip()) == 0:
-            print(f"❌ El archivo {archivo_entrada} está vacío")
+            print(f"ERROR El archivo {archivo_entrada} está vacío")
             return False
-        
-        print(f"✅ Archivo leído: {len(contenido)} caracteres")
-        
+
+        print(f"[OK] Archivo leído: {len(contenido)} caracteres")
+
     except Exception as e:
-        print(f"❌ Error leyendo archivo: {e}")
+        print(f"ERROR Error leyendo archivo: {e}")
         return False
     
     # Procesar productos
