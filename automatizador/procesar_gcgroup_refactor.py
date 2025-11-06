@@ -188,46 +188,156 @@ class ProcesadorGCGroup:
             return []
 
     def generar_json_productos(self, archivo_salida="../public/productos_ram.json"):
-        """Generar JSON con estructura compatible con el frontend"""
+        """Generar JSONs: uno público (sin info sensible) y uno completo (privado)"""
         try:
-            # Estructura compatible con el frontend existente
-            estructura_json = {
-                "metadatos": {
-                    "fecha_extraccion": datetime.now().strftime("%d/%m/%Y %H:%M"),
-                    "proveedor": "GcGroup",
-                    "total_productos": len(self.productos_extraidos),
-                    "formula_precio": "(costo + 18%) + $20, redondeado a múltiplo de 5"
-                },
-                "productos": {}
+            # Archivos de salida
+            archivo_publico = archivo_salida
+            archivo_privado = "productos_ram_completo.json"  # En carpeta automatizador (privada)
+            
+            # === CARGAR JSON EXISTENTE ===
+            estructura_publica = {"metadatos": {}, "productos": {}}
+            estructura_completa = {"metadatos": {}, "productos": {}}
+            
+            # Cargar JSON público existente
+            if os.path.exists(archivo_publico):
+                try:
+                    with open(archivo_publico, 'r', encoding='utf-8') as f:
+                        json_publico = json.load(f)
+                    estructura_publica = json_publico.copy()
+                    print(f"📖 JSON público cargado con {len(estructura_publica.get('productos', {}))} categorías")
+                except Exception as e:
+                    print(f"⚠️ Error leyendo JSON público: {e}")
+            
+            # Cargar JSON completo existente
+            if os.path.exists(archivo_privado):
+                try:
+                    with open(archivo_privado, 'r', encoding='utf-8') as f:
+                        json_completo = json.load(f)
+                    estructura_completa = json_completo.copy()
+                    print(f"📖 JSON completo cargado con {len(estructura_completa.get('productos', {}))} categorías")
+                except Exception as e:
+                    print(f"⚠️ Error leyendo JSON completo: {e}")
+            
+            # === FILTRAR PRODUCTOS NO-GCGROUP ===
+            # Para JSON público: mantener productos sin precio_costo
+            productos_publicos_no_gc = {}
+            for categoria, productos in estructura_publica.get("productos", {}).items():
+                productos_filtrados = []
+                for producto in productos:
+                    if ('precio_costo' not in producto or 
+                        producto.get('proveedor', 'GcGroup') != 'GcGroup'):
+                        productos_filtrados.append(producto)
+                if productos_filtrados:
+                    productos_publicos_no_gc[categoria] = productos_filtrados
+            
+            # Para JSON completo: mantener productos sin precio_costo
+            productos_completos_no_gc = {}
+            for categoria, productos in estructura_completa.get("productos", {}).items():
+                productos_filtrados = []
+                for producto in productos:
+                    if ('precio_costo' not in producto or 
+                        producto.get('proveedor', 'GcGroup') != 'GcGroup'):
+                        productos_filtrados.append(producto)
+                if productos_filtrados:
+                    productos_completos_no_gc[categoria] = productos_filtrados
+            
+            # Reinicializar con productos no-GCGroup
+            estructura_publica["productos"] = productos_publicos_no_gc
+            estructura_completa["productos"] = productos_completos_no_gc
+            
+            print(f"🔄 Manteniendo productos de otros proveedores")
+            
+            # === METADATOS ===
+            metadatos_base = {
+                "ultima_actualizacion": datetime.now().strftime("%d/%m/%Y %H:%M"),
+                "fecha_extraccion_gcgroup": datetime.now().strftime("%d/%m/%Y %H:%M"),
+                "productos_gcgroup": len(self.productos_extraidos)
             }
             
-            # Agrupar por categorías
+            # Metadatos públicos (sin información sensible)
+            metadatos_publicos = metadatos_base.copy()
+            
+            # Metadatos completos (con información sensible)
+            metadatos_completos = metadatos_base.copy()
+            metadatos_completos.update({
+                "proveedor_gcgroup": "GcGroup",
+                "formula_precio_gcgroup": "(costo + 18%) + $20, redondeado a múltiplo de 5"
+            })
+            
+            # Actualizar metadatos
+            if "metadatos" not in estructura_publica:
+                estructura_publica["metadatos"] = {}
+            if "metadatos" not in estructura_completa:
+                estructura_completa["metadatos"] = {}
+                
+            estructura_publica["metadatos"].update(metadatos_publicos)
+            estructura_completa["metadatos"].update(metadatos_completos)
+            
+            # === AGREGAR PRODUCTOS GCGROUP ===
+            productos_gcgroup_agregados = 0
+            
             for producto in self.productos_extraidos:
                 categoria = producto['categoria']
-                if categoria not in estructura_json["productos"]:
-                    estructura_json["productos"][categoria] = []
                 
-                # Formato compatible con el frontend
-                producto_frontend = {
-                    "nombre": producto['producto'],  # Corregido: usar 'producto' en lugar de 'nombre'
+                # Crear categorías si no existen
+                if categoria not in estructura_publica["productos"]:
+                    estructura_publica["productos"][categoria] = []
+                if categoria not in estructura_completa["productos"]:
+                    estructura_completa["productos"][categoria] = []
+                
+                # PRODUCTO PÚBLICO (sin información sensible)
+                producto_publico = {
+                    "nombre": producto['producto'],
                     "precio": producto['precio_venta'],
-                    "precio_costo": producto['precio_costo'],
                     "categoria": categoria
                 }
                 
-                estructura_json["productos"][categoria].append(producto_frontend)
+                # PRODUCTO COMPLETO (con toda la información)
+                producto_completo = {
+                    "nombre": producto['producto'],
+                    "precio": producto['precio_venta'],
+                    "precio_costo": producto['precio_costo'],  # Solo en versión completa
+                    "categoria": categoria,
+                    "proveedor": "GcGroup",
+                    "ganancia_porcentaje": 18,  # Solo en versión completa
+                    "extra_usd": 20,  # Solo en versión completa
+                    "fecha_actualizacion": datetime.now().strftime("%d/%m/%Y %H:%M")
+                }
+                
+                estructura_publica["productos"][categoria].append(producto_publico)
+                estructura_completa["productos"][categoria].append(producto_completo)
+                productos_gcgroup_agregados += 1
             
-            # Guardar JSON
-            os.makedirs(os.path.dirname(archivo_salida), exist_ok=True)
-            with open(archivo_salida, 'w', encoding='utf-8') as f:
-                json.dump(estructura_json, f, indent=2, ensure_ascii=False)
+            # === ACTUALIZAR TOTALES ===
+            total_productos_publico = sum(len(productos) for productos in estructura_publica["productos"].values())
+            total_productos_completo = sum(len(productos) for productos in estructura_completa["productos"].values())
             
-            print(f"✅ JSON generado: {archivo_salida}")
-            print(f"📊 {len(self.productos_extraidos)} productos en {len(estructura_json['productos'])} categorías")
+            estructura_publica["metadatos"]["total_productos"] = total_productos_publico
+            estructura_completa["metadatos"]["total_productos"] = total_productos_completo
+            
+            # === GUARDAR ARCHIVOS ===
+            os.makedirs(os.path.dirname(archivo_publico), exist_ok=True)
+            
+            # Guardar JSON público
+            with open(archivo_publico, 'w', encoding='utf-8') as f:
+                json.dump(estructura_publica, f, indent=2, ensure_ascii=False)
+            
+            # Guardar JSON completo
+            with open(archivo_privado, 'w', encoding='utf-8') as f:
+                json.dump(estructura_completa, f, indent=2, ensure_ascii=False)
+            
+            # === REPORTES ===
+            print(f"✅ JSON público generado: {archivo_publico}")
+            print(f"🔒 JSON completo generado: {archivo_privado}")
+            print(f"📊 {productos_gcgroup_agregados} productos de GCGroup agregados/actualizados")
+            print(f"📈 Total productos públicos: {total_productos_publico}")
+            print(f"🔒 Total productos completos: {total_productos_completo}")
+            print(f"📂 Total categorías: {len(estructura_publica['productos'])}")
+            print(f"🛡️  Información sensible oculta en versión pública")
             return True
             
         except Exception as e:
-            print(f"❌ Error generando JSON: {e}")
+            print(f"❌ Error generando JSONs: {e}")
             return False
 
     def generar_archivo_difusion(self, archivo_salida="output/difusion_ram_gcgroup.txt"):
