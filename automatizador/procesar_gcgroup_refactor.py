@@ -266,18 +266,18 @@ class ProcesadorGCGroup:
             
             # === METADATOS ===
             metadatos_base = {
-                "ultima_actualizacion": datetime.now().strftime("%d/%m/%Y %H:%M"),
-                "fecha_extraccion_gcgroup": datetime.now().strftime("%d/%m/%Y %H:%M"),
-                "productos_gcgroup": len(self.productos_extraidos)
+                "ultima_actualizacion": datetime.now().strftime("%d/%m/%Y %H:%M")
             }
             
-            # Metadatos públicos (sin información sensible)
+            # Metadatos públicos (información mínima y limpia)
             metadatos_publicos = metadatos_base.copy()
             
-            # Metadatos completos (con información sensible)
+            # Metadatos completos (con información sensible para uso interno)
             metadatos_completos = metadatos_base.copy()
             metadatos_completos.update({
+                "fecha_extraccion_gcgroup": datetime.now().strftime("%d/%m/%Y %H:%M"),
                 "proveedor_gcgroup": "GcGroup",
+                "productos_gcgroup": len(self.productos_extraidos),
                 "formula_precio_gcgroup": "(costo + 18%) + $20, redondeado a múltiplo de 5"
             })
             
