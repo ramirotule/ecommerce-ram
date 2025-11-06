@@ -147,7 +147,7 @@ const Prices = () => {
           
           setProductos(productosArray);
           console.log(data.metadatos)
-          setUltimaActualizacion(data.metadatos.fecha_extraccion);
+          setUltimaActualizacion(data.metadatos.ultima_actualizacion);
         } else {
           // Formato antiguo sin metadatos
           setProductos(data);
