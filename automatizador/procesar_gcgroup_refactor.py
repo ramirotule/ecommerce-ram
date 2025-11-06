@@ -23,43 +23,60 @@ class ProcesadorGCGroup:
         Normalizar categorías según las reglas de negocio:
         - Remover " - GTIA 3 MESES" de marcas  
         - Agrupar TV, QLED, ULED en TELEVISORES
+        - Agregar "CELULARES" a marcas de teléfonos
+        - Agrupar PS5, XBOX, joysticks en VIDEO JUEGOS
         - Mantener categorías específicas como están
         """
         categoria = categoria_raw.strip()
         
-        # Regla 1: Simplificar categorías que contienen "GTIA 3 MESES"
-        if "GTIA 3 MESES" in categoria:
-            # INFINIX - GTIA 3 MESES --> INFINIX
-            # ITEL - GTIA 3 MESES --> ITEL  
-            # XIAOMI - GTIA 3 MESES --> XIAOMI
-            # SAMSUNG - GTIA 3 MESES --> SAMSUNG
-            categoria = categoria.replace(" - GTIA 3 MESES", "").strip()
+        # Regla 1: Limpiar información adicional (GTIA, entrega, etc.)
+        if " - " in categoria:
+            partes = categoria.split(" - ")
+            categoria = partes[0].strip()
         
         # Regla 2: Agrupar televisores (TV, QLED, ULED, TVS)
         palabras_tv = ["TV", "QLED", "ULED", "TVS"]
         if any(palabra in categoria.upper() for palabra in palabras_tv):
             return "TELEVISORES"
         
-        # Regla 3: Mantener categorías específicas tal como están
+        # Regla 3: Agregar "CELULARES" a marcas de teléfonos
+        marcas_celulares = ["SAMSUNG", "MOTOROLA", "INFINIX", "ITEL", "XIAOMI"]
+        if any(marca in categoria.upper() for marca in marcas_celulares):
+            # SAMSUNG → CELULARES SAMSUNG
+            marca_encontrada = next(marca for marca in marcas_celulares if marca in categoria.upper())
+            return f"CELULARES {marca_encontrada}"
+        
+        # Regla 4: Categorías de iPhone con prefijo CELULARES
+        categorias_iphone = ["IPHONE NEW", "IPHONE TESTER", "IPHONE AS IS"]
+        if any(iphone_cat in categoria.upper() for iphone_cat in categorias_iphone):
+            # IPHONE NEW → CELULARES IPHONE NEW
+            # IPHONE TESTER → CELULARES IPHONE TESTER  
+            # IPHONE AS IS → CELULARES IPHONE AS IS
+            if "IPHONE NEW" in categoria.upper():
+                return "CELULARES IPHONE NEW"
+            elif "IPHONE TESTER" in categoria.upper():
+                return "CELULARES IPHONE TESTER"
+            elif "IPHONE AS IS" in categoria.upper():
+                return "CELULARES IPHONE AS IS"
+        
+        # Regla 5: Agrupar gaming en VIDEO JUEGOS
+        categorias_gaming = ["PLAYSTATION", "XBOX"]
+        productos_gaming = ["PS5", "XBOX", "JOYSTICK"]
+        if (any(cat in categoria.upper() for cat in categorias_gaming) or
+            any(prod in categoria.upper() for prod in productos_gaming)):
+            return "VIDEO JUEGOS"
+        
+        # Regla 6: Mantener categorías específicas tal como están
         categorias_especiales = [
             "PARLANTES JBL",
-            "CARGADOR APPLE ORIGINAL"
+            "CARGADOR APPLE ORIGINAL",
+            "AIRPODS", 
+            "APPLE WATCH",
+            "IPAD",
+            "MACBOOK"
         ]
         if categoria in categorias_especiales:
             return categoria
-        
-        # Regla 4: Limpiar información adicional de entrega o garantía
-        if " - " in categoria:
-            # Casos como "TVS - ENTREGA 1 DIA DESPUES" → ya manejado arriba como TV
-            # Otros casos donde queremos solo la primera parte
-            partes = categoria.split(" - ")
-            categoria_limpia = partes[0].strip()
-            
-            # Verificar de nuevo si es TV después de limpiar
-            if any(palabra in categoria_limpia.upper() for palabra in palabras_tv):
-                return "TELEVISORES"
-                
-            return categoria_limpia
         
         return categoria
         

@@ -930,7 +930,7 @@ class AutomatizadorWSP:
         
         scripts_a_ejecutar = [
             {
-                "nombre": "procesar_gcgroup_refactor.py",
+                "nombre": "procesar_gcgroup.py",
                 "descripcion": "Procesamiento específico de GCGroup con nueva fórmula de precios"
             }
         ]
