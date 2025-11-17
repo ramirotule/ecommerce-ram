@@ -13,33 +13,44 @@ def procesar_txt_a_json(txt_file):
         with open(txt_file, 'r', encoding='utf-8') as f:
             contenido = f.read()
         
+        print(f"Procesando archivo TXT: {txt_file}")
+        
         # Procesar líneas del archivo de difusión
         lineas = contenido.split('\n')
-        producto_actual = None
         
         for i, linea in enumerate(lineas):
             linea = linea.strip()
             
-            # Si la línea contiene "U$S" es un precio
-            if re.search(r'U\$S?\s*(\d+)', linea):
-                precio_match = re.search(r'U\$S?\s*(\d+)', linea)
-                if precio_match and producto_actual:
-                    precio = int(precio_match.group(1))
-                    
-                    # Categorizar productos
-                    categoria = categorizar_producto(producto_actual)
-                    
-                    productos.append({
-                        'producto': producto_actual.strip(),
-                        'precio_usd': precio,
-                        'categoria': categoria
-                    })
-                    producto_actual = None
-                    
-            # Si la línea no es vacía, emojis o separadores, puede ser un producto
-            elif linea and not re.match(r'^[🏪⚠️💰⛔🛒=]+', linea) and len(linea) > 5:
-                if not any(word in linea.upper() for word in ['LISTA', 'CONSULTAS', 'PEDIDOS', 'ACLARACION', 'PAGO', 'PRODUCTOS', 'DISPONIBLES']):
-                    producto_actual = linea
+            # Buscar líneas con productos que tengan el formato: • PRODUCTO - $PRECIO
+            if linea.startswith('•') and ' - $' in linea:
+                try:
+                    # Dividir por ' - $' para separar producto y precio
+                    partes = linea.split(' - $')
+                    if len(partes) == 2:
+                        producto_texto = partes[0].replace('•', '').strip()
+                        precio_texto = partes[1].strip()
+                        
+                        # Extraer solo el número del precio
+                        precio_match = re.search(r'(\d+)', precio_texto)
+                        if precio_match:
+                            precio = int(precio_match.group(1))
+                            
+                            # Categorizar productos
+                            categoria = categorizar_producto(producto_texto)
+                            
+                            productos.append({
+                                'producto': producto_texto,
+                                'precio_usd': precio,
+                                'categoria': categoria
+                            })
+                            
+                            print(f"   ✅ Producto extraído: {producto_texto} - ${precio}")
+                        else:
+                            print(f"   ⚠️ No se pudo extraer precio de: {linea}")
+                    else:
+                        print(f"   ⚠️ Formato inesperado en: {linea}")
+                except Exception as e:
+                    print(f"   ❌ Error procesando línea: {linea} - {e}")
         
         print(f"Productos extraídos del TXT: {len(productos)}")
         return productos
