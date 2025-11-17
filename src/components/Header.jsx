@@ -270,6 +270,28 @@ const Header = () => {
               >
                 🏠 Inicio
               </Link>
+
+              <Link
+                to="/productos"
+                onClick={scrollToTop}
+                className={`nav-link-hover ${isActive('/productos') ? 'nav-link-active' : ''}`}
+                style={{
+                  textDecoration: 'none',
+                  color: COLORS.text.white,
+                  padding: navStyles.padding,
+                  borderRadius: '25px',
+                  fontWeight: '600',
+                  fontSize: navStyles.fontSize,
+                  transition: 'all 0.3s ease',
+                  background: isActive('/productos') ? 'rgba(255,255,255,0.2)' : 'transparent',
+                  backdropFilter: isActive('/productos') ? 'blur(10px)' : 'none',
+                  border: isActive('/productos') ? '1px solid rgba(255,255,255,0.3)' : '1px solid transparent',
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                📦  Productos
+              </Link>
+
               <Link
                 to="/otros-productos"
                 onClick={scrollToTop}
@@ -394,39 +416,7 @@ const Header = () => {
                 maxWidth: '500px',
                 position: 'relative'
               }}>
-                <input
-                  type="text"
-                  placeholder="Buscar productos..."
-                  value={searchTerm}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  onBlur={(e) => {
-                    setTimeout(() => {
-                      setShowResults(false);
-                      setSearchTerm(''); // Limpiar el texto de búsqueda
-                      setSearchResults([]); // Limpiar los resultados
-                    }, 1500); // Tiempo suficiente para interactuar con resultados
-                    e.target.style.border = '1px solid rgba(0, 241, 0, 0.3)';
-                    e.target.style.boxShadow = 'none';
-                  }}
-                  onFocus={(e) => {
-                    if (searchTerm.length > 2) setShowResults(true);
-                    e.target.style.border = '1px solid rgba(0, 241, 0, 0.6)';
-                    e.target.style.boxShadow = '0 0 10px rgba(0, 241, 0, 0.3)';
-                  }}
-                  style={{
-                    width: '100%',
-                    maxWidth: '400px',
-                    padding: '8px 15px',
-                    borderRadius: '20px',
-                    border: '1px solid rgba(0, 241, 0, 0.3)',
-                    background: 'rgba(255,255,255,0.1)',
-                    color: COLORS.text.white,
-                    fontSize: '14px',
-                    outline: 'none',
-                    backdropFilter: 'blur(10px)',
-                    marginBottom: '10px',
-                  }}
-                />
+              
 
                 {/* Resultados de búsqueda */}
                 {showResults && searchResults.length > 0 && (
@@ -496,9 +486,9 @@ const Header = () => {
                               💵 US$ {product.precio_usd}
                             </span>
                             {dolarBlue && (
-                                <span style={{ color: '#87CEEB', fontSize: '12px', fontWeight: '600' }}>
-                                  💰 $ {formatearNumero(precioEnPesos)} ARS
-                                </span>
+                              <span style={{ color: '#87CEEB', fontSize: '12px', fontWeight: '600' }}>
+                                💰 $ {formatearNumero(precioEnPesos)} ARS
+                              </span>
                             )}
                           </div>
                         </div>
@@ -542,7 +532,7 @@ const Header = () => {
                 justifyContent: 'flex-end',
                 width: '200px'
               }}>
-             
+
               </div>
             </div>
           )}
@@ -570,6 +560,25 @@ const Header = () => {
               >
                 🏠 Inicio
               </Link>
+
+              <Link
+                to="/productos"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToTop();
+                }}
+                style={{
+                  display: 'block',
+                  textDecoration: 'none',
+                  color: COLORS.text.white,
+                  padding: '12px 0',
+                  marginLeft: '20px',
+                  fontWeight: '600'
+                }}
+              >
+                � Productos
+              </Link>
+
               <Link
                 to="/otros-productos"
                 onClick={() => {

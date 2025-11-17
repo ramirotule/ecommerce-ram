@@ -9,6 +9,7 @@ import About from "./pages/About";
 import HowToBuy from "./pages/HowToBuy";
 import Login from "./pages/Login";
 import Prices from "./pages/Prices";
+import Products from "./pages/Products";
 import OtherProducts from "./pages/OtherProducts";
   import ReactGA from 'react-ga4';
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/nosotros" element={<About />} />
           <Route path="/como-comprar" element={<HowToBuy />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/productos" element={<Products />} />
           <Route path="/precios" element={<Prices />} />
           <Route path="/otros-productos" element={<OtherProducts />} />
 
