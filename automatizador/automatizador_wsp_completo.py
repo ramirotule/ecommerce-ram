@@ -15,8 +15,9 @@ class AutomatizadorWSP:
     def __init__(self):
         """Inicializar el automatizador con configuración de Selenium"""
         self.driver = None
-        self.mensaje_buen_dia_encontrado = False
-        self.elemento_mensaje_buen_dia = None
+        self.mensaje_objetivo_encontrado = False
+        self.elemento_mensaje_objetivo = None
+        self.fecha_hoy = self.obtener_fecha_hoy()
         self.proveedores = {
             "Rodrigo Provee": {
                 "archivo_salida": "output/lista_rodrigo.txt",
@@ -37,6 +38,32 @@ class AutomatizadorWSP:
                 "busqueda_alternativa": ["gc", "group", "gcgroup"]
             }
         }
+        
+    def obtener_fecha_hoy(self):
+        """Obtener la fecha de hoy en formato dinámico para buscar en WhatsApp"""
+        fecha_actual = datetime.now()
+        
+        # Mapear días y meses en español
+        dias_semana = {
+            0: "LUNES", 1: "MARTES", 2: "MIÉRCOLES", 3: "JUEVES", 
+            4: "VIERNES", 5: "SÁBADO", 6: "DOMINGO"
+        }
+        
+        meses = {
+            1: "ENERO", 2: "FEBRERO", 3: "MARZO", 4: "ABRIL",
+            5: "MAYO", 6: "JUNIO", 7: "JULIO", 8: "AGOSTO", 
+            9: "SEPTIEMBRE", 10: "OCTUBRE", 11: "NOVIEMBRE", 12: "DICIEMBRE"
+        }
+        
+        dia_semana = dias_semana[fecha_actual.weekday()]
+        dia = fecha_actual.day
+        mes = meses[fecha_actual.month]
+        
+        # Formato: "VIERNES 14 DE NOVIEMBRE"
+        fecha_formateada = f"{dia_semana} {dia} DE {mes}"
+        print(f"🗓️ Fecha objetivo: {fecha_formateada}")
+        
+        return fecha_formateada
         
     def configurar_navegador(self):
         """Configurar y abrir navegador con sesión persistente"""
@@ -64,6 +91,552 @@ class AutomatizadorWSP:
         except Exception as e:
             print(f"❌ Error configurando navegador: {e}")
             return False
+    
+    def buscar_mensaje_objetivo_hoy(self):
+        """Buscar específicamente el mensaje con la fecha de hoy - MÉTODO OPTIMIZADO"""
+        try:
+            print(f"🎯 Buscando mensaje: 'BUEN DIA TE DEJO LA LISTA DE HOY {self.fecha_hoy}'")
+            
+            # PASO 1: Ir al final del chat (mensajes más recientes) SIN scroll excesivo
+            print("📍 Posicionándose al final del chat...")
+            try:
+                chat_container = None
+                selectores_chat = [
+                    '//div[@data-testid="chat-history"]',
+                    '//div[@data-testid="conversation-panel-messages"]', 
+                    '//div[contains(@class, "copyable-area")]'
+                ]
+                
+                for selector in selectores_chat:
+                    try:
+                        chat_container = WebDriverWait(self.driver, 5).until(
+                            EC.presence_of_element_located((By.XPATH, selector))
+                        )
+                        break
+                    except:
+                        continue
+                
+                if chat_container:
+                    # IR DIRECTAMENTE al final (mensajes más recientes)
+                    self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight;", chat_container)
+                    time.sleep(2)
+                    print("   ✅ Posicionado al final del chat")
+                else:
+                    print("   ⚠️ No se pudo encontrar contenedor del chat")
+                    
+            except Exception as e:
+                print(f"   ⚠️ Error posicionándose al final: {e}")
+            
+            # PASO 2: Buscar el elemento específico con la clase exacta que mencionaste
+            print("🔍 Buscando elemento con clase específica...")
+            selector_objetivo = '//div[@class="x9f619 x1hx0egp x1yrsyyn xizg8k xu9hqtb xwib8y2"]'
+            
+            elementos_encontrados = self.driver.find_elements(By.XPATH, selector_objetivo)
+            print(f"   📊 Encontrados {len(elementos_encontrados)} elementos con clase específica")
+            
+            # PASO 2.1: EXPANDIR MENSAJES LARGOS ANTES DE EXTRAER
+            print("📖 Expandiendo mensajes largos antes de extraer...")
+            self.expandir_mensaje_especifico()
+            
+            # Re-buscar elementos después de la expansión
+            elementos_encontrados = self.driver.find_elements(By.XPATH, selector_objetivo)
+            print(f"   📊 Después de expandir: {len(elementos_encontrados)} elementos")
+            
+            # PASO 3: Buscar dentro de esos elementos el mensaje con la fecha de hoy
+            for i, elemento in enumerate(elementos_encontrados):
+                try:
+                    texto_elemento = elemento.text.strip()
+                    if not texto_elemento:
+                        continue
+                        
+                    # Convertir a mayúsculas para comparación
+                    texto_upper = texto_elemento.upper()
+                    
+                    # EXCLUSIÓN: Ignorar completamente listas de colores
+                    if "LISTA DE MODELOS Y COLORES" in texto_upper:
+                        print(f"   ❌ Elemento {i+1} IGNORADO: Contiene 'LISTA DE MODELOS Y COLORES'")
+                        continue
+                    
+                    if "📱👇🏻📱" in texto_elemento:
+                        print(f"   ❌ Elemento {i+1} IGNORADO: Contiene emojis de lista de colores")
+                        continue
+                    
+                    # BÚSQUEDA: Mensaje con fecha de hoy
+                    if ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper and 
+                        self.fecha_hoy in texto_upper):
+                        
+                        print(f"   🎯 ¡MENSAJE OBJETIVO ENCONTRADO! (Elemento {i+1})")
+                        print(f"   📝 Longitud: {len(texto_elemento)} caracteres")
+                        print(f"   📝 Inicio: '{texto_elemento[:150]}...'")
+                        
+                        # VERIFICACIÓN DE COMPLETITUD
+                        if texto_elemento.endswith("…") or texto_elemento.endswith("...") or "Leer más" in texto_elemento:
+                            print(f"   ⚠️ MENSAJE PARECE INCOMPLETO - Aplicando expansión agresiva...")
+                            
+                            # ESTRATEGIA AGRESIVA: Expandir TODO en el área del mensaje
+                            try:
+                                self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", elemento)
+                                time.sleep(2)
+                                
+                                # Buscar TODOS los posibles botones "Leer más" en un área amplia
+                                selectores_expansion = [
+                                    './/span[contains(text(), "Leer más")]',
+                                    './/span[contains(text(), "Lee más")]',
+                                    './/span[contains(text(), "…")]',
+                                    './/span[contains(text(), "...")]',
+                                    './/*[contains(text(), "Read more")]',
+                                    './/div[@role="button"]',
+                                    './/*[contains(@class, "read-more")]'
+                                ]
+                                
+                                # También buscar en el contenedor padre y hermanos
+                                areas_busqueda = [elemento]
+                                try:
+                                    contenedor_padre = elemento.find_element(By.XPATH, '..')
+                                    areas_busqueda.append(contenedor_padre)
+                                    
+                                    # Y en el contenedor abuelo
+                                    contenedor_abuelo = contenedor_padre.find_element(By.XPATH, '..')
+                                    areas_busqueda.append(contenedor_abuelo)
+                                except:
+                                    pass
+                                
+                                total_botones_expandidos = 0
+                                
+                                for area in areas_busqueda:
+                                    for selector in selectores_expansion:
+                                        try:
+                                            botones = area.find_elements(By.XPATH, selector)
+                                            if botones:
+                                                print(f"     🎯 Encontrados {len(botones)} botones con '{selector}' en área")
+                                                
+                                                for j, boton in enumerate(botones):
+                                                    try:
+                                                        if boton.is_displayed() and boton.is_enabled():
+                                                            # Hacer scroll al botón específico
+                                                            self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", boton)
+                                                            time.sleep(1)
+                                                            
+                                                            # Múltiples métodos de clic
+                                                            click_exitoso = False
+                                                            
+                                                            # Método 1: JavaScript click
+                                                            try:
+                                                                self.driver.execute_script("arguments[0].click();", boton)
+                                                                click_exitoso = True
+                                                                print(f"       ✅ Botón {j+1} expandido con JS")
+                                                                time.sleep(3)  # Tiempo extendido para expansión
+                                                            except:
+                                                                pass
+                                                            
+                                                            # Método 2: Click directo
+                                                            if not click_exitoso:
+                                                                try:
+                                                                    boton.click()
+                                                                    click_exitoso = True
+                                                                    print(f"       ✅ Botón {j+1} expandido con click directo")
+                                                                    time.sleep(3)
+                                                                except:
+                                                                    pass
+                                                            
+                                                            # Método 3: Doble clic
+                                                            if not click_exitoso:
+                                                                try:
+                                                                    self.driver.execute_script("arguments[0].dispatchEvent(new MouseEvent('click', {bubbles: true}));", boton)
+                                                                    click_exitoso = True
+                                                                    print(f"       ✅ Botón {j+1} expandido con evento")
+                                                                    time.sleep(3)
+                                                                except:
+                                                                    pass
+                                                            
+                                                            if click_exitoso:
+                                                                total_botones_expandidos += 1
+                                                            
+                                                    except Exception as btn_error:
+                                                        continue
+                                        except:
+                                            continue
+                                
+                                print(f"   🎉 Total de botones expandidos en expansión agresiva: {total_botones_expandidos}")
+                                
+                                # Dar tiempo para que TODO se cargue
+                                time.sleep(5)
+                                
+                                # Re-extraer el texto después de la expansión agresiva
+                                tiempo_espera = 0
+                                max_espera = 15  # 15 segundos máximo
+                                
+                                while tiempo_espera < max_espera:
+                                    try:
+                                        texto_actualizado = elemento.text.strip()
+                                        if len(texto_actualizado) > len(texto_elemento) and not texto_actualizado.endswith("…"):
+                                            print(f"   🎉 ¡EXPANSIÓN EXITOSA! Texto expandido de {len(texto_elemento)} a {len(texto_actualizado)} caracteres")
+                                            texto_elemento = texto_actualizado
+                                            break
+                                        else:
+                                            time.sleep(1)
+                                            tiempo_espera += 1
+                                    except:
+                                        time.sleep(1)
+                                        tiempo_espera += 1
+                                
+                                if tiempo_espera >= max_espera:
+                                    print(f"   ⚠️ Tiempo de espera agotado, usando texto actual de {len(texto_elemento)} caracteres")
+                                    
+                            except Exception as e:
+                                print(f"   ⚠️ Error en expansión agresiva: {e}")
+                        
+                        # Guardar referencia al elemento
+                        self.mensaje_objetivo_encontrado = True
+                        self.elemento_mensaje_objetivo = elemento
+                        
+                        return texto_elemento
+                        
+                except Exception as e:
+                    print(f"   ⚠️ Error procesando elemento {i+1}: {e}")
+                    continue
+            
+            # PASO 4: Si no se encontró con la clase específica, búsqueda alternativa MÁS LIMITADA
+            print("🔄 Búsqueda alternativa en elementos <strong> cerca del final...")
+            
+            # Buscar elementos <strong> que contengan el texto objetivo
+            selector_strong = f'//strong[contains(@class, "selectable-text") and contains(text(), "BUEN DIA TE DEJO LA LISTA DE HOY {self.fecha_hoy}")]'
+            elementos_strong = self.driver.find_elements(By.XPATH, selector_strong)
+            
+            if elementos_strong:
+                print(f"   ✅ Encontrado en elemento <strong>!")
+                elemento_strong = elementos_strong[0]
+                
+                # Buscar el contenedor padre que tenga todo el mensaje
+                contenedor_padre = elemento_strong
+                for nivel in range(10):  # Máximo 10 niveles hacia arriba
+                    try:
+                        contenedor_padre = contenedor_padre.find_element(By.XPATH, '..')
+                        texto_contenedor = contenedor_padre.text.strip()
+                        
+                        # Si el contenedor tiene suficiente contenido, usarlo
+                        if len(texto_contenedor) > 500:  # Mínimo para una lista
+                            print(f"   📦 Usando contenedor padre (nivel {nivel+1})")
+                            print(f"   📝 Longitud: {len(texto_contenedor)} caracteres")
+                            
+                            self.mensaje_objetivo_encontrado = True
+                            self.elemento_mensaje_objetivo = contenedor_padre
+                            
+                            return texto_contenedor
+                            
+                    except Exception as e:
+                        break
+            
+            # PASO 5: BÚSQUEDA EXHAUSTIVA - Si aún no se encontró completo
+            print("🔍 BÚSQUEDA EXHAUSTIVA: Buscando versión completa en todo el chat...")
+            
+            # Expandir TODOS los mensajes del día de hoy para asegurar completitud
+            self.expandir_todos_los_mensajes_hoy()
+            
+            # Re-buscar después de expansión exhaustiva
+            elementos_exhaustivos = self.driver.find_elements(By.XPATH, selector_objetivo)
+            
+            for i, elemento in enumerate(elementos_exhaustivos):
+                try:
+                    texto_elemento = elemento.text.strip()
+                    if not texto_elemento:
+                        continue
+                        
+                    texto_upper = texto_elemento.upper()
+                    
+                    # Solo mensajes con la fecha de hoy y que contengan precios
+                    if (self.fecha_hoy in texto_upper and 
+                        "BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper and
+                        "$ " in texto_elemento):
+                        
+                        # Verificar si es más completo que versiones anteriores
+                        if not texto_elemento.endswith("…") and not texto_elemento.endswith("..."):
+                            print(f"   🎉 ¡VERSIÓN COMPLETA ENCONTRADA! (Búsqueda exhaustiva)")
+                            print(f"   📝 Longitud: {len(texto_elemento)} caracteres")
+                            
+                            self.mensaje_objetivo_encontrado = True
+                            self.elemento_mensaje_objetivo = elemento
+                            
+                            return texto_elemento
+                        else:
+                            print(f"   ⚠️ Versión encontrada pero aún incompleta: {len(texto_elemento)} chars")
+                            
+                except Exception as e:
+                    continue
+            
+            print("   ❌ No se encontró el mensaje objetivo")
+            return None
+            
+        except Exception as e:
+            print(f"❌ Error en búsqueda del mensaje objetivo: {e}")
+            return None
+    
+    def expandir_mensaje_especifico(self):
+        """Expandir específicamente mensajes que contengan la fecha de hoy - ACTUALIZADO CON HTML REAL"""
+        try:
+            print("🎯 Buscando mensajes específicos para expandir con selectores actualizados...")
+            
+            # Buscar botones "Lee más" usando la información HTML real proporcionada
+            botones_encontrados = []
+            
+            # Método 1: Buscar botones cerca de elementos que contengan la fecha
+            try:
+                elementos_con_fecha = self.driver.find_elements(By.XPATH, 
+                    f'//*[contains(text(), "{self.fecha_hoy}")]')
+                
+                for elemento in elementos_con_fecha:
+                    # Buscar botones "Lee más" cerca de este elemento usando los selectores reales
+                    try:
+                        # Selector específico basado en el HTML real proporcionado
+                        botones_cerca = elemento.find_elements(By.XPATH, 
+                            './/following-sibling::*//div[@role="button" and contains(@class, "read-more-button")]')
+                        botones_encontrados.extend(botones_cerca)
+                        
+                        # También buscar texto "Leer más" en divs con role="button"
+                        botones_texto = elemento.find_elements(By.XPATH, 
+                            './/following-sibling::*//div[@role="button" and contains(text(), "Leer más")]')
+                        botones_encontrados.extend(botones_texto)
+                        
+                        # Buscar en contenedor padre con clases específicas
+                        contenedor = elemento.find_element(By.XPATH, '..')
+                        botones_padre = contenedor.find_elements(By.XPATH, 
+                            './/div[@role="button" and contains(@class, "read-more-button")]')
+                        botones_encontrados.extend(botones_padre)
+                    except:
+                        continue
+                        
+            except Exception as e:
+                print(f"   ⚠️ Error buscando elementos con fecha: {e}")
+            
+            # Método 2: Buscar todos los botones "Lee más" visibles con selectores actualizados
+            try:
+                selectores_boton = [
+                    # Selector principal basado en HTML real
+                    '//div[@role="button" and contains(@class, "read-more-button")]',
+                    '//div[@role="button" and contains(text(), "Leer más")]',
+                    '//div[@role="button" and contains(@class, "xuxw1ft") and contains(text(), "Leer más")]',
+                    # Selectores de fallback
+                    '//span[contains(text(), "Lee más")]',
+                    '//span[contains(text(), "…")]',
+                    '//*[contains(text(), "Read more")]',
+                    '//*[@role="button" and contains(text(), "más")]'
+                ]
+                
+                for selector in selectores_boton:
+                    botones = self.driver.find_elements(By.XPATH, selector)
+                    if botones:
+                        print(f"   📍 Selector '{selector[:60]}...' encontró {len(botones)} botones")
+                    botones_encontrados.extend(botones)
+                    
+            except Exception as e:
+                print(f"   ⚠️ Error buscando botones Lee más: {e}")
+            
+            # Eliminar duplicados por posición
+            botones_unicos = []
+            posiciones_vistas = set()
+            
+            for boton in botones_encontrados:
+                try:
+                    location = boton.location
+                    pos_key = f"{location['x']},{location['y']}"
+                    if pos_key not in posiciones_vistas:
+                        posiciones_vistas.add(pos_key)
+                        botones_unicos.append(boton)
+                except:
+                    botones_unicos.append(boton)
+            
+            print(f"   📊 Encontrados {len(botones_unicos)} botones únicos para expandir")
+            
+            # Expandir cada botón con métodos optimizados para la estructura HTML real
+            expandidos = 0
+            for i, boton in enumerate(botones_unicos):
+                try:
+                    if boton.is_displayed() and boton.is_enabled():
+                        # Hacer scroll hacia el botón
+                        self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", boton)
+                        time.sleep(1)
+                        
+                        # Intentar hacer clic con múltiples métodos optimizados para el HTML real
+                        click_exitoso = self.hacer_click_optimizado_leer_mas(boton, i + 1)
+                        if click_exitoso:
+                            expandidos += 1
+                            print(f"   ✅ Botón {i+1} expandido exitosamente")
+                            time.sleep(2)  # Tiempo para que se expanda
+                        else:
+                            print(f"   ❌ No se pudo expandir botón {i+1}")
+                        
+                except Exception as e:
+                    print(f"   ⚠️ Error procesando botón {i+1}: {e}")
+                    continue
+            
+            print(f"✅ Total de botones expandidos: {expandidos}")
+            
+        except Exception as e:
+            print(f"⚠️ Error expandiendo mensajes específicos: {e}")
+
+    def hacer_click_optimizado_leer_mas(self, boton, numero_boton):
+        """Método optimizado para hacer clic en botones 'Leer más' con la estructura HTML real"""
+        try:
+            # Obtener información del botón para debugging
+            try:
+                tag_name = boton.tag_name
+                classes = boton.get_attribute("class")
+                role = boton.get_attribute("role")
+                texto = boton.text
+                print(f"     🎯 Botón {numero_boton}: <{tag_name}> role='{role}' texto='{texto[:20]}'")
+            except:
+                print(f"     🎯 Botón {numero_boton}: Información no accesible")
+            
+            # Método 1: Clic JavaScript directo (más compatible con elementos complejos)
+            try:
+                self.driver.execute_script("arguments[0].click();", boton)
+                print(f"       ✅ Método 1 (JS click): Exitoso")
+                return True
+            except Exception as e:
+                print(f"       ⚠️ Método 1 falló: {type(e).__name__}")
+            
+            # Método 2: Trigger de evento click manualmente
+            try:
+                self.driver.execute_script("""
+                    var evt = new MouseEvent('click', {
+                        view: window,
+                        bubbles: true,
+                        cancelable: true,
+                        clientX: arguments[0].getBoundingClientRect().left + arguments[0].offsetWidth/2,
+                        clientY: arguments[0].getBoundingClientRect().top + arguments[0].offsetHeight/2
+                    });
+                    arguments[0].dispatchEvent(evt);
+                """, boton)
+                print(f"       ✅ Método 2 (Event dispatch): Exitoso")
+                return True
+            except Exception as e:
+                print(f"       ⚠️ Método 2 falló: {type(e).__name__}")
+            
+            # Método 3: Clic directo con WebDriver
+            try:
+                boton.click()
+                print(f"       ✅ Método 3 (Direct click): Exitoso")
+                return True
+            except Exception as e:
+                print(f"       ⚠️ Método 3 falló: {type(e).__name__}")
+            
+            # Método 4: Clic usando ActionChains (para casos complejos)
+            try:
+                from selenium.webdriver.common.action_chains import ActionChains
+                actions = ActionChains(self.driver)
+                actions.move_to_element(boton).click().perform()
+                print(f"       ✅ Método 4 (ActionChains): Exitoso")
+                return True
+            except Exception as e:
+                print(f"       ⚠️ Método 4 falló: {type(e).__name__}")
+            
+            # Método 5: Focus + Enter (simular teclado)
+            try:
+                self.driver.execute_script("arguments[0].focus();", boton)
+                boton.send_keys('\ue007')  # Enter key
+                print(f"       ✅ Método 5 (Focus + Enter): Exitoso")
+                return True
+            except Exception as e:
+                print(f"       ⚠️ Método 5 falló: {type(e).__name__}")
+            
+            print(f"       ❌ Todos los métodos fallaron para botón {numero_boton}")
+            return False
+            
+        except Exception as e:
+            print(f"       ❌ Error general en click optimizado: {e}")
+            return False
+    
+    def expandir_todos_los_mensajes_hoy(self):
+        """Expansión exhaustiva de TODOS los mensajes que puedan contener la lista de hoy - ACTUALIZADO CON HTML REAL"""
+        try:
+            print("🚀 EXPANSIÓN EXHAUSTIVA: Expandiendo todos los mensajes posibles con selectores actualizados...")
+            
+            # Buscar TODOS los botones "Lee más" visibles en la página usando selectores basados en HTML real
+            selectores_exhaustivos = [
+                # Selectores principales basados en HTML real proporcionado
+                '//div[@role="button" and contains(@class, "read-more-button")]',
+                '//div[@role="button" and contains(text(), "Leer más")]',
+                '//div[@role="button" and contains(@class, "xuxw1ft") and contains(text(), "Leer más")]',
+                '//div[@role="button" and contains(@class, "x1ypdohk") and contains(text(), "Leer más")]',
+                # Selectores de fallback tradicionales
+                '//span[contains(text(), "Lee más")]',
+                '//span[contains(text(), "…")]', 
+                '//span[contains(text(), "...")]',
+                '//*[contains(text(), "Read more")]',
+                '//div[@role="button" and contains(., "más")]',
+                '//*[contains(@class, "read-more")]'
+            ]
+            
+            todos_los_botones = []
+            
+            for selector in selectores_exhaustivos:
+                try:
+                    botones = self.driver.find_elements(By.XPATH, selector)
+                    if botones:
+                        print(f"   📊 Selector '{selector[:50]}...' encontró {len(botones)} botones")
+                    todos_los_botones.extend(botones)
+                except:
+                    continue
+            
+            # Eliminar duplicados por posición
+            botones_unicos = []
+            posiciones_vistas = set()
+            
+            for boton in todos_los_botones:
+                try:
+                    if boton.is_displayed():
+                        location = boton.location
+                        pos_key = f"{location['x']},{location['y']}"
+                        if pos_key not in posiciones_vistas:
+                            posiciones_vistas.add(pos_key)
+                            botones_unicos.append(boton)
+                except:
+                    continue
+            
+            print(f"   🎯 Total de botones únicos encontrados: {len(botones_unicos)}")
+            
+            # Expandir todos los botones encontrados con método optimizado
+            expandidos_exitosos = 0
+            
+            for i, boton in enumerate(botones_unicos):
+                print(f"   🔄 Procesando botón {i+1}/{len(botones_unicos)}...")
+                
+                try:
+                    # Verificar que el botón sigue siendo válido
+                    if not (boton.is_displayed() and boton.is_enabled()):
+                        print(f"     ⚠️ Botón {i+1} ya no es válido")
+                        continue
+                        
+                    # Scroll hacia el botón
+                    self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", boton)
+                    time.sleep(0.5)
+                    
+                    # Usar el método optimizado de clic
+                    click_exitoso = self.hacer_click_optimizado_leer_mas(boton, i + 1)
+                    if click_exitoso:
+                        expandidos_exitosos += 1
+                        print(f"     ✅ Botón {i+1} expandido exitosamente")
+                        time.sleep(1.5)  # Tiempo para que se expanda
+                    else:
+                        print(f"     ❌ No se pudo expandir botón {i+1}")
+                        
+                except Exception as e:
+                    print(f"     ❌ Error procesando botón {i+1}: {e}")
+                    continue
+                
+                # Cada 3 expansiones, pausa para que WhatsApp procese
+                if (i + 1) % 3 == 0:
+                    print(f"   ⏳ Pausa de procesamiento ({i+1}/{len(botones_unicos)})")
+                    time.sleep(2)
+            
+            print(f"🎉 EXPANSIÓN EXHAUSTIVA COMPLETADA")
+            print(f"   ✅ Botones expandidos exitosamente: {expandidos_exitosos}/{len(botones_unicos)}")
+            
+            # Dar tiempo para que todos los mensajes se carguen completamente
+            time.sleep(3)
+            
+        except Exception as e:
+            print(f"❌ Error en expansión exhaustiva: {e}")
     
     def ir_al_final_del_chat(self):
         """Ir directamente al final del chat para obtener SOLO los mensajes más recientes (hoy)"""
@@ -117,123 +690,176 @@ class AutomatizadorWSP:
             max_intentos = 5  # Máximo 5 pasadas para evitar bucle infinito
             
             for intento in range(max_intentos):
-                # Buscar botones "Lee más..." con múltiples selectores
-                botones_leer_mas = []
+                # RE-BUSCAR botones "Lee más..." en CADA iteración para evitar stale elements
+                print(f"   🔄 Pasada {intento + 1}: Re-buscando botones 'Lee más'...")
                 
-                # Selector 1: Elementos span con texto
-                botones_span = self.driver.find_elements(By.XPATH, 
-                    '//span[contains(text(), "Lee más") or contains(text(), "Read more") or '
-                    'contains(text(), "Show more") or contains(text(), "Ver más") or '
-                    'contains(text(), "más...") or contains(text(), "...")]'
-                )
-                botones_leer_mas.extend(botones_span)
+                # Buscar botones "Lee más..." con múltiples selectores - RENOVADOS EN CADA PASADA
+                def buscar_botones_leer_mas():
+                    botones_encontrados = []
+                    
+                    # Selector 1: Elementos span con texto
+                    try:
+                        botones_span = self.driver.find_elements(By.XPATH, 
+                            '//span[contains(text(), "Lee más") or contains(text(), "Read more") or '
+                            'contains(text(), "Show more") or contains(text(), "Ver más") or '
+                            'contains(text(), "más...") or contains(text(), "...")]'
+                        )
+                        botones_encontrados.extend(botones_span)
+                    except:
+                        pass
+                    
+                    # Selector 2: Div con clase read-more-button
+                    try:
+                        botones_div_class = self.driver.find_elements(By.XPATH, 
+                            '//div[contains(@class, "read-more-button")]'
+                        )
+                        botones_encontrados.extend(botones_div_class)
+                    except:
+                        pass
+                    
+                    # Selector 3: Cualquier elemento con texto "Leer más"
+                    try:
+                        botones_general = self.driver.find_elements(By.XPATH, 
+                            '//*[contains(text(), "Leer más") or contains(text(), "Read more")]'
+                        )
+                        botones_encontrados.extend(botones_general)
+                    except:
+                        pass
+                    
+                    # Selector 4: Elementos clickeables con role="button"
+                    try:
+                        botones_role = self.driver.find_elements(By.XPATH, 
+                            '//div[@role="button" and contains(text(), "más")]'
+                        )
+                        botones_encontrados.extend(botones_role)
+                    except:
+                        pass
+                    
+                    # Selector 5: Elementos que contengan "…" (pueden ser botones cortados)
+                    try:
+                        botones_puntos = self.driver.find_elements(By.XPATH, 
+                            '//*[contains(text(), "…") and not(ancestor::*[contains(@class, "message")])]'
+                        )
+                        botones_encontrados.extend(botones_puntos)
+                    except:
+                        pass
+                    
+                    # Eliminar duplicados basándose en posición
+                    botones_unicos = []
+                    posiciones_vistas = set()
+                    
+                    for boton in botones_encontrados:
+                        try:
+                            # Usar la posición del elemento como identificador único
+                            location = boton.location
+                            pos_key = f"{location['x']},{location['y']}"
+                            if pos_key not in posiciones_vistas:
+                                posiciones_vistas.add(pos_key)
+                                botones_unicos.append(boton)
+                        except:
+                            # Si no se puede obtener la posición, incluirlo de todos modos
+                            botones_unicos.append(boton)
+                    
+                    return botones_unicos
                 
-                # Selector 2: Div con clase read-more-button (específico para GcGroup)
-                botones_div_class = self.driver.find_elements(By.XPATH, 
-                    '//div[contains(@class, "read-more-button")]'
-                )
-                botones_leer_mas.extend(botones_div_class)
-                
-                # Selector 3: Cualquier elemento con texto "Leer más"
-                botones_general = self.driver.find_elements(By.XPATH, 
-                    '//*[contains(text(), "Leer más") or contains(text(), "Read more")]'
-                )
-                botones_leer_mas.extend(botones_general)
-                
-                # Selector 4: Elementos clickeables con role="button" que contengan "más"
-                botones_role = self.driver.find_elements(By.XPATH, 
-                    '//div[@role="button" and contains(text(), "más")]'
-                )
-                botones_leer_mas.extend(botones_role)
-                
-                # Eliminar duplicados
-                botones_unicos = []
-                for boton in botones_leer_mas:
-                    if boton not in botones_unicos:
-                        botones_unicos.append(boton)
-                botones_leer_mas = botones_unicos
+                botones_leer_mas = buscar_botones_leer_mas()
                 
                 if not botones_leer_mas:
                     if intento == 0:
                         print("   ℹ️ No se encontraron mensajes para expandir")
                         # Debug: buscar elementos similares
-                        debug_elements = self.driver.find_elements(By.XPATH, '//*[contains(text(), "más")]')
-                        if debug_elements:
-                            print(f"   🔍 Debug: Encontrados {len(debug_elements)} elementos con 'más':")
-                            for elem in debug_elements[:3]:  # Mostrar solo los primeros 3
-                                print(f"     - <{elem.tag_name}> '{elem.text[:50]}...'")
+                        try:
+                            debug_elements = self.driver.find_elements(By.XPATH, '//*[contains(text(), "más")]')
+                            if debug_elements:
+                                print(f"   🔍 Debug: Encontrados {len(debug_elements)} elementos con 'más':")
+                                for elem in debug_elements[:3]:  # Mostrar solo los primeros 3
+                                    try:
+                                        print(f"     - <{elem.tag_name}> '{elem.text[:50]}...'")
+                                    except:
+                                        print(f"     - <elemento no accesible>")
+                        except:
+                            pass
                     break
                 
-                print(f"   🔄 Pasada {intento + 1}: {len(botones_leer_mas)} botones encontrados")
-                
-                # Debug: mostrar tipos de botones encontrados
-                if botones_leer_mas:
-                    tipos_botones = {}
-                    for boton in botones_leer_mas:
-                        tipo = f"{boton.tag_name}"
-                        if 'class' in boton.get_attribute('outerHTML'):
-                            clases = boton.get_attribute('class')
-                            if 'read-more' in clases:
-                                tipo += " (read-more)"
-                        tipos_botones[tipo] = tipos_botones.get(tipo, 0) + 1
-                    
-                    print(f"   📊 Tipos de botones: {tipos_botones}")
+                print(f"   � Encontrados {len(botones_leer_mas)} botones en esta pasada")
                 
                 expandidos_en_pasada = 0
-                for i, boton in enumerate(botones_leer_mas):
+                # Procesar cada botón INMEDIATAMENTE después de encontrarlo
+                for i in range(len(botones_leer_mas)):
                     try:
-                        # Verificar si el botón aún es visible y clickeable
-                        if boton.is_displayed() and boton.is_enabled():
-                            # Debug: mostrar información del botón
+                        # RE-BUSCAR el botón específico para evitar stale reference
+                        botones_actuales = buscar_botones_leer_mas()
+                        
+                        if i >= len(botones_actuales):
+                            print(f"     ⚠️ Botón {i+1} ya no existe (posiblemente expandido)")
+                            continue
+                            
+                        boton = botones_actuales[i]
+                        
+                        # Verificar si el botón aún es válido y visible
+                        try:
+                            if not (boton.is_displayed() and boton.is_enabled()):
+                                continue
+                        except:
+                            print(f"     ⚠️ Botón {i+1} se volvió inválido")
+                            continue
+                        
+                        # Obtener información del botón ANTES de hacer clic
+                        try:
                             texto_boton = boton.text[:30] if boton.text else "Sin texto"
                             tag_name = boton.tag_name
-                            print(f"     🎯 Clickeando botón {i+1}: <{tag_name}> '{texto_boton}'...")
-                            
-                            # Hacer scroll hacia el botón para asegurar que esté visible
+                        except:
+                            texto_boton = "No accesible"
+                            tag_name = "unknown"
+                        
+                        print(f"     🎯 Clickeando botón {i+1}: <{tag_name}> '{texto_boton}'...")
+                        
+                        # Hacer scroll hacia el botón
+                        try:
                             self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", boton)
-                            time.sleep(0.5)
-                            
-                            # Intentar múltiples métodos de clic
-                            click_exitoso = False
-                            
-                            # Método 1: JavaScript click
+                            time.sleep(1)
+                        except:
+                            print(f"     ⚠️ No se pudo hacer scroll al botón {i+1}")
+                            continue
+                        
+                        # Intentar hacer clic con manejo robusto de errores
+                        click_exitoso = False
+                        
+                        # Método 1: JavaScript click
+                        try:
+                            self.driver.execute_script("arguments[0].click();", boton)
+                            click_exitoso = True
+                            print(f"       ✅ Click exitoso con JavaScript")
+                            time.sleep(2)
+                        except Exception as e:
+                            print(f"       ⚠️ Fallo JavaScript click: {type(e).__name__}")
+                        
+                        # Método 2: Click directo si el primero falló
+                        if not click_exitoso:
                             try:
-                                self.driver.execute_script("arguments[0].click();", boton)
+                                boton.click()
                                 click_exitoso = True
-                                print(f"       ✅ Click exitoso con JavaScript")
-                            except:
-                                pass
+                                print(f"       ✅ Click exitoso directo")
+                                time.sleep(2)
+                            except Exception as e:
+                                print(f"       ⚠️ Fallo click directo: {type(e).__name__}")
+                        
+                        if click_exitoso:
+                            expandidos_en_pasada += 1
+                            print(f"       🎉 Mensaje expandido exitosamente!")
                             
-                            # Método 2: Click directo si el primero falló
-                            if not click_exitoso:
-                                try:
-                                    boton.click()
-                                    click_exitoso = True
-                                    print(f"       ✅ Click exitoso directo")
-                                except:
-                                    pass
+                            # Pausa para que se cargue completamente
+                            time.sleep(1.5)
                             
-                            # Método 3: Simular Enter si los anteriores fallaron
-                            if not click_exitoso:
-                                try:
-                                    boton.send_keys('\ue007')  # Enter
-                                    click_exitoso = True
-                                    print(f"       ✅ Click exitoso con Enter")
-                                except:
-                                    print(f"       ❌ No se pudo hacer click")
-                                    continue
-                            
-                            if click_exitoso:
-                                expandidos_en_pasada += 1
-                                time.sleep(1)  # Pausa para que se cargue el contenido expandido
-                                
-                                # Cada 3 clics, hacer una pausa más larga para que WhatsApp procese
-                                if (i + 1) % 3 == 0:
-                                    print(f"       ⏳ Pausa de procesamiento...")
-                                    time.sleep(2)
-                                
+                            # Cada 2 expansiones exitosas, pausa más larga
+                            if expandidos_en_pasada % 2 == 0:
+                                print(f"       ⏳ Pausa de procesamiento...")
+                                time.sleep(3)
+                        else:
+                            print(f"       ❌ No se pudo hacer click en botón {i+1}")
+                        
                     except Exception as e:
-                        print(f"       ⚠️ Error con botón {i+1}: {e}")
+                        print(f"       ⚠️ Error procesando botón {i+1}: {type(e).__name__}")
                         continue
                 
                 total_expandidos += expandidos_en_pasada
@@ -244,43 +870,137 @@ class AutomatizadorWSP:
                     break
                 
                 # Pausa entre pasadas para que WhatsApp procese los cambios
-                time.sleep(2)
+                time.sleep(3)  # Aumentado tiempo entre pasadas
             
             print(f"✅ Total de mensajes expandidos: {total_expandidos}")
+            
+            # VERIFICACIÓN ADICIONAL: Buscar mensajes que aún puedan estar cortados
+            if total_expandidos > 0:
+                print("   🔍 Verificación final: Buscando mensajes que puedan estar incompletos...")
+                try:
+                    # Buscar elementos que terminen con "..." o estén cortados
+                    elementos_cortados = self.driver.find_elements(By.XPATH, 
+                        '//*[contains(text(), "...") or contains(text(), "…")]'
+                    )
+                    if elementos_cortados:
+                        print(f"   ⚠️ Detectados {len(elementos_cortados)} elementos que pueden estar cortados")
+                        
+                        # Intentar hacer scroll y volver a expandir
+                        for elem in elementos_cortados[:3]:  # Solo los primeros 3
+                            try:
+                                self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", elem)
+                                time.sleep(1)
+                                texto = elem.text
+                                if "…" in texto or "..." in texto:
+                                    print(f"   🔄 Reintentando expansión para: '{texto[:50]}...'")
+                                    # Buscar botones "Lee más" cerca de este elemento
+                                    botones_cerca = elem.find_elements(By.XPATH, './/following-sibling::*//span[contains(text(), "Lee más")]')
+                                    if botones_cerca:
+                                        botones_cerca[0].click()
+                                        time.sleep(2)
+                            except:
+                                continue
+                                
+                except Exception as e:
+                    print(f"   ⚠️ Error en verificación final: {e}")
             
             # Hacer scroll final para asegurar que todos los mensajes estén cargados
             if total_expandidos > 0:
                 print("   📜 Haciendo scroll final para cargar contenido expandido...")
-                chat_container = self.driver.find_element(By.XPATH, '//div[@data-testid="chat-history"]')
-                self.driver.execute_script("arguments[0].scrollTop = 0;", chat_container)
-                time.sleep(1)
-                
+                try:
+                    # Buscar el contenedor del chat con múltiples selectores
+                    chat_container = None
+                    selectores_chat = [
+                        '//div[@data-testid="chat-history"]',  # Corregido el typo
+                        '//div[@data-testid="conversation-panel-messages"]', 
+                        '//div[contains(@class, "copyable-area")]'
+                    ]
+                    
+                    for selector in selectores_chat:
+                        try:
+                            chat_container = self.driver.find_element(By.XPATH, selector)
+                            break
+                        except:
+                            continue
+                    
+                    if chat_container:
+                        self.driver.execute_script("arguments[0].scrollTop = 0;", chat_container)
+                        time.sleep(2)  # Más tiempo para cargar
+                        # Scroll hacia abajo para cargar todo el contenido
+                        self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight;", chat_container)
+                        time.sleep(1)
+                    else:
+                        print("   ⚠️ No se pudo encontrar contenedor para scroll final")
+                        
+                except Exception as scroll_error:
+                    print(f"   ⚠️ Error en scroll final: {scroll_error}")
+                    print("   ℹ️ Continuando sin scroll final...")
+        
         except Exception as e:
             print(f"⚠️ Error al expandir mensajes: {e}")
             print("   ℹ️ Continuando con la extracción...")
     
     def filtrar_mensajes_del_dia(self, textos, filtro_inicio):
-        """Filtrar mensajes que contengan palabras clave de listas de precios"""
+        """Filtrar mensajes que contengan palabras clave de listas de precios (NO colores)"""
         mensajes_filtrados = []
         
-        print(f"🔍 Filtrando {len(textos)} mensajes buscando listas de precios...")
+        print(f"🔍 Filtrando {len(textos)} mensajes buscando SOLO listas de precios...")
         
         for i, texto in enumerate(textos):
             texto_upper = texto.upper()
             
-            # Buscar diferentes tipos de mensajes de precios
+            # EXCLUIR específicamente listas de colores/modelos
+            criterios_exclusion = [
+                "LISTA DE MODELOS Y COLORES",
+                "MODELOS Y COLORES DEL DÍA",
+                "MODELOS Y COLORES",
+                "DISPONIBILIDAD",
+                "STOCK DISPONIBLE", 
+                "COLORES DISPONIBLES"
+            ]
+            
+            # Verificar si el mensaje debe ser excluido
+            excluir_mensaje = False
+            for criterio_exclusion in criterios_exclusion:
+                if criterio_exclusion in texto_upper:
+                    excluir_mensaje = True
+                    print(f"   ❌ Mensaje {i+1} EXCLUIDO: Contiene '{criterio_exclusion}' (es lista de colores)")
+                    break
+            
+            # Verificación adicional: Si contiene productos sin precios ($), excluir
+            if not excluir_mensaje and "$ " not in texto:
+                # Contar líneas de productos vs líneas con precios
+                lineas = texto.split('\n')
+                lineas_con_productos = 0
+                lineas_con_precios = 0
+                
+                for linea in lineas:
+                    linea_clean = linea.strip()
+                    if len(linea_clean) > 10:  # Líneas significativas
+                        if any(marca in linea_clean.upper() for marca in ['IPHONE', 'SAMSUNG', 'MOTOROLA', 'XIAOMI', 'INFINIX']):
+                            lineas_con_productos += 1
+                        if '$ ' in linea_clean:
+                            lineas_con_precios += 1
+                
+                # Si hay muchos productos pero ningún precio, es lista de colores
+                if lineas_con_productos > 5 and lineas_con_precios == 0:
+                    excluir_mensaje = True
+                    print(f"   ❌ Mensaje {i+1} EXCLUIDO: {lineas_con_productos} productos sin precios (lista de disponibilidad)")
+            
+            
+            if excluir_mensaje:
+                continue
+            
+            # Buscar SOLO mensajes con precios reales
             criterios_busqueda = [
-                # Mensajes tradicionales
+                # Mensajes tradicionales con precios (deben contener $)
                 "BUEN DIA TE DEJO LA LISTA DE HOY",
                 "BUEN DÍA TE DEJO LA LISTA DE HOY", 
                 # Mensajes de precios específicos
                 "LISTA DE PRECIOS",
-                "PRECIOS DEL DIA",
+                "PRECIOS DEL DIA", 
                 "PRECIOS DEL DÍA",
-                "LISTA ACTUALIZADA",
-                # Mensajes de disponibilidad (también útiles)
-                "LISTA DE MODELOS Y COLORES",
-                "MODELOS DISPONIBLES"
+                "LISTA ACTUALIZADA"
             ]
             
             encontrado = False
@@ -288,12 +1008,36 @@ class AutomatizadorWSP:
             
             for criterio in criterios_busqueda:
                 if criterio in texto_upper:
+                    # VERIFICACIÓN OBLIGATORIA: DEBE contener precios ($) para CUALQUIER criterio
+                    if "$ " not in texto:
+                        print(f"   ⚠️ Mensaje {i+1} contiene '{criterio}' pero NO tiene precios ($) - RECHAZADO")
+                        continue  # Saltar si no tiene precios
+                    
+                    # Verificación adicional: Contar ratio precios vs productos
+                    lineas = texto.split('\n')
+                    productos_encontrados = 0
+                    precios_encontrados = 0
+                    
+                    for linea in lineas:
+                        linea_clean = linea.strip()
+                        if len(linea_clean) > 5:
+                            if any(marca in linea_clean.upper() for marca in ['IPHONE', 'SAMSUNG', 'MOTOROLA', 'XIAOMI', 'INFINIX']):
+                                productos_encontrados += 1
+                            if '$ ' in linea_clean:
+                                precios_encontrados += 1
+                    
+                    # Debe haber una proporción razonable de precios por productos
+                    if productos_encontrados > 10 and precios_encontrados == 0:
+                        print(f"   ⚠️ Mensaje {i+1} tiene {productos_encontrados} productos pero 0 precios - RECHAZADO (es lista de disponibilidad)")
+                        continue
+                    
                     encontrado = True
                     tipo_mensaje = criterio
+                    print(f"   ✅ Mensaje VÁLIDO: {productos_encontrados} productos, {precios_encontrados} precios")
                     break
             
             if encontrado:
-                print(f"   ✅ Mensaje {i+1} aceptado: Contiene '{tipo_mensaje}'")
+                print(f"   ✅ Mensaje {i+1} aceptado: Contiene '{tipo_mensaje}' CON PRECIOS")
                 print(f"   📝 Longitud: {len(texto)} caracteres")
                 print(f"   📝 Inicio: '{texto[:100]}...'")
                 mensajes_filtrados.append(texto)
@@ -315,94 +1059,22 @@ class AutomatizadorWSP:
         return mensajes_filtrados
     
     def verificar_chat_tiene_mensajes_hoy(self):
-        """Verificar rápidamente si el chat tiene mensajes con la estructura específica de GCGroup"""
+        """Verificar específicamente si existe el mensaje objetivo de hoy - VERSIÓN REFACTORIZADA"""
         try:
-            print("🔍 Verificando mensajes de GCGroup con clase específica...")
+            print("🔍 Verificación rápida: ¿Existe el mensaje de hoy?")
             
-            # Debug: Mostrar algunos mensajes recientes
-            try:
-                print("   🔍 Mostrando algunos mensajes recientes para debug...")
-                all_messages = self.driver.find_elements(By.XPATH, '//div[contains(@class, "message-in") or contains(@class, "message-out")]//span[contains(@class, "selectable-text")]')
-                recent_messages = all_messages[-15:] if len(all_messages) > 15 else all_messages
+            # Buscar directamente el mensaje objetivo
+            mensaje_encontrado = self.buscar_mensaje_objetivo_hoy()
+            
+            if mensaje_encontrado:
+                print("   ✅ ¡Mensaje de hoy confirmado!")
+                return True
+            else:
+                print("   ❌ No se encontró mensaje de hoy")
+                return False
                 
-                for i, msg in enumerate(recent_messages):
-                    try:
-                        text = msg.text.strip()
-                        if text and len(text) > 20:  # Solo mensajes con contenido significativo
-                            print(f"   📝 Mensaje {i+1}: '{text[:150]}...'")
-                    except:
-                        pass
-            except Exception as e:
-                print(f"   ⚠️ Error en debug: {e}")
-            
-            # PRIMERA BÚSQUEDA: Con la clase CSS específica que mencionaste
-            try:
-                selector_especifico = '//div[contains(@class, "x9f619") and contains(@class, "x1hx0egp") and contains(@class, "x1yrsyyn")]'
-                elementos_especificos = self.driver.find_elements(By.XPATH, selector_especifico)
-                print(f"   🎯 Selector específico encontró: {len(elementos_especificos)} elementos")
-                
-                for elemento in elementos_especificos:
-                    try:
-                        texto = elemento.text.strip()
-                        if len(texto) > 100:  # Solo textos significativos
-                            texto_upper = texto.upper()
-                            
-                            if ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper or
-                                "BUEN DÍA TE DEJO LA LISTA DE HOY" in texto_upper):
-                                
-                                print(f"   ✅ ENCONTRADO con selector específico!")
-                                print(f"   📝 Longitud: {len(texto)} caracteres")
-                                print(f"   📝 Inicio: '{texto[:100]}...'")
-                                
-                                self.mensaje_buen_dia_encontrado = True
-                                self.elemento_mensaje_buen_dia = elemento
-                                return True
-                                
-                    except Exception as e:
-                        continue
-                        
-            except Exception as e:
-                print(f"   ⚠️ Error con selector específico: {e}")
-            
-            # SEGUNDA BÚSQUEDA: Selectores alternativos
-            selectores_alternativos = [
-                '//div[contains(@class, "copyable-text")]//span[contains(@class, "selectable-text")]',
-                '//span[contains(@class, "selectable-text") and contains(@class, "copyable-text")]',
-                '//div[contains(@class, "message")]//span[contains(@class, "selectable-text")]'
-            ]
-            
-            for selector in selectores_alternativos:
-                try:
-                    elementos = self.driver.find_elements(By.XPATH, selector)
-                    print(f"   � Selector alternativo encontró: {len(elementos)} elementos")
-                    
-                    for elemento in elementos:
-                        try:
-                            texto = elemento.text.strip()
-                            if len(texto) > 100:
-                                texto_upper = texto.upper()
-                                
-                                if ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper or
-                                    "BUEN DÍA TE DEJO LA LISTA DE HOY" in texto_upper):
-                                    
-                                    print(f"   ✅ ENCONTRADO con selector alternativo!")
-                                    print(f"   📝 Longitud: {len(texto)} caracteres")
-                                    
-                                    self.mensaje_buen_dia_encontrado = True
-                                    self.elemento_mensaje_buen_dia = elemento
-                                    return True
-                                    
-                        except Exception as e:
-                            continue
-                            
-                except Exception as e:
-                    continue
-            
-            print("   ❌ No se encontró mensaje de GCGroup")
-            return False
-            
         except Exception as e:
-            print(f"   ❌ Error verificando mensajes: {e}")
+            print(f"   ❌ Error verificando mensaje de hoy: {e}")
             return False
 
     def buscar_y_abrir_chat(self, nombre_proveedor, config):
@@ -467,123 +1139,60 @@ class AutomatizadorWSP:
             print(f"❌ Error abriendo chat {nombre_proveedor}: {e}")
             return False
     
-    def extraer_mensajes_por_contenido(self):
-        """Extraer mensajes basándose en el mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' encontrado"""
+    def extraer_mensaje_objetivo_optimizado(self):
+        """Extracción optimizada del mensaje objetivo - REFACTORIZADO"""
         try:
-            print("📝 Extrayendo mensajes por análisis de contenido...")
+            print("📝 Extrayendo mensaje objetivo con método optimizado...")
             
-            # Verificar si tenemos un mensaje "BUEN DIA" marcado anteriormente
-            if hasattr(self, 'mensaje_buen_dia_encontrado') and self.mensaje_buen_dia_encontrado and hasattr(self, 'elemento_mensaje_buen_dia') and self.elemento_mensaje_buen_dia:
-                print("   🎯 Usando mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' encontrado anteriormente")
-                try:
-                    texto_completo = self.elemento_mensaje_buen_dia.text.strip()
-                    if texto_completo:
-                        print(f"   ✅ Mensaje extraído exitosamente: {len(texto_completo)} caracteres")
-                        print(f"   📝 Vista previa: '{texto_completo[:150]}...'")
-                        return [texto_completo]
-                except Exception as e:
-                    print(f"   ⚠️ Error extrayendo mensaje 'BUEN DIA': {e}")
-            
-            # Si no tenemos el mensaje guardado, buscar nuevamente con BÚSQUEDA EXHAUSTIVA
-            print("   🔍 Buscando mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' en tiempo real...")
-            
-            # Hacer scroll hacia arriba para cargar MÁS mensajes históricos
-            try:
-                chat_container = None
-                selectores_chat = [
-                    '//div[@data-testid="chat-history"]',
-                    '//div[@data-testid="conversation-panel-messages"]', 
-                    '//div[contains(@class, "copyable-area")]'
-                ]
+            # OPCIÓN 1: Si ya tenemos el mensaje guardado
+            if (hasattr(self, 'mensaje_objetivo_encontrado') and self.mensaje_objetivo_encontrado and 
+                hasattr(self, 'elemento_mensaje_objetivo') and self.elemento_mensaje_objetivo):
                 
-                for selector in selectores_chat:
-                    try:
-                        chat_container = self.driver.find_element(By.XPATH, selector)
-                        break
-                    except:
-                        continue
-                
-                if chat_container:
-                    print("   📜 Cargando TODOS los mensajes históricos disponibles...")
-                    # Hacer muchos más scrolls para cargar mensajes muy antiguos
-                    for i in range(20):  # Incrementado de 5 a 20
-                        self.driver.execute_script("arguments[0].scrollTop = Math.max(0, arguments[0].scrollTop - arguments[0].clientHeight * 2);", chat_container)
-                        time.sleep(0.5)
-                    
-                    print("   ✅ Carga completa de mensajes históricos")
-                    
-            except Exception as e:
-                print(f"   ⚠️ Error cargando mensajes históricos: {e}")
-            
-            selectores_mensaje = [
-                '//div[contains(@class, "message")]//span[contains(@class, "selectable-text")]',
-                '//div[contains(@class, "copyable-text")]//span',
-                '//span[@class="selectable-text copyable-text"]',
-                '//div[@data-testid="msg-container"]//span',
-                '//span[contains(@class, "selectable-text")]',
-                '//*[contains(@class, "copyable-text")]',
-                '//div[contains(@class, "message")]//div[contains(@class, "copyable-text")]'  # Nuevo selector
-            ]
-            
-            total_mensajes_revisados = 0
-            
-            for i, selector in enumerate(selectores_mensaje):
+                print("   🎯 Usando mensaje objetivo encontrado anteriormente")
                 try:
-                    print(f"   🔎 Selector {i+1}/{len(selectores_mensaje)}: Buscando mensajes...")
-                    elementos = self.driver.find_elements(By.XPATH, selector)
-                    print(f"   📊 Encontrados {len(elementos)} elementos con este selector")
-                    
-                    for elemento in elementos:
-                        try:
-                            texto = elemento.text.strip()
-                            total_mensajes_revisados += 1
-                            
-                            if texto and len(texto) > 20:
-                                texto_upper = texto.upper()
-                                
-                                # Buscar mensaje que contenga "BUEN DIA TE DEJO LA LISTA DE HOY" (más flexible)
-                                if ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper or
-                                    "BUEN DÍA TE DEJO LA LISTA DE HOY" in texto_upper):
-                                    
-                                    print(f"   🎯 ¡MENSAJE 'BUEN DIA' ENCONTRADO!")
-                                    print(f"   📊 Longitud: {len(texto)} caracteres")
-                                    print(f"   📝 Primeros 200 caracteres: '{texto[:200]}...'")
-                                    print(f"   📝 Últimos 100 caracteres: '...{texto[-100:]}'")
-                                    return [texto]
-                                    
-                        except Exception as e:
-                            continue
-                            
+                    # Verificar si el elemento sigue siendo válido
+                    if self.elemento_mensaje_objetivo.is_displayed():
+                        texto_completo = self.elemento_mensaje_objetivo.text.strip()
+                        if texto_completo:
+                            print(f"   ✅ Mensaje extraído exitosamente: {len(texto_completo)} caracteres")
+                            return [texto_completo]
+                    else:
+                        print("   ⚠️ Elemento guardado ya no está visible, re-buscando...")
                 except Exception as e:
-                    print(f"   ⚠️ Error con selector {i+1}: {e}")
-                    continue
+                    print(f"   ⚠️ Error con elemento guardado: {e}")
+                    print("   🔄 Re-buscando mensaje objetivo...")
             
-            print(f"   📊 Total mensajes revisados en extracción: {total_mensajes_revisados}")
-            print("   ⚠️ No se encontró mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' en extracción")
-            return []
+            # OPCIÓN 2: Buscar el mensaje objetivo desde cero
+            mensaje_encontrado = self.buscar_mensaje_objetivo_hoy()
+            
+            if mensaje_encontrado:
+                print(f"   ✅ Mensaje objetivo extraído: {len(mensaje_encontrado)} caracteres")
+                return [mensaje_encontrado]
+            else:
+                print("   ❌ No se pudo extraer el mensaje objetivo")
+                return []
                 
         except Exception as e:
-            print(f"   ❌ Error extrayendo mensajes por contenido: {e}")
+            print(f"❌ Error en extracción optimizada: {e}")
             return []
 
     def extraer_mensajes_desde_ultima_etiqueta(self):
-        """Extraer mensajes desde la última etiqueta de fecha encontrada - CON MÉTODO MEJORADO"""
+        """MÉTODO REFACTORIZADO: Extracción directa y optimizada del mensaje objetivo"""
         try:
-            print("📝 Buscando mensajes de hoy con método inteligente...")
+            print("📝 Iniciando extracción optimizada del mensaje objetivo...")
             
-            # MÉTODO 1: Buscar por contenido de texto (más confiable)
-            mensajes_contenido = self.extraer_mensajes_por_contenido()
-            if mensajes_contenido:
-                print("   ✅ Mensajes encontrados por análisis de contenido")
-                return mensajes_contenido
+            # EXTRACCIÓN DIRECTA: Usar el nuevo método optimizado
+            mensajes_extraidos = self.extraer_mensaje_objetivo_optimizado()
             
-            print("   ⚠️ Método de contenido no encontró mensajes, intentando método de etiquetas DOM...")
-            
-            # MÉTODO 2: Buscar por etiquetas DOM (fallback)
-            return self.extraer_mensajes_por_etiquetas_dom()
+            if mensajes_extraidos:
+                print(f"📊 Mensaje extraído exitosamente: {len(mensajes_extraidos[0])} caracteres")
+                return mensajes_extraidos
+            else:
+                print("⚠️ No se pudo extraer el mensaje con el método optimizado")
+                return []
             
         except Exception as e:
-            print(f"❌ Error en extracción de mensajes: {e}")
+            print(f"❌ Error en extracción desde última etiqueta: {e}")
             return []
     
     def extraer_mensajes_por_etiquetas_dom(self):
@@ -808,12 +1417,64 @@ class AutomatizadorWSP:
             search_box.send_keys('\ue017')  # Delete
             time.sleep(0.5)
             
-            # Limpiar variables del mensaje "BUEN DIA" para el siguiente proveedor
-            self.mensaje_buen_dia_encontrado = False
-            self.elemento_mensaje_buen_dia = None
+            # Limpiar variables del mensaje objetivo para el siguiente proveedor
+            self.mensaje_objetivo_encontrado = False
+            self.elemento_mensaje_objetivo = None
             
         except Exception as e:
             print(f"⚠️ Error limpiando búsqueda: {e}")
+
+    def verificar_mensaje_completo(self, mensaje, numero_mensaje):
+        """Verificar si un mensaje está completo o fue cortado"""
+        try:
+            # Verificaciones para detectar mensajes incompletos
+            mensaje_lower = mensaje.lower()
+            
+            # 1. Verificar si termina abruptamente (con "..." o "…")
+            if mensaje.endswith("…") or mensaje.endswith("..."):
+                print(f"   ⚠️ Mensaje {numero_mensaje} parece estar cortado (termina con puntos suspensivos)")
+                return False
+            
+            # 2. Verificar si hay palabras cortadas al final
+            ultima_linea = mensaje.strip().split('\n')[-1].strip()
+            if ultima_linea and len(ultima_linea) > 0:
+                # Si la última línea termina con una palabra muy corta o extraña
+                palabras_ultima_linea = ultima_linea.split()
+                if palabras_ultima_linea:
+                    ultima_palabra = palabras_ultima_linea[-1]
+                    # Palabras sospechosamente cortas que podrían estar cortadas
+                    if len(ultima_palabra) <= 3 and not ultima_palabra.isdigit() and "$" not in ultima_palabra:
+                        print(f"   ⚠️ Mensaje {numero_mensaje} posiblemente cortado (última palabra: '{ultima_palabra}')")
+                        return False
+            
+            # 3. Verificar estructura típica de lista completa
+            lineas = mensaje.split('\n')
+            tiene_header = False
+            tiene_productos = False
+            
+            for linea in lineas:
+                linea_clean = linea.strip().upper()
+                if "BUEN DIA" in linea_clean or "LISTA" in linea_clean:
+                    tiene_header = True
+                if any(marca in linea_clean for marca in ['IPHONE', 'SAMSUNG', 'MOTOROLA', 'XIAOMI']):
+                    tiene_productos = True
+            
+            # Un mensaje completo debería tener header y productos
+            if not (tiene_header and tiene_productos):
+                print(f"   ⚠️ Mensaje {numero_mensaje} no tiene estructura completa (header: {tiene_header}, productos: {tiene_productos})")
+                return False
+            
+            # 4. Verificar longitud razonable
+            if len(mensaje) < 500:
+                print(f"   ⚠️ Mensaje {numero_mensaje} es muy corto ({len(mensaje)} caracteres) para ser una lista completa")
+                return False
+            
+            print(f"   ✅ Mensaje {numero_mensaje} parece estar completo ({len(mensaje)} caracteres)")
+            return True
+            
+        except Exception as e:
+            print(f"   ⚠️ Error verificando completitud del mensaje {numero_mensaje}: {e}")
+            return True  # En caso de error, asumir que está completo
 
     def procesar_proveedor(self, nombre_proveedor, config):
         """Procesar un proveedor específico"""
@@ -825,24 +1486,15 @@ class AutomatizadorWSP:
         if not self.buscar_y_abrir_chat(nombre_proveedor, config):
             return False
         
-        # NUEVA VERIFICACIÓN: Comprobar si hay mensajes de hoy antes de procesar
+        # NUEVA VERIFICACIÓN: Comprobar si hay mensaje objetivo de hoy
         if not self.verificar_chat_tiene_mensajes_hoy():
-            print(f"⏭️  SALTANDO {nombre_proveedor}: No tiene mensajes con 'BUEN DIA TE DEJO LA LISTA DE HOY'")
+            print(f"⏭️  SALTANDO {nombre_proveedor}: No tiene mensaje objetivo de hoy")
             return False
         
-        if hasattr(self, 'mensaje_buen_dia_encontrado') and self.mensaje_buen_dia_encontrado:
-            print(f"✅ Confirmado: {nombre_proveedor} tiene mensaje 'BUEN DIA TE DEJO LA LISTA DE HOY' - Continuando procesamiento...")
-        else:
-            print(f"✅ Confirmado: {nombre_proveedor} tiene mensajes válidos - Continuando procesamiento...")
+        print(f"✅ Confirmado: {nombre_proveedor} tiene mensaje objetivo de hoy - Continuando...")
         
-        # Ir al final del chat y expandir mensajes
-        if not self.ir_al_final_del_chat():
-            return False
-        
-        # Expandir mensajes largos solo en la zona reciente
-        self.expandir_mensajes_largos()
-        
-        # Extraer mensajes
+        # EXTRACCIÓN DIRECTA: Sin scroll excesivo hacia atrás
+        print("📝 Extrayendo mensaje objetivo directamente...")
         mensajes = self.extraer_mensajes_desde_ultima_etiqueta()
         if not mensajes:
             print(f"⚠️ No se encontraron mensajes para {nombre_proveedor}")
@@ -852,13 +1504,33 @@ class AutomatizadorWSP:
         mensajes_filtrados = self.filtrar_mensajes_del_dia(mensajes, config["filtro_inicio"])
         print(f"🎯 Mensajes filtrados del día: {len(mensajes_filtrados)}")
         
-        if not mensajes_filtrados:
-            print(f"⚠️ No se encontraron mensajes del día para {nombre_proveedor}")
+        # VALIDACIÓN: Verificar si algún mensaje está incompleto
+        mensajes_completos = []
+        for i, mensaje in enumerate(mensajes_filtrados):
+            esta_completo = self.verificar_mensaje_completo(mensaje, i + 1)
+            if esta_completo:
+                mensajes_completos.append(mensaje)
+            else:
+                print(f"   🔄 Intentando re-extraer mensaje {i + 1}...")
+                # Intentar re-extraer el mensaje
+                mensajes_reextraidos = self.extraer_mensajes_desde_ultima_etiqueta()
+                if mensajes_reextraidos:
+                    # Tomar el mensaje más largo/completo
+                    mensaje_mejor = max(mensajes_reextraidos, key=len)
+                    if self.verificar_mensaje_completo(mensaje_mejor, i + 1):
+                        mensajes_completos.append(mensaje_mejor)
+                        print(f"   ✅ Mensaje {i + 1} re-extraído exitosamente")
+                    else:
+                        print(f"   ⚠️ Mensaje {i + 1} sigue incompleto, guardando versión actual")
+                        mensajes_completos.append(mensaje)
+        
+        if not mensajes_completos:
+            print(f"⚠️ No se encontraron mensajes completos del día para {nombre_proveedor}")
             print(f"⛔ No se guardarán mensajes viejos ni fallback.")
         
         # Guardar archivo
         exito = self.guardar_archivo_txt(
-            mensajes_filtrados, 
+            mensajes_completos, 
             config["archivo_salida"], 
             nombre_proveedor
         )
@@ -991,8 +1663,8 @@ class AutomatizadorWSP:
         print("🎉 PROCESAMIENTO AUTOMÁTICO COMPLETADO")
         print(f"{'='*70}")
         print("📁 Revisa la carpeta 'output/' para ver todos los archivos generados:")
-        print("   • Lista extraída de WhatsApp (TXT)")
-        print("   • Lista procesada con colores (Excel)")
+        print("   • Lista extraída de WhatsApp (TXT) - SOLO PRECIOS")
+        print("   • Lista procesada con precios calculados (Excel)")
         print("   • Productos categorizados (JSON)")
         print("   • Archivo de difusión para WhatsApp (TXT)")
 
