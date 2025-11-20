@@ -147,7 +147,22 @@ const Prices = () => {
           
           setProductos(productosArray);
           console.log(data.metadatos)
-          setUltimaActualizacion(data.metadatos.ultima_actualizacion);
+          // Usar fecha_actualizacion en lugar de ultima_actualizacion
+          const fechaRaw = data.metadatos.fecha_actualizacion;
+          if (fechaRaw) {
+            // Convertir formato ISO a formato legible
+            const fecha = new Date(fechaRaw);
+            const fechaFormateada = fecha.toLocaleDateString('es-AR', {
+              day: '2-digit',
+              month: '2-digit', 
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            });
+            setUltimaActualizacion(fechaFormateada);
+          } else {
+            setUltimaActualizacion(data.metadatos.ultima_actualizacion || "Sin datos");
+          }
         } else {
           // Formato antiguo sin metadatos
           setProductos(data);

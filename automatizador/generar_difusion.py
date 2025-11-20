@@ -71,9 +71,12 @@ def generar_difusion_txt():
     print(f"Total productos encontrados: {total_productos}")
     print(f"Categorías: {list(productos_por_categoria.keys())}")
     
-    # Crear el encabezado
+    # Crear el encabezado con fecha dinámica y sitio web
     contenido = [
-        "🔥 LISTA DE PRECIOS RAM INFORMATICA 🔥",
+        f"🔥 BUEN DIA LES DEJO LA LISTA DE PRECIOS RAM INFORMATICA - {fecha_actual} 🔥",
+        "",
+        "🌐 www.raminformatica.com.ar",
+        "=" * 50,
         "",
         "⚠️ LOS PEDIDOS Y LAS CONSULTAS SE TOMAN DESDE EL MOMENTO QUE ENVIAMOS LA LISTA HASTA LAS 13 HS.",
         "UNA VEZ CONFIRMADO EL PEDIDO SE RETIRA POR NUESTRA SUCURSAL A PARTIR DE LAS 16 HASTA LAS 18 HS",
