@@ -1,7 +1,7 @@
 {
   "metadatos": {
-    "fecha_actualizacion": "2025-11-17T09:33:23.078782",
-    "total_productos": 173,
+    "fecha_actualizacion": "2025-11-20T10:27:41.553290",
+    "total_productos": 174,
     "fuente": "TXT_fallback"
   },
   "productos": [
@@ -12,37 +12,32 @@
     },
     {
       "producto": "IPHONE 14 128 GB SIM/ESIM",
-      "precio_usd": 650,
+      "precio_usd": 640,
       "categoria": "CELULARES"
     },
     {
       "producto": "IPHONE 15 128 GB SIM/ESIM",
-      "precio_usd": 690,
+      "precio_usd": 705,
       "categoria": "CELULARES"
     },
     {
       "producto": "IPHONE 15 256 GB SIM/ESIM",
-      "precio_usd": 855,
+      "precio_usd": 860,
       "categoria": "CELULARES"
     },
     {
       "producto": "IPHONE 16 128 GB SIM/ESIM",
-      "precio_usd": 820,
+      "precio_usd": 825,
       "categoria": "CELULARES"
     },
     {
-      "producto": "IPHONE 16 256 GB ESIM",
-      "precio_usd": 990,
+      "producto": "IPHONE 16 256 GB SIM/ESIM",
+      "precio_usd": 985,
       "categoria": "CELULARES"
     },
     {
       "producto": "IPHONE 16 PLUS 256 GB ESIM",
       "precio_usd": 1150,
-      "categoria": "CELULARES"
-    },
-    {
-      "producto": "IPHONE 16 PRO MAX 256 GB ESIM",
-      "precio_usd": 1490,
       "categoria": "CELULARES"
     },
     {
@@ -52,37 +47,37 @@
     },
     {
       "producto": "IPHONE AIR 256 GB ESIM",
-      "precio_usd": 1060,
+      "precio_usd": 1075,
       "categoria": "CELULARES"
     },
     {
-      "producto": "IPHONE 17 PRO 256 GB ESIM",
-      "precio_usd": 1405,
+      "producto": "IPHONE 17 PRO 256 GB ESIM ORANG",
+      "precio_usd": 1385,
+      "categoria": "CELULARES"
+    },
+    {
+      "producto": "IPHONE 17 PRO 256 GB ESIM SILVER",
+      "precio_usd": 1395,
       "categoria": "CELULARES"
     },
     {
       "producto": "IPHONE 17 PRO 512 GB ESIM",
-      "precio_usd": 1670,
+      "precio_usd": 1645,
       "categoria": "CELULARES"
     },
     {
-      "producto": "IPHONE 17 PRO MAX 256 GB ESIM",
-      "precio_usd": 1615,
+      "producto": "IPHONE 17 PRO MAX 256 GB ESIM BLUE",
+      "precio_usd": 1560,
+      "categoria": "CELULARES"
+    },
+    {
+      "producto": "IPHONE 17 PRO MAX 256 GB ESIM SILV/ORANG",
+      "precio_usd": 1600,
       "categoria": "CELULARES"
     },
     {
       "producto": "IPHONE 17 PRO MAX 512 GB ESIM",
-      "precio_usd": 1895,
-      "categoria": "CELULARES"
-    },
-    {
-      "producto": "IPHONE 17 PRO MAX 1TB ESIM",
-      "precio_usd": 2150,
-      "categoria": "CELULARES"
-    },
-    {
-      "producto": "IPHONE 11 128 GB BAT 100%",
-      "precio_usd": 330,
+      "precio_usd": 1880,
       "categoria": "CELULARES"
     },
     {
@@ -91,18 +86,18 @@
       "categoria": "CELULARES"
     },
     {
-      "producto": "IPHONE 14 PRO MAX 256 GB BAT 86%",
-      "precio_usd": 820,
+      "producto": "IPHONE 15 128 GB BAT 86%",
+      "precio_usd": 640,
       "categoria": "CELULARES"
     },
     {
       "producto": "IPHONE 15 128 GB BLACK AS IS",
-      "precio_usd": 625,
+      "precio_usd": 620,
       "categoria": "CELULARES"
     },
     {
       "producto": "SAMSUNG A06 4/64 GB",
-      "precio_usd": 145,
+      "precio_usd": 140,
       "categoria": "CELULARES"
     },
     {
@@ -131,11 +126,6 @@
       "categoria": "CELULARES"
     },
     {
-      "producto": "SAMSUNG A16 8/256 GB",
-      "precio_usd": 235,
-      "categoria": "CELULARES"
-    },
-    {
       "producto": "SAMSUNG A17 4/128* GB",
       "precio_usd": 235,
       "categoria": "CELULARES"
@@ -147,7 +137,7 @@
     },
     {
       "producto": "SAMSUNG A17 5G 6/128 GB",
-      "precio_usd": 280,
+      "precio_usd": 275,
       "categoria": "CELULARES"
     },
     {
@@ -157,7 +147,7 @@
     },
     {
       "producto": "SAMSUNG A26 5G 8/256 GB",
-      "precio_usd": 290,
+      "precio_usd": 280,
       "categoria": "CELULARES"
     },
     {
@@ -172,22 +162,17 @@
     },
     {
       "producto": "SAMSUNG A56 5G 8/256 GB",
-      "precio_usd": 460,
+      "precio_usd": 455,
       "categoria": "CELULARES"
     },
     {
       "producto": "SAMSUNG A56 5G 12/256 GB",
-      "precio_usd": 455,
+      "precio_usd": 445,
       "categoria": "CELULARES"
     },
     {
       "producto": "SAMSUNG S24 FE 8/256 GB",
       "precio_usd": 575,
-      "categoria": "CELULARES"
-    },
-    {
-      "producto": "SAMSUNG S24 ULTRA 12/512 GB",
-      "precio_usd": 1060,
       "categoria": "CELULARES"
     },
     {
@@ -212,22 +197,37 @@
     },
     {
       "producto": "SAMSUNG S25 ULTRA 12/256 GB",
-      "precio_usd": 1095,
+      "precio_usd": 1085,
       "categoria": "CELULARES"
     },
     {
       "producto": "SAMSUNG S25 ULTRA 12/512 GB",
-      "precio_usd": 1175,
-      "categoria": "CELULARES"
-    },
-    {
-      "producto": "SAMSUNG S25 ULTRA 12/1 TB",
-      "precio_usd": 1290,
+      "precio_usd": 1165,
       "categoria": "CELULARES"
     },
     {
       "producto": "SAMSUNG ZFLIP 7 12/512 GB",
       "precio_usd": 1125,
+      "categoria": "CELULARES"
+    },
+    {
+      "producto": "TABLET SAMSUNG X110 A9 8.7\" 4GB+64GB WIFI BLACK/GRAY",
+      "precio_usd": 150,
+      "categoria": "CELULARES"
+    },
+    {
+      "producto": "TABLET SAMSUNG X216B A9+   11.0\" 4GB+64GB 11\" 5G GRAY",
+      "precio_usd": 270,
+      "categoria": "CELULARES"
+    },
+    {
+      "producto": "TABLET SAMSUNG X115 A9 8.7\" 8GB+128GB LTE GRAY",
+      "precio_usd": 235,
+      "categoria": "CELULARES"
+    },
+    {
+      "producto": "TABLET XIAOMI REDMI PAD PRO 12.1\" 8GB+256GB WIFI BLACK/BLUE",
+      "precio_usd": 375,
       "categoria": "CELULARES"
     },
     {
@@ -272,27 +272,22 @@
     },
     {
       "producto": "MOTOROLA G55 5G 8/256 GB",
-      "precio_usd": 235,
-      "categoria": "CELULARES"
-    },
-    {
-      "producto": "MOTOROLA G56 5G 8/256 GB",
-      "precio_usd": 275,
+      "precio_usd": 230,
       "categoria": "CELULARES"
     },
     {
       "producto": "MOTOROLA G75 5G 8/256 GB",
-      "precio_usd": 270,
+      "precio_usd": 260,
       "categoria": "CELULARES"
     },
     {
       "producto": "MOTOROLA G85 5G 8/256 GB",
-      "precio_usd": 275,
+      "precio_usd": 270,
       "categoria": "CELULARES"
     },
     {
       "producto": "MOTOROLA G86 5G 8/256 GB",
-      "precio_usd": 310,
+      "precio_usd": 300,
       "categoria": "CELULARES"
     },
     {
@@ -311,13 +306,8 @@
       "categoria": "CELULARES"
     },
     {
-      "producto": "MOTOROLA EDGE 50 FUSION 5G 12/256 GB",
-      "precio_usd": 330,
-      "categoria": "CELULARES"
-    },
-    {
       "producto": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
-      "precio_usd": 335,
+      "precio_usd": 330,
       "categoria": "CELULARES"
     },
     {
@@ -337,7 +327,7 @@
     },
     {
       "producto": "MOTOROLA EDGE 60 PRO 5G 12/512 GB",
-      "precio_usd": 560,
+      "precio_usd": 555,
       "categoria": "CELULARES"
     },
     {
@@ -357,7 +347,7 @@
     },
     {
       "producto": "INFINIX HOT 60 PRO+ 8/256 GB",
-      "precio_usd": 265,
+      "precio_usd": 260,
       "categoria": "OTROS"
     },
     {
@@ -372,7 +362,7 @@
     },
     {
       "producto": "ITEL A90 4/256 GB",
-      "precio_usd": 125,
+      "precio_usd": 115,
       "categoria": "OTROS"
     },
     {
@@ -456,16 +446,6 @@
       "categoria": "CELULARES"
     },
     {
-      "producto": "XIAOMI NOTE 14 5G 12/512 GB",
-      "precio_usd": 310,
-      "categoria": "CELULARES"
-    },
-    {
-      "producto": "XIAOMI NOTE 14 PRO 12/512 GB",
-      "precio_usd": 345,
-      "categoria": "CELULARES"
-    },
-    {
       "producto": "XIAOMI NOTE 14 PRO 5G 12/512 GB",
       "precio_usd": 420,
       "categoria": "CELULARES"
@@ -491,18 +471,13 @@
       "categoria": "CELULARES"
     },
     {
-      "producto": "XIAOMI POCO C75 8/256 GB",
-      "precio_usd": 190,
-      "categoria": "CELULARES"
-    },
-    {
       "producto": "XIAOMI POCO C85 6/128 GB",
       "precio_usd": 165,
       "categoria": "CELULARES"
     },
     {
       "producto": "XIAOMI POCO C85 8/256 GB",
-      "precio_usd": 190,
+      "precio_usd": 180,
       "categoria": "CELULARES"
     },
     {
@@ -533,6 +508,21 @@
     {
       "producto": "XIAOMI POCO X7 PRO 5G 12/512 GB",
       "precio_usd": 440,
+      "categoria": "CELULARES"
+    },
+    {
+      "producto": "XIAOMI POCO F6 PRO 5G 12/512 GB",
+      "precio_usd": 440,
+      "categoria": "CELULARES"
+    },
+    {
+      "producto": "XIAOMI POCO F7 5G 12/512 GB",
+      "precio_usd": 560,
+      "categoria": "CELULARES"
+    },
+    {
+      "producto": "XIAOMI POCO F7 PRO 5G 12/512 GB",
+      "precio_usd": 640,
       "categoria": "CELULARES"
     },
     {
@@ -571,9 +561,14 @@
       "categoria": "CELULARES"
     },
     {
-      "producto": "XIAOMI 15T PRO 5G 12/1 TB",
-      "precio_usd": 950,
-      "categoria": "CELULARES"
+      "producto": "AURICULAR JBL TUNE T520BT BLACK/WHITE",
+      "precio_usd": 65,
+      "categoria": "OTROS"
+    },
+    {
+      "producto": "AURICULAR JBL TUNE T720BT BLACK/WHITE",
+      "precio_usd": 80,
+      "categoria": "OTROS"
     },
     {
       "producto": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED",
@@ -662,7 +657,7 @@
     },
     {
       "producto": "PS5 SLIM 1 TB C/LECTORA",
-      "precio_usd": 705,
+      "precio_usd": 695,
       "categoria": "VIDEO JUEGOS"
     },
     {
@@ -671,13 +666,8 @@
       "categoria": "VIDEO JUEGOS"
     },
     {
-      "producto": "PS5 SLIM 1 TB C/LECTORA ASTROBOT",
-      "precio_usd": 765,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
       "producto": "PS5 PRO 2 TB",
-      "precio_usd": 1025,
+      "precio_usd": 1000,
       "categoria": "VIDEO JUEGOS"
     },
     {
@@ -692,7 +682,7 @@
     },
     {
       "producto": "AIRPODS PRO 3RA USBC",
-      "precio_usd": 355,
+      "precio_usd": 335,
       "categoria": "CARGADORES"
     },
     {
@@ -706,13 +696,18 @@
       "categoria": "OTROS"
     },
     {
+      "producto": "WATCH SE 3 40MM GPS",
+      "precio_usd": 360,
+      "categoria": "OTROS"
+    },
+    {
       "producto": "WATCH 11 42MM GPS",
       "precio_usd": 525,
       "categoria": "OTROS"
     },
     {
       "producto": "WATCH 11 46MM GPS",
-      "precio_usd": 560,
+      "precio_usd": 550,
       "categoria": "OTROS"
     },
     {
@@ -762,12 +757,12 @@
     },
     {
       "producto": "IPAD PRO 11 M5 256 GB",
-      "precio_usd": 1285,
+      "precio_usd": 1240,
       "categoria": "OTROS"
     },
     {
       "producto": "IPAD PRO 13 M5 256 GB",
-      "precio_usd": 1675,
+      "precio_usd": 1640,
       "categoria": "OTROS"
     },
     {
@@ -782,12 +777,12 @@
     },
     {
       "producto": "MACBOOK AIR M4 13” 16/256 GB",
-      "precio_usd": 1155,
+      "precio_usd": 1145,
       "categoria": "MACBOOKS"
     },
     {
       "producto": "MACBOOK AIR M4 13” 16/512 GB",
-      "precio_usd": 1415,
+      "precio_usd": 1425,
       "categoria": "MACBOOKS"
     },
     {
@@ -826,7 +821,7 @@
       "categoria": "CELULARES"
     },
     {
-      "producto": "75” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con IA 75UA8550PSA",
+      "producto": "75” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con Inteligencia Artificial 75UA8550PSA",
       "precio_usd": 1050,
       "categoria": "TELEVISORES"
     },
@@ -836,13 +831,23 @@
       "categoria": "CELULARES"
     },
     {
-      "producto": "65” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con IA 65UA8050PSA",
-      "precio_usd": 720,
+      "producto": "65” Smart TV Samsung LED Crystal UHD 4K DU7000",
+      "precio_usd": 825,
+      "categoria": "CELULARES"
+    },
+    {
+      "producto": "65” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con Inteligencia Artificial 65UA8050PSA",
+      "precio_usd": 715,
       "categoria": "TELEVISORES"
     },
     {
+      "producto": "55” Smart TV Samsung 4K QLED Q65D",
+      "precio_usd": 705,
+      "categoria": "CELULARES"
+    },
+    {
       "producto": "55” Smart TV UHD 4K Samsung UN55DU7000GCZB",
-      "precio_usd": 565,
+      "precio_usd": 560,
       "categoria": "CELULARES"
     },
     {
@@ -856,8 +861,8 @@
       "categoria": "CELULARES"
     },
     {
-      "producto": "43” Smart TV Samsung LED Crystal UHD 4K DU7000",
-      "precio_usd": 405,
+      "producto": "43” Smart TV Samsung Du7000 4K",
+      "precio_usd": 425,
       "categoria": "CELULARES"
     },
     {
