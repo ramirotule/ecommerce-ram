@@ -1602,8 +1602,12 @@ class AutomatizadorWSP:
         
         scripts_a_ejecutar = [
             {
-                "nombre": "procesar_gcgroup.py",
+                "nombre": "procesar_gcgroup_refactor.py",
                 "descripcion": "Procesamiento específico de GCGroup con nueva fórmula de precios"
+            },
+            {
+                "nombre": "excel_to_json.py",
+                "descripcion": "Conversión de Excel a JSON para productos_ram.json"
             }
         ]
         
@@ -1653,6 +1657,11 @@ class AutomatizadorWSP:
                 
                 if resultado.returncode == 0:
                     print(f"✅ {script['nombre']} ejecutado exitosamente")
+                    
+                    # Pausa especial después de procesar_gcgroup_refactor.py para generar archivo de difusión
+                    if script['nombre'] == 'procesar_gcgroup_refactor.py':
+                        print("⏳ Esperando 3 segundos para que se genere el archivo de difusión...")
+                        time.sleep(3)
                 else:
                     print(f"❌ Error ejecutando {script['nombre']} (código: {resultado.returncode})")
                     
@@ -1665,8 +1674,9 @@ class AutomatizadorWSP:
         print("📁 Revisa la carpeta 'output/' para ver todos los archivos generados:")
         print("   • Lista extraída de WhatsApp (TXT) - SOLO PRECIOS")
         print("   • Lista procesada con precios calculados (Excel)")
-        print("   • Productos categorizados (JSON)")
+        print("   • Productos categorizados (JSON) - productos_ram.json actualizado")
         print("   • Archivo de difusión para WhatsApp (TXT)")
+        print("\n🌐 El archivo productos_ram.json ha sido actualizado para la web")
 
     def mostrar_resumen(self, resultados):
         """Mostrar resumen de la ejecución"""
