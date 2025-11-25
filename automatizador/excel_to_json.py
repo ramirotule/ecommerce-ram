@@ -39,7 +39,7 @@ def procesar_txt_a_json(txt_file):
                             categoria = categorizar_producto(producto_texto)
                             
                             productos.append({
-                                'producto': producto_texto,
+                                'nombre': producto_texto,
                                 'precio_usd': precio,
                                 'categoria': categoria
                             })
@@ -63,16 +63,38 @@ def categorizar_producto(producto):
     """Categorizar productos basándose en palabras clave"""
     producto_upper = producto.upper()
     
-    if any(word in producto_upper for word in ['IPHONE', 'SAMSUNG', 'XIAOMI', 'MOTOROLA', 'HUAWEI', 'CELULAR', 'PHONE']):
+    # IPADS - prioridad alta
+    if 'IPAD' in producto_upper:
+        return 'IPADS'
+    
+    # AURICULARES - prioridad alta
+    if producto_upper.startswith('AURICULAR') or 'AIRPODS' in producto_upper:
+        return 'AURICULARES'
+    
+    # SMARTWATCH - prioridad alta
+    if 'WATCH' in producto_upper:
+        return 'SMARTWATCH'
+    
+    # CELULARES - incluyendo infinix e itel
+    if any(word in producto_upper for word in ['IPHONE', 'SAMSUNG', 'XIAOMI', 'MOTOROLA', 'HUAWEI', 'INFINIX', 'ITEL', 'CELULAR', 'PHONE']):
         return 'CELULARES'
+    
+    # MACBOOKS
     elif any(word in producto_upper for word in ['MACBOOK', 'NOTEBOOK', 'LAPTOP', 'LENOVO', 'DELL', 'HP', 'ASUS']):
         return 'MACBOOKS'
+    
+    # TELEVISORES
     elif any(word in producto_upper for word in ['TV', 'TELEVISOR', 'SMART', 'LG', 'TCL']):
         return 'TELEVISORES'
+    
+    # VIDEO JUEGOS
     elif any(word in producto_upper for word in ['PS5', 'PS4', 'XBOX', 'NINTENDO', 'PLAY', 'GAMING', 'GAMER']):
         return 'VIDEO JUEGOS'
+    
+    # CARGADORES
     elif any(word in producto_upper for word in ['CARGADOR', 'CABLE', 'USB', 'TYPE']):
         return 'CARGADORES'
+    
     else:
         return 'OTROS'
 
@@ -150,18 +172,40 @@ print("="*50)
 
 def determinar_categoria(descripcion):
     """Determinar la categoría basándose en la descripción del producto"""
-    descripcion = descripcion.upper()
+    descripcion_upper = descripcion.upper()
     
-    if any(palabra in descripcion for palabra in ['IPHONE', 'SAMSUNG', 'XIAOMI', 'MOTOROLA', 'HUAWEI', 'CELULAR']):
+    # IPADS - prioridad alta
+    if 'IPAD' in descripcion_upper:
+        return "IPADS"
+    
+    # AURICULARES - prioridad alta
+    if descripcion_upper.startswith('AURICULAR') or 'AIRPODS' in descripcion_upper:
+        return "AURICULARES"
+    
+    # SMARTWATCH - prioridad alta
+    if 'WATCH' in descripcion_upper:
+        return "SMARTWATCH"
+    
+    # CELULARES - incluyendo infinix e itel
+    elif any(palabra in descripcion_upper for palabra in ['IPHONE', 'SAMSUNG', 'XIAOMI', 'MOTOROLA', 'HUAWEI', 'INFINIX', 'ITEL', 'CELULAR']):
         return "CELULARES"
-    elif any(palabra in descripcion for palabra in ['MACBOOK', 'LAPTOP', 'NOTEBOOK']):
+    
+    # MACBOOKS
+    elif any(palabra in descripcion_upper for palabra in ['MACBOOK', 'LAPTOP', 'NOTEBOOK']):
         return "MACBOOKS"
-    elif any(palabra in descripcion for palabra in ['TV', 'TELEVISOR', 'SMART TV']):
+    
+    # TELEVISORES
+    elif any(palabra in descripcion_upper for palabra in ['TV', 'TELEVISOR', 'SMART TV']):
         return "TELEVISORES"
-    elif any(palabra in descripcion for palabra in ['PS4', 'PS5', 'XBOX', 'NINTENDO', 'JOYSTICK']):
+    
+    # VIDEO JUEGOS
+    elif any(palabra in descripcion_upper for palabra in ['PS4', 'PS5', 'XBOX', 'NINTENDO', 'JOYSTICK']):
         return "VIDEO JUEGOS"
-    elif any(palabra in descripcion for palabra in ['CARGADOR', 'CABLE', 'AURICULAR', 'FUNDA', 'PROTECTOR']):
+    
+    # CARGADORES (excluyendo auriculares que ya se procesaron arriba)
+    elif any(palabra in descripcion_upper for palabra in ['CARGADOR', 'CABLE', 'FUNDA', 'PROTECTOR']) and not descripcion_upper.startswith('AURICULAR'):
         return "CARGADORES"
+    
     else:
         return "OTROS"
 
@@ -233,7 +277,7 @@ for index, row in df.iterrows():
                 
                 # Crear objeto del producto
                 producto_obj = {
-                    "producto": producto,
+                    "nombre": producto,
                     "precio_usd": precio_usd,
                     "categoria": determinar_categoria(producto),
                     "imagen": generar_nombre_imagen(producto)
