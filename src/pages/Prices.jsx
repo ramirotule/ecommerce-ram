@@ -133,16 +133,20 @@ const Prices = () => {
               if (Array.isArray(productosCategoria)) {
                 productosCategoria.forEach(producto => {
                   productosArray.push({
-                    producto: producto.nombre || producto.producto,
-                    categoria: producto.categoria || categoria,
-                    precio_usd: producto.precio || producto.precio_usd
+                    producto: producto.nombre || producto.producto || '',
+                    categoria: producto.categoria || categoria || '',
+                    precio_usd: producto.precio || producto.precio_usd || 0
                   });
                 });
               }
             });
           } else if (Array.isArray(data.productos)) {
             // Si productos ya es un array
-            productosArray = data.productos;
+            productosArray = data.productos.map(producto => ({
+              producto: producto.nombre || producto.producto || '',
+              categoria: producto.categoria || '',
+              precio_usd: producto.precio || producto.precio_usd || 0
+            }));
           }
           
           setProductos(productosArray);
@@ -188,8 +192,8 @@ const Prices = () => {
   useEffect(() => {
     if (productos && productos.length > 0) {
       const totalFiltrados = productos.filter(p => {
-        const categoriaMatch = categoria === "TODOS" || p.categoria === categoria;
-        const busquedaMatch = p.producto.toLowerCase().includes(busqueda.toLowerCase());
+        const categoriaMatch = categoria === "TODOS" || (p.categoria || '') === (categoria || '');
+        const busquedaMatch = (p.producto || '').toLowerCase().includes((busqueda || '').toLowerCase());
         return categoriaMatch && busquedaMatch;
       }).length;
       
