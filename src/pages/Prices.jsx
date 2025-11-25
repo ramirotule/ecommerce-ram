@@ -239,8 +239,8 @@ const Prices = () => {
   };
 
   let filtrados = (productos || []).filter(p => {
-    const categoriaMatch = categoria === "TODOS" || p.categoria === categoria;
-    const busquedaMatch = p.producto.toLowerCase().includes(busqueda.toLowerCase());
+    const categoriaMatch = categoria === "TODOS" || (p.categoria || '').toLowerCase() === (categoria || '').toLowerCase();
+    const busquedaMatch = (p.producto || '').toLowerCase().includes((busqueda || '').toLowerCase());
     return categoriaMatch && busquedaMatch;
   });
 
@@ -250,8 +250,8 @@ const Prices = () => {
       let valA = a[sortBy];
       let valB = b[sortBy];
       if (sortBy === 'producto' || sortBy === 'categoria') {
-        valA = valA.toLowerCase();
-        valB = valB.toLowerCase();
+        valA = (valA || '').toLowerCase();
+        valB = (valB || '').toLowerCase();
         if (valA < valB) return sortDir === 'asc' ? -1 : 1;
         if (valA > valB) return sortDir === 'asc' ? 1 : -1;
         return 0;
@@ -265,11 +265,15 @@ const Prices = () => {
     if (orden === "categoria_az") {
       filtrados.sort((a, b) => {
         // Primero por categoría A-Z, luego por producto A-Z
-        if (a.categoria.toLowerCase() < b.categoria.toLowerCase()) return -1;
-        if (a.categoria.toLowerCase() > b.categoria.toLowerCase()) return 1;
+        const catA = (a.categoria || '').toLowerCase();
+        const catB = (b.categoria || '').toLowerCase();
+        if (catA < catB) return -1;
+        if (catA > catB) return 1;
         // Si la categoría es igual, ordenar por producto A-Z
-        if (a.producto.toLowerCase() < b.producto.toLowerCase()) return -1;
-        if (a.producto.toLowerCase() > b.producto.toLowerCase()) return 1;
+        const prodA = (a.producto || '').toLowerCase();
+        const prodB = (b.producto || '').toLowerCase();
+        if (prodA < prodB) return -1;
+        if (prodA > prodB) return 1;
         return 0;
       });
     }

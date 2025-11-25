@@ -16,14 +16,14 @@ const ProductModal = ({ producto, isOpen, onClose, generateImageFileName, getCat
                          producto.categoria.includes('WATCH') ? 'smartwatch' :
                          producto.categoria.includes('CELULAR') ? 'celulares' : producto.categoria;
 
-  const imagePath = `/productos/${categoryFolder}/${generateImageFileName(producto.nombre)}`;
+  const imagePath = `/productos/${categoryFolder}/${generateImageFileName(producto.nombre || producto.producto)}`;
   const categoryIcon = getCategoryIcon(producto.categoria);
 
   const handleWhatsAppContact = () => {
     const capacidades = producto.variants && producto.variants.length > 1 
       ? ` (Capacidades disponibles: ${producto.capacities})`
       : '';
-    const mensaje = `Hola! Me interesa el producto: ${producto.nombre}${capacidades} de la categoría ${producto.categoria}. ¿Podrías darme más información?`;
+    const mensaje = `Hola! Me interesa el producto: ${producto.nombre || producto.producto}${capacidades} de la categoría ${producto.categoria}. ¿Podrías darme más información?`;
     window.open(`https://wa.me/5491131234567?text=${encodeURIComponent(mensaje)}`, '_blank');
   };
 
@@ -111,7 +111,7 @@ const ProductModal = ({ producto, isOpen, onClose, generateImageFileName, getCat
           }}>
             <img
               src={imagePath}
-              alt={producto.nombre}
+              alt={producto.nombre || producto.producto}
               style={{
                 width: '90%',
                 height: '90%',
@@ -165,7 +165,7 @@ const ProductModal = ({ producto, isOpen, onClose, generateImageFileName, getCat
               marginBottom: '15px',
               lineHeight: '1.3'
             }}>
-              {producto.nombre}
+              {producto.nombre || producto.producto}
             </h2>
 
             {/* Descripción */}
@@ -320,7 +320,7 @@ const ProductImage = ({ producto, generateImageFileName, getCategoryIcon }) => {
 
   // Generar la ruta de la imagen
   const categoryFolder = getCategoryFolder(producto.categoria);
-  const imagePath = `/productos/${categoryFolder}/${generateImageFileName(producto.nombre)}`;
+  const imagePath = `/productos/${categoryFolder}/${generateImageFileName(producto.nombre || producto.producto)}`;
   const categoryIcon = getCategoryIcon(producto.categoria);
 
   // Reset estados cuando cambia el producto
@@ -357,7 +357,7 @@ const ProductImage = ({ producto, generateImageFileName, getCategoryIcon }) => {
       {!imageError && (
         <img
           src={imagePath}
-          alt={producto.nombre}
+          alt={producto.nombre || producto.producto}
           onError={handleImageError}
           onLoad={handleImageLoad}
           style={{
@@ -423,6 +423,11 @@ const Products = () => {
 
   // Función para generar el nombre de archivo de imagen
   const generateImageFileName = useCallback((nombre) => {
+    console.log('generateImageFileName recibió nombre:', nombre);
+    if (!nombre) {
+      console.error('generateImageFileName: nombre es undefined o null');
+      return 'placeholder.jpg';
+    }
     let fileName = nombre.toLowerCase();
     
     // Casos especiales específicos primero
@@ -555,7 +560,7 @@ const Products = () => {
     const grouped = {};
     
     productosArray.forEach(producto => {
-      const baseModel = extractBaseModel(producto.nombre);
+      const baseModel = extractBaseModel(producto.nombre || producto.producto);
       const key = `${producto.categoria}-${baseModel}`;   
       
       if (!grouped[key]) {
@@ -568,10 +573,10 @@ const Products = () => {
       }
       
       // Extraer la capacidad o variante específica (RAM/Storage o solo Storage)
-      const ramStorageGBMatch = producto.nombre.match(/\d+\/\d+\s+GB/i);
-      const ramStorageTBMatch = producto.nombre.match(/\d+\/\d+\s+TB/i);
-      const simpleGBMatch = producto.nombre.match(/\d+\s+GB/i);
-      const simpleTBMatch = producto.nombre.match(/\d+\s+TB/i);
+      const ramStorageGBMatch = (producto.nombre || producto.producto).match(/\d+\/\d+\s+GB/i);
+      const ramStorageTBMatch = (producto.nombre || producto.producto).match(/\d+\/\d+\s+TB/i);
+      const simpleGBMatch = (producto.nombre || producto.producto).match(/\d+\s+GB/i);
+      const simpleTBMatch = (producto.nombre || producto.producto).match(/\d+\s+TB/i);
       
       let capacity = '';
       if (ramStorageGBMatch) {
@@ -585,7 +590,7 @@ const Products = () => {
       }
       
       grouped[key].variants.push({
-        fullName: producto.nombre,
+        fullName: producto.nombre || producto.producto,
         capacity: capacity,
         ...producto
       });
@@ -609,22 +614,52 @@ const Products = () => {
       .then(response => response.json())
       .then(data => {
         if (data.metadatos && data.productos) {
-          let productosArray = [];
-          
-          Object.keys(data.productos).forEach(categoria => {
-            if (Array.isArray(data.productos[categoria])) {
-              data.productos[categoria].forEach(producto => {
-                productosArray.push({
-                  ...producto,
-                  categoria: categoria
+          // La nueva estructura tiene productos como array directo
+          if (Array.isArray(data.productos)) {
+            // Agrupar productos por categoría
+            const productosAgrupados = {};
+            const categoriasEncontradas = new Set();
+            
+            data.productos.forEach(producto => {
+              const categoria = producto.categoria || 'OTROS';
+              if (!productosAgrupados[categoria]) {
+                productosAgrupados[categoria] = [];
+              }
+              // Normalizar el nombre del producto para compatibilidad
+              const productoNormalizado = {
+                ...producto,
+                nombre: producto.nombre || producto.producto // Compatibilidad con ambos formatos
+              };
+              productosAgrupados[categoria].push(productoNormalizado);
+              categoriasEncontradas.add(categoria);
+            });
+            
+            setProductos(productosAgrupados);
+            setCategorias(Array.from(categoriasEncontradas));
+            setFilteredProducts(data.productos.map(p => ({
+              ...p,
+              nombre: p.nombre || p.producto // Compatibilidad con ambos formatos
+            })));
+          } else {
+            // Estructura anterior (por compatibilidad)
+            let productosArray = [];
+            
+            Object.keys(data.productos).forEach(categoria => {
+              if (Array.isArray(data.productos[categoria])) {
+                data.productos[categoria].forEach(producto => {
+                  productosArray.push({
+                    ...producto,
+                    categoria: categoria,
+                    nombre: producto.nombre || producto.producto // Compatibilidad
+                  });
                 });
-              });
-            }
-          });
-          
-          setProductos(data.productos);
-          setCategorias(Object.keys(data.productos));
-          setFilteredProducts(productosArray);
+              }
+            });
+            
+            setProductos(data.productos);
+            setCategorias(Object.keys(data.productos));
+            setFilteredProducts(productosArray);
+          }
         }
       })
       .catch(error => {
@@ -652,7 +687,7 @@ const Products = () => {
     // Filtrar por término de búsqueda
     if (searchTerm) {
       productosArray = productosArray.filter(producto =>
-        normalizeName(producto.nombre).includes(normalizeName(searchTerm)) ||
+        normalizeName(producto.nombre || producto.producto).includes(normalizeName(searchTerm)) ||
         normalizeName(producto.categoria).includes(normalizeName(searchTerm)) ||
         (producto.variants && producto.variants.some(v => 
           normalizeName(v.fullName).includes(normalizeName(searchTerm))
@@ -679,7 +714,7 @@ const Products = () => {
     <div style={{
       minHeight: '100vh',
       background: `linear-gradient(135deg, ${COLORS.background.primary} 0%, ${COLORS.background.secondary} 100%)`,
-      paddingBottom: '50px'
+      paddingBottom: '50
     }}>
       <div style={{
         maxWidth: '1200px',
@@ -885,7 +920,7 @@ const Products = () => {
                   marginBottom: '10px',
                   lineHeight: '1.3'
                 }}>
-                  {producto.nombre}
+                  {producto.nombre || producto.producto || 'Producto sin nombre'}
                 </h3>
 
                 {/* Descripción o características */}
