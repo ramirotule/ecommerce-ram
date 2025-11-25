@@ -714,7 +714,7 @@ const Products = () => {
     <div style={{
       minHeight: '100vh',
       background: `linear-gradient(135deg, ${COLORS.background.primary} 0%, ${COLORS.background.secondary} 100%)`,
-      paddingBottom: '50
+      paddingBottom: '50px'
     }}>
       <div style={{
         maxWidth: '1200px',
