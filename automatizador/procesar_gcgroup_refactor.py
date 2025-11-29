@@ -91,7 +91,7 @@ class ProcesadorGCGroup:
                 precio_costo = float(precio_costo.replace(',', '.'))
             
             # Aplicar 18% de ganancia
-            precio_con_ganancia = precio_costo * 1.18
+            precio_con_ganancia = precio_costo * 1.10
             
             # Sumar $20 USD extras
             precio_con_extras = precio_con_ganancia + 20
