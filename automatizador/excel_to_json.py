@@ -249,7 +249,17 @@ print(f"Procesando {len(df)} productos del Excel...")
 for index, row in df.iterrows():
     try:
         # Obtener datos usando los nombres de columnas (más robusto)
-        producto = str(row['Descripción']).strip()
+        # Intentar diferentes nombres de columna
+        if 'Descripción' in df.columns:
+            producto = str(row['Descripción']).strip()
+        elif 'Equipo' in df.columns:
+            producto = str(row['Equipo']).strip()
+        elif 'Producto' in df.columns:
+            producto = str(row['Producto']).strip()
+        else:
+            # Usar la primera columna si no encuentra ninguna conocida
+            producto = str(row[df.columns[0]]).strip()
+        
         precio_str = str(row['Precio Venta']).strip()
         
         # Limpiar el precio y convertir a float

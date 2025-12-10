@@ -386,13 +386,35 @@ class ProcesadorGCGroup:
             # === GUARDAR ARCHIVOS ===
             os.makedirs(os.path.dirname(archivo_publico), exist_ok=True)
             
-            # Guardar JSON público
-            with open(archivo_publico, 'w', encoding='utf-8') as f:
-                json.dump(estructura_publica, f, indent=2, ensure_ascii=False)
+            # === CONVERTIR A FORMATO LISTA PARA LA WEB ===
+            # La web espera: {"metadatos": {...}, "productos": [{}, {}, ...]}
+            # Convertir de diccionario por categorías a lista plana
+            productos_lista_publica = []
+            for categoria, productos in estructura_publica["productos"].items():
+                productos_lista_publica.extend(productos)
             
-            # Guardar JSON completo
+            productos_lista_completa = []
+            for categoria, productos in estructura_completa["productos"].items():
+                productos_lista_completa.extend(productos)
+            
+            # Crear estructuras finales en formato lista
+            estructura_publica_final = {
+                "metadatos": estructura_publica["metadatos"],
+                "productos": productos_lista_publica
+            }
+            
+            estructura_completa_final = {
+                "metadatos": estructura_completa["metadatos"],
+                "productos": productos_lista_completa
+            }
+            
+            # Guardar JSON público (formato lista)
+            with open(archivo_publico, 'w', encoding='utf-8') as f:
+                json.dump(estructura_publica_final, f, indent=2, ensure_ascii=False)
+            
+            # Guardar JSON completo (formato lista)
             with open(archivo_privado, 'w', encoding='utf-8') as f:
-                json.dump(estructura_completa, f, indent=2, ensure_ascii=False)
+                json.dump(estructura_completa_final, f, indent=2, ensure_ascii=False)
             
             # === REPORTES ===
             print(f"✅ JSON público generado: {archivo_publico}")
