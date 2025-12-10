@@ -43,10 +43,10 @@ class AutomatizadorWSP:
         """Obtener la fecha de hoy en formato dinámico para buscar en WhatsApp"""
         fecha_actual = datetime.now()
         
-        # Mapear días y meses en español
+        # Mapear días y meses en español (sin acentos para coincidencia flexible)
         dias_semana = {
-            0: "LUNES", 1: "MARTES", 2: "MIÉRCOLES", 3: "JUEVES", 
-            4: "VIERNES", 5: "SÁBADO", 6: "DOMINGO"
+            0: "LUNES", 1: "MARTES", 2: "MIERCOLES", 3: "JUEVES", 
+            4: "VIERNES", 5: "SABADO", 6: "DOMINGO"
         }
         
         meses = {
@@ -59,11 +59,26 @@ class AutomatizadorWSP:
         dia = fecha_actual.day
         mes = meses[fecha_actual.month]
         
-        # Formato: "VIERNES 14 DE NOVIEMBRE"
+        # Formato: "VIERNES 14 DE NOVIEMBRE" (sin acentos para coincidencia flexible)
         fecha_formateada = f"{dia_semana} {dia} DE {mes}"
         print(f"🗓️ Fecha objetivo: {fecha_formateada}")
         
         return fecha_formateada
+    
+    def normalizar_texto(self, texto):
+        """Normalizar texto eliminando acentos para búsqueda flexible"""
+        # Diccionario de reemplazos de acentos
+        reemplazos = {
+            'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U',
+            'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+            'Ñ': 'N', 'ñ': 'n'
+        }
+        
+        texto_normalizado = texto
+        for acento, sin_acento in reemplazos.items():
+            texto_normalizado = texto_normalizado.replace(acento, sin_acento)
+        
+        return texto_normalizado
         
     def configurar_navegador(self):
         """Configurar y abrir navegador con sesión persistente"""
@@ -149,11 +164,13 @@ class AutomatizadorWSP:
                     if not texto_elemento:
                         continue
                         
-                    # Convertir a mayúsculas para comparación
+                    # Convertir a mayúsculas y normalizar (sin acentos) para comparación
                     texto_upper = texto_elemento.upper()
+                    texto_normalizado = self.normalizar_texto(texto_upper)
+                    fecha_normalizada = self.normalizar_texto(self.fecha_hoy)
                     
                     # EXCLUSIÓN: Ignorar completamente listas de colores
-                    if "LISTA DE MODELOS Y COLORES" in texto_upper:
+                    if "LISTA DE MODELOS Y COLORES" in texto_normalizado:
                         print(f"   ❌ Elemento {i+1} IGNORADO: Contiene 'LISTA DE MODELOS Y COLORES'")
                         continue
                     
@@ -161,9 +178,10 @@ class AutomatizadorWSP:
                         print(f"   ❌ Elemento {i+1} IGNORADO: Contiene emojis de lista de colores")
                         continue
                     
-                    # BÚSQUEDA: Mensaje con fecha de hoy
-                    if ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper and 
-                        self.fecha_hoy in texto_upper):
+                    # BÚSQUEDA: Mensaje con fecha de hoy (sin acentos para mayor flexibilidad)
+                    if (("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_normalizado or 
+                         "LISTA DE HOY" in texto_normalizado) and 
+                        fecha_normalizada in texto_normalizado):
                         
                         print(f"   🎯 ¡MENSAJE OBJETIVO ENCONTRADO! (Elemento {i+1})")
                         print(f"   📝 Longitud: {len(texto_elemento)} caracteres")
@@ -296,19 +314,20 @@ class AutomatizadorWSP:
                     print(f"   ⚠️ Error procesando elemento {i+1}: {e}")
                     continue
             
-            # PASO 4: Si no se encontró con la clase específica, búsqueda alternativa MÁS LIMITADA
-            print("🔄 Búsqueda alternativa en elementos <strong> cerca del final...")
+            # PASO 4: Si no se encontró con la clase específica, búsqueda alternativa MÁS FLEXIBLE
+            print("🔄 Búsqueda alternativa: buscando mensaje más reciente del día...")
             
-            # Buscar elementos <strong> que contengan el texto objetivo
-            selector_strong = f'//strong[contains(@class, "selectable-text") and contains(text(), "BUEN DIA TE DEJO LA LISTA DE HOY {self.fecha_hoy}")]'
-            elementos_strong = self.driver.find_elements(By.XPATH, selector_strong)
+            # Buscar simplemente por "LISTA DE HOY" y el número del día
+            dia_numero = str(datetime.now().day)
+            selector_alternativo = f'//div[contains(text(), "LISTA DE HOY") and contains(text(), "{dia_numero}")]'
+            elementos_alternativos = self.driver.find_elements(By.XPATH, selector_alternativo)
             
-            if elementos_strong:
-                print(f"   ✅ Encontrado en elemento <strong>!")
-                elemento_strong = elementos_strong[0]
+            if elementos_alternativos:
+                print(f"   ✅ Encontrado en búsqueda alternativa!")
+                elemento_alternativo = elementos_alternativos[-1]  # Tomar el más reciente (último)
                 
                 # Buscar el contenedor padre que tenga todo el mensaje
-                contenedor_padre = elemento_strong
+                contenedor_padre = elemento_alternativo
                 for nivel in range(10):  # Máximo 10 niveles hacia arriba
                     try:
                         contenedor_padre = contenedor_padre.find_element(By.XPATH, '..')
@@ -343,10 +362,13 @@ class AutomatizadorWSP:
                         continue
                         
                     texto_upper = texto_elemento.upper()
+                    texto_normalizado = self.normalizar_texto(texto_upper)
+                    fecha_normalizada = self.normalizar_texto(self.fecha_hoy)
                     
                     # Solo mensajes con la fecha de hoy y que contengan precios
-                    if (self.fecha_hoy in texto_upper and 
-                        "BUEN DIA TE DEJO LA LISTA DE HOY" in texto_upper and
+                    if (fecha_normalizada in texto_normalizado and 
+                        ("BUEN DIA TE DEJO LA LISTA DE HOY" in texto_normalizado or 
+                         "LISTA DE HOY" in texto_normalizado) and
                         "$ " in texto_elemento):
                         
                         # Verificar si es más completo que versiones anteriores
@@ -1604,6 +1626,10 @@ class AutomatizadorWSP:
             {
                 "nombre": "procesar_gcgroup_refactor.py",
                 "descripcion": "Procesamiento específico de GCGroup con nueva fórmula de precios"
+            },
+            {
+                "nombre": "generar_ganancias_excel.py",
+                "descripcion": "Generación de Excel con ganancias por producto (GCGroup y Zentek BA)"
             },
             {
                 "nombre": "excel_to_json.py",

@@ -79,6 +79,33 @@ class ProcesadorGCGroup:
             return categoria
         
         return categoria
+    
+    def obtener_icono_categoria(self, categoria):
+        """Obtener el icono apropiado para cada categoría"""
+        # Normalizar categoría para comparación
+        cat_upper = categoria.upper()
+        
+        # Mapeo de categorías a iconos
+        if "TELEVISOR" in cat_upper or "TV" in cat_upper or "QLED" in cat_upper or "ULED" in cat_upper:
+            return "📺"
+        elif "MACBOOK" in cat_upper:
+            return "💻"
+        elif "APPLE WATCH" in cat_upper or "WATCH" in cat_upper:
+            return "⌚"
+        elif "AIRPODS" in cat_upper or "AIRPOD" in cat_upper:
+            return "🎧"
+        elif "VIDEO JUEGO" in cat_upper or "VIDEOJUEGO" in cat_upper or "PS5" in cat_upper or "XBOX" in cat_upper or "PLAYSTATION" in cat_upper:
+            return "🕹️"
+        elif "JBL" in cat_upper or "PARLANTE" in cat_upper or "AURICULAR" in cat_upper:
+            return "🎵"
+        elif "IPAD" in cat_upper:
+            return "📱"
+        elif "CELULAR" in cat_upper or "IPHONE" in cat_upper or "SAMSUNG" in cat_upper or "MOTOROLA" in cat_upper or "INFINIX" in cat_upper or "XIAOMI" in cat_upper or "ITEL" in cat_upper:
+            return "📱"
+        elif "CARGADOR" in cat_upper:
+            return "🔌"
+        else:
+            return "📱"  # Icono por defecto
         
     def calcular_precio_venta(self, precio_costo):
         """
@@ -220,6 +247,18 @@ class ProcesadorGCGroup:
                 try:
                     with open(archivo_publico, 'r', encoding='utf-8') as f:
                         json_publico = json.load(f)
+                    
+                    # Convertir de lista a diccionario si es necesario
+                    if isinstance(json_publico.get('productos'), list):
+                        print(f"📖 JSON público tiene formato de lista, convirtiendo a diccionario...")
+                        productos_dict = {}
+                        for producto in json_publico.get('productos', []):
+                            categoria = producto.get('categoria', 'SIN_CATEGORIA')
+                            if categoria not in productos_dict:
+                                productos_dict[categoria] = []
+                            productos_dict[categoria].append(producto)
+                        json_publico['productos'] = productos_dict
+                    
                     estructura_publica = json_publico.copy()
                     print(f"📖 JSON público cargado con {len(estructura_publica.get('productos', {}))} categorías")
                 except Exception as e:
@@ -230,6 +269,18 @@ class ProcesadorGCGroup:
                 try:
                     with open(archivo_privado, 'r', encoding='utf-8') as f:
                         json_completo = json.load(f)
+                    
+                    # Convertir de lista a diccionario si es necesario
+                    if isinstance(json_completo.get('productos'), list):
+                        print(f"📖 JSON completo tiene formato de lista, convirtiendo a diccionario...")
+                        productos_dict = {}
+                        for producto in json_completo.get('productos', []):
+                            categoria = producto.get('categoria', 'SIN_CATEGORIA')
+                            if categoria not in productos_dict:
+                                productos_dict[categoria] = []
+                            productos_dict[categoria].append(producto)
+                        json_completo['productos'] = productos_dict
+                    
                     estructura_completa = json_completo.copy()
                     print(f"📖 JSON completo cargado con {len(estructura_completa.get('productos', {}))} categorías")
                 except Exception as e:
@@ -381,7 +432,8 @@ class ProcesadorGCGroup:
                 
                 # Escribir por categorías
                 for categoria, productos in categorias.items():
-                    f.write(f"📱 {categoria}\n")
+                    icono = self.obtener_icono_categoria(categoria)
+                    f.write(f"{icono} {categoria}\n")
                     f.write("-" * 30 + "\n")
                     
                     for producto in productos:

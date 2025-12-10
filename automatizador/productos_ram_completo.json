@@ -1,1771 +1,1665 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "17/11/2025 09:15",
-    "fecha_extraccion_gcgroup": "17/11/2025 09:15",
-    "productos_gcgroup": 173,
+    "ultima_actualizacion": "10/12/2025 12:42",
+    "fecha_extraccion_gcgroup": "10/12/2025 12:42",
+    "productos_gcgroup": 163,
     "proveedor_gcgroup": "GcGroup",
     "formula_precio_gcgroup": "(costo + 18%) + $20, redondeado a múltiplo de 5",
-    "total_productos": 173
+    "total_productos": 163
   },
   "productos": {
     "CELULARES IPHONE NEW": [
       {
         "nombre": "IPHONE 13 128 GB SIM",
-        "precio": 585,
-        "precio_costo": 475.0,
+        "precio": 570,
+        "precio_costo": 500.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPHONE 14 128 GB SIM/ESIM",
-        "precio": 650,
-        "precio_costo": 530.0,
+        "precio": 600,
+        "precio_costo": 525.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPHONE 15 128 GB SIM/ESIM",
-        "precio": 690,
-        "precio_costo": 565.0,
+        "precio": 705,
+        "precio_costo": 620.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "IPHONE 15 256 GB SIM/ESIM",
-        "precio": 855,
-        "precio_costo": 705.0,
-        "categoria": "CELULARES IPHONE NEW",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPHONE 16 128 GB SIM/ESIM",
-        "precio": 820,
-        "precio_costo": 675.0,
+        "precio": 805,
+        "precio_costo": 710.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "IPHONE 16 256 GB ESIM",
-        "precio": 990,
+        "nombre": "IPHONE 16 256 GB SIM/ESIM",
+        "precio": 925,
         "precio_costo": 820.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "IPHONE 16 PLUS 256 GB ESIM",
-        "precio": 1150,
-        "precio_costo": 955.0,
-        "categoria": "CELULARES IPHONE NEW",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPHONE 16 PRO MAX 256 GB ESIM",
-        "precio": 1490,
-        "precio_costo": 1245.0,
+        "precio": 1415,
+        "precio_costo": 1265.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPHONE 17 256 GB ESIM",
-        "precio": 1150,
-        "precio_costo": 955.0,
-        "categoria": "CELULARES IPHONE NEW",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "IPHONE AIR 256 GB ESIM",
         "precio": 1060,
-        "precio_costo": 880.0,
+        "precio_costo": 945.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "IPHONE 17 PRO 256 GB ESIM",
+        "nombre": "IPHONE 17 PRO 256 GB ESIM ORANG/BLUE",
         "precio": 1405,
-        "precio_costo": 1170.0,
+        "precio_costo": 1255.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "IPHONE 17 PRO 256 GB ESIM SILV",
+        "precio": 1425,
+        "precio_costo": 1275.0,
+        "categoria": "CELULARES IPHONE NEW",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPHONE 17 PRO 512 GB ESIM",
-        "precio": 1670,
-        "precio_costo": 1395.0,
+        "precio": 1535,
+        "precio_costo": 1375.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPHONE 17 PRO MAX 256 GB ESIM",
-        "precio": 1615,
-        "precio_costo": 1350.0,
+        "precio": 1485,
+        "precio_costo": 1330.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPHONE 17 PRO MAX 512 GB ESIM",
-        "precio": 1895,
-        "precio_costo": 1585.0,
+        "precio": 1720,
+        "precio_costo": 1545.0,
         "categoria": "CELULARES IPHONE NEW",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "IPHONE 17 PRO MAX 1TB ESIM",
-        "precio": 2150,
-        "precio_costo": 1805.0,
-        "categoria": "CELULARES IPHONE NEW",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      }
-    ],
-    "CELULARES IPHONE TESTER": [
-      {
-        "nombre": "IPHONE 11 128 GB BAT 100%",
-        "precio": 330,
-        "precio_costo": 260.0,
-        "categoria": "CELULARES IPHONE TESTER",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "IPHONE 12 PRO MAX 256 GB BAT 78%",
-        "precio": 600,
-        "precio_costo": 490.0,
-        "categoria": "CELULARES IPHONE TESTER",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "IPHONE 14 PRO MAX 256 GB BAT 86%",
-        "precio": 820,
-        "precio_costo": 675.0,
-        "categoria": "CELULARES IPHONE TESTER",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      }
-    ],
-    "CELULARES IPHONE AS IS": [
-      {
-        "nombre": "IPHONE 15 128 GB BLACK AS IS",
-        "precio": 625,
-        "precio_costo": 510.0,
-        "categoria": "CELULARES IPHONE AS IS",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "CELULARES SAMSUNG": [
       {
         "nombre": "SAMSUNG A06 4/64 GB",
-        "precio": 145,
-        "precio_costo": 105.0,
+        "precio": 130,
+        "precio_costo": 100.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG A06 4/128 GB",
-        "precio": 150,
-        "precio_costo": 110.0,
+        "precio": 130,
+        "precio_costo": 100.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG A07 4/64 GB",
-        "precio": 165,
+        "precio": 155,
         "precio_costo": 120.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "SAMSUNG A07 4/128 GB",
-        "precio": 170,
-        "precio_costo": 125.0,
-        "categoria": "CELULARES SAMSUNG",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "SAMSUNG A07 8/256 GB",
-        "precio": 200,
-        "precio_costo": 150.0,
-        "categoria": "CELULARES SAMSUNG",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG A16 4/128 GB",
-        "precio": 180,
+        "precio": 170,
         "precio_costo": 135.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "SAMSUNG A16 8/256 GB",
-        "precio": 235,
+        "nombre": "SAMSUNG A17 4/128 GB",
+        "precio": 220,
         "precio_costo": 180.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "SAMSUNG A17 4/128* GB",
-        "precio": 235,
-        "precio_costo": 180.0,
-        "categoria": "CELULARES SAMSUNG",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG A17 8/256 GB",
-        "precio": 280,
-        "precio_costo": 220.0,
+        "precio": 250,
+        "precio_costo": 205.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG A17 5G 6/128 GB",
-        "precio": 280,
-        "precio_costo": 220.0,
+        "precio": 260,
+        "precio_costo": 215.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG A17 5G 8/256 GB",
-        "precio": 300,
+        "precio": 280,
         "precio_costo": 235.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "SAMSUNG A26 5G 6/128 GB",
+        "precio": 260,
+        "precio_costo": 215.0,
+        "categoria": "CELULARES SAMSUNG",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG A26 5G 8/256 GB",
-        "precio": 290,
-        "precio_costo": 225.0,
+        "precio": 265,
+        "precio_costo": 220.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "SAMSUNG A36 5G 6/128 GB",
-        "precio": 345,
-        "precio_costo": 275.0,
+        "nombre": "SAMSUNG A36 5G 8/128 GB",
+        "precio": 315,
+        "precio_costo": 265.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG A36 5G 8/256 GB",
-        "precio": 370,
-        "precio_costo": 295.0,
+        "precio": 340,
+        "precio_costo": 290.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "SAMSUNG A56 5G 8/128 GB",
+        "precio": 375,
+        "precio_costo": 320.0,
+        "categoria": "CELULARES SAMSUNG",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG A56 5G 8/256 GB",
-        "precio": 460,
-        "precio_costo": 370.0,
+        "precio": 410,
+        "precio_costo": 350.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG A56 5G 12/256 GB",
-        "precio": 455,
-        "precio_costo": 365.0,
+        "precio": 435,
+        "precio_costo": 375.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG S24 FE 8/256 GB",
-        "precio": 575,
+        "precio": 540,
         "precio_costo": 470.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "SAMSUNG S24 ULTRA 12/512 GB",
-        "precio": 1060,
-        "precio_costo": 880.0,
+        "nombre": "SAMSUNG S24 ULTRA 12/256 GB",
+        "precio": 945,
+        "precio_costo": 840.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG S25 12/256 GB",
-        "precio": 845,
-        "precio_costo": 695.0,
+        "precio": 770,
+        "precio_costo": 680.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "SAMSUNG S25 FE 8/256 GB",
-        "precio": 725,
-        "precio_costo": 595.0,
-        "categoria": "CELULARES SAMSUNG",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "SAMSUNG S25 PLUS 12/256 GB",
-        "precio": 970,
-        "precio_costo": 805.0,
-        "categoria": "CELULARES SAMSUNG",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG S25 PLUS 12/512 GB",
-        "precio": 1030,
-        "precio_costo": 855.0,
+        "precio": 935,
+        "precio_costo": 830.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "SAMSUNG S25 ULTRA 12/256 GB",
-        "precio": 1095,
-        "precio_costo": 910.0,
-        "categoria": "CELULARES SAMSUNG",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "SAMSUNG S25 ULTRA 12/512 GB",
-        "precio": 1175,
-        "precio_costo": 975.0,
+        "precio": 1080,
+        "precio_costo": 960.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "SAMSUNG S25 ULTRA 12/1 TB",
-        "precio": 1290,
-        "precio_costo": 1075.0,
+        "nombre": "SAMSUNG S25 ULTRA 1 TB",
+        "precio": 1200,
+        "precio_costo": 1070.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "SAMSUNG ZFLIP 7 12/512 GB",
-        "precio": 1125,
-        "precio_costo": 935.0,
+        "nombre": "TABLET XIAOMI REDMI PAD PRO 12.1\" 8GB+256GB WIFI BLACK/BLUE",
+        "precio": 330,
+        "precio_costo": 280.0,
         "categoria": "CELULARES SAMSUNG",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "CELULARES MOTOROLA": [
       {
         "nombre": "MOTOROLA E15 2/64 GB",
-        "precio": 115,
+        "precio": 110,
         "precio_costo": 80.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA G04 4/128 GB",
-        "precio": 145,
+        "precio": 140,
         "precio_costo": 105.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "MOTOROLA G04S 4/256 GB",
-        "precio": 150,
-        "precio_costo": 110.0,
-        "categoria": "CELULARES MOTOROLA",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA G05 4/128 GB",
-        "precio": 135,
+        "precio": 125,
         "precio_costo": 95.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA G14 4/128 GB",
-        "precio": 160,
+        "precio": 150,
         "precio_costo": 115.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "MOTOROLA G15 4/128 GB",
-        "precio": 165,
+        "nombre": "MOTOROLA G15 4/256 GB",
+        "precio": 155,
         "precio_costo": 120.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA G15 4/512 GB",
-        "precio": 195,
-        "precio_costo": 145.0,
-        "categoria": "CELULARES MOTOROLA",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "MOTOROLA G35 5G 4/256 GB",
-        "precio": 190,
+        "precio": 175,
         "precio_costo": 140.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "MOTOROLA G35 5G 4/256 GB",
+        "precio": 175,
+        "precio_costo": 140.0,
+        "categoria": "CELULARES MOTOROLA",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA G55 5G 8/256 GB",
-        "precio": 235,
-        "precio_costo": 180.0,
+        "precio": 215,
+        "precio_costo": 175.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA G56 5G 8/256 GB",
-        "precio": 275,
-        "precio_costo": 215.0,
+        "precio": 235,
+        "precio_costo": 195.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA G75 5G 8/256 GB",
-        "precio": 270,
-        "precio_costo": 210.0,
+        "precio": 235,
+        "precio_costo": 195.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA G85 5G 8/256 GB",
-        "precio": 275,
-        "precio_costo": 215.0,
+        "precio": 250,
+        "precio_costo": 205.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "MOTOROLA G86 5G 8/256 GB",
-        "precio": 310,
-        "precio_costo": 245.0,
-        "categoria": "CELULARES MOTOROLA",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA THINKPHONE 5G 8/256 GB",
-        "precio": 365,
+        "precio": 340,
         "precio_costo": 290.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA EDGE 40 NEO 12/256 GB",
-        "precio": 295,
-        "precio_costo": 230.0,
+        "precio": 265,
+        "precio_costo": 220.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "MOTOROLA EDGE 50 5G 12/512 GB",
+        "precio": 325,
+        "precio_costo": 275.0,
+        "categoria": "CELULARES MOTOROLA",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA EDGE 50 FUSION 5G 8/256 GB",
-        "precio": 300,
-        "precio_costo": 235.0,
+        "precio": 270,
+        "precio_costo": 225.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MOTOROLA EDGE 50 FUSION 5G 12/256 GB",
-        "precio": 330,
+        "precio": 310,
         "precio_costo": 260.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
+        "nombre": "MOTOROLA RAZR 50 ULTRA 5G 12/512 GB",
+        "precio": 765,
+        "precio_costo": 675.0,
+        "categoria": "CELULARES MOTOROLA",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "MOTOROLA EDGE 60 FUSION 5G 8/256 GB",
         "precio": 335,
-        "precio_costo": 265.0,
+        "precio_costo": 285.0,
         "categoria": "CELULARES MOTOROLA",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "MOTOROLA EDGE 50 NEO 5G 8/256 GB",
-        "precio": 295,
-        "precio_costo": 230.0,
-        "categoria": "CELULARES MOTOROLA",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "MOTOROLA EDGE 50 PRO 5G 12/512 GB",
-        "precio": 485,
-        "precio_costo": 390.0,
-        "categoria": "CELULARES MOTOROLA",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "MOTOROLA EDGE 50 ULTRA 5G 16/1 TB",
-        "precio": 950,
-        "precio_costo": 785.0,
-        "categoria": "CELULARES MOTOROLA",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "MOTOROLA EDGE 60 PRO 5G 12/512 GB",
-        "precio": 560,
-        "precio_costo": 455.0,
-        "categoria": "CELULARES MOTOROLA",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "CELULARES INFINIX": [
       {
+        "nombre": "INFINIX SMART 10 4/128 GB",
+        "precio": 140,
+        "precio_costo": 105.0,
+        "categoria": "CELULARES INFINIX",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "INFINIX HOT 50i 4/256 GB",
+        "precio": 150,
+        "precio_costo": 115.0,
+        "categoria": "CELULARES INFINIX",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
         "nombre": "INFINIX HOT 50 PRO 8/256 GB",
-        "precio": 210,
+        "precio": 200,
         "precio_costo": 160.0,
         "categoria": "CELULARES INFINIX",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "INFINIX HOT 60i 8/256 GB",
-        "precio": 180,
+        "precio": 170,
         "precio_costo": 135.0,
         "categoria": "CELULARES INFINIX",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "INFINIX HOT 60 PRO 8/256 GB",
-        "precio": 230,
+        "precio": 215,
         "precio_costo": 175.0,
         "categoria": "CELULARES INFINIX",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "INFINIX HOT 60 PRO+ 8/256 GB",
-        "precio": 265,
-        "precio_costo": 205.0,
-        "categoria": "CELULARES INFINIX",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "INFINIX NOTE 50X 5G 8/256 GB",
-        "precio": 260,
+        "precio": 245,
         "precio_costo": 200.0,
         "categoria": "CELULARES INFINIX",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "INFINIX GT 30 PRO 5G 12/256 GB",
-        "precio": 410,
-        "precio_costo": 330.0,
+        "nombre": "INFINIX NOTE 50X 5G 8/256 GB",
+        "precio": 245,
+        "precio_costo": 200.0,
         "categoria": "CELULARES INFINIX",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      }
-    ],
-    "CELULARES ITEL": [
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
       {
-        "nombre": "ITEL A90 4/256 GB",
-        "precio": 125,
-        "precio_costo": 85.0,
-        "categoria": "CELULARES ITEL",
+        "nombre": "INFINIX NOTE 50 PRO NFC 8/256 GB",
+        "precio": 290,
+        "precio_costo": 245.0,
+        "categoria": "CELULARES INFINIX",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "INFINIX ZERO 40 8/512 GB",
+        "precio": 315,
+        "precio_costo": 265.0,
+        "categoria": "CELULARES INFINIX",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "INFINIX GT 30 PRO 5G 12/256 GB",
+        "precio": 380,
+        "precio_costo": 325.0,
+        "categoria": "CELULARES INFINIX",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "CELULARES XIAOMI": [
       {
         "nombre": "XIAOMI REDMI A5 3/64 GB",
-        "precio": 130,
+        "precio": 120,
         "precio_costo": 90.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI REDMI A5 4/128 GB",
-        "precio": 140,
+        "precio": 130,
         "precio_costo": 100.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "XIAOMI REDMI 13C 8/256 GB",
-        "precio": 170,
-        "precio_costo": 125.0,
-        "categoria": "CELULARES XIAOMI",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI REDMI 13X 8/256 GB",
-        "precio": 190,
+        "precio": 175,
         "precio_costo": 140.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI REDMI 14C 4/128 GB",
-        "precio": 160,
+        "precio": 150,
         "precio_costo": 115.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "XIAOMI REDMI 15 6/128 GB",
-        "precio": 200,
-        "precio_costo": 150.0,
-        "categoria": "CELULARES XIAOMI",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "XIAOMI REDMI 15 8/256 GB",
-        "precio": 210,
-        "precio_costo": 160.0,
-        "categoria": "CELULARES XIAOMI",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "XIAOMI REDMI 15C 4/128 GB",
-        "precio": 165,
+        "nombre": "XIAOMI REDMI 14C 6/128 GB",
+        "precio": 155,
         "precio_costo": 120.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI REDMI 15 6/128 GB",
+        "precio": 185,
+        "precio_costo": 150.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI REDMI 15 8/256 GB",
+        "precio": 200,
+        "precio_costo": 160.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI REDMI 15C 4/128 GB",
+        "precio": 155,
+        "precio_costo": 120.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI REDMI 15C 8/256 GB",
-        "precio": 190,
+        "precio": 175,
         "precio_costo": 140.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI NOTE 12 PRO + 5G 8/256 GB",
-        "precio": 305,
+        "precio": 285,
         "precio_costo": 240.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "XIAOMI NOTE 13 PRO 5G 8/256 GB",
-        "precio": 325,
-        "precio_costo": 255.0,
-        "categoria": "CELULARES XIAOMI",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI NOTE 13 PRO 5G 12/512 GB",
-        "precio": 345,
+        "precio": 325,
         "precio_costo": 275.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI NOTE 14 6/128 GB",
-        "precio": 205,
+        "precio": 195,
         "precio_costo": 155.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI NOTE 14 8/256 GB",
-        "precio": 235,
-        "precio_costo": 180.0,
+        "precio": 215,
+        "precio_costo": 175.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI NOTE 14s 8/256 GB",
-        "precio": 265,
-        "precio_costo": 205.0,
+        "precio": 260,
+        "precio_costo": 215.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI NOTE 14s 12/512 GB",
-        "precio": 310,
+        "precio": 290,
         "precio_costo": 245.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "XIAOMI NOTE 14 5G 12/512 GB",
-        "precio": 310,
-        "precio_costo": 245.0,
+        "nombre": "XIAOMI NOTE 14 PRO 5G 8/256 GB",
+        "precio": 335,
+        "precio_costo": 285.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "XIAOMI NOTE 14 PRO 12/512 GB",
-        "precio": 345,
-        "precio_costo": 275.0,
-        "categoria": "CELULARES XIAOMI",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI NOTE 14 PRO 5G 12/512 GB",
-        "precio": 420,
+        "precio": 390,
         "precio_costo": 335.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI NOTE 14 PRO + 5G 8/256 GB",
-        "precio": 400,
-        "precio_costo": 320.0,
+        "precio": 380,
+        "precio_costo": 325.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI NOTE 14 PRO + 5G 12/512 GB",
-        "precio": 475,
+        "precio": 445,
         "precio_costo": 385.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI POCO C71 3/64 GB",
-        "precio": 130,
+        "precio": 120,
         "precio_costo": 90.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI POCO C71 4/128 GB",
         "precio": 140,
-        "precio_costo": 100.0,
+        "precio_costo": 105.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "XIAOMI POCO C75 8/256 GB",
-        "precio": 190,
-        "precio_costo": 140.0,
-        "categoria": "CELULARES XIAOMI",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI POCO C85 6/128 GB",
-        "precio": 165,
+        "precio": 155,
         "precio_costo": 120.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI POCO C85 8/256 GB",
-        "precio": 190,
+        "precio": 175,
         "precio_costo": 140.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI POCO M5s 4/128 GB",
-        "precio": 175,
+        "precio": 165,
         "precio_costo": 130.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "XIAOMI POCO M6 8/256 GB",
-        "precio": 200,
-        "precio_costo": 150.0,
+        "nombre": "XIAOMI POCO M7 6/128 GB",
+        "precio": 175,
+        "precio_costo": 140.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI POCO M7 8/256 GB",
-        "precio": 210,
+        "precio": 200,
         "precio_costo": 160.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI POCO M7 PRO 5G 8/256 GB",
+        "precio": 265,
+        "precio_costo": 220.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI POCO M7 PRO 5G 12/512 GB",
-        "precio": 295,
+        "precio": 275,
         "precio_costo": 230.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI POCO X7 5G 8/256 GB",
+        "precio": 310,
+        "precio_costo": 260.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI POCO X7 PRO 5G 8/256 GB",
-        "precio": 380,
+        "precio": 360,
         "precio_costo": 305.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI POCO X7 PRO 5G 12/512 GB",
-        "precio": 440,
+        "precio": 420,
+        "precio_costo": 360.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI POCO F6 PRO 5G 12/512 GB",
+        "precio": 415,
         "precio_costo": 355.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI POCO F7 5G 12/512 GB",
+        "precio": 525,
+        "precio_costo": 455.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI POCO F7 PRO 5G 12/512 GB",
+        "precio": 635,
+        "precio_costo": 555.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI POCO F8 PRO 5G 12/256 GB",
+        "precio": 660,
+        "precio_costo": 580.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI POCO F8 PRO 5G 12/512 GB",
+        "precio": 710,
+        "precio_costo": 625.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI POCO F8 ULTRA 5G 12/256 GB",
+        "precio": 865,
+        "precio_costo": 765.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI 13T PRO 5G 12/512 GB",
-        "precio": 590,
+        "precio": 550,
         "precio_costo": 480.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "XIAOMI 14 5G 12/512 GB",
-        "precio": 770,
-        "precio_costo": 635.0,
-        "categoria": "CELULARES XIAOMI",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI 14T 5G 12/512 GB",
-        "precio": 610,
+        "precio": 570,
         "precio_costo": 500.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "XIAOMI 14T PRO 5G 12/512 GB",
-        "precio": 715,
-        "precio_costo": 585.0,
-        "categoria": "CELULARES XIAOMI",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI 14T PRO 5G 12/1 TB",
-        "precio": 795,
+        "precio": 745,
         "precio_costo": 655.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "XIAOMI 15 5G 12/512 GB",
+        "precio": 870,
+        "precio_costo": 770.0,
+        "categoria": "CELULARES XIAOMI",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI 15T 5G 12/512 GB",
-        "precio": 690,
-        "precio_costo": 565.0,
+        "precio": 615,
+        "precio_costo": 540.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XIAOMI 15T PRO 5G 12/512 GB",
-        "precio": 885,
-        "precio_costo": 730.0,
+        "precio": 800,
+        "precio_costo": 705.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "XIAOMI 15T PRO 5G 12/1 TB",
-        "precio": 950,
-        "precio_costo": 785.0,
+        "nombre": "XIAOMI 15 ULTRA 5G 16/512 GB",
+        "precio": 1300,
+        "precio_costo": 1160.0,
         "categoria": "CELULARES XIAOMI",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "JBL PARLANTES/AURICULARES": [
       {
-        "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED",
-        "precio": 70,
+        "nombre": "AURICULAR JBL TUNE T520BT BLACK/WHITE",
+        "precio": 60,
+        "precio_costo": 35.0,
+        "categoria": "JBL PARLANTES/AURICULARES",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED/CAMUFLADO",
+        "precio": 65,
         "precio_costo": 40.0,
         "categoria": "JBL PARLANTES/AURICULARES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "JBL CLIP 5 BLUETOOTH  7 WATTS BLACK/RED",
-        "precio": 80,
+        "precio": 75,
         "precio_costo": 50.0,
         "categoria": "JBL PARLANTES/AURICULARES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "JBL FLIP 7 35 WATTS BLUE/BLACK/RED/VIOLET",
-        "precio": 150,
+        "nombre": "JBL FLIP 7 35 WATTS BLACK/BLUE/RED/PINK/CAMUFLADO",
+        "precio": 145,
         "precio_costo": 110.0,
         "categoria": "JBL PARLANTES/AURICULARES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "JBL CHARGE 6 45 WATTS BLACK/ BLUE/RED",
-        "precio": 195,
+        "nombre": "JBL CHARGE 6 45 WATTS BLACK/BLUE/RED",
+        "precio": 180,
         "precio_costo": 145.0,
         "categoria": "JBL PARLANTES/AURICULARES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "JBL XTREME 4 100 WATTS 24 HORAS NEGRO",
-        "precio": 330,
-        "precio_costo": 260.0,
+        "precio": 315,
+        "precio_costo": 265.0,
         "categoria": "JBL PARLANTES/AURICULARES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "JBL BOOMBOX 3 180 WATTS 2V CAMUFLADO",
-        "precio": 455,
+        "precio": 425,
         "precio_costo": 365.0,
         "categoria": "JBL PARLANTES/AURICULARES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "JBL BOOMBOX 3 WIFI 180 WATTS 2V NEGRO",
-        "precio": 485,
+        "precio": 450,
         "precio_costo": 390.0,
         "categoria": "JBL PARLANTES/AURICULARES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "JBL BARRA DE SONIDO CINEMA SB180 2.1 SOUNDBAR USB 229 WATTS 2V",
-        "precio": 240,
+        "precio": 225,
         "precio_costo": 185.0,
         "categoria": "JBL PARLANTES/AURICULARES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "VIDEO JUEGOS": [
       {
-        "nombre": "JOYSTICK PS5 MIDNIGHT",
-        "precio": 110,
+        "nombre": "VOLANTE CON PEDAL LOGITECH G29 PS5",
+        "precio": 365,
+        "precio_costo": 310.0,
+        "categoria": "VIDEO JUEGOS",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "JOYSTICK PS5 BLACK",
+        "precio": 105,
         "precio_costo": 75.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "JOYSTICK PS5 WHITE",
-        "precio": 110,
+        "precio": 105,
         "precio_costo": 75.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "JOYSTICK PS5 CAMUFLADO",
-        "precio": 115,
-        "precio_costo": 80.0,
-        "categoria": "VIDEO JUEGOS",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "JOYSTICK PS5 VOLCANIC RED",
-        "precio": 115,
-        "precio_costo": 80.0,
+        "precio": 105,
+        "precio_costo": 75.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "JOYSTICK PS5 CAMUFLADO",
+        "precio": 105,
+        "precio_costo": 75.0,
+        "categoria": "VIDEO JUEGOS",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "JOYSTICK PS5 COBALT BLUE",
-        "precio": 115,
-        "precio_costo": 80.0,
+        "precio": 105,
+        "precio_costo": 75.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "JOYSTICK PS5 STERLING SILVER",
-        "precio": 115,
-        "precio_costo": 80.0,
+        "nombre": "JOYSTICK PS5 SILVER",
+        "precio": 105,
+        "precio_costo": 75.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "JOYSTICK PS5 CHROMA PEARL",
-        "precio": 115,
-        "precio_costo": 80.0,
+        "precio": 105,
+        "precio_costo": 75.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "PS5 SLIM 1 TB DIGITAL",
-        "precio": 610,
+        "precio": 570,
         "precio_costo": 500.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "PS5 SLIM 1 TB DIGITAL CALL OF DUTY",
-        "precio": 670,
-        "precio_costo": 550.0,
-        "categoria": "VIDEO JUEGOS",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "PS5 SLIM 1 TB C/LECTORA",
-        "precio": 705,
-        "precio_costo": 580.0,
+        "precio": 650,
+        "precio_costo": 570.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "PS5 SLIM 1 TB C/LECTORA CALL OF DUTY 6",
-        "precio": 740,
-        "precio_costo": 610.0,
+        "precio": 680,
+        "precio_costo": 600.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "PS5 SLIM 1 TB C/LECTORA ASTROBOT",
-        "precio": 765,
-        "precio_costo": 630.0,
-        "categoria": "VIDEO JUEGOS",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "PS5 PRO 2 TB",
-        "precio": 1025,
-        "precio_costo": 850.0,
+        "precio": 935,
+        "precio_costo": 830.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "XBOX S 512 GB",
-        "precio": 530,
+        "precio": 495,
         "precio_costo": 430.0,
         "categoria": "VIDEO JUEGOS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "AIRPODS": [
       {
         "nombre": "AIRPODS PRO 2DA USBC",
-        "precio": 270,
+        "precio": 255,
         "precio_costo": 210.0,
         "categoria": "AIRPODS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "AIRPODS PRO 3RA USBC",
-        "precio": 355,
-        "precio_costo": 280.0,
+        "precio": 315,
+        "precio_costo": 265.0,
         "categoria": "AIRPODS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "AIRPODS 4",
-        "precio": 175,
+        "precio": 165,
         "precio_costo": 130.0,
         "categoria": "AIRPODS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "AIRPODS 4 NOISE CANCELLING",
-        "precio": 235,
+        "precio": 220,
         "precio_costo": 180.0,
         "categoria": "AIRPODS",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "APPLE WATCH": [
       {
         "nombre": "WATCH 11 42MM GPS",
-        "precio": 525,
+        "precio": 490,
         "precio_costo": 425.0,
         "categoria": "APPLE WATCH",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "WATCH 11 46MM GPS",
-        "precio": 560,
+        "precio": 525,
         "precio_costo": 455.0,
         "categoria": "APPLE WATCH",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "WATCH ULTRA 3 CELL 49MM GPS",
-        "precio": 995,
+        "precio": 930,
         "precio_costo": 825.0,
         "categoria": "APPLE WATCH",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "IPAD": [
       {
-        "nombre": "IPAD 11 A16 10.2 128 GB",
-        "precio": 495,
+        "nombre": "IPAD 11” A16 128 GB",
+        "precio": 465,
         "precio_costo": 400.0,
         "categoria": "IPAD",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "IPAD 11 A16 10.2 256 GB",
-        "precio": 610,
-        "precio_costo": 500.0,
-        "categoria": "IPAD",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPAD MINI 7 128 GB",
-        "precio": 650,
+        "precio": 605,
         "precio_costo": 530.0,
         "categoria": "IPAD",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPAD MINI 7 256 GB",
-        "precio": 765,
+        "precio": 715,
         "precio_costo": 630.0,
         "categoria": "IPAD",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPAD AIR 11” M3 128 GB",
-        "precio": 755,
-        "precio_costo": 620.0,
+        "precio": 695,
+        "precio_costo": 610.0,
         "categoria": "IPAD",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPAD AIR 11” M3 256 GB",
-        "precio": 870,
+        "precio": 815,
         "precio_costo": 720.0,
         "categoria": "IPAD",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPAD AIR 13” M3 128 GB",
-        "precio": 1000,
+        "precio": 935,
         "precio_costo": 830.0,
         "categoria": "IPAD",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "IPAD PRO 11 M4 256 GB",
-        "precio": 1190,
-        "precio_costo": 990.0,
-        "categoria": "IPAD",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "IPAD PRO 11 M5 256 GB",
-        "precio": 1285,
-        "precio_costo": 1070.0,
+        "precio": 1145,
+        "precio_costo": 1020.0,
         "categoria": "IPAD",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "IPAD PRO 13 M5 256 GB",
-        "precio": 1675,
-        "precio_costo": 1400.0,
-        "categoria": "IPAD",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "MACBOOK": [
       {
         "nombre": "MAC MINI M4 16/256 GB",
-        "precio": 850,
-        "precio_costo": 700.0,
+        "precio": 770,
+        "precio_costo": 680.0,
         "categoria": "MACBOOK",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MAC MINI M4 16/512 GB",
-        "precio": 1130,
-        "precio_costo": 940.0,
+        "precio": 1045,
+        "precio_costo": 930.0,
         "categoria": "MACBOOK",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MACBOOK AIR M4 13” 16/256 GB",
-        "precio": 1155,
-        "precio_costo": 960.0,
+        "precio": 1065,
+        "precio_costo": 950.0,
         "categoria": "MACBOOK",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MACBOOK AIR M4 13” 16/512 GB",
-        "precio": 1415,
+        "precio": 1320,
         "precio_costo": 1180.0,
         "categoria": "MACBOOK",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "MACBOOK AIR M4 15” 16/256 GB",
+        "precio": 1320,
+        "precio_costo": 1180.0,
+        "categoria": "MACBOOK",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MACBOOK AIR M4 15” 16/512 GB",
-        "precio": 1710,
-        "precio_costo": 1430.0,
+        "precio": 1565,
+        "precio_costo": 1400.0,
         "categoria": "MACBOOK",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "MACBOOK PRO M4 14” 16/512 GB",
-        "precio": 1920,
-        "precio_costo": 1610.0,
-        "categoria": "MACBOOK",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MACBOOK PRO M4 14” 16/1 TB",
-        "precio": 2160,
+        "precio": 2015,
         "precio_costo": 1810.0,
         "categoria": "MACBOOK",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MACBOOK PRO M4 PRO 14” 24/512 GB",
-        "precio": 2490,
+        "precio": 2320,
         "precio_costo": 2090.0,
         "categoria": "MACBOOK",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "MACBOOK PRO M4 PRO 14” 24/1 TB",
-        "precio": 3010,
-        "precio_costo": 2530.0,
+        "precio": 2815,
+        "precio_costo": 2540.0,
         "categoria": "MACBOOK",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
-      },
-      {
-        "nombre": "MACBOOK PRO M5 14” 16/512 GB",
-        "precio": 2050,
-        "precio_costo": 1720.0,
-        "categoria": "MACBOOK",
-        "proveedor": "GcGroup",
-        "ganancia_porcentaje": 18,
-        "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ],
     "TELEVISORES": [
       {
         "nombre": "75” Smart TV UHD 4K Samsung UN75DU7000GCZB",
-        "precio": 1295,
-        "precio_costo": 1080.0,
+        "precio": 1200,
+        "precio_costo": 1070.0,
         "categoria": "TELEVISORES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "75” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con IA 75UA8550PSA",
-        "precio": 1050,
-        "precio_costo": 870.0,
+        "nombre": "75” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con Inteligencia Artificial 75UA8550PSA",
+        "precio": 970,
+        "precio_costo": 860.0,
         "categoria": "TELEVISORES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "65” Smart TV QLED 4K Samsung QN65Q65DAGCZB",
-        "precio": 955,
-        "precio_costo": 790.0,
+        "precio": 885,
+        "precio_costo": 785.0,
         "categoria": "TELEVISORES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "65” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con IA 65UA8050PSA",
-        "precio": 720,
-        "precio_costo": 590.0,
+        "nombre": "65” Smart TV Samsung LED Crystal UHD 4K DU7000",
+        "precio": 795,
+        "precio_costo": 700.0,
         "categoria": "TELEVISORES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "65” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con Inteligencia Artificial 65UA8050PSA",
+        "precio": 660,
+        "precio_costo": 580.0,
+        "categoria": "TELEVISORES",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
+      },
+      {
+        "nombre": "55” Smart TV Samsung 4K QLED Q65D",
+        "precio": 650,
+        "precio_costo": 570.0,
+        "categoria": "TELEVISORES",
+        "proveedor": "GcGroup",
+        "ganancia_porcentaje": 18,
+        "extra_usd": 20,
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "55” Smart TV UHD 4K Samsung UN55DU7000GCZB",
-        "precio": 565,
-        "precio_costo": 460.0,
+        "precio": 515,
+        "precio_costo": 450.0,
         "categoria": "TELEVISORES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "55” Tv Led Philips UHD 55PUD7309/77",
-        "precio": 495,
-        "precio_costo": 400.0,
+        "precio": 450,
+        "precio_costo": 390.0,
         "categoria": "TELEVISORES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
-        "precio": 465,
-        "precio_costo": 375.0,
+        "precio": 430,
+        "precio_costo": 370.0,
         "categoria": "TELEVISORES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
-        "nombre": "43” Smart TV Samsung LED Crystal UHD 4K DU7000",
-        "precio": 405,
-        "precio_costo": 325.0,
+        "nombre": "43” Smart TV Samsung Du7000 4K",
+        "precio": 390,
+        "precio_costo": 335.0,
         "categoria": "TELEVISORES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "43” Smart TV Full HD Samsung UN43T5300A",
-        "precio": 355,
+        "precio": 330,
         "precio_costo": 280.0,
         "categoria": "TELEVISORES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       },
       {
         "nombre": "43” Smart TV LED Philips 43PFD6910/77",
-        "precio": 295,
+        "precio": 275,
         "precio_costo": 230.0,
         "categoria": "TELEVISORES",
         "proveedor": "GcGroup",
         "ganancia_porcentaje": 18,
         "extra_usd": 20,
-        "fecha_actualizacion": "17/11/2025 09:15"
+        "fecha_actualizacion": "10/12/2025 12:42"
       }
     ]
   }
