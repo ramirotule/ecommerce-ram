@@ -23,5 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
-# Automatizador output directory
+# Automatizador - Solo mantener scripts .py
 automatizador/output/
+automatizador/*.json
+automatizador/*.xlsx
+automatizador/*.txt
+automatizador/__pycache__/
+automatizador/C:/
