@@ -84,12 +84,32 @@ class AutomatizadorWSP:
         """Configurar y abrir navegador con sesión persistente"""
         print("🔧 Configurando navegador...")
         
+        # Determinar la ruta del perfil según el sistema operativo
+        import platform
+        if platform.system() == 'Darwin':  # macOS
+            user_data_dir = os.path.expanduser("~/Library/Application Support/Google/Chrome/selenium_wsp")
+        elif platform.system() == 'Windows':
+            user_data_dir = "C:/selenium_wsp"
+        else:  # Linux
+            user_data_dir = os.path.expanduser("~/.config/google-chrome/selenium_wsp")
+        
+        # Crear directorio si no existe
+        os.makedirs(user_data_dir, exist_ok=True)
+        print(f"📁 Usando perfil: {user_data_dir}")
+        
         options = webdriver.ChromeOptions()
-        options.add_argument("--user-data-dir=C:/selenium_wsp")
+        options.add_argument(f"--user-data-dir={user_data_dir}")
         options.add_argument("--profile-directory=Default")
         options.add_argument("--start-maximized")
-        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        options.add_argument("--no-first-run")
+        options.add_argument("--no-default-browser-check")
+        options.add_argument("--disable-blink-features=AutomationControlled")
+        options.add_experimental_option('excludeSwitches', ['enable-logging', 'enable-automation'])
         options.add_experimental_option('useAutomationExtension', False)
+        options.add_experimental_option("prefs", {
+            "credentials_enable_service": False,
+            "profile.password_manager_enabled": False
+        })
         
         try:
             self.driver = webdriver.Chrome(
@@ -1625,15 +1645,7 @@ class AutomatizadorWSP:
         scripts_a_ejecutar = [
             {
                 "nombre": "procesar_gcgroup_refactor.py",
-                "descripcion": "Procesamiento específico de GCGroup con nueva fórmula de precios"
-            },
-            {
-                "nombre": "generar_ganancias_excel.py",
-                "descripcion": "Generación de Excel con ganancias por producto (GCGroup y Zentek BA)"
-            },
-            {
-                "nombre": "excel_to_json.py",
-                "descripcion": "Conversión de Excel a JSON para productos_ram.json"
+                "descripcion": "Procesamiento específico de GCGroup - Genera productos_ram.json directamente"
             }
         ]
         
