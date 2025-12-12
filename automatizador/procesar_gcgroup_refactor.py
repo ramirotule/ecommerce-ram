@@ -343,9 +343,11 @@ class ProcesadorGCGroup:
             
             # === AGREGAR PRODUCTOS GCGROUP ===
             productos_gcgroup_agregados = 0
+            productos_duplicados = 0
             
             for producto in self.productos_extraidos:
                 categoria = producto['categoria']
+                nombre_producto = producto['producto']
                 
                 # Crear categorías si no existen
                 if categoria not in estructura_publica["productos"]:
@@ -353,28 +355,54 @@ class ProcesadorGCGroup:
                 if categoria not in estructura_completa["productos"]:
                     estructura_completa["productos"][categoria] = []
                 
-                # PRODUCTO PÚBLICO (sin información sensible)
-                producto_publico = {
-                    "nombre": producto['producto'],
-                    "precio": producto['precio_venta'],
-                    "categoria": categoria
-                }
+                # VERIFICAR SI EL PRODUCTO YA EXISTE (evitar duplicados)
+                producto_ya_existe = False
+                for prod_existente in estructura_publica["productos"][categoria]:
+                    if prod_existente.get("nombre", "").upper() == nombre_producto.upper():
+                        producto_ya_existe = True
+                        productos_duplicados += 1
+                        break
                 
-                # PRODUCTO COMPLETO (con toda la información)
-                producto_completo = {
-                    "nombre": producto['producto'],
-                    "precio": producto['precio_venta'],
-                    "precio_costo": producto['precio_costo'],  # Solo en versión completa
-                    "categoria": categoria,
-                    "proveedor": "GcGroup",
-                    "ganancia_porcentaje": 18,  # Solo en versión completa
-                    "extra_usd": 20,  # Solo en versión completa
-                    "fecha_actualizacion": datetime.now().strftime("%d/%m/%Y %H:%M")
-                }
-                
-                estructura_publica["productos"][categoria].append(producto_publico)
-                estructura_completa["productos"][categoria].append(producto_completo)
-                productos_gcgroup_agregados += 1
+                # Si el producto ya existe, actualizarlo; si no, agregarlo
+                if producto_ya_existe:
+                    # Actualizar precio y fecha
+                    for i, prod_existente in enumerate(estructura_publica["productos"][categoria]):
+                        if prod_existente.get("nombre", "").upper() == nombre_producto.upper():
+                            estructura_publica["productos"][categoria][i]["precio"] = producto['precio_venta']
+                            estructura_publica["productos"][categoria][i]["precio_costo"] = producto['precio_costo']
+                            estructura_publica["productos"][categoria][i]["fecha_actualizacion"] = datetime.now().strftime("%d/%m/%Y %H:%M")
+                            break
+                    
+                    # Mismo para estructura completa
+                    for i, prod_existente in enumerate(estructura_completa["productos"][categoria]):
+                        if prod_existente.get("nombre", "").upper() == nombre_producto.upper():
+                            estructura_completa["productos"][categoria][i]["precio"] = producto['precio_venta']
+                            estructura_completa["productos"][categoria][i]["precio_costo"] = producto['precio_costo']
+                            estructura_completa["productos"][categoria][i]["fecha_actualizacion"] = datetime.now().strftime("%d/%m/%Y %H:%M")
+                            break
+                else:
+                    # PRODUCTO PÚBLICO (sin información sensible)
+                    producto_publico = {
+                        "nombre": producto['producto'],
+                        "precio": producto['precio_venta'],
+                        "categoria": categoria
+                    }
+                    
+                    # PRODUCTO COMPLETO (con toda la información)
+                    producto_completo = {
+                        "nombre": producto['producto'],
+                        "precio": producto['precio_venta'],
+                        "precio_costo": producto['precio_costo'],  # Solo en versión completa
+                        "categoria": categoria,
+                        "proveedor": "GcGroup",
+                        "ganancia_porcentaje": 18,  # Solo en versión completa
+                        "extra_usd": 20,  # Solo en versión completa
+                        "fecha_actualizacion": datetime.now().strftime("%d/%m/%Y %H:%M")
+                    }
+                    
+                    estructura_publica["productos"][categoria].append(producto_publico)
+                    estructura_completa["productos"][categoria].append(producto_completo)
+                    productos_gcgroup_agregados += 1
             
             # === ACTUALIZAR TOTALES ===
             total_productos_publico = sum(len(productos) for productos in estructura_publica["productos"].values())
@@ -419,7 +447,9 @@ class ProcesadorGCGroup:
             # === REPORTES ===
             print(f"✅ JSON público generado: {archivo_publico}")
             print(f"🔒 JSON completo generado: {archivo_privado}")
-            print(f"📊 {productos_gcgroup_agregados} productos de GCGroup agregados/actualizados")
+            print(f"📊 {productos_gcgroup_agregados} productos de GCGroup agregados/nuevos")
+            if productos_duplicados > 0:
+                print(f"🔄 {productos_duplicados} productos duplicados actualizados")
             print(f"📈 Total productos públicos: {total_productos_publico}")
             print(f"🔒 Total productos completos: {total_productos_completo}")
             print(f"📂 Total categorías: {len(estructura_publica['productos'])}")
