@@ -110,21 +110,23 @@ class ProcesadorGCGroup:
     def calcular_precio_venta(self, precio_costo):
         """
         Calcular precio de venta usando la fórmula:
-        (precio_costo + 18%) + $20 USD, redondeado a múltiplo de 5
+        (precio_costo / 0.9) + $20 USD, redondeado a múltiplo de 5 (al más cercano)
+        
+        Equivalente a la fórmula Excel: =REDOND.MULT(precio_costo/0.9+20;5)
         """
         try:
             # Convertir a float si es string
             if isinstance(precio_costo, str):
                 precio_costo = float(precio_costo.replace(',', '.'))
             
-            # Aplicar 18% de ganancia
-            precio_con_ganancia = precio_costo * 1.10
+            # Aplicar fórmula: dividir por 0.9 (margen del 90% para el costo)
+            precio_con_margen = precio_costo / 0.9
             
             # Sumar $20 USD extras
-            precio_con_extras = precio_con_ganancia + 20
+            precio_con_extras = precio_con_margen + 20
             
-            # Redondear a múltiplo de 5
-            precio_final = math.ceil(precio_con_extras / 5) * 5
+            # Redondear al múltiplo de 5 más cercano (como REDOND.MULT de Excel)
+            precio_final = round(precio_con_extras / 5) * 5
             
             return int(precio_final)
             
