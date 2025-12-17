@@ -1,7 +1,7 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "16/12/2025 10:29",
-    "total_productos": 178
+    "ultima_actualizacion": "17/12/2025 10:51",
+    "total_productos": 186
   },
   "productos": [
     {
@@ -10,71 +10,8 @@
       "categoria": "CELULARES IPHONE NEW"
     },
     {
-      "nombre": "IPHONE 16 128 GB SIM/ESIM",
-      "precio": 820,
-      "categoria": "CELULARES IPHONE NEW",
-      "precio_costo": 725.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
-    },
-    {
-      "nombre": "IPHONE 17 PRO 512 GB ESIM SILV/BLUE",
-      "precio": 1595,
-      "categoria": "CELULARES IPHONE NEW",
-      "precio_costo": 1430.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
-    },
-    {
       "nombre": "IPHONE 17 PRO MAX 256 GB ESIM",
       "precio": 1515,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 PRO 512 GB ESIM SILV",
-      "precio": 1580,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM ORANG",
-      "precio": 1490,
-      "categoria": "CELULARES IPHONE NEW",
-      "precio_costo": 1335.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
-    },
-    {
-      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM BLUE/SILV",
-      "precio": 1500,
-      "categoria": "CELULARES IPHONE NEW",
-      "precio_costo": 1345.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
-    },
-    {
-      "nombre": "IPHONE 14 256 GB SIM/ESIM",
-      "precio": 770,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 16 256 GB SIM/ESIM",
-      "precio": 925,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 16 PLUS 256 GB SIM/ESIM",
-      "precio": 1075,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 16 PRO MAX 256 GB ESIM",
-      "precio": 1415,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 256 GB ESIM",
-      "precio": 1035,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE AIR 256 GB ESIM",
-      "precio": 1090,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -88,13 +25,83 @@
       "categoria": "CELULARES IPHONE NEW"
     },
     {
+      "nombre": "IPHONE 16 128 GB SIM/ESIM",
+      "precio": 825,
+      "categoria": "CELULARES IPHONE NEW",
+      "precio_costo": 725.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "IPHONE 17 PRO 256 GB ESIM",
+      "precio": 1390,
+      "categoria": "CELULARES IPHONE NEW",
+      "precio_costo": 1235.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM ORANG",
+      "precio": 1490,
+      "categoria": "CELULARES IPHONE NEW",
+      "precio_costo": 1325.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM BLUE",
+      "precio": 1520,
+      "categoria": "CELULARES IPHONE NEW",
+      "precio_costo": 1350.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM SILV",
+      "precio": 1530,
+      "categoria": "CELULARES IPHONE NEW",
+      "precio_costo": 1360.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "IPHONE 14 256 GB SIM/ESIM",
+      "precio": 775,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 16 256 GB SIM/ESIM",
+      "precio": 925,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 16 PLUS 256 GB SIM/ESIM",
+      "precio": 1080,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 16 PRO MAX 256 GB ESIM",
+      "precio": 1425,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 17 256 GB ESIM",
+      "precio": 1050,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE AIR 256 GB ESIM",
+      "precio": 1100,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
       "nombre": "IPHONE 17 PRO 512 GB ESIM ORANG",
-      "precio": 1545,
+      "precio": 1560,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 17 PRO 512 GB ESIM SILV",
+      "precio": 1610,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO MAX 512 GB ESIM",
-      "precio": 1695,
+      "precio": 1675,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -113,25 +120,44 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
+      "nombre": "SAMSUNG A07 4/128 GB",
+      "precio": 155,
+      "categoria": "CELULARES SAMSUNG"
+    },
+    {
       "nombre": "SAMSUNG A26 5G 6/128 GB",
       "precio": 260,
       "categoria": "CELULARES SAMSUNG",
       "precio_costo": 215.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "SAMSUNG S25 ULTRA 12/256 GB",
-      "precio": 1015,
+      "precio": 1020,
       "categoria": "CELULARES SAMSUNG",
       "precio_costo": 900.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "SAMSUNG S25 ULTRA 12/512 GB",
-      "precio": 1090,
+      "precio": 1100,
       "categoria": "CELULARES SAMSUNG",
       "precio_costo": 970.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "TABLET SAMSUNG X110 A9 8.7\" 4/64GB WIFI SILVER/ GRAFITO",
+      "precio": 140,
+      "categoria": "CELULARES SAMSUNG",
+      "precio_costo": 110.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "TABLET SAMSUNG X216B A9+ 11\" 4/64GB 5G GRAFITO",
+      "precio": 255,
+      "categoria": "CELULARES SAMSUNG",
+      "precio_costo": 210.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "SAMSUNG A06 4/64 GB",
@@ -140,7 +166,7 @@
     },
     {
       "nombre": "SAMSUNG A06 4/128 GB",
-      "precio": 145,
+      "precio": 140,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -149,23 +175,18 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
-      "nombre": "SAMSUNG A07 4/128 GB",
-      "precio": 155,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
       "nombre": "SAMSUNG A16 4/128 GB",
-      "precio": 170,
+      "precio": 165,
       "categoria": "CELULARES SAMSUNG"
     },
     {
       "nombre": "SAMSUNG A17 4/128 GB",
-      "precio": 210,
+      "precio": 220,
       "categoria": "CELULARES SAMSUNG"
     },
     {
       "nombre": "SAMSUNG A17 8/256 GB",
-      "precio": 250,
+      "precio": 265,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -190,7 +211,7 @@
     },
     {
       "nombre": "SAMSUNG A56 5G 8/128 GB",
-      "precio": 375,
+      "precio": 385,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -205,32 +226,18 @@
     },
     {
       "nombre": "SAMSUNG S24 ULTRA 12/256 GB",
-      "precio": 945,
+      "precio": 955,
       "categoria": "CELULARES SAMSUNG"
     },
     {
       "nombre": "SAMSUNG S25 12/256 GB",
-      "precio": 770,
+      "precio": 775,
       "categoria": "CELULARES SAMSUNG"
     },
     {
       "nombre": "SAMSUNG S25 ULTRA 1 TB",
-      "precio": 1200,
+      "precio": 1210,
       "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "MOTOROLA G05 4/128 GB",
-      "precio": 125,
-      "categoria": "CELULARES MOTOROLA",
-      "precio_costo": 95.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
-    },
-    {
-      "nombre": "MOTOROLA G15 4/256 GB",
-      "precio": 155,
-      "categoria": "CELULARES MOTOROLA",
-      "precio_costo": 120.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
     },
     {
       "nombre": "MOTOROLA G24 POWER 5G 8/256 GB",
@@ -238,46 +245,35 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA G35 5G 4/256 GB",
-      "precio": 175,
-      "categoria": "CELULARES MOTOROLA",
-      "precio_costo": 140.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "nombre": "MOTOROLA G55 5G 8/256 GB",
+      "precio": 215,
+      "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
-      "precio": 320,
+      "nombre": "MOTOROLA EDGE 50 FUSION 5G 8/256 GB",
+      "precio": 270,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA G05 4/128 GB",
+      "precio": 125,
       "categoria": "CELULARES MOTOROLA",
-      "precio_costo": 270.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "precio_costo": 95.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "MOTOROLA EDGE 50 ULTRA 5G 12/512 GB",
-      "precio": 660,
+      "precio": 665,
       "categoria": "CELULARES MOTOROLA",
       "precio_costo": 580.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "MOTOROLA EDGE 50 ULTRA 5G 16/1 TB",
-      "precio": 725,
+      "precio": 730,
       "categoria": "CELULARES MOTOROLA",
       "precio_costo": 640.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
-    },
-    {
-      "nombre": "MOTOROLA EDGE 50 RAZR 5G 12/512 GB",
-      "precio": 765,
-      "categoria": "CELULARES MOTOROLA",
-      "precio_costo": 675.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
-    },
-    {
-      "nombre": "MOTOROLA EDGE 60 PRO 5G 12/512 GB",
-      "precio": 555,
-      "categoria": "CELULARES MOTOROLA",
-      "precio_costo": 485.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "MOTOROLA E15 2/64 GB",
@@ -286,7 +282,7 @@
     },
     {
       "nombre": "MOTOROLA G04 4/128 GB",
-      "precio": 140,
+      "precio": 135,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -300,18 +296,13 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA G55 5G 8/256 GB",
-      "precio": 215,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
       "nombre": "MOTOROLA G56 5G 8/256 GB",
       "precio": 235,
       "categoria": "CELULARES MOTOROLA"
     },
     {
       "nombre": "MOTOROLA G56 5G 12/256 GB",
-      "precio": 245,
+      "precio": 240,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -345,18 +336,13 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA EDGE 50 FUSION 5G 8/256 GB",
-      "precio": 270,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
       "nombre": "MOTOROLA EDGE 50 NEO 5G 8/256 GB",
       "precio": 275,
       "categoria": "CELULARES MOTOROLA"
     },
     {
       "nombre": "MOTOROLA EDGE 50 PRO 5G 12/512 GB",
-      "precio": 445,
+      "precio": 450,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -364,11 +350,11 @@
       "precio": 200,
       "categoria": "CELULARES INFINIX",
       "precio_costo": 160.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "INFINIX SMART 10 4/128 GB",
-      "precio": 140,
+      "precio": 135,
       "categoria": "CELULARES INFINIX"
     },
     {
@@ -388,12 +374,12 @@
     },
     {
       "nombre": "INFINIX HOT 60 PRO+ 8/256 GB",
-      "precio": 245,
+      "precio": 240,
       "categoria": "CELULARES INFINIX"
     },
     {
       "nombre": "INFINIX NOTE 50X 5G 8/256 GB",
-      "precio": 245,
+      "precio": 240,
       "categoria": "CELULARES INFINIX"
     },
     {
@@ -422,32 +408,66 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
+      "nombre": "XIAOMI NOTE 14 PRO + 5G 12/512 GB",
+      "precio": 445,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO M7 PRO 5G 12/512 GB",
+      "precio": 275,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO F6 PRO 5G 12/512 GB",
+      "precio": 415,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI 15T PRO 5G 12/512 GB",
+      "precio": 800,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
       "nombre": "XIAOMI REDMI 14C 8/256 GB",
       "precio": 175,
       "categoria": "CELULARES XIAOMI",
       "precio_costo": 140.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "XIAOMI NOTE 13 PRO 5G 8/256 GB",
       "precio": 290,
       "categoria": "CELULARES XIAOMI",
       "precio_costo": 245.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "XIAOMI NOTE 13 PRO 5G 12/512 GB",
       "precio": 340,
       "categoria": "CELULARES XIAOMI",
       "precio_costo": 290.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "XIAOMI NOTE 14 8/256 GB",
+      "precio": 220,
+      "categoria": "CELULARES XIAOMI",
+      "precio_costo": 180.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "XIAOMI NOTE 14 PRO 8/256 GB",
+      "precio": 285,
+      "categoria": "CELULARES XIAOMI",
+      "precio_costo": 240.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "XIAOMI NOTE 14 PRO 5G 12/512 GB",
-      "precio": 400,
+      "precio": 405,
       "categoria": "CELULARES XIAOMI",
       "precio_costo": 345.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
       "nombre": "XIAOMI REDMI A5 3/64 GB",
@@ -491,7 +511,7 @@
     },
     {
       "nombre": "XIAOMI NOTE 14 6/128 GB",
-      "precio": 195,
+      "precio": 190,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -511,7 +531,7 @@
     },
     {
       "nombre": "XIAOMI NOTE 14s 12/512 GB",
-      "precio": 295,
+      "precio": 300,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -530,18 +550,13 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "XIAOMI NOTE 14 PRO + 5G 12/512 GB",
-      "precio": 445,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
       "nombre": "XIAOMI POCO C71 3/64 GB",
       "precio": 120,
       "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI POCO C71 4/128 GB",
-      "precio": 140,
+      "precio": 135,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -575,11 +590,6 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "XIAOMI POCO M7 PRO 5G 12/512 GB",
-      "precio": 275,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
       "nombre": "XIAOMI POCO X7 5G 8/256 GB",
       "precio": 310,
       "categoria": "CELULARES XIAOMI"
@@ -600,11 +610,6 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "XIAOMI POCO F6 PRO 5G 12/512 GB",
-      "precio": 415,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
       "nombre": "XIAOMI POCO F7 5G 12/512 GB",
       "precio": 525,
       "categoria": "CELULARES XIAOMI"
@@ -616,37 +621,32 @@
     },
     {
       "nombre": "XIAOMI POCO F8 PRO 5G 12/256 GB",
-      "precio": 660,
+      "precio": 665,
       "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI 13T PRO 5G 12/512 GB",
-      "precio": 550,
+      "precio": 555,
       "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI 14T 5G 12/512 GB",
-      "precio": 570,
+      "precio": 575,
       "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI 15 5G 12/512 GB",
-      "precio": 870,
+      "precio": 875,
       "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI 15T 5G 12/512 GB",
-      "precio": 615,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI 15T PRO 5G 12/512 GB",
-      "precio": 800,
+      "precio": 620,
       "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI 15 ULTRA 5G 16/512 GB",
-      "precio": 1300,
+      "precio": 1310,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -665,31 +665,64 @@
       "categoria": "VIDEO JUEGOS"
     },
     {
-      "nombre": "SONY VR2 HORIZON BUNDLE",
-      "precio": 615,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
-      "nombre": "PS5 SLIM 1 TB DIGITAL",
-      "precio": 570,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
       "nombre": "PS5 SLIM 1 TB C/LECTORA CALL OF DUTY 6",
       "precio": 680,
       "categoria": "VIDEO JUEGOS"
     },
     {
-      "nombre": "PS5 PRO 2 TB",
-      "precio": 935,
+      "nombre": "JOYSTICK PS5 CAMUFLADO",
+      "precio": 105,
+      "categoria": "VIDEO JUEGOS",
+      "precio_costo": 75.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "JOYSTICK PS5 VOLCANIC RED",
+      "precio": 105,
+      "categoria": "VIDEO JUEGOS",
+      "precio_costo": 75.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "JOYSTICK PS5 COBALT BLUE",
+      "precio": 105,
+      "categoria": "VIDEO JUEGOS",
+      "precio_costo": 75.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "XBOX S 1TB",
+      "precio": 560,
+      "categoria": "VIDEO JUEGOS",
+      "precio_costo": 485.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "XBOX X 1TB",
+      "precio": 775,
+      "categoria": "VIDEO JUEGOS",
+      "precio_costo": 680.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "SONY VR2 HORIZON BUNDLE",
+      "precio": 620,
       "categoria": "VIDEO JUEGOS"
     },
     {
-      "nombre": "WATCH SE 3 40MM GPS",
-      "precio": 335,
-      "categoria": "APPLE WATCH",
-      "precio_costo": 285.0,
-      "fecha_actualizacion": "16/12/2025 10:29"
+      "nombre": "PS5 SLIM 1 TB DIGITAL",
+      "precio": 575,
+      "categoria": "VIDEO JUEGOS"
+    },
+    {
+      "nombre": "PS5 PRO 2 TB",
+      "precio": 940,
+      "categoria": "VIDEO JUEGOS"
+    },
+    {
+      "nombre": "WATCH ULTRA 3 CELL 49MM GPS",
+      "precio": 930,
+      "categoria": "APPLE WATCH"
     },
     {
       "nombre": "WATCH 11 42MM GPS",
@@ -698,12 +731,7 @@
     },
     {
       "nombre": "WATCH 11 46MM GPS",
-      "precio": 510,
-      "categoria": "APPLE WATCH"
-    },
-    {
-      "nombre": "WATCH ULTRA 3 CELL 49MM GPS",
-      "precio": 930,
+      "precio": 525,
       "categoria": "APPLE WATCH"
     },
     {
@@ -712,23 +740,8 @@
       "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
-      "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED/CAMUFLADO",
-      "precio": 65,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL CLIP 5 BLUETOOTH  7 WATTS BLACK/RED",
-      "precio": 75,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
       "nombre": "JBL FLIP 7 35 WATTS BLUE/RED/PINK/CAMUFLADO",
       "precio": 145,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL CHARGE 6 45 WATTS BLACK/BLUE/RED",
-      "precio": 180,
       "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
@@ -742,13 +755,51 @@
       "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
-      "nombre": "AIRPODS PRO 2DA USBC",
-      "precio": 255,
-      "categoria": "AIRPODS"
+      "nombre": "AURICULAR JBL TUNE T520BT WHITE",
+      "precio": 60,
+      "categoria": "JBL PARLANTES/AURICULARES",
+      "precio_costo": 35.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
     },
     {
-      "nombre": "AIRPODS PRO 3RA USBC",
-      "precio": 315,
+      "nombre": "JBL FLIP 7 35 WATTS BLACK/BLUE/RED/PINK/CAMUFLADO",
+      "precio": 140,
+      "categoria": "JBL PARLANTES/AURICULARES",
+      "precio_costo": 110.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "JBL BOOMBOX 3 180 WATTS 2V CAMUFLADO",
+      "precio": 425,
+      "categoria": "JBL PARLANTES/AURICULARES",
+      "precio_costo": 365.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "JBL BOOMBOX 4 210 WATTS 2V NEGRO",
+      "precio": 575,
+      "categoria": "JBL PARLANTES/AURICULARES",
+      "precio_costo": 500.0,
+      "fecha_actualizacion": "17/12/2025 10:51"
+    },
+    {
+      "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED/CAMUFLADO",
+      "precio": 65,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
+      "nombre": "JBL CLIP 5 BLUETOOTH  7 WATTS BLACK/RED",
+      "precio": 75,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
+      "nombre": "JBL CHARGE 6 45 WATTS BLACK/BLUE/RED",
+      "precio": 180,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
+      "nombre": "AIRPODS PRO 2DA USBC",
+      "precio": 255,
       "categoria": "AIRPODS"
     },
     {
@@ -762,23 +813,13 @@
       "categoria": "AIRPODS"
     },
     {
-      "nombre": "IPAD 11” A16 128 GB",
-      "precio": 465,
-      "categoria": "IPAD"
+      "nombre": "AIRPODS PRO 3RA USBC",
+      "precio": 315,
+      "categoria": "AIRPODS"
     },
     {
       "nombre": "IPAD 11” A16 256 GB",
       "precio": 570,
-      "categoria": "IPAD"
-    },
-    {
-      "nombre": "IPAD MINI 7 128 GB",
-      "precio": 605,
-      "categoria": "IPAD"
-    },
-    {
-      "nombre": "IPAD MINI 7 256 GB",
-      "precio": 715,
       "categoria": "IPAD"
     },
     {
@@ -792,68 +833,43 @@
       "categoria": "IPAD"
     },
     {
+      "nombre": "IPAD 11” A16 128 GB",
+      "precio": 465,
+      "categoria": "IPAD"
+    },
+    {
+      "nombre": "IPAD MINI 7 128 GB",
+      "precio": 610,
+      "categoria": "IPAD"
+    },
+    {
+      "nombre": "IPAD MINI 7 256 GB",
+      "precio": 720,
+      "categoria": "IPAD"
+    },
+    {
       "nombre": "IPAD AIR 13” M3 128 GB",
-      "precio": 960,
+      "precio": 965,
       "categoria": "IPAD"
     },
     {
       "nombre": "IPAD PRO 11” M5 256 GB",
-      "precio": 1145,
+      "precio": 1155,
       "categoria": "IPAD"
     },
     {
       "nombre": "IPAD PRO 13” M5 256 GB",
-      "precio": 1550,
+      "precio": 1565,
       "categoria": "IPAD"
     },
     {
-      "nombre": "MAC MINI M4 16/256 GB",
-      "precio": 770,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MAC MINI M4 16/512 GB",
-      "precio": 1045,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK AIR M4 13” 16/256 GB",
-      "precio": 1065,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK AIR M4 13” 16/512 GB",
-      "precio": 1320,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK AIR M4 15” 16/256 GB",
-      "precio": 1320,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK AIR M4 15” 16/512 GB",
-      "precio": 1565,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK PRO M4 14” 16/1 TB",
-      "precio": 2015,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK PRO M4 PRO 14” 24/512 GB",
-      "precio": 2320,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK PRO M4 PRO 14” 24/1 TB",
-      "precio": 2815,
-      "categoria": "MACBOOK"
+      "nombre": "75” Smart TV Samsung Neo QLED 4K QN85D",
+      "precio": 2430,
+      "categoria": "TELEVISORES"
     },
     {
       "nombre": "100” Smart TV Xiaomi TV Max 4K UHD QLED con Google TV y Dolby Atmos",
-      "precio": 3070,
+      "precio": 3065,
       "categoria": "TELEVISORES"
     },
     {
@@ -862,28 +878,23 @@
       "categoria": "TELEVISORES"
     },
     {
-      "nombre": "75” Smart TV Samsung Neo QLED 4K QN85D",
-      "precio": 2430,
-      "categoria": "TELEVISORES"
-    },
-    {
       "nombre": "75” Smart TV Samsung LED 4K Crystal UHD U8000F",
-      "precio": 1420,
+      "precio": 1240,
       "categoria": "TELEVISORES"
     },
     {
       "nombre": "75” Smart TV UHD 4K Samsung UN75DU7000GCZB",
-      "precio": 1200,
+      "precio": 1210,
       "categoria": "TELEVISORES"
     },
     {
       "nombre": "75” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con Inteligencia Artificial 75UA8550PSA",
-      "precio": 970,
+      "precio": 1020,
       "categoria": "TELEVISORES"
     },
     {
       "nombre": "65” Smart TV Samsung QLED 4K Q7 Tizen OS IA",
-      "precio": 960,
+      "precio": 1000,
       "categoria": "TELEVISORES"
     },
     {
@@ -893,37 +904,37 @@
     },
     {
       "nombre": "65” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con Inteligencia Artificial 65UA8050PSA",
-      "precio": 660,
+      "precio": 665,
       "categoria": "TELEVISORES"
     },
     {
       "nombre": "55” Smart TV Samsung 4K QLED Q65D",
-      "precio": 650,
+      "precio": 655,
       "categoria": "TELEVISORES"
     },
     {
       "nombre": "55” Smart TV UHD 4K Samsung Crystal UN55DU7000GCZB",
-      "precio": 495,
+      "precio": 510,
       "categoria": "TELEVISORES"
     },
     {
       "nombre": "55” Smart TV Samsung LED 4K Crystal UHD U8000F",
-      "precio": 515,
+      "precio": 520,
       "categoria": "TELEVISORES"
     },
     {
       "nombre": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
-      "precio": 430,
+      "precio": 465,
       "categoria": "TELEVISORES"
     },
     {
       "nombre": "43” Smart TV Samsung Du7000 4K",
-      "precio": 390,
+      "precio": 400,
       "categoria": "TELEVISORES"
     },
     {
       "nombre": "43” Smart TV Full HD Samsung UN43T5300A",
-      "precio": 330,
+      "precio": 355,
       "categoria": "TELEVISORES"
     },
     {
@@ -933,8 +944,53 @@
     },
     {
       "nombre": "32” Smart TV Samsung HD UN32T4300A",
-      "precio": 205,
+      "precio": 240,
       "categoria": "TELEVISORES"
+    },
+    {
+      "nombre": "MAC MINI M4 16/256 GB",
+      "precio": 775,
+      "categoria": "MACBOOK"
+    },
+    {
+      "nombre": "MAC MINI M4 16/512 GB",
+      "precio": 1055,
+      "categoria": "MACBOOK"
+    },
+    {
+      "nombre": "MACBOOK AIR M4 13” 16/256 GB",
+      "precio": 1075,
+      "categoria": "MACBOOK"
+    },
+    {
+      "nombre": "MACBOOK AIR M4 13” 16/512 GB",
+      "precio": 1330,
+      "categoria": "MACBOOK"
+    },
+    {
+      "nombre": "MACBOOK AIR M4 15” 16/256 GB",
+      "precio": 1330,
+      "categoria": "MACBOOK"
+    },
+    {
+      "nombre": "MACBOOK AIR M4 15” 16/512 GB",
+      "precio": 1575,
+      "categoria": "MACBOOK"
+    },
+    {
+      "nombre": "MACBOOK PRO M4 14” 16/1 TB",
+      "precio": 2030,
+      "categoria": "MACBOOK"
+    },
+    {
+      "nombre": "MACBOOK PRO M4 PRO 14” 24/512 GB",
+      "precio": 2340,
+      "categoria": "MACBOOK"
+    },
+    {
+      "nombre": "MACBOOK PRO M4 PRO 14” 24/1 TB",
+      "precio": 2840,
+      "categoria": "MACBOOK"
     }
   ]
 }
