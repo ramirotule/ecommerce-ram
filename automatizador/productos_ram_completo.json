@@ -1,11 +1,11 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "17/12/2025 10:51",
-    "fecha_extraccion_gcgroup": "17/12/2025 10:51",
-    "productos_gcgroup": 153,
+    "ultima_actualizacion": "18/12/2025 11:41",
+    "fecha_extraccion_gcgroup": "18/12/2025 11:41",
+    "productos_gcgroup": 148,
     "proveedor_gcgroup": "GcGroup",
     "formula_precio_gcgroup": "(costo + 18%) + $20, redondeado a múltiplo de 5",
-    "total_productos": 124
+    "total_productos": 115
   },
   "productos": [
     {
@@ -16,7 +16,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPHONE 16 256 GB SIM/ESIM",
@@ -26,7 +26,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPHONE 16 PLUS 256 GB SIM/ESIM",
@@ -36,7 +36,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPHONE 16 PRO MAX 256 GB ESIM",
@@ -46,7 +46,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPHONE 17 256 GB ESIM",
@@ -56,7 +56,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPHONE AIR 256 GB ESIM",
@@ -66,37 +66,37 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPHONE 17 PRO 512 GB ESIM ORANG",
-      "precio": 1560,
-      "precio_costo": 1385.0,
+      "precio": 1570,
+      "precio_costo": 1395.0,
       "categoria": "CELULARES IPHONE NEW",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPHONE 17 PRO 512 GB ESIM SILV",
-      "precio": 1610,
-      "precio_costo": 1430.0,
+      "precio": 1620,
+      "precio_costo": 1440.0,
       "categoria": "CELULARES IPHONE NEW",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPHONE 17 PRO MAX 512 GB ESIM",
-      "precio": 1675,
-      "precio_costo": 1490.0,
+      "precio": 1715,
+      "precio_costo": 1525.0,
       "categoria": "CELULARES IPHONE NEW",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A06 4/64 GB",
@@ -106,7 +106,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A06 4/128 GB",
@@ -116,7 +116,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A07 4/64 GB",
@@ -126,7 +126,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A16 4/128 GB",
@@ -136,7 +136,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A17 4/128 GB",
@@ -146,17 +146,17 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A17 8/256 GB",
-      "precio": 265,
-      "precio_costo": 220.0,
+      "precio": 250,
+      "precio_costo": 205.0,
       "categoria": "CELULARES SAMSUNG",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A17 5G 8/256 GB",
@@ -166,7 +166,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A26 5G 8/256 GB",
@@ -176,7 +176,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A36 5G 8/128 GB",
@@ -186,7 +186,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A36 5G 8/256 GB",
@@ -196,7 +196,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A56 5G 8/128 GB",
@@ -206,7 +206,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG A56 5G 12/256 GB",
@@ -216,7 +216,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG S24 FE 8/256 GB",
@@ -226,7 +226,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG S24 ULTRA 12/256 GB",
@@ -236,7 +236,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SAMSUNG S25 12/256 GB",
@@ -246,17 +246,17 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
-      "nombre": "SAMSUNG S25 ULTRA 1 TB",
-      "precio": 1210,
-      "precio_costo": 1070.0,
+      "nombre": "SAMSUNG S25 PLUS 12/512 GB",
+      "precio": 925,
+      "precio_costo": 815.0,
       "categoria": "CELULARES SAMSUNG",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA E15 2/64 GB",
@@ -266,7 +266,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA G04 4/128 GB",
@@ -276,7 +276,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA G14 4/128 GB",
@@ -286,7 +286,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA G15 4/512 GB",
@@ -296,27 +296,17 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
-      "nombre": "MOTOROLA G56 5G 8/256 GB",
+      "nombre": "MOTOROLA G56 5G 12/256 GB",
       "precio": 235,
       "precio_costo": 195.0,
       "categoria": "CELULARES MOTOROLA",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
-    },
-    {
-      "nombre": "MOTOROLA G56 5G 12/256 GB",
-      "precio": 240,
-      "precio_costo": 200.0,
-      "categoria": "CELULARES MOTOROLA",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA G75 5G 8/256 GB",
@@ -326,7 +316,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA G86 5G 8/256 GB",
@@ -336,7 +326,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA G86 POWER 5G 8/512 GB",
@@ -346,7 +336,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA THINKPHONE 5G 8/256 GB",
@@ -356,7 +346,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA EDGE 40 NEO 12/256 GB",
@@ -366,7 +356,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA EDGE 50 5G 12/512 GB",
@@ -376,7 +366,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA EDGE 50 NEO 5G 8/256 GB",
@@ -386,7 +376,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MOTOROLA EDGE 50 PRO 5G 12/512 GB",
@@ -396,7 +386,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "INFINIX SMART 10 4/128 GB",
@@ -406,7 +396,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "INFINIX HOT 50i 4/256 GB",
@@ -416,7 +406,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "INFINIX HOT 60i 8/256 GB",
@@ -426,7 +416,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "INFINIX HOT 60 PRO 8/256 GB",
@@ -436,7 +426,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "INFINIX HOT 60 PRO+ 8/256 GB",
@@ -446,7 +436,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "INFINIX NOTE 50X 5G 8/256 GB",
@@ -456,7 +446,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "INFINIX NOTE 50 PRO NFC 8/256 GB",
@@ -466,7 +456,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "INFINIX ZERO 40 8/512 GB",
@@ -476,7 +466,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "INFINIX GT 30 PRO 5G 12/256 GB",
@@ -486,7 +476,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI REDMI A5 3/64 GB",
@@ -496,7 +486,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI REDMI A5 4/128 GB",
@@ -506,7 +496,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI REDMI 13X 8/256 GB",
@@ -516,7 +506,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI REDMI 15 6/128 GB",
@@ -526,17 +516,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
-    },
-    {
-      "nombre": "XIAOMI REDMI 15 8/256 GB",
-      "precio": 200,
-      "precio_costo": 160.0,
-      "categoria": "CELULARES XIAOMI",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI REDMI 15C 4/128 GB",
@@ -546,7 +526,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI REDMI 15C 8/256 GB",
@@ -556,7 +536,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI NOTE 12 PRO + 5G 8/256 GB",
@@ -566,7 +546,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI NOTE 14 6/128 GB",
@@ -576,7 +556,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI NOTE 14 5G 8/256 GB",
@@ -586,7 +566,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI NOTE 14 5G 12/512 GB",
@@ -596,7 +576,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI NOTE 14s 8/256 GB",
@@ -606,7 +586,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI NOTE 14s 12/512 GB",
@@ -616,7 +596,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI NOTE 14 PRO 12/512 GB",
@@ -626,7 +606,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI NOTE 14 PRO 5G 8/256 GB",
@@ -636,17 +616,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
-    },
-    {
-      "nombre": "XIAOMI NOTE 14 PRO + 5G 8/256 GB",
-      "precio": 380,
-      "precio_costo": 325.0,
-      "categoria": "CELULARES XIAOMI",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO C71 3/64 GB",
@@ -656,27 +626,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
-    },
-    {
-      "nombre": "XIAOMI POCO C71 4/128 GB",
-      "precio": 135,
-      "precio_costo": 105.0,
-      "categoria": "CELULARES XIAOMI",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
-    },
-    {
-      "nombre": "XIAOMI POCO C85 6/128 GB",
-      "precio": 155,
-      "precio_costo": 120.0,
-      "categoria": "CELULARES XIAOMI",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO C85 8/256 GB",
@@ -686,7 +636,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO M5s 4/128 GB",
@@ -696,7 +646,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO M7 6/128 GB",
@@ -706,7 +656,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO M7 8/256 GB",
@@ -716,7 +666,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO M7 PRO 5G 8/256 GB",
@@ -726,17 +676,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
-    },
-    {
-      "nombre": "XIAOMI POCO X7 5G 8/256 GB",
-      "precio": 310,
-      "precio_costo": 260.0,
-      "categoria": "CELULARES XIAOMI",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO X7 5G 12/512 GB",
@@ -746,7 +686,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO X7 PRO 5G 8/256 GB",
@@ -756,7 +696,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO X7 PRO 5G 12/512 GB",
@@ -766,7 +706,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO F7 5G 12/512 GB",
@@ -776,7 +716,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO F7 PRO 5G 12/512 GB",
@@ -786,7 +726,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI POCO F8 PRO 5G 12/256 GB",
@@ -796,7 +736,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI 13T PRO 5G 12/512 GB",
@@ -806,7 +746,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI 14T 5G 12/512 GB",
@@ -816,7 +756,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI 15 5G 12/512 GB",
@@ -826,7 +766,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI 15T 5G 12/512 GB",
@@ -836,7 +776,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "XIAOMI 15 ULTRA 5G 16/512 GB",
@@ -846,7 +786,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED/CAMUFLADO",
@@ -856,17 +796,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
-    },
-    {
-      "nombre": "JBL CLIP 5 BLUETOOTH  7 WATTS BLACK/RED",
-      "precio": 75,
-      "precio_costo": 50.0,
-      "categoria": "JBL PARLANTES/AURICULARES",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "JBL CHARGE 6 45 WATTS BLACK/BLUE/RED",
@@ -876,7 +806,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "SONY VR2 HORIZON BUNDLE",
@@ -886,17 +816,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
-    },
-    {
-      "nombre": "PS5 SLIM 1 TB DIGITAL",
-      "precio": 575,
-      "precio_costo": 500.0,
-      "categoria": "VIDEO JUEGOS",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "PS5 PRO 2 TB",
@@ -906,7 +826,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "AIRPODS PRO 3RA USBC",
@@ -916,17 +836,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
-    },
-    {
-      "nombre": "WATCH 11 42MM GPS",
-      "precio": 490,
-      "precio_costo": 425.0,
-      "categoria": "APPLE WATCH",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "WATCH 11 46MM GPS",
@@ -936,7 +846,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPAD 11” A16 128 GB",
@@ -946,7 +856,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPAD MINI 7 128 GB",
@@ -956,7 +866,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPAD MINI 7 256 GB",
@@ -966,7 +876,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPAD AIR 13” M3 128 GB",
@@ -976,7 +886,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPAD PRO 11” M5 256 GB",
@@ -986,7 +896,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "IPAD PRO 13” M5 256 GB",
@@ -996,7 +906,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MAC MINI M4 16/256 GB",
@@ -1006,7 +916,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MAC MINI M4 16/512 GB",
@@ -1016,7 +926,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MACBOOK AIR M4 13” 16/256 GB",
@@ -1026,7 +936,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MACBOOK AIR M4 13” 16/512 GB",
@@ -1036,7 +946,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MACBOOK AIR M4 15” 16/256 GB",
@@ -1046,7 +956,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MACBOOK AIR M4 15” 16/512 GB",
@@ -1056,7 +966,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MACBOOK PRO M4 14” 16/1 TB",
@@ -1066,7 +976,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MACBOOK PRO M4 PRO 14” 24/512 GB",
@@ -1076,7 +986,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "MACBOOK PRO M4 PRO 14” 24/1 TB",
@@ -1086,7 +996,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "100” Smart TV Xiaomi TV Max 4K UHD QLED con Google TV y Dolby Atmos",
@@ -1096,7 +1006,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "85” Smart TV Samsung 4K QLED Q70D",
@@ -1106,7 +1016,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "75” Smart TV Samsung LED 4K Crystal UHD U8000F",
@@ -1116,7 +1026,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "75” Smart TV UHD 4K Samsung UN75DU7000GCZB",
@@ -1126,7 +1036,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "75” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con Inteligencia Artificial 75UA8550PSA",
@@ -1136,7 +1046,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "65” Smart TV Samsung QLED 4K Q7 Tizen OS IA",
@@ -1146,7 +1056,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "65” Smart TV Philips LED 4K UHD 65PUD8100/77 Ambilight Titan OS WiFi",
@@ -1156,7 +1066,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "65” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con Inteligencia Artificial 65UA8050PSA",
@@ -1166,7 +1076,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "55” Smart TV Samsung 4K QLED Q65D",
@@ -1176,7 +1086,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "55” Smart TV UHD 4K Samsung Crystal UN55DU7000GCZB",
@@ -1186,7 +1096,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "55” Smart TV Samsung LED 4K Crystal UHD U8000F",
@@ -1196,7 +1106,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
@@ -1206,7 +1116,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "43” Smart TV Samsung Du7000 4K",
@@ -1216,7 +1126,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "43” Smart TV Full HD Samsung UN43T5300A",
@@ -1226,7 +1136,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "43” Smart TV LED Philips 43PFD6910/77",
@@ -1236,7 +1146,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     },
     {
       "nombre": "32” Smart TV Samsung HD UN32T4300A",
@@ -1246,7 +1156,7 @@
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "fecha_actualizacion": "18/12/2025 11:41"
     }
   ]
 }

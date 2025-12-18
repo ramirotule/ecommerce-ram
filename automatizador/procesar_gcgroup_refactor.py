@@ -367,15 +367,14 @@ class ProcesadorGCGroup:
                 
                 # Si el producto ya existe, actualizarlo; si no, agregarlo
                 if producto_ya_existe:
-                    # Actualizar precio y fecha
+                    # Actualizar precio en JSON PÚBLICO (SIN precio_costo - información sensible)
                     for i, prod_existente in enumerate(estructura_publica["productos"][categoria]):
                         if prod_existente.get("nombre", "").upper() == nombre_producto.upper():
                             estructura_publica["productos"][categoria][i]["precio"] = producto['precio_venta']
-                            estructura_publica["productos"][categoria][i]["precio_costo"] = producto['precio_costo']
-                            estructura_publica["productos"][categoria][i]["fecha_actualizacion"] = datetime.now().strftime("%d/%m/%Y %H:%M")
+                            # NO GUARDAR PRECIO_COSTO EN JSON PÚBLICO
                             break
                     
-                    # Mismo para estructura completa
+                    # Mismo para estructura completa (CON precio_costo - solo para uso interno)
                     for i, prod_existente in enumerate(estructura_completa["productos"][categoria]):
                         if prod_existente.get("nombre", "").upper() == nombre_producto.upper():
                             estructura_completa["productos"][categoria][i]["precio"] = producto['precio_venta']
