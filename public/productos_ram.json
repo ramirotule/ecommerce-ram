@@ -1,7 +1,7 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "17/12/2025 10:51",
-    "total_productos": 186
+    "ultima_actualizacion": "18/12/2025 11:41",
+    "total_productos": 190
   },
   "productos": [
     {
@@ -27,37 +27,27 @@
     {
       "nombre": "IPHONE 16 128 GB SIM/ESIM",
       "precio": 825,
-      "categoria": "CELULARES IPHONE NEW",
-      "precio_costo": 725.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO 256 GB ESIM",
-      "precio": 1390,
-      "categoria": "CELULARES IPHONE NEW",
-      "precio_costo": 1235.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "precio": 1375,
+      "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO MAX 256 GB ESIM ORANG",
-      "precio": 1490,
-      "categoria": "CELULARES IPHONE NEW",
-      "precio_costo": 1325.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "precio": 1480,
+      "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO MAX 256 GB ESIM BLUE",
-      "precio": 1520,
-      "categoria": "CELULARES IPHONE NEW",
-      "precio_costo": 1350.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "precio": 1500,
+      "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO MAX 256 GB ESIM SILV",
       "precio": 1530,
-      "categoria": "CELULARES IPHONE NEW",
-      "precio_costo": 1360.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 14 256 GB SIM/ESIM",
@@ -91,17 +81,17 @@
     },
     {
       "nombre": "IPHONE 17 PRO 512 GB ESIM ORANG",
-      "precio": 1560,
+      "precio": 1570,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO 512 GB ESIM SILV",
-      "precio": 1610,
+      "precio": 1620,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO MAX 512 GB ESIM",
-      "precio": 1675,
+      "precio": 1715,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -115,49 +105,39 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
-      "nombre": "SAMSUNG S25 PLUS 12/512 GB",
-      "precio": 930,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
       "nombre": "SAMSUNG A07 4/128 GB",
       "precio": 155,
       "categoria": "CELULARES SAMSUNG"
     },
     {
+      "nombre": "SAMSUNG S25 ULTRA 1 TB",
+      "precio": 1210,
+      "categoria": "CELULARES SAMSUNG"
+    },
+    {
       "nombre": "SAMSUNG A26 5G 6/128 GB",
       "precio": 260,
-      "categoria": "CELULARES SAMSUNG",
-      "precio_costo": 215.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES SAMSUNG"
     },
     {
       "nombre": "SAMSUNG S25 ULTRA 12/256 GB",
-      "precio": 1020,
-      "categoria": "CELULARES SAMSUNG",
-      "precio_costo": 900.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "precio": 1030,
+      "categoria": "CELULARES SAMSUNG"
     },
     {
       "nombre": "SAMSUNG S25 ULTRA 12/512 GB",
-      "precio": 1100,
-      "categoria": "CELULARES SAMSUNG",
-      "precio_costo": 970.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "precio": 1105,
+      "categoria": "CELULARES SAMSUNG"
     },
     {
       "nombre": "TABLET SAMSUNG X110 A9 8.7\" 4/64GB WIFI SILVER/ GRAFITO",
       "precio": 140,
-      "categoria": "CELULARES SAMSUNG",
-      "precio_costo": 110.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES SAMSUNG"
     },
     {
       "nombre": "TABLET SAMSUNG X216B A9+ 11\" 4/64GB 5G GRAFITO",
       "precio": 255,
-      "categoria": "CELULARES SAMSUNG",
-      "precio_costo": 210.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES SAMSUNG"
     },
     {
       "nombre": "SAMSUNG A06 4/64 GB",
@@ -186,7 +166,7 @@
     },
     {
       "nombre": "SAMSUNG A17 8/256 GB",
-      "precio": 265,
+      "precio": 250,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -235,8 +215,8 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
-      "nombre": "SAMSUNG S25 ULTRA 1 TB",
-      "precio": 1210,
+      "nombre": "SAMSUNG S25 PLUS 12/512 GB",
+      "precio": 925,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -255,25 +235,44 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA G05 4/128 GB",
-      "precio": 125,
-      "categoria": "CELULARES MOTOROLA",
-      "precio_costo": 95.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "nombre": "MOTOROLA G56 5G 8/256 GB",
+      "precio": 235,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA G04S 4/256 GB",
+      "precio": 135,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA G05 4/256 GB",
+      "precio": 160,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA G15 4/256 GB",
+      "precio": 155,
+      "categoria": "CELULARES MOTOROLA"
     },
     {
       "nombre": "MOTOROLA EDGE 50 ULTRA 5G 12/512 GB",
       "precio": 665,
-      "categoria": "CELULARES MOTOROLA",
-      "precio_costo": 580.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES MOTOROLA"
     },
     {
       "nombre": "MOTOROLA EDGE 50 ULTRA 5G 16/1 TB",
       "precio": 730,
-      "categoria": "CELULARES MOTOROLA",
-      "precio_costo": 640.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA EDGE 60 FUSION 5G 12/256 GB",
+      "precio": 330,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA EDGE 60 PRO 5G 12/512 GB",
+      "precio": 535,
+      "categoria": "CELULARES MOTOROLA"
     },
     {
       "nombre": "MOTOROLA E15 2/64 GB",
@@ -296,13 +295,8 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA G56 5G 8/256 GB",
-      "precio": 235,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
       "nombre": "MOTOROLA G56 5G 12/256 GB",
-      "precio": 240,
+      "precio": 235,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -348,9 +342,7 @@
     {
       "nombre": "INFINIX HOT 50 PRO 8/256 GB",
       "precio": 200,
-      "categoria": "CELULARES INFINIX",
-      "precio_costo": 160.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES INFINIX"
     },
     {
       "nombre": "INFINIX SMART 10 4/128 GB",
@@ -428,46 +420,59 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
+      "nombre": "XIAOMI REDMI 15 8/256 GB",
+      "precio": 200,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI NOTE 14 PRO + 5G 8/256 GB",
+      "precio": 380,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO C71 4/128 GB",
+      "precio": 135,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO C85 6/128 GB",
+      "precio": 155,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO X7 5G 8/256 GB",
+      "precio": 310,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
       "nombre": "XIAOMI REDMI 14C 8/256 GB",
       "precio": 175,
-      "categoria": "CELULARES XIAOMI",
-      "precio_costo": 140.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI NOTE 13 PRO 5G 8/256 GB",
       "precio": 290,
-      "categoria": "CELULARES XIAOMI",
-      "precio_costo": 245.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI NOTE 13 PRO 5G 12/512 GB",
       "precio": 340,
-      "categoria": "CELULARES XIAOMI",
-      "precio_costo": 290.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI NOTE 14 8/256 GB",
       "precio": 220,
-      "categoria": "CELULARES XIAOMI",
-      "precio_costo": 180.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI NOTE 14 PRO 8/256 GB",
       "precio": 285,
-      "categoria": "CELULARES XIAOMI",
-      "precio_costo": 240.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI NOTE 14 PRO 5G 12/512 GB",
       "precio": 405,
-      "categoria": "CELULARES XIAOMI",
-      "precio_costo": 345.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI REDMI A5 3/64 GB",
@@ -487,11 +492,6 @@
     {
       "nombre": "XIAOMI REDMI 15 6/128 GB",
       "precio": 185,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI REDMI 15 8/256 GB",
-      "precio": 200,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -545,23 +545,8 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "XIAOMI NOTE 14 PRO + 5G 8/256 GB",
-      "precio": 380,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
       "nombre": "XIAOMI POCO C71 3/64 GB",
       "precio": 120,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO C71 4/128 GB",
-      "precio": 135,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO C85 6/128 GB",
-      "precio": 155,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -587,11 +572,6 @@
     {
       "nombre": "XIAOMI POCO M7 PRO 5G 8/256 GB",
       "precio": 265,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO X7 5G 8/256 GB",
-      "precio": 310,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -670,48 +650,38 @@
       "categoria": "VIDEO JUEGOS"
     },
     {
+      "nombre": "PS5 SLIM 1 TB DIGITAL",
+      "precio": 575,
+      "categoria": "VIDEO JUEGOS"
+    },
+    {
       "nombre": "JOYSTICK PS5 CAMUFLADO",
       "precio": 105,
-      "categoria": "VIDEO JUEGOS",
-      "precio_costo": 75.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "VIDEO JUEGOS"
     },
     {
       "nombre": "JOYSTICK PS5 VOLCANIC RED",
       "precio": 105,
-      "categoria": "VIDEO JUEGOS",
-      "precio_costo": 75.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "VIDEO JUEGOS"
     },
     {
       "nombre": "JOYSTICK PS5 COBALT BLUE",
       "precio": 105,
-      "categoria": "VIDEO JUEGOS",
-      "precio_costo": 75.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "VIDEO JUEGOS"
     },
     {
       "nombre": "XBOX S 1TB",
       "precio": 560,
-      "categoria": "VIDEO JUEGOS",
-      "precio_costo": 485.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "VIDEO JUEGOS"
     },
     {
       "nombre": "XBOX X 1TB",
       "precio": 775,
-      "categoria": "VIDEO JUEGOS",
-      "precio_costo": 680.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "VIDEO JUEGOS"
     },
     {
       "nombre": "SONY VR2 HORIZON BUNDLE",
       "precio": 620,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
-      "nombre": "PS5 SLIM 1 TB DIGITAL",
-      "precio": 575,
       "categoria": "VIDEO JUEGOS"
     },
     {
@@ -727,6 +697,11 @@
     {
       "nombre": "WATCH 11 42MM GPS",
       "precio": 490,
+      "categoria": "APPLE WATCH"
+    },
+    {
+      "nombre": "WATCH SE 3 40MM GPS",
+      "precio": 340,
       "categoria": "APPLE WATCH"
     },
     {
@@ -755,41 +730,28 @@
       "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
+      "nombre": "JBL CLIP 5 BLUETOOTH  7 WATTS BLACK/RED",
+      "precio": 75,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
       "nombre": "AURICULAR JBL TUNE T520BT WHITE",
       "precio": 60,
-      "categoria": "JBL PARLANTES/AURICULARES",
-      "precio_costo": 35.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
       "nombre": "JBL FLIP 7 35 WATTS BLACK/BLUE/RED/PINK/CAMUFLADO",
       "precio": 140,
-      "categoria": "JBL PARLANTES/AURICULARES",
-      "precio_costo": 110.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
-    },
-    {
-      "nombre": "JBL BOOMBOX 3 180 WATTS 2V CAMUFLADO",
-      "precio": 425,
-      "categoria": "JBL PARLANTES/AURICULARES",
-      "precio_costo": 365.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
       "nombre": "JBL BOOMBOX 4 210 WATTS 2V NEGRO",
       "precio": 575,
-      "categoria": "JBL PARLANTES/AURICULARES",
-      "precio_costo": 500.0,
-      "fecha_actualizacion": "17/12/2025 10:51"
+      "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
       "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED/CAMUFLADO",
       "precio": 65,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL CLIP 5 BLUETOOTH  7 WATTS BLACK/RED",
-      "precio": 75,
       "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
