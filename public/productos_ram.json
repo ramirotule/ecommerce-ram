@@ -1,12 +1,12 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "18/12/2025 11:41",
-    "total_productos": 190
+    "ultima_actualizacion": "19/12/2025 10:20",
+    "total_productos": 198
   },
   "productos": [
     {
       "nombre": "IPHONE 15 128 GB SIM/ESIM",
-      "precio": 705,
+      "precio": 740,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -26,7 +26,7 @@
     },
     {
       "nombre": "IPHONE 16 128 GB SIM/ESIM",
-      "precio": 825,
+      "precio": 810,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -36,17 +36,17 @@
     },
     {
       "nombre": "IPHONE 17 PRO MAX 256 GB ESIM ORANG",
-      "precio": 1480,
+      "precio": 1475,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO MAX 256 GB ESIM BLUE",
-      "precio": 1500,
+      "precio": 1490,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO MAX 256 GB ESIM SILV",
-      "precio": 1530,
+      "precio": 1510,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -56,7 +56,7 @@
     },
     {
       "nombre": "IPHONE 16 256 GB SIM/ESIM",
-      "precio": 925,
+      "precio": 915,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -71,7 +71,7 @@
     },
     {
       "nombre": "IPHONE 17 256 GB ESIM",
-      "precio": 1050,
+      "precio": 1030,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -81,7 +81,7 @@
     },
     {
       "nombre": "IPHONE 17 PRO 512 GB ESIM ORANG",
-      "precio": 1570,
+      "precio": 1565,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -92,6 +92,16 @@
     {
       "nombre": "IPHONE 17 PRO MAX 512 GB ESIM",
       "precio": 1715,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 13 128 GB SIM",
+      "precio": 565,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 14 128 GB SIM/ESIM",
+      "precio": 620,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -166,7 +176,7 @@
     },
     {
       "nombre": "SAMSUNG A17 8/256 GB",
-      "precio": 250,
+      "precio": 265,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -211,7 +221,7 @@
     },
     {
       "nombre": "SAMSUNG S25 12/256 GB",
-      "precio": 775,
+      "precio": 770,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -690,6 +700,11 @@
       "categoria": "VIDEO JUEGOS"
     },
     {
+      "nombre": "JOYSTICK PS5 MIDNIGHT",
+      "precio": 105,
+      "categoria": "VIDEO JUEGOS"
+    },
+    {
       "nombre": "WATCH ULTRA 3 CELL 49MM GPS",
       "precio": 930,
       "categoria": "APPLE WATCH"
@@ -760,6 +775,21 @@
       "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
+      "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLUE/RED/CAMUFLADO",
+      "precio": 65,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
+      "nombre": "JBL FLIP 7 35 WATTS BLACK/BLUE/RED/PINK",
+      "precio": 140,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
+      "nombre": "JBL XTREME 4 100 WATTS 24 HORAS NEGRO",
+      "precio": 315,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
       "nombre": "AIRPODS PRO 2DA USBC",
       "precio": 255,
       "categoria": "AIRPODS"
@@ -780,8 +810,13 @@
       "categoria": "AIRPODS"
     },
     {
+      "nombre": "AIRPODS MAX MID/PURP/SKYBLUE/STAR",
+      "precio": 660,
+      "categoria": "AIRPODS"
+    },
+    {
       "nombre": "IPAD 11” A16 256 GB",
-      "precio": 570,
+      "precio": 585,
       "categoria": "IPAD"
     },
     {
@@ -822,6 +857,11 @@
     {
       "nombre": "IPAD PRO 13” M5 256 GB",
       "precio": 1565,
+      "categoria": "IPAD"
+    },
+    {
+      "nombre": "IPAD PRO 13” M5 512 GB",
+      "precio": 1775,
       "categoria": "IPAD"
     },
     {
