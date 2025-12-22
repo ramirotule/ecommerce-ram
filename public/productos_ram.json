@@ -1,7 +1,7 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "19/12/2025 10:20",
-    "total_productos": 198
+    "ultima_actualizacion": "22/12/2025 10:40",
+    "total_productos": 211
   },
   "productos": [
     {
@@ -46,7 +46,7 @@
     },
     {
       "nombre": "IPHONE 17 PRO MAX 256 GB ESIM SILV",
-      "precio": 1510,
+      "precio": 1500,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -56,7 +56,7 @@
     },
     {
       "nombre": "IPHONE 16 256 GB SIM/ESIM",
-      "precio": 915,
+      "precio": 925,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -71,7 +71,7 @@
     },
     {
       "nombre": "IPHONE 17 256 GB ESIM",
-      "precio": 1030,
+      "precio": 1055,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -81,17 +81,17 @@
     },
     {
       "nombre": "IPHONE 17 PRO 512 GB ESIM ORANG",
-      "precio": 1565,
+      "precio": 1560,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO 512 GB ESIM SILV",
-      "precio": 1620,
+      "precio": 1590,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 17 PRO MAX 512 GB ESIM",
-      "precio": 1715,
+      "precio": 1725,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -101,7 +101,22 @@
     },
     {
       "nombre": "IPHONE 14 128 GB SIM/ESIM",
-      "precio": 620,
+      "precio": 630,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 17 PRO 256 GB ESIM BLUE/ORANG",
+      "precio": 1355,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 17 PRO 256 GB ESIM SILVER",
+      "precio": 1375,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM BLUE/ ORANG",
+      "precio": 1465,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -136,7 +151,7 @@
     },
     {
       "nombre": "SAMSUNG S25 ULTRA 12/512 GB",
-      "precio": 1105,
+      "precio": 1100,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -176,7 +191,7 @@
     },
     {
       "nombre": "SAMSUNG A17 8/256 GB",
-      "precio": 265,
+      "precio": 260,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -191,7 +206,7 @@
     },
     {
       "nombre": "SAMSUNG A36 5G 8/128 GB",
-      "precio": 315,
+      "precio": 305,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -201,7 +216,7 @@
     },
     {
       "nombre": "SAMSUNG A56 5G 8/128 GB",
-      "precio": 385,
+      "precio": 375,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -211,7 +226,7 @@
     },
     {
       "nombre": "SAMSUNG S24 FE 8/256 GB",
-      "precio": 540,
+      "precio": 550,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -230,6 +245,11 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
+      "nombre": "SAMSUNG A17 6/128 GB",
+      "precio": 225,
+      "categoria": "CELULARES SAMSUNG"
+    },
+    {
       "nombre": "MOTOROLA G24 POWER 5G 8/256 GB",
       "precio": 170,
       "categoria": "CELULARES MOTOROLA"
@@ -241,12 +261,12 @@
     },
     {
       "nombre": "MOTOROLA EDGE 50 FUSION 5G 8/256 GB",
-      "precio": 270,
+      "precio": 265,
       "categoria": "CELULARES MOTOROLA"
     },
     {
       "nombre": "MOTOROLA G56 5G 8/256 GB",
-      "precio": 235,
+      "precio": 225,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -271,12 +291,12 @@
     },
     {
       "nombre": "MOTOROLA EDGE 50 ULTRA 5G 16/1 TB",
-      "precio": 730,
+      "precio": 720,
       "categoria": "CELULARES MOTOROLA"
     },
     {
       "nombre": "MOTOROLA EDGE 60 FUSION 5G 12/256 GB",
-      "precio": 330,
+      "precio": 320,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -301,7 +321,7 @@
     },
     {
       "nombre": "MOTOROLA G15 4/512 GB",
-      "precio": 170,
+      "precio": 165,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -331,12 +351,12 @@
     },
     {
       "nombre": "MOTOROLA EDGE 40 NEO 12/256 GB",
-      "precio": 265,
+      "precio": 260,
       "categoria": "CELULARES MOTOROLA"
     },
     {
       "nombre": "MOTOROLA EDGE 50 5G 12/512 GB",
-      "precio": 325,
+      "precio": 320,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -350,13 +370,23 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
+      "nombre": "MOTOROLA G24 POWER 8/256 GB",
+      "precio": 200,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
+      "precio": 320,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
       "nombre": "INFINIX HOT 50 PRO 8/256 GB",
       "precio": 200,
       "categoria": "CELULARES INFINIX"
     },
     {
       "nombre": "INFINIX SMART 10 4/128 GB",
-      "precio": 135,
+      "precio": 130,
       "categoria": "CELULARES INFINIX"
     },
     {
@@ -396,7 +426,7 @@
     },
     {
       "nombre": "INFINIX GT 30 PRO 5G 12/256 GB",
-      "precio": 380,
+      "precio": 370,
       "categoria": "CELULARES INFINIX"
     },
     {
@@ -426,12 +456,12 @@
     },
     {
       "nombre": "XIAOMI 15T PRO 5G 12/512 GB",
-      "precio": 800,
+      "precio": 775,
       "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI REDMI 15 8/256 GB",
-      "precio": 200,
+      "precio": 205,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -611,7 +641,7 @@
     },
     {
       "nombre": "XIAOMI POCO F8 PRO 5G 12/256 GB",
-      "precio": 665,
+      "precio": 660,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -631,12 +661,37 @@
     },
     {
       "nombre": "XIAOMI 15T 5G 12/512 GB",
-      "precio": 620,
+      "precio": 600,
       "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI 15 ULTRA 5G 16/512 GB",
       "precio": 1310,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI NOTE 14 PRO PLUS 8/256 GB",
+      "precio": 380,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI NOTE 14 PRO PLUS 12/256 GB",
+      "precio": 450,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO C75 8/256 GB",
+      "precio": 175,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO F7 ULTRA 5G 12/256 GB",
+      "precio": 725,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO F8 PRO 5G 12/512 GB",
+      "precio": 710,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -821,7 +876,7 @@
     },
     {
       "nombre": "IPAD AIR 11” M3 128 GB",
-      "precio": 670,
+      "precio": 710,
       "categoria": "IPAD"
     },
     {
@@ -856,12 +911,17 @@
     },
     {
       "nombre": "IPAD PRO 13” M5 256 GB",
-      "precio": 1565,
+      "precio": 1555,
       "categoria": "IPAD"
     },
     {
       "nombre": "IPAD PRO 13” M5 512 GB",
       "precio": 1775,
+      "categoria": "IPAD"
+    },
+    {
+      "nombre": "IPAD PRO 11” M5 512 GB",
+      "precio": 1455,
       "categoria": "IPAD"
     },
     {
@@ -876,7 +936,7 @@
     },
     {
       "nombre": "85” Smart TV Samsung 4K QLED Q70D",
-      "precio": 2220,
+      "precio": 2185,
       "categoria": "TELEVISORES"
     },
     {
@@ -896,7 +956,7 @@
     },
     {
       "nombre": "65” Smart TV Samsung QLED 4K Q7 Tizen OS IA",
-      "precio": 1000,
+      "precio": 1030,
       "categoria": "TELEVISORES"
     },
     {
@@ -906,12 +966,12 @@
     },
     {
       "nombre": "65” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con Inteligencia Artificial 65UA8050PSA",
-      "precio": 665,
+      "precio": 675,
       "categoria": "TELEVISORES"
     },
     {
       "nombre": "55” Smart TV Samsung 4K QLED Q65D",
-      "precio": 655,
+      "precio": 640,
       "categoria": "TELEVISORES"
     },
     {
@@ -926,7 +986,7 @@
     },
     {
       "nombre": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
-      "precio": 465,
+      "precio": 475,
       "categoria": "TELEVISORES"
     },
     {
@@ -936,7 +996,7 @@
     },
     {
       "nombre": "43” Smart TV Full HD Samsung UN43T5300A",
-      "precio": 355,
+      "precio": 375,
       "categoria": "TELEVISORES"
     },
     {
@@ -947,6 +1007,11 @@
     {
       "nombre": "32” Smart TV Samsung HD UN32T4300A",
       "precio": 240,
+      "categoria": "TELEVISORES"
+    },
+    {
+      "nombre": "65” Smart TV Samsung led 4K Du7000",
+      "precio": 885,
       "categoria": "TELEVISORES"
     },
     {

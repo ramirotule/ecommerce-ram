@@ -1,92 +1,142 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "19/12/2025 10:20",
-    "fecha_extraccion_gcgroup": "19/12/2025 10:20",
-    "productos_gcgroup": 148,
+    "ultima_actualizacion": "22/12/2025 10:40",
+    "fecha_extraccion_gcgroup": "22/12/2025 10:40",
+    "productos_gcgroup": 155,
     "proveedor_gcgroup": "GcGroup",
     "formula_precio_gcgroup": "(costo + 18%) + $20, redondeado a múltiplo de 5",
-    "total_productos": 8
+    "total_productos": 13
   },
   "productos": [
     {
-      "nombre": "IPHONE 13 128 GB SIM",
-      "precio": 565,
-      "precio_costo": 490.0,
+      "nombre": "IPHONE 17 PRO 256 GB ESIM BLUE/ORANG",
+      "precio": 1355,
+      "precio_costo": 1200.0,
       "categoria": "CELULARES IPHONE NEW",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "19/12/2025 10:20"
+      "fecha_actualizacion": "22/12/2025 10:40"
     },
     {
-      "nombre": "IPHONE 14 128 GB SIM/ESIM",
-      "precio": 620,
-      "precio_costo": 540.0,
+      "nombre": "IPHONE 17 PRO 256 GB ESIM SILVER",
+      "precio": 1375,
+      "precio_costo": 1220.0,
       "categoria": "CELULARES IPHONE NEW",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "19/12/2025 10:20"
+      "fecha_actualizacion": "22/12/2025 10:40"
     },
     {
-      "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLUE/RED/CAMUFLADO",
-      "precio": 65,
-      "precio_costo": 40.0,
-      "categoria": "JBL PARLANTES/AURICULARES",
+      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM BLUE/ ORANG",
+      "precio": 1465,
+      "precio_costo": 1300.0,
+      "categoria": "CELULARES IPHONE NEW",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "19/12/2025 10:20"
+      "fecha_actualizacion": "22/12/2025 10:40"
     },
     {
-      "nombre": "JBL FLIP 7 35 WATTS BLACK/BLUE/RED/PINK",
-      "precio": 140,
-      "precio_costo": 110.0,
-      "categoria": "JBL PARLANTES/AURICULARES",
+      "nombre": "SAMSUNG A17 6/128 GB",
+      "precio": 225,
+      "precio_costo": 185.0,
+      "categoria": "CELULARES SAMSUNG",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "19/12/2025 10:20"
+      "fecha_actualizacion": "22/12/2025 10:40"
     },
     {
-      "nombre": "JBL XTREME 4 100 WATTS 24 HORAS NEGRO",
-      "precio": 315,
-      "precio_costo": 265.0,
-      "categoria": "JBL PARLANTES/AURICULARES",
+      "nombre": "MOTOROLA G24 POWER 8/256 GB",
+      "precio": 200,
+      "precio_costo": 160.0,
+      "categoria": "CELULARES MOTOROLA",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "19/12/2025 10:20"
+      "fecha_actualizacion": "22/12/2025 10:40"
     },
     {
-      "nombre": "JOYSTICK PS5 MIDNIGHT",
-      "precio": 105,
-      "precio_costo": 75.0,
-      "categoria": "VIDEO JUEGOS",
+      "nombre": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
+      "precio": 320,
+      "precio_costo": 270.0,
+      "categoria": "CELULARES MOTOROLA",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "19/12/2025 10:20"
+      "fecha_actualizacion": "22/12/2025 10:40"
     },
     {
-      "nombre": "AIRPODS MAX MID/PURP/SKYBLUE/STAR",
-      "precio": 660,
-      "precio_costo": 575.0,
-      "categoria": "AIRPODS",
+      "nombre": "XIAOMI NOTE 14 PRO PLUS 8/256 GB",
+      "precio": 380,
+      "precio_costo": 325.0,
+      "categoria": "CELULARES XIAOMI",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "19/12/2025 10:20"
+      "fecha_actualizacion": "22/12/2025 10:40"
     },
     {
-      "nombre": "IPAD PRO 13” M5 512 GB",
-      "precio": 1775,
-      "precio_costo": 1580.0,
+      "nombre": "XIAOMI NOTE 14 PRO PLUS 12/256 GB",
+      "precio": 450,
+      "precio_costo": 385.0,
+      "categoria": "CELULARES XIAOMI",
+      "proveedor": "GcGroup",
+      "ganancia_porcentaje": 18,
+      "extra_usd": 20,
+      "fecha_actualizacion": "22/12/2025 10:40"
+    },
+    {
+      "nombre": "XIAOMI POCO C75 8/256 GB",
+      "precio": 175,
+      "precio_costo": 140.0,
+      "categoria": "CELULARES XIAOMI",
+      "proveedor": "GcGroup",
+      "ganancia_porcentaje": 18,
+      "extra_usd": 20,
+      "fecha_actualizacion": "22/12/2025 10:40"
+    },
+    {
+      "nombre": "XIAOMI POCO F7 ULTRA 5G 12/256 GB",
+      "precio": 725,
+      "precio_costo": 635.0,
+      "categoria": "CELULARES XIAOMI",
+      "proveedor": "GcGroup",
+      "ganancia_porcentaje": 18,
+      "extra_usd": 20,
+      "fecha_actualizacion": "22/12/2025 10:40"
+    },
+    {
+      "nombre": "XIAOMI POCO F8 PRO 5G 12/512 GB",
+      "precio": 710,
+      "precio_costo": 620.0,
+      "categoria": "CELULARES XIAOMI",
+      "proveedor": "GcGroup",
+      "ganancia_porcentaje": 18,
+      "extra_usd": 20,
+      "fecha_actualizacion": "22/12/2025 10:40"
+    },
+    {
+      "nombre": "IPAD PRO 11” M5 512 GB",
+      "precio": 1455,
+      "precio_costo": 1290.0,
       "categoria": "IPAD",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "19/12/2025 10:20"
+      "fecha_actualizacion": "22/12/2025 10:40"
+    },
+    {
+      "nombre": "65” Smart TV Samsung led 4K Du7000",
+      "precio": 885,
+      "precio_costo": 780.0,
+      "categoria": "TELEVISORES",
+      "proveedor": "GcGroup",
+      "ganancia_porcentaje": 18,
+      "extra_usd": 20,
+      "fecha_actualizacion": "22/12/2025 10:40"
     }
   ]
 }
