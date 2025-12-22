@@ -472,7 +472,8 @@ class ProcesadorGCGroup:
             
             with open(archivo_con_fecha, 'w', encoding='utf-8') as f:
                 # Encabezado
-                f.write(f"🔥 LISTA DE PRECIOS RAM - {datetime.now().strftime('%d/%m/%Y')} 🔥\n")
+                f.write(f"🔥 LISTA DE PRECIOS RAM INFORMÁTICA - {datetime.now().strftime('%d/%m/%Y')} 🔥\n")
+                f.write(f" 🌐 WWW.RAMINFORMATICA.COM.AR\n")
                 f.write("=" * 50 + "\n\n")
                 
                 # Agrupar por categorías
