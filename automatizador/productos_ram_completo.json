@@ -1,142 +1,72 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "22/12/2025 10:40",
-    "fecha_extraccion_gcgroup": "22/12/2025 10:40",
-    "productos_gcgroup": 155,
+    "ultima_actualizacion": "23/12/2025 10:57",
+    "fecha_extraccion_gcgroup": "23/12/2025 10:57",
+    "productos_gcgroup": 150,
     "proveedor_gcgroup": "GcGroup",
     "formula_precio_gcgroup": "(costo + 18%) + $20, redondeado a múltiplo de 5",
-    "total_productos": 13
+    "total_productos": 6
   },
   "productos": [
     {
-      "nombre": "IPHONE 17 PRO 256 GB ESIM BLUE/ORANG",
-      "precio": 1355,
-      "precio_costo": 1200.0,
-      "categoria": "CELULARES IPHONE NEW",
+      "nombre": "IPHONE 16 256 GB AS IS ULTRAMARINE",
+      "precio": 835,
+      "precio_costo": 735.0,
+      "categoria": "CELULARES IPHONE AS IS",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
+      "fecha_actualizacion": "23/12/2025 10:57"
     },
     {
-      "nombre": "IPHONE 17 PRO 256 GB ESIM SILVER",
-      "precio": 1375,
-      "precio_costo": 1220.0,
-      "categoria": "CELULARES IPHONE NEW",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
-    },
-    {
-      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM BLUE/ ORANG",
-      "precio": 1465,
-      "precio_costo": 1300.0,
-      "categoria": "CELULARES IPHONE NEW",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
-    },
-    {
-      "nombre": "SAMSUNG A17 6/128 GB",
-      "precio": 225,
-      "precio_costo": 185.0,
+      "nombre": "SAMSUNG A07 4/128GB",
+      "precio": 165,
+      "precio_costo": 130.0,
       "categoria": "CELULARES SAMSUNG",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
+      "fecha_actualizacion": "23/12/2025 10:57"
     },
     {
-      "nombre": "MOTOROLA G24 POWER 8/256 GB",
-      "precio": 200,
-      "precio_costo": 160.0,
+      "nombre": "MOTOROLA G35 5G 4/128 GB",
+      "precio": 165,
+      "precio_costo": 130.0,
       "categoria": "CELULARES MOTOROLA",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
+      "fecha_actualizacion": "23/12/2025 10:57"
     },
     {
-      "nombre": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
-      "precio": 320,
-      "precio_costo": 270.0,
-      "categoria": "CELULARES MOTOROLA",
+      "nombre": "INFINIX NOTE 40 PRO NFC 8/256 GB",
+      "precio": 310,
+      "precio_costo": 260.0,
+      "categoria": "CELULARES INFINIX",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
+      "fecha_actualizacion": "23/12/2025 10:57"
     },
     {
-      "nombre": "XIAOMI NOTE 14 PRO PLUS 8/256 GB",
-      "precio": 380,
-      "precio_costo": 325.0,
+      "nombre": "XIAOMI NOTE 13 PRO PLUS 5G 8/256 GB",
+      "precio": 290,
+      "precio_costo": 245.0,
       "categoria": "CELULARES XIAOMI",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
+      "fecha_actualizacion": "23/12/2025 10:57"
     },
     {
-      "nombre": "XIAOMI NOTE 14 PRO PLUS 12/256 GB",
-      "precio": 450,
-      "precio_costo": 385.0,
-      "categoria": "CELULARES XIAOMI",
+      "nombre": "AURICULAR JBL TUNE T720BT BLACK",
+      "precio": 80,
+      "precio_costo": 55.0,
+      "categoria": "JBL PARLANTES/AURICULARES",
       "proveedor": "GcGroup",
       "ganancia_porcentaje": 18,
       "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
-    },
-    {
-      "nombre": "XIAOMI POCO C75 8/256 GB",
-      "precio": 175,
-      "precio_costo": 140.0,
-      "categoria": "CELULARES XIAOMI",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
-    },
-    {
-      "nombre": "XIAOMI POCO F7 ULTRA 5G 12/256 GB",
-      "precio": 725,
-      "precio_costo": 635.0,
-      "categoria": "CELULARES XIAOMI",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
-    },
-    {
-      "nombre": "XIAOMI POCO F8 PRO 5G 12/512 GB",
-      "precio": 710,
-      "precio_costo": 620.0,
-      "categoria": "CELULARES XIAOMI",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
-    },
-    {
-      "nombre": "IPAD PRO 11” M5 512 GB",
-      "precio": 1455,
-      "precio_costo": 1290.0,
-      "categoria": "IPAD",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
-    },
-    {
-      "nombre": "65” Smart TV Samsung led 4K Du7000",
-      "precio": 885,
-      "precio_costo": 780.0,
-      "categoria": "TELEVISORES",
-      "proveedor": "GcGroup",
-      "ganancia_porcentaje": 18,
-      "extra_usd": 20,
-      "fecha_actualizacion": "22/12/2025 10:40"
+      "fecha_actualizacion": "23/12/2025 10:57"
     }
   ]
 }

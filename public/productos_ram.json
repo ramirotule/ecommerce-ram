@@ -1,7 +1,7 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "22/12/2025 10:40",
-    "total_productos": 211
+    "ultima_actualizacion": "23/12/2025 10:57",
+    "total_productos": 217
   },
   "productos": [
     {
@@ -26,7 +26,7 @@
     },
     {
       "nombre": "IPHONE 16 128 GB SIM/ESIM",
-      "precio": 810,
+      "precio": 830,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -46,7 +46,7 @@
     },
     {
       "nombre": "IPHONE 17 PRO MAX 256 GB ESIM SILV",
-      "precio": 1500,
+      "precio": 1475,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -71,7 +71,7 @@
     },
     {
       "nombre": "IPHONE 17 256 GB ESIM",
-      "precio": 1055,
+      "precio": 1050,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -81,7 +81,7 @@
     },
     {
       "nombre": "IPHONE 17 PRO 512 GB ESIM ORANG",
-      "precio": 1560,
+      "precio": 1570,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -91,7 +91,7 @@
     },
     {
       "nombre": "IPHONE 17 PRO MAX 512 GB ESIM",
-      "precio": 1725,
+      "precio": 1665,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -111,7 +111,7 @@
     },
     {
       "nombre": "IPHONE 17 PRO 256 GB ESIM SILVER",
-      "precio": 1375,
+      "precio": 1340,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -146,7 +146,7 @@
     },
     {
       "nombre": "SAMSUNG S25 ULTRA 12/256 GB",
-      "precio": 1030,
+      "precio": 1025,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -196,7 +196,7 @@
     },
     {
       "nombre": "SAMSUNG A17 5G 8/256 GB",
-      "precio": 280,
+      "precio": 275,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -226,12 +226,12 @@
     },
     {
       "nombre": "SAMSUNG S24 FE 8/256 GB",
-      "precio": 550,
+      "precio": 540,
       "categoria": "CELULARES SAMSUNG"
     },
     {
       "nombre": "SAMSUNG S24 ULTRA 12/256 GB",
-      "precio": 955,
+      "precio": 940,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -247,6 +247,11 @@
     {
       "nombre": "SAMSUNG A17 6/128 GB",
       "precio": 225,
+      "categoria": "CELULARES SAMSUNG"
+    },
+    {
+      "nombre": "SAMSUNG A07 4/128GB",
+      "precio": 165,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -326,7 +331,7 @@
     },
     {
       "nombre": "MOTOROLA G56 5G 12/256 GB",
-      "precio": 235,
+      "precio": 230,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -380,6 +385,11 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
+      "nombre": "MOTOROLA G35 5G 4/128 GB",
+      "precio": 165,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
       "nombre": "INFINIX HOT 50 PRO 8/256 GB",
       "precio": 200,
       "categoria": "CELULARES INFINIX"
@@ -430,8 +440,13 @@
       "categoria": "CELULARES INFINIX"
     },
     {
+      "nombre": "INFINIX NOTE 40 PRO NFC 8/256 GB",
+      "precio": 310,
+      "categoria": "CELULARES INFINIX"
+    },
+    {
       "nombre": "XIAOMI POCO F8 ULTRA 5G 12/256 GB",
-      "precio": 865,
+      "precio": 870,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -541,7 +556,7 @@
     },
     {
       "nombre": "XIAOMI REDMI 15C 8/256 GB",
-      "precio": 175,
+      "precio": 180,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -695,6 +710,11 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
+      "nombre": "XIAOMI NOTE 13 PRO PLUS 5G 8/256 GB",
+      "precio": 290,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
       "nombre": "VOLANTE CON PEDAL LOGITECH G29 PS5",
       "precio": 365,
       "categoria": "VIDEO JUEGOS"
@@ -845,6 +865,11 @@
       "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
+      "nombre": "AURICULAR JBL TUNE T720BT BLACK",
+      "precio": 80,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
       "nombre": "AIRPODS PRO 2DA USBC",
       "precio": 255,
       "categoria": "AIRPODS"
@@ -911,7 +936,7 @@
     },
     {
       "nombre": "IPAD PRO 13” M5 256 GB",
-      "precio": 1555,
+      "precio": 1510,
       "categoria": "IPAD"
     },
     {
@@ -1058,6 +1083,11 @@
       "nombre": "MACBOOK PRO M4 PRO 14” 24/1 TB",
       "precio": 2840,
       "categoria": "MACBOOK"
+    },
+    {
+      "nombre": "IPHONE 16 256 GB AS IS ULTRAMARINE",
+      "precio": 835,
+      "categoria": "CELULARES IPHONE AS IS"
     }
   ]
 }
