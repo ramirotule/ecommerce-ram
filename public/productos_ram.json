@@ -1,9 +1,14 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "13/01/2026 12:08",
-    "total_productos": 263
+    "ultima_actualizacion": "13/01/2026 15:03",
+    "total_productos": 151
   },
   "productos": [
+    {
+      "nombre": "IPHONE 14 128 GB SIM/ESIM",
+      "precio": 655,
+      "categoria": "CELULARES IPHONE NEW"
+    },
     {
       "nombre": "IPHONE 15 128 GB SIM/ESIM",
       "precio": 765,
@@ -15,33 +20,13 @@
       "categoria": "CELULARES IPHONE NEW"
     },
     {
-      "nombre": "IPHONE 17 PRO 256 GB ESIM",
-      "precio": 1375,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM",
-      "precio": 1490,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 14 256 GB SIM/ESIM",
-      "precio": 775,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
       "nombre": "IPHONE 16 256 GB SIM/ESIM",
       "precio": 930,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
-      "nombre": "IPHONE 16 PLUS 256 GB SIM/ESIM",
-      "precio": 1080,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 16 PRO MAX 256 GB ESIM",
-      "precio": 1425,
+      "nombre": "IPHONE 16 PRO 128 GB ESIM",
+      "precio": 1190,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -50,63 +35,8 @@
       "categoria": "CELULARES IPHONE NEW"
     },
     {
-      "nombre": "IPHONE AIR 256 GB ESIM",
-      "precio": 1100,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 PRO 512 GB ESIM ORANG",
-      "precio": 1570,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 PRO 512 GB ESIM SILV",
-      "precio": 1590,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 PRO MAX 512 GB ESIM",
-      "precio": 1770,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 13 128 GB SIM",
-      "precio": 565,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 14 128 GB SIM/ESIM",
-      "precio": 655,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
       "nombre": "IPHONE 17 PRO 256 GB ESIM ORANGE",
       "precio": 1425,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 PRO 256 GB ESIM SILVER",
-      "precio": 1470,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 PRO 512 GB ESIM",
-      "precio": 1635,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM ORANGE",
-      "precio": 1580,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM BLUE",
-      "precio": 1605,
-      "categoria": "CELULARES IPHONE NEW"
-    },
-    {
-      "nombre": "IPHONE 16 PRO 128 GB ESIM",
-      "precio": 1190,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -120,58 +50,13 @@
       "categoria": "CELULARES IPHONE NEW"
     },
     {
-      "nombre": "SAMSUNG A17 5G 6/128 GB",
-      "precio": 260,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG A56 5G 8/256 GB",
-      "precio": 425,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG A07 4/128 GB",
-      "precio": 155,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG S25 ULTRA 1 TB",
-      "precio": 1210,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG A26 5G 6/128 GB",
-      "precio": 260,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG S25 ULTRA 12/256 GB",
-      "precio": 1025,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG S25 ULTRA 12/512 GB",
-      "precio": 1115,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "TABLET SAMSUNG X110 A9 8.7\" 4/64GB WIFI SILVER/ GRAFITO",
-      "precio": 140,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "TABLET SAMSUNG X216B A9+ 11\" 4/64GB 5G GRAFITO",
-      "precio": 255,
-      "categoria": "CELULARES SAMSUNG"
+      "nombre": "IPHONE 17 PRO MAX 512 GB ESIM",
+      "precio": 1770,
+      "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "SAMSUNG A06 4/64 GB",
       "precio": 130,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG A06 4/128 GB",
-      "precio": 140,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -185,11 +70,6 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
-      "nombre": "SAMSUNG A17 4/128 GB",
-      "precio": 220,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
       "nombre": "SAMSUNG A17 8/256 GB",
       "precio": 255,
       "categoria": "CELULARES SAMSUNG"
@@ -197,6 +77,11 @@
     {
       "nombre": "SAMSUNG A17 5G 8/256 GB",
       "precio": 275,
+      "categoria": "CELULARES SAMSUNG"
+    },
+    {
+      "nombre": "SAMSUNG A26 5G 6/128 GB",
+      "precio": 260,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -220,38 +105,8 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
-      "nombre": "SAMSUNG A56 5G 12/256 GB",
-      "precio": 420,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
       "nombre": "SAMSUNG S24 FE 8/256 GB",
       "precio": 540,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG S24 ULTRA 12/256 GB",
-      "precio": 940,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG S25 12/256 GB",
-      "precio": 770,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG S25 PLUS 12/512 GB",
-      "precio": 925,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG A17 6/128 GB",
-      "precio": 225,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG A07 4/128GB",
-      "precio": 165,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -260,27 +115,17 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
-      "nombre": "MOTOROLA G24 POWER 5G 8/256 GB",
-      "precio": 170,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G55 5G 8/256 GB",
-      "precio": 220,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA EDGE 50 FUSION 5G 8/256 GB",
-      "precio": 265,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G56 5G 8/256 GB",
-      "precio": 225,
+      "nombre": "MOTOROLA E40 4/64 GB",
+      "precio": 135,
       "categoria": "CELULARES MOTOROLA"
     },
     {
       "nombre": "MOTOROLA G04S 4/256 GB",
+      "precio": 135,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA G05 4/128 GB",
       "precio": 135,
       "categoria": "CELULARES MOTOROLA"
     },
@@ -290,38 +135,8 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA G15 4/256 GB",
+      "nombre": "MOTOROLA G06 4/128 GB",
       "precio": 155,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA EDGE 50 ULTRA 5G 12/512 GB",
-      "precio": 665,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA EDGE 50 ULTRA 5G 16/1 TB",
-      "precio": 715,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA EDGE 60 FUSION 5G 12/256 GB",
-      "precio": 310,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA EDGE 60 PRO 5G 12/512 GB",
-      "precio": 535,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA E15 2/64 GB",
-      "precio": 110,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G04 4/128 GB",
-      "precio": 135,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -330,8 +145,28 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
+      "nombre": "MOTOROLA G15 4/256 GB",
+      "precio": 155,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
       "nombre": "MOTOROLA G15 4/512 GB",
       "precio": 165,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA G24 POWER 8/256 GB",
+      "precio": 200,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA G55 5G 8/256 GB",
+      "precio": 220,
+      "categoria": "CELULARES MOTOROLA"
+    },
+    {
+      "nombre": "MOTOROLA G56 5G 8/256 GB",
+      "precio": 225,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -345,13 +180,13 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA G86 5G 8/256 GB",
-      "precio": 275,
+      "nombre": "MOTOROLA G85 5G 8/256 GB",
+      "precio": 265,
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA G86 POWER 5G 8/512 GB",
-      "precio": 335,
+      "nombre": "MOTOROLA G86 5G 8/256 GB",
+      "precio": 275,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -360,18 +195,13 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA EDGE 40 NEO 12/256 GB",
-      "precio": 260,
+      "nombre": "MOTOROLA EDGE 50 NEO 5G 12/512",
+      "precio": 335,
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA EDGE 50 5G 12/512 GB",
-      "precio": 320,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA EDGE 50 NEO 5G 8/256 GB",
-      "precio": 275,
+      "nombre": "MOTOROLA EDGE 50 ULTRA 5G 16/1 TB",
+      "precio": 715,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -380,49 +210,9 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA G24 POWER 8/256 GB",
-      "precio": 200,
+      "nombre": "MOTOROLA EDGE 60 FUSION 5G 12/256 GB",
+      "precio": 310,
       "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA EDGE 50 FUSION 5G 12/512 GB",
-      "precio": 320,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G35 5G 4/128 GB",
-      "precio": 160,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA E40 4/64 GB",
-      "precio": 135,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G05 4/128 GB",
-      "precio": 135,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G06 4/128 GB",
-      "precio": 155,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G85 5G 8/256 GB",
-      "precio": 265,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA EDGE 50 NEO 5G 12/512",
-      "precio": 335,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "INFINIX HOT 50 PRO 8/256 GB",
-      "precio": 200,
-      "categoria": "CELULARES INFINIX"
     },
     {
       "nombre": "INFINIX SMART 10 4/128 GB",
@@ -435,18 +225,13 @@
       "categoria": "CELULARES INFINIX"
     },
     {
-      "nombre": "INFINIX HOT 60i 8/256 GB",
-      "precio": 170,
+      "nombre": "INFINIX HOT 50 PRO NFC 8/256 GB",
+      "precio": 200,
       "categoria": "CELULARES INFINIX"
     },
     {
       "nombre": "INFINIX HOT 60 PRO 8/256 GB",
       "precio": 215,
-      "categoria": "CELULARES INFINIX"
-    },
-    {
-      "nombre": "INFINIX HOT 60 PRO+ 8/256 GB",
-      "precio": 240,
       "categoria": "CELULARES INFINIX"
     },
     {
@@ -470,101 +255,6 @@
       "categoria": "CELULARES INFINIX"
     },
     {
-      "nombre": "INFINIX NOTE 40 PRO NFC 8/256 GB",
-      "precio": 310,
-      "categoria": "CELULARES INFINIX"
-    },
-    {
-      "nombre": "INFINIX HOT 50 PRO NFC 8/256 GB",
-      "precio": 200,
-      "categoria": "CELULARES INFINIX"
-    },
-    {
-      "nombre": "XIAOMI POCO F8 ULTRA 5G 12/256 GB",
-      "precio": 870,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI REDMI 14C 4/128 GB",
-      "precio": 150,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 14 PRO + 5G 12/512 GB",
-      "precio": 445,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO M7 PRO 5G 12/512 GB",
-      "precio": 275,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO F6 PRO 5G 12/512 GB",
-      "precio": 415,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI 15T PRO 5G 12/512 GB",
-      "precio": 775,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI REDMI 15 8/256 GB",
-      "precio": 205,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 14 PRO + 5G 8/256 GB",
-      "precio": 380,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO C71 4/128 GB",
-      "precio": 135,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO C85 6/128 GB",
-      "precio": 155,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO X7 5G 8/256 GB",
-      "precio": 310,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI REDMI 14C 8/256 GB",
-      "precio": 175,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 13 PRO 5G 8/256 GB",
-      "precio": 290,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 13 PRO 5G 12/512 GB",
-      "precio": 335,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 14 8/256 GB",
-      "precio": 230,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 14 PRO 8/256 GB",
-      "precio": 280,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 14 PRO 5G 12/512 GB",
-      "precio": 385,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
       "nombre": "XIAOMI REDMI A5 3/64 GB",
       "precio": 120,
       "categoria": "CELULARES XIAOMI"
@@ -585,8 +275,18 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
+      "nombre": "XIAOMI REDMI 15 8/256 GB",
+      "precio": 205,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
       "nombre": "XIAOMI REDMI 15C 4/128 GB",
       "precio": 155,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI REDMI 15C 4/256 GB",
+      "precio": 165,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -595,13 +295,23 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "XIAOMI NOTE 12 PRO + 5G 8/256 GB",
-      "precio": 285,
+      "nombre": "XIAOMI NOTE 13 8/256 GB",
+      "precio": 200,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI NOTE 13 PRO 5G 12/512 GB",
+      "precio": 335,
       "categoria": "CELULARES XIAOMI"
     },
     {
       "nombre": "XIAOMI NOTE 14 6/128 GB",
       "precio": 190,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI NOTE 14 8/256 GB",
+      "precio": 230,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -625,138 +335,18 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
+      "nombre": "XIAOMI NOTE 14 PRO 8/256 GB",
+      "precio": 280,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
       "nombre": "XIAOMI NOTE 14 PRO 12/512 GB",
       "precio": 330,
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "XIAOMI NOTE 14 PRO 5G 8/256 GB",
-      "precio": 335,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO C71 3/64 GB",
-      "precio": 120,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO C85 8/256 GB",
-      "precio": 175,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO M5s 4/128 GB",
-      "precio": 165,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO M7 6/128 GB",
-      "precio": 175,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO M7 8/256 GB",
-      "precio": 190,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO M7 PRO 5G 8/256 GB",
-      "precio": 265,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO X7 5G 12/512 GB",
-      "precio": 335,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO X7 PRO 5G 8/256 GB",
-      "precio": 360,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO X7 PRO 5G 12/512 GB",
-      "precio": 440,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO F7 5G 12/512 GB",
-      "precio": 505,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO F7 PRO 5G 12/512 GB",
-      "precio": 635,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO F8 PRO 5G 12/256 GB",
-      "precio": 660,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI 13T PRO 5G 12/512 GB",
-      "precio": 555,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI 14T 5G 12/512 GB",
-      "precio": 555,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI 15 5G 12/512 GB",
-      "precio": 835,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI 15T 5G 12/512 GB",
-      "precio": 585,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI 15 ULTRA 5G 16/512 GB",
-      "precio": 1310,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 14 PRO PLUS 8/256 GB",
-      "precio": 380,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 14 PRO PLUS 12/256 GB",
-      "precio": 450,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO C75 8/256 GB",
-      "precio": 175,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO F7 ULTRA 5G 12/256 GB",
-      "precio": 725,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI POCO F8 PRO 5G 12/512 GB",
-      "precio": 715,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 13 PRO PLUS 5G 8/256 GB",
-      "precio": 290,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI REDMI 15C 4/256 GB",
-      "precio": 165,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 13 8/256 GB",
-      "precio": 200,
+      "nombre": "XIAOMI NOTE 14 PRO 5G 12/512 GB",
+      "precio": 385,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -800,8 +390,48 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
+      "nombre": "XIAOMI POCO C71 3/64 GB",
+      "precio": 120,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO C71 4/128 GB",
+      "precio": 135,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO C85 6/128 GB",
+      "precio": 155,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO C85 8/256 GB",
+      "precio": 175,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
       "nombre": "XIAOMI POCO M6 PRO 5G 8/256 GB",
       "precio": 200,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO M7 6/128 GB",
+      "precio": 175,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO M7 8/256 GB",
+      "precio": 190,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO M7 PRO 5G 8/256 GB",
+      "precio": 265,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO M7 PRO 5G 12/512 GB",
+      "precio": 275,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -815,8 +445,63 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
+      "nombre": "XIAOMI POCO X7 5G 8/256 GB",
+      "precio": 310,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO X7 5G 12/512 GB",
+      "precio": 335,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO X7 PRO 5G 8/256 GB",
+      "precio": 360,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO X7 PRO 5G 12/512 GB",
+      "precio": 440,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO F7 5G 12/512 GB",
+      "precio": 505,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO F7 PRO 5G 12/512 GB",
+      "precio": 635,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO F7 ULTRA 5G 12/256 GB",
+      "precio": 725,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO F8 PRO 5G 12/256 GB",
+      "precio": 660,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI POCO F8 PRO 5G 12/512 GB",
+      "precio": 715,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
       "nombre": "XIAOMI 14T PRO 5G 12/512 GB",
       "precio": 680,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI 15 5G 12/512 GB",
+      "precio": 835,
+      "categoria": "CELULARES XIAOMI"
+    },
+    {
+      "nombre": "XIAOMI 15T 5G 12/512 GB",
+      "precio": 585,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -825,14 +510,29 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "VOLANTE CON PEDAL LOGITECH G29 PS5",
-      "precio": 365,
-      "categoria": "VIDEO JUEGOS"
+      "nombre": "AURICULAR JBL TUNE T520BT WHITE",
+      "precio": 65,
+      "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
-      "nombre": "JOYSTICK PS5 CHROMA PEARL",
-      "precio": 105,
-      "categoria": "VIDEO JUEGOS"
+      "nombre": "AURICULAR JBL TUNE T720BT BLACK",
+      "precio": 80,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
+      "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS WHITE/BLUE/RED/CAMUFLADO",
+      "precio": 65,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
+      "nombre": "JBL FLIP 7 35 WATTS BLACK/BLUE/RED/WHITE/PINK/CAMUFLADO",
+      "precio": 140,
+      "categoria": "JBL PARLANTES/AURICULARES"
+    },
+    {
+      "nombre": "JBL CHARGE 6 45 WATTS BLACK/BLUE",
+      "precio": 180,
+      "categoria": "JBL PARLANTES/AURICULARES"
     },
     {
       "nombre": "JOYSTICK PS5 BLACK",
@@ -840,13 +540,8 @@
       "categoria": "VIDEO JUEGOS"
     },
     {
-      "nombre": "PS5 SLIM 1 TB C/LECTORA CALL OF DUTY 6",
-      "precio": 680,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
-      "nombre": "PS5 SLIM 1 TB DIGITAL",
-      "precio": 575,
+      "nombre": "JOYSTICK PS5 WHITE",
+      "precio": 105,
       "categoria": "VIDEO JUEGOS"
     },
     {
@@ -855,7 +550,7 @@
       "categoria": "VIDEO JUEGOS"
     },
     {
-      "nombre": "JOYSTICK PS5 VOLCANIC RED",
+      "nombre": "JOYSTICK PS5 STARLIGHT BLUE",
       "precio": 105,
       "categoria": "VIDEO JUEGOS"
     },
@@ -865,32 +560,7 @@
       "categoria": "VIDEO JUEGOS"
     },
     {
-      "nombre": "XBOX S 1TB",
-      "precio": 560,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
-      "nombre": "XBOX X 1TB",
-      "precio": 775,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
-      "nombre": "SONY VR2 HORIZON BUNDLE",
-      "precio": 620,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
-      "nombre": "PS5 PRO 2 TB",
-      "precio": 940,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
-      "nombre": "JOYSTICK PS5 MIDNIGHT",
-      "precio": 105,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
-      "nombre": "JOYSTICK PS5 WHITE",
+      "nombre": "JOYSTICK PS5 VOLCANIC RED",
       "precio": 105,
       "categoria": "VIDEO JUEGOS"
     },
@@ -900,34 +570,29 @@
       "categoria": "VIDEO JUEGOS"
     },
     {
+      "nombre": "JOYSTICK PS5 CHROMA PEARL",
+      "precio": 105,
+      "categoria": "VIDEO JUEGOS"
+    },
+    {
       "nombre": "PS5 DIGITAL 1 TB",
       "precio": 570,
       "categoria": "VIDEO JUEGOS"
     },
     {
-      "nombre": "JOYSTICK PS5 STARLIGHT BLUE",
-      "precio": 105,
-      "categoria": "VIDEO JUEGOS"
+      "nombre": "AIRPODS 4",
+      "precio": 190,
+      "categoria": "APPLE AIRPODS"
     },
     {
-      "nombre": "WATCH ULTRA 3 CELL 49MM GPS",
-      "precio": 930,
-      "categoria": "APPLE WATCH"
+      "nombre": "AIRPODS 4 NOISE CANCELLING",
+      "precio": 230,
+      "categoria": "APPLE AIRPODS"
     },
     {
-      "nombre": "WATCH 11 42MM GPS",
-      "precio": 490,
-      "categoria": "APPLE WATCH"
-    },
-    {
-      "nombre": "WATCH SE 3 40MM GPS",
+      "nombre": "AIRPODS PRO 3",
       "precio": 340,
-      "categoria": "APPLE WATCH"
-    },
-    {
-      "nombre": "WATCH 11 46MM GPS",
-      "precio": 525,
-      "categoria": "APPLE WATCH"
+      "categoria": "APPLE AIRPODS"
     },
     {
       "nombre": "WATCH SE 3 2025 40MM",
@@ -960,136 +625,6 @@
       "categoria": "APPLE WATCH"
     },
     {
-      "nombre": "AURICULAR JBL TUNE T520BT BLACK/WHITE",
-      "precio": 60,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL FLIP 7 35 WATTS BLUE/RED/PINK/CAMUFLADO",
-      "precio": 145,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL BOOMBOX 3 WIFI 180 WATTS 2V NEGRO",
-      "precio": 450,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL BARRA DE SONIDO CINEMA SB180 2.1 SOUNDBAR USB 229 WATTS 2V",
-      "precio": 225,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL CLIP 5 BLUETOOTH  7 WATTS BLACK/RED",
-      "precio": 75,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "AURICULAR JBL TUNE T520BT WHITE",
-      "precio": 65,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL FLIP 7 35 WATTS BLACK/BLUE/RED/PINK/CAMUFLADO",
-      "precio": 140,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL BOOMBOX 4 210 WATTS 2V NEGRO",
-      "precio": 575,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLACK/BLUE/RED/CAMUFLADO",
-      "precio": 65,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL CHARGE 6 45 WATTS BLACK/BLUE/RED",
-      "precio": 180,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS BLUE/RED/CAMUFLADO",
-      "precio": 65,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL FLIP 7 35 WATTS BLACK/BLUE/RED/PINK",
-      "precio": 140,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL XTREME 4 100 WATTS 24 HORAS NEGRO",
-      "precio": 315,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "AURICULAR JBL TUNE T720BT BLACK",
-      "precio": 80,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL FLIP 7 35 WATTS BLACK/BLUE/RED/WHITE/PINK/CAMUFLADO",
-      "precio": 140,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL CHARGE 6 45 WATTS BLACK/BLUE",
-      "precio": 180,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "JBL GO 4 BLUETOOTH 4.2 WATTS WHITE/BLUE/RED/CAMUFLADO",
-      "precio": 65,
-      "categoria": "JBL PARLANTES/AURICULARES"
-    },
-    {
-      "nombre": "AIRPODS PRO 2DA USBC",
-      "precio": 255,
-      "categoria": "AIRPODS"
-    },
-    {
-      "nombre": "AIRPODS 4",
-      "precio": 165,
-      "categoria": "AIRPODS"
-    },
-    {
-      "nombre": "AIRPODS 4 NOISE CANCELLING",
-      "precio": 220,
-      "categoria": "AIRPODS"
-    },
-    {
-      "nombre": "AIRPODS PRO 3RA USBC",
-      "precio": 315,
-      "categoria": "AIRPODS"
-    },
-    {
-      "nombre": "AIRPODS MAX MID/PURP/SKYBLUE/STAR",
-      "precio": 660,
-      "categoria": "AIRPODS"
-    },
-    {
-      "nombre": "IPAD 11” A16 256 GB",
-      "precio": 585,
-      "categoria": "IPAD"
-    },
-    {
-      "nombre": "IPAD AIR 11” M3 128 GB",
-      "precio": 710,
-      "categoria": "IPAD"
-    },
-    {
-      "nombre": "IPAD AIR 11” M3 256 GB",
-      "precio": 780,
-      "categoria": "IPAD"
-    },
-    {
-      "nombre": "IPAD 11” A16 128 GB",
-      "precio": 465,
-      "categoria": "IPAD"
-    },
-    {
       "nombre": "IPAD MINI 7 128 GB",
       "precio": 610,
       "categoria": "IPAD"
@@ -1100,48 +635,43 @@
       "categoria": "IPAD"
     },
     {
+      "nombre": "IPAD AIR 11” M3 128 GB",
+      "precio": 710,
+      "categoria": "IPAD"
+    },
+    {
       "nombre": "IPAD AIR 13” M3 128 GB",
       "precio": 965,
       "categoria": "IPAD"
     },
     {
-      "nombre": "IPAD PRO 11” M5 256 GB",
-      "precio": 1155,
-      "categoria": "IPAD"
+      "nombre": "MAC MINI M4 16/256 GB",
+      "precio": 775,
+      "categoria": "MACBOOK"
     },
     {
-      "nombre": "IPAD PRO 13” M5 256 GB",
-      "precio": 1510,
-      "categoria": "IPAD"
+      "nombre": "MAC MINI M4 16/512 GB",
+      "precio": 1055,
+      "categoria": "MACBOOK"
     },
     {
-      "nombre": "IPAD PRO 13” M5 512 GB",
-      "precio": 1775,
-      "categoria": "IPAD"
+      "nombre": "MACBOOK AIR M4 13” 16/256 GB",
+      "precio": 1075,
+      "categoria": "MACBOOK"
     },
     {
-      "nombre": "IPAD PRO 11” M5 512 GB",
-      "precio": 1455,
-      "categoria": "IPAD"
+      "nombre": "MACBOOK PRO M4 PRO 14” 24/512 GB",
+      "precio": 2340,
+      "categoria": "MACBOOK"
     },
     {
-      "nombre": "75” Smart TV Samsung Neo QLED 4K QN85D",
-      "precio": 2430,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "100” Smart TV Xiaomi TV Max 4K UHD QLED con Google TV y Dolby Atmos",
-      "precio": 3065,
-      "categoria": "TELEVISORES"
+      "nombre": "MACBOOK PRO M4 PRO 14” 24/1 TB",
+      "precio": 2840,
+      "categoria": "MACBOOK"
     },
     {
       "nombre": "85” Smart TV Samsung 4K QLED Q70D",
       "precio": 2000,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "75” Smart TV Samsung LED 4K Crystal UHD U8000F",
-      "precio": 1240,
       "categoria": "TELEVISORES"
     },
     {
@@ -1160,8 +690,8 @@
       "categoria": "TELEVISORES"
     },
     {
-      "nombre": "65” Smart TV Philips LED 4K UHD 65PUD8100/77 Ambilight Titan OS WiFi",
-      "precio": 740,
+      "nombre": "65” Smart TV Samsung LED 4K Crystal UHD U800F",
+      "precio": 855,
       "categoria": "TELEVISORES"
     },
     {
@@ -1170,58 +700,13 @@
       "categoria": "TELEVISORES"
     },
     {
-      "nombre": "55” Smart TV Samsung 4K QLED Q65D",
-      "precio": 600,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "55” Smart TV UHD 4K Samsung Crystal UN55DU7000GCZB",
-      "precio": 510,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "55” Smart TV Samsung LED 4K Crystal UHD U8000F",
-      "precio": 520,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
-      "precio": 465,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "43” Smart TV Samsung Du7000 4K",
-      "precio": 400,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "43” Smart TV Full HD Samsung UN43T5300A",
-      "precio": 355,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "43” Smart TV LED Philips 43PFD6910/77",
-      "precio": 315,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "32” Smart TV Samsung HD UN32T4300A",
-      "precio": 230,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "65” Smart TV Samsung led 4K Du7000",
-      "precio": 885,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "65” Smart TV Samsung LED 4K Crystal UHD U800F",
-      "precio": 855,
-      "categoria": "TELEVISORES"
-    },
-    {
       "nombre": "55” Smart TV Samsung QLED 4K Q7 Tizen OS",
       "precio": 610,
+      "categoria": "TELEVISORES"
+    },
+    {
+      "nombre": "55” Smart TV Samsung 4K QLED Q65D",
+      "precio": 600,
       "categoria": "TELEVISORES"
     },
     {
@@ -1240,8 +725,23 @@
       "categoria": "TELEVISORES"
     },
     {
+      "nombre": "50” Smart TV UHD 4K Samsung UN50DU7000GCZB",
+      "precio": 465,
+      "categoria": "TELEVISORES"
+    },
+    {
       "nombre": "50” Smart TV Admiral QLED 4K UHD new model",
       "precio": 370,
+      "categoria": "TELEVISORES"
+    },
+    {
+      "nombre": "43” Smart TV Full HD Samsung UN43T5300A",
+      "precio": 355,
+      "categoria": "TELEVISORES"
+    },
+    {
+      "nombre": "43” Smart TV LED Philips 43PFD6910/77",
+      "precio": 315,
       "categoria": "TELEVISORES"
     },
     {
@@ -1250,244 +750,14 @@
       "categoria": "TELEVISORES"
     },
     {
-      "nombre": "32” Smart TV TCL QLED FHD 32S5K Google TV",
-      "precio": 225,
+      "nombre": "32” Smart TV Samsung HD UN32T4300A",
+      "precio": 230,
       "categoria": "TELEVISORES"
     },
     {
-      "nombre": "MAC MINI M4 16/256 GB",
-      "precio": 775,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MAC MINI M4 16/512 GB",
-      "precio": 1055,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK AIR M4 13” 16/256 GB",
-      "precio": 1075,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK AIR M4 13” 16/512 GB",
-      "precio": 1330,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK AIR M4 15” 16/256 GB",
-      "precio": 1330,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK AIR M4 15” 16/512 GB",
-      "precio": 1575,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK PRO M4 14” 16/1 TB",
-      "precio": 2030,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK PRO M4 PRO 14” 24/512 GB",
-      "precio": 2340,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "MACBOOK PRO M4 PRO 14” 24/1 TB",
-      "precio": 2840,
-      "categoria": "MACBOOK"
-    },
-    {
-      "nombre": "IPHONE 16 256 GB AS IS ULTRAMARINE",
-      "precio": 835,
-      "categoria": "CELULARES IPHONE AS IS"
-    },
-    {
-      "nombre": "AIRPODS 4",
-      "precio": 190,
-      "categoria": "APPLE AIRPODS"
-    },
-    {
-      "nombre": "AIRPODS 4 NOISE CANCELLING",
-      "precio": 230,
-      "categoria": "APPLE AIRPODS"
-    },
-    {
-      "nombre": "AIRPODS PRO 3",
-      "precio": 340,
-      "categoria": "APPLE AIRPODS"
-    },
-     {
-    "nombre": "LENOVO LOQ 15IAX9E GAMING CORE I5-12450HX 512GB SSD 8GB 15.6\" FHD 144HZ WINDOWS 11 NVIDIA RTX 2050 4GB LUNA GRAY BACKLIT KEYBOARD",
-    "precio": 840,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "MSI A15 B13VE GAMING CORE I5-13420H 512GB SSD 16GB 15.6\" FHD IPS 144HZ NVIDIA RTX 4050 6GB BLACK BACKLIT KEYBOARD",
-    "precio": 915,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "HP VICTUS 15-FB3093 GAMING AMD RYZEN 7 7445HS 512GB SSD 16GB 15.6\" FHD 144HZ WINDOWS 11 NVIDIA RTX 4050 6GB MICA SILVER",
-    "precio": 1105,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "LENOVO LOQ GAMER 83JE002KUS INTEL CORE I5-13450HX 16GB RAM 512GB SSD 15.6\" FHD TOUCH NVIDIA GEFORCE RTX 5050 6GB WINDOWS 11 LUNA GREY",
-    "precio": 1260,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "DELL ALIENWARE 16X AURORA GAMING LAPTOP INTEL CORE 7 240H 16GB RAM 1TB SSD 16\" WQXGA 120HZ NVIDIA GEFORCE RTX 5050 8GB WINDOWS 11",
-    "precio": 1425,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "HP VICTUS 15-FA2093 GAMING INTEL CORE I7-13620H 1TB SSD 16GB 15.6\" FHD 144HZ WINDOWS 11 NVIDIA RTX 5060 8GB MICA SILVER",
-    "precio": 1505,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "HP VICTUS 15-FA11633DX GAMING INTEL CORE I7-12650H 512GB SSD 16GB 15.6\" FHD 144HZ NVIDIA GEFORCE RTX 4050 6GB WINDOWS 11",
-    "precio": 1505,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "ASUS TUF A16 FA617NT GAMING AMD RYZEN 7 7735HS 512GB SSD 16GB 16\" WUXGA 165HZ AMD RADEON RX 7700S 8GB WINDOWS 11 OFF BLACK BACKLIT KEYBOARD",
-    "precio": 1535,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "LENOVO LOQ 15AHP10 GAMING AMD RYZEN 7 250 512GB SSD 16GB 15.6\" FHD 144HZ WINDOWS 11 NVIDIA RTX 5060 8GB LUNA GRAY BACKLIT KEYBOARD",
-    "precio": 1555,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "HP VICTUS 15-FA2787 GAMING INTEL CORE I7-13620H 512GB SSD 16GB 15.6\" FHD 144HZ WINDOWS 11 NVIDIA RTX 5060 8GB MECA SILVER BACKLIT KEYBOARD",
-    "precio": 1595,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "MSI KATANA 15 HXB14WGK GAMING INTEL CORE I7-14650HX 1TB SSD 16GB 15.6\" QHD 165HZ NVIDIA GEFORCE RTX 5070 8GB WINDOWS 11 BLACK BACKLIT KEYBOARD",
-    "precio": 1760,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "LENOVO LEGION 5 16IRX9 GAMING INTEL CORE I9-14900HX 32GB DDR5 1TB SSD 16\" WQXGA NVIDIA GEFORCE RTX 4060 8GB WINDOWS 11",
-    "precio": 1825,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "HP OMEN GAMING LAPTOP AMD RYZEN AI 9 365 32GB RAM 1TB SSD 17.3\" FHD 144HZ NVIDIA GEFORCE RTX 5060 8GB WINDOWS 11",
-    "precio": 1895,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "ACER PREDATOR HELIOS NEO 16S AI GAMING LAPTOP INTEL CORE ULTRA 9 32GB RAM 1TB SSD 16\" OLED 165HZ NVIDIA GEFORCE RTX 5070TI 12GB OBSIDIAN BLACK",
-    "precio": 2315,
-    "categoria": "NOTEBOOK GAMER"
-  },
-  {
-    "nombre": "ACER ASPIRE 3 A314-36P INTEL CORE I3-N305 8GB RAM DDR5 128GB SSD 14\" FHD LED WINDOWS 11 HOME",
-    "precio": 570,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "LENOVO SLIM 3 82XB00C2US INTEL CORE I3-N305 8GB RAM 128GB SSD 15.6\" FHD WINDOWS 11 HOME ARCTIC GRAY",
-    "precio": 635,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "ASUS VIVOBOOK F1404VAP INTEL CORE 5 120U 8GB RAM 512GB SSD 14\" FHD WINDOWS 11 (INCLUYE MOUSE)",
-    "precio": 670,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "ASUS X1404VA-I38128 INTEL CORE I3-1315U 16GB RAM DDR4 512GB SSD 14\" FHD WINDOWS 11 HOME QUIET BLUE",
-    "precio": 670,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "ACER ASPIRE GO 15 GAMING / OFICINA AMD RYZEN 5 7520U 8GB DDR5 512GB SSD 15.6\" FHD IPS SLIMBEZEL TOUCH LCD WINDOWS 11 HOME",
-    "precio": 680,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "LENOVO THINKPAD T495S AMD RYZEN 5 PRO 3500U 8GB RAM 256GB SSD 14\" FHD TOUCHSCREEN WINDOWS 10 PRO BLACK",
-    "precio": 680,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "LENOVO IDEAPAD 1 82VG00TYUS AMD RYZEN 5 7520U 8GB RAM 256GB SSD 15.6\" FHD TOUCH WINDOWS 11 HOME ABYSS BLUE",
-    "precio": 725,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "ACER ASPIRE VERO AV16-51P-58KU INTEL CORE ULTRA 5 125U 8GB RAM 512GB SSD 16\" WUXGA WINDOWS 11 IRON BACKLIT KEYBOARD FP READER",
-    "precio": 790,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "HP 255 G10 AMD RYZEN 7 7730U 16GB RAM 512GB SSD 15.6\" FHD (1920x1080) WINDOWS 11 DARK ASH SILVER",
-    "precio": 845,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "HP OMNIBOOK 5 FLIP 14-FP0013DX INTEL CORE 5 120U 8GB RAM DDR5 512GB SSD 14\" 2K LED TOUCH WINDOWS 11",
-    "precio": 870,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "LENOVO IDEAPAD SLIM 3 15ABR8 AMD RYZEN 7 5825U 16GB RAM 512GB SSD 15.6\" FHD TOUCHSCREEN WINDOWS 11 ARTIC GREY",
-    "precio": 995,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "LENOVO V15 G4 IRU 83CC002EUS INTEL CORE I7-13620H 16GB RAM 512GB SSD 15.6\" FHD WINDOWS 11 HOME BUSINESS BLACK",
-    "precio": 1015,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "SAMSUNG BOOK4 NP750XGK-KS2US INTEL CORE 7 150U 16GB RAM DDR4 512GB SSD 15.6\" FHD WINDOWS 11 HOME SILVER",
-    "precio": 1015,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "HP OMNIBOOK 5 FLIP 14-FP0023DX INTEL CORE 7 150U 16GB DDR5 512GB SSD 14\" 2K LED TOUCH WINDOWS 11",
-    "precio": 1060,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "LENOVO THINKPAD E16 INTEL CORE I7-1335U 512GB SSD 16GB 16\" WUXGA (1920x1200) IPS WINDOWS 11 PRO GRAPHITE BLACK BACKLIT KEYBOARD FP READER",
-    "precio": 1125,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "DELL 16 DC16250 INTEL CORE 7 150U 1TB SSD 16GB 16\" WUXGA (1920x1200) TOUCHSCREEN IPS WINDOWS 11 BACKLIT KEYBOARD CARBON BLACK",
-    "precio": 1160,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "DELL INSPIRON 16 PLUS 7630 INTEL CORE I7-13700H 1TB SSD 16GB 16\" (2560x1600) WINDOWS 11 BACKLIT KEYBOARD FP READER GRAY",
-    "precio": 1195,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "LENOVO YOGA 7 83JU003US AMD RYZEN AI 7 350 16GB RAM 1TB SSD 16\" WUXGA TOUCHSCREEN WINDOWS 11 HOME SEA SHELL",
-    "precio": 1245,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "LENOVO YOGA 7 83DL0002US INTEL CORE ULTRA 7 155U 16GB RAM 1TB SSD 16\" WUXGA TOUCHSCREEN WINDOWS 11 HOME STORM GRAY",
-    "precio": 1270,
-    "categoria": "NOTEBOOK OFICINA"
-  },
-  {
-    "nombre": "LENOVO YOGA 7 16IML9 2-IN-1 INTEL CORE ULTRA 7 155U 16GB RAM 1TB SSD 16\" WUXGA TOUCHSCREEN WINDOWS 11 STORM GREY BACKLIT KEYBOARD FP READER",
-    "precio": 1270,
-    "categoria": "NOTEBOOK OFICINA"
-  }
+      "nombre": "32” Smart TV TCL QLED FHD 32S5K Google TV",
+      "precio": 225,
+      "categoria": "TELEVISORES"
+    }
   ]
 }
