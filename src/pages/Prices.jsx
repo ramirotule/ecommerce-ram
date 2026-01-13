@@ -3,6 +3,7 @@ import { COLORS } from '../utils/colors';
 import { AiOutlineDownload } from "react-icons/ai";
 import Select from 'react-select';
 import FinanciacionModal from '../components/FinanciacionModal';
+import { jsPDF } from 'jspdf';
 
 // Ruta del PDF para descarga
 const pdfFile = "/precios_ram.pdf";
@@ -289,13 +290,121 @@ const Prices = () => {
     // Trackear el evento de descarga
     trackEvent('pdf_download', 'Lista_Precios', 'Descarga_PDF', 1);
     
-    // Crear un enlace temporal para descargar el PDF
-    const link = document.createElement('a');
-    link.href = pdfFile;
-    link.download = 'precios_ram.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Crear instancia de PDF
+    const doc = new jsPDF();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const margin = 15;
+    const lineHeight = 7;
+    let yPosition = margin;
+    
+    // Obtener fecha actual
+    const fechaActual = new Date();
+    const fechaFormateada = fechaActual.toLocaleDateString('es-AR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    
+    // Título
+    doc.setFontSize(24);
+    doc.setFont('helvetica', 'bold');
+    doc.text('RAM - Lista de Precios', pageWidth / 2, yPosition, { align: 'center' });
+    yPosition += 12;
+    
+    // Fecha de generación
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(100, 100, 100);
+    doc.text(`Generado: ${fechaFormateada}`, pageWidth / 2, yPosition, { align: 'center' });
+    yPosition += 8;
+    
+    // Línea divisoria
+    doc.setDrawColor(0, 241, 0);
+    doc.line(margin, yPosition, pageWidth - margin, yPosition);
+    yPosition += 8;
+    
+    // Agrupar productos por categoría
+    const productosParaPdf = productos && productos.length > 0 ? productos : [];
+    const productosPorCategoria = {};
+    
+    productosParaPdf.forEach(producto => {
+      const categoria = producto.categoria || 'SIN CATEGORÍA';
+      if (!productosPorCategoria[categoria]) {
+        productosPorCategoria[categoria] = [];
+      }
+      productosPorCategoria[categoria].push(producto);
+    });
+    
+    // Ordenar categorías
+    const categoriasOrdenadas = Object.keys(productosPorCategoria).sort();
+    
+    // Recorrer cada categoría
+    categoriasOrdenadas.forEach(categoria => {
+      // Verificar si necesitamos nueva página
+      if (yPosition > pageHeight - 30) {
+        doc.addPage();
+        yPosition = margin;
+      }
+      
+      // Encabezado de categoría con fondo negro y texto verde fluor
+      const categoryHeight = 8;
+      doc.setFillColor(0, 0, 0); // Fondo negro
+      doc.rect(margin, yPosition - 5, pageWidth - (margin * 2), categoryHeight, 'F');
+      
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.setTextColor(0, 241, 0); // Verde fluor
+      doc.text(categoria, margin + 3, yPosition + 1);
+      
+      yPosition += categoryHeight + 3;
+      
+      // Productos de esta categoría
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      doc.setTextColor(0, 0, 0);
+      
+      const colWidths = {
+        producto: pageWidth * 0.75 - margin,
+        precioUsd: pageWidth * 0.25 - margin
+      };
+      
+      productosPorCategoria[categoria].forEach(producto => {
+        // Verificar si necesitamos nueva página
+        if (yPosition > pageHeight - 20) {
+          doc.addPage();
+          yPosition = margin;
+        }
+        
+        // Escribir datos
+        let xPos = margin;
+        
+        // Producto (puede ocupar múltiples líneas)
+        const productLines = doc.splitTextToSize(producto.producto, colWidths.producto - 2);
+        doc.text(productLines, xPos, yPosition);
+        const productHeight = productLines.length * lineHeight;
+        
+        xPos += colWidths.producto;
+        doc.text(`U$S ${producto.precio_usd}`, xPos, yPosition);
+        
+        yPosition += Math.max(productHeight, lineHeight) + 1;
+      });
+      
+      // Espacio entre categorías
+      yPosition += 3;
+    });
+    
+    // Información al pie
+    yPosition = pageHeight - 20;
+    doc.setFontSize(9);
+    doc.setTextColor(100, 100, 100);
+    doc.text('Los precios están sujetos a cambios sin previo aviso.', pageWidth / 2, yPosition, { align: 'center' });
+    doc.text('Para consultas específicas, contactanos por WhatsApp.', pageWidth / 2, yPosition + 5, { align: 'center' });
+    
+    // Descargar PDF
+    doc.save(`precios_ram_${fechaActual.getDate()}-${String(fechaActual.getMonth() + 1).padStart(2, '0')}-${fechaActual.getFullYear()}.pdf`);
   };
 
   // Opciones para react-select
