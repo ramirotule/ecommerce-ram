@@ -469,10 +469,11 @@ const Prices = () => {
           </h2>
           <div style={{ 
             display: 'flex', 
-            gap: '20px', 
+            gap: '6px', 
             flexWrap: 'wrap', 
             marginBottom: '20px',
-            flexDirection: isMobile ? 'column' : 'row'
+            flexDirection: isMobile ? 'column' : 'row',
+
           }}>
             <input
               type="text"
@@ -499,7 +500,7 @@ const Prices = () => {
                 flex: isMobile ? 'none' : '1'
               }}
             />
-            <div style={{ minWidth: isMobile ? '100%' : '220px', flex: 1 }}>
+            <div style={{ minWidth: isMobile ? '100%' : 'auto', flex: isMobile ? 'none' : '0 0 auto' }}>
               <Select
                 options={categoriaOptions}
                 value={categoriaOptions.find(opt => opt.value === categoria)}
@@ -512,18 +513,18 @@ const Prices = () => {
                     borderColor: '#ccc', 
                     fontSize: 16, 
                     minHeight: 44,
-                    width: isMobile ? '100%' : '220px',
+                    width: isMobile ? '100%' : '280px',
                     minWidth: isMobile ? '100%' : '220px'
                   }),
                   menu: (base) => ({ 
                     ...base, 
                     borderRadius: 8,
-                    width: isMobile ? '100%' : '220px',
+                    width: isMobile ? '100%' : '280px',
                     minWidth: isMobile ? '100%' : '220px'
                   }),
                   menuList: (base) => ({
                     ...base,
-                    width: isMobile ? '100%' : '220px',
+                    width: isMobile ? '100%' : '280px',
                     minWidth: isMobile ? '100%' : '220px'
                   }),
                   singleValue: (base) => ({ ...base, color: '#111' }), // color negro al seleccionar
@@ -546,7 +547,7 @@ const Prices = () => {
                 })}
               />
             </div>
-            <div style={{ minWidth: isMobile ? '100%' : '220px', flex: 1 }}>
+            <div style={{ minWidth: isMobile ? '100%' : 'auto', flex: isMobile ? 'none' : '0 0 auto' }}>
               <Select
                 options={ordenOptions}
                 value={ordenOptions.find(opt => opt.value === orden)}
@@ -609,7 +610,7 @@ const Prices = () => {
                 fontSize: '16px',
                 cursor: 'pointer',
                 boxShadow: '0 2px 8px rgba(0,241,0,0.08)',
-                marginLeft: isMobile ? '0' : '10px',
+                marginLeft: isMobile ? '0' : '0',
                 transition: 'all 0.2s',
                 width: isMobile ? '100%' : 'auto',
                 marginTop: isMobile ? '0' : '0'
