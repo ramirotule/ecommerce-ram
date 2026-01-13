@@ -321,11 +321,6 @@ const Prices = () => {
     doc.text(`Generado: ${fechaFormateada}`, pageWidth / 2, yPosition, { align: 'center' });
     yPosition += 8;
     
-    // Línea divisoria
-    doc.setDrawColor(0, 241, 0);
-    doc.line(margin, yPosition, pageWidth - margin, yPosition);
-    yPosition += 8;
-    
     // Agrupar productos por categoría
     const productosParaPdf = productos && productos.length > 0 ? productos : [];
     const productosPorCategoria = {};

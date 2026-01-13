@@ -415,6 +415,12 @@ class ProcesadorGCGroup:
             # === GUARDAR ARCHIVOS ===
             os.makedirs(os.path.dirname(archivo_publico), exist_ok=True)
             
+            # Borrar archivos anteriores si existen
+            if os.path.exists(archivo_publico):
+                os.remove(archivo_publico)
+            if os.path.exists(archivo_privado):
+                os.remove(archivo_privado)
+            
             # === CONVERTIR A FORMATO LISTA PARA LA WEB ===
             # La web espera: {"metadatos": {...}, "productos": [{}, {}, ...]}
             # Convertir de diccionario por categorías a lista plana
