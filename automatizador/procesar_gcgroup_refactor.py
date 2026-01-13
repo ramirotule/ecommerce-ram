@@ -331,7 +331,7 @@ class ProcesadorGCGroup:
                 "fecha_extraccion_gcgroup": datetime.now().strftime("%d/%m/%Y %H:%M"),
                 "proveedor_gcgroup": "GcGroup",
                 "productos_gcgroup": len(self.productos_extraidos),
-                "formula_precio_gcgroup": "(costo + 18%) + $20, redondeado a múltiplo de 5"
+                "formula_precio_gcgroup": "(costo + 10%) + $20, redondeado a múltiplo de 5"
             })
             
             # Actualizar metadatos
