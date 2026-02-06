@@ -3,16 +3,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { normalizeName } from "../utils/normalizeName";
 import { COLORS } from "../utils/colors";
-import UploadPriceList from "../components/UploadPriceList";
-import PriceSearch from "../components/PriceSearch";
-import ProvidersManager from "../components/ProvidersManager";
-import CategoriesManager from "../components/CategoriesManager";
 
 const Admin = () => {
   const [archivo, setArchivo] = useState(null);
   const [productos, setProductos] = useState([]);
-  const [proveedores, setProveedores] = useState([]);
-  const [activeSection, setActiveSection] = useState('proveedores');
   const navigate = useNavigate();
 
   // Cargar productos automáticamente desde el JSON existente
@@ -22,20 +16,8 @@ const Admin = () => {
         const response = await fetch("/productos_ram.json");
         if (response.ok) {
           const data = await response.json();
-          // Soportar dos formatos: array directo o { productos: [...] }
-          const rawList = Array.isArray(data) ? data : (data.productos || []);
-          // Normalizar a formato interno esperado: { producto, precio_usd, categoria, imagen }
-          const list = rawList.map(item => {
-            if (item.producto) return item;
-            return {
-              producto: item.nombre || item.producto || item.name || '',
-              precio_usd: item.precio || item.precio_usd || item.price || 0,
-              categoria: item.categoria || item.categoria || 'OTROS',
-              imagen: item.imagen || ''
-            };
-          });
-          setProductos(list);
-          console.log(`✅ Productos cargados automáticamente: ${list.length} productos`);
+          setProductos(data);
+          console.log(`✅ Productos cargados automáticamente: ${data.length} productos`);
         }
       } catch (error) {
         console.error("Error al cargar productos:", error);
@@ -118,12 +100,139 @@ const Admin = () => {
     a.click();
   };
 
-  /*
   const actualizarJSONAutomatico = async () => {
-    // Funcionalidad temporalmente deshabilitada para evitar commits automáticos
-    // Ver historial de cambios si necesitas restaurar esta función.
+    const confirmacion = window.confirm(
+      '¿Estás seguro de actualizar los productos en GitHub?\n\n' +
+      'Esto actualizará el archivo y Vercel se redeplegará automáticamente.'
+    );
+    
+    if (!confirmacion) return;
+
+    try {
+      // Primero intentar usar variable de entorno (más seguro)
+      let githubToken = import.meta.env.VITE_GITHUB_TOKEN;
+      
+      // Si no hay variable de entorno, usar localStorage o pedir token
+      if (!githubToken) {
+        githubToken = localStorage.getItem('github_token');
+        
+        if (!githubToken) {
+          githubToken = prompt(
+            '🔑 Ingresa tu GitHub Personal Access Token:\n\n' +
+            'IMPORTANTE: Nunca compartas este token públicamente\n\n' +
+            'Si no tienes uno:\n' +
+            '1. Ve a GitHub → Settings → Developer settings → Personal access tokens\n' +
+            '2. Generate new token (classic)\n' +
+            '3. Marca el scope "repo"\n' +
+            '4. Copia y pega el token aquí'
+          );
+          
+          if (!githubToken) {
+            alert('❌ Token requerido para actualizar automáticamente');
+            return;
+          }
+          
+          // Preguntar si quiere guardar el token
+          const guardarToken = window.confirm(
+            '¿Quieres guardar el token en este navegador para futuras actualizaciones?\n\n' +
+            '(Se guardará localmente y solo en este dispositivo)'
+          );
+          
+          if (guardarToken) {
+            localStorage.setItem('github_token', githubToken);
+          }
+        }
+      }
+
+      // Mostrar loading
+      const loadingAlert = '⏳ Actualizando productos en GitHub...';
+      console.log(loadingAlert);
+
+console.log("El valor de los productos es:", productos);
+      const jsonContent = JSON.stringify(productos, null, 2);
+      console.log("el valor de jsonContent:",   jsonContent);
+      const encodedContent = btoa(unescape(encodeURIComponent(jsonContent)));
+
+      // Detectar la rama actual (dev o main)
+      const currentBranch = 'dev'; // Cambia esto según tu rama principal
+
+      // Primero obtener el SHA actual del archivo
+      const getFileResponse = await fetch(
+        `https://api.github.com/repos/ramirotule/ecommerce-ram/contents/public/productos_ram.json?ref=${currentBranch}`,
+        {
+          headers: {
+            'Authorization': `token ${githubToken}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        }
+      );
+
+      let sha = null;
+      if (getFileResponse.ok) {
+        const fileData = await getFileResponse.json();
+        sha = fileData.sha;
+      } else if (getFileResponse.status === 404) {
+        // El archivo no existe, se creará
+        console.log('Archivo no existe, se creará uno nuevo');
+      } else {
+        throw new Error(`Error al obtener archivo: ${getFileResponse.status}`);
+      }
+
+      // Actualizar o crear el archivo
+      const updateResponse = await fetch(
+        'https://api.github.com/repos/ramirotule/ecommerce-ram/contents/public/productos_ram.json',
+        {
+          method: 'PUT',
+          headers: {
+            'Authorization': `token ${githubToken}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: `📦 Actualizar productos desde Admin (${productos.length} productos) - ${new Date().toLocaleString('es-AR')}`,
+            content: encodedContent,
+            ...(sha && { sha }), // Solo incluir SHA si existe
+            branch: currentBranch
+          })
+        }
+      );
+
+      if (updateResponse.ok) {
+        const result = await updateResponse.json();
+        alert(
+          `✅ ¡Productos actualizados exitosamente!\n\n` +
+          `📊 ${productos.length} productos actualizados\n` +
+          `🌐 Vercel se redeplegará automáticamente en unos minutos\n` +
+          `🔗 Commit: ${result.commit.html_url}`
+        );
+        
+        // Opcional: Abrir el commit en una nueva ventana
+        const abrirCommit = window.confirm('¿Quieres ver el commit en GitHub?');
+        if (abrirCommit) {
+          window.open(result.commit.html_url, '_blank');
+        }
+      } else {
+        const error = await updateResponse.json();
+        console.error('Error response:', error);
+        
+        if (updateResponse.status === 401) {
+          // Token inválido
+          localStorage.removeItem('github_token');
+          alert('❌ Token inválido o expirado. Se ha eliminado el token guardado.\n\nIntenta nuevamente con un nuevo token.');
+        } else {
+          alert(`❌ Error al actualizar: ${error.message || 'Error desconocido'}\n\nDescargando JSON como respaldo...`);
+          descargarJSON(); // Fallback
+        }
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert(
+        `❌ Error de conexión: ${error.message}\n\n` +
+        'Descargando JSON como respaldo...'
+      );
+      descargarJSON(); // Fallback
+    }
   };
-  */
 
   const gestionarToken = () => {
     const tokenGuardado = localStorage.getItem('github_token');
@@ -157,18 +266,135 @@ const Admin = () => {
       }
     }
   };
-  /*
+
   const commitAutomaticoMain = async () => {
-    // Commit automático a main deshabilitado temporalmente.
+    const fechaHoy = new Date().toLocaleDateString('es-AR');
+    const confirmacion = window.confirm(
+      '¿Estás seguro de hacer commit del archivo productos_ram.json actualizado?\n\n' +
+      'Esto hará commit del archivo que tu script de Python actualizó automáticamente.\n' +
+      `Mensaje del commit: "Actualización de productos - ${fechaHoy}"\n\n` +
+      'Se subirá a la rama main y activará GitHub Actions.'
+    );
+    
+    if (!confirmacion) return;
+
+    try {
+      // Obtener el token de GitHub
+      let githubToken = import.meta.env.VITE_GITHUB_TOKEN;
+      
+      if (!githubToken) {
+        githubToken = localStorage.getItem('github_token');
+        
+        if (!githubToken) {
+          githubToken = prompt(
+            '🔑 Ingresa tu GitHub Personal Access Token:\n\n' +
+            'IMPORTANTE: Necesitas permisos de "repo" para hacer commits\n\n' +
+            'Si no tienes uno:\n' +
+            '1. Ve a GitHub → Settings → Developer settings → Personal access tokens\n' +
+            '2. Generate new token (classic)\n' +
+            '3. Marca el scope "repo"\n' +
+            '4. Copia y pega el token aquí'
+          );
+          
+          if (!githubToken) {
+            alert('❌ Token requerido para hacer commit automático');
+            return;
+          }
+          
+          const guardarToken = window.confirm('¿Quieres guardar el token para futuras operaciones?');
+          if (guardarToken) {
+            localStorage.setItem('github_token', githubToken);
+          }
+        }
+      }
+
+      alert('⏳ Haciendo commit del archivo productos_ram.json actualizado...');
+
+      // Leer el archivo productos_ram.json actual
+      const response = await fetch("/productos_ram.json");
+      if (!response.ok) {
+        throw new Error('No se pudo leer el archivo productos_ram.json');
+      }
+      const productosData = await response.json();
+      const jsonContent = JSON.stringify(productosData, null, 2);
+      const encodedContent = btoa(unescape(encodeURIComponent(jsonContent)));
+
+      // Obtener el SHA actual del archivo en main
+      const getFileResponse = await fetch(
+        'https://api.github.com/repos/ramirotule/ecommerce-ram/contents/public/productos_ram.json?ref=main',
+        {
+          headers: {
+            'Authorization': `token ${githubToken}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        }
+      );
+
+      let sha = null;
+      if (getFileResponse.ok) {
+        const fileData = await getFileResponse.json();
+        sha = fileData.sha;
+      } else if (getFileResponse.status === 404) {
+        console.log('Archivo no existe en main, se creará uno nuevo');
+      } else {
+        throw new Error(`Error al obtener archivo: ${getFileResponse.status}`);
+      }
+
+      // Actualizar el archivo en main
+      const commitMessage = `Actualización de productos - ${fechaHoy}`;
+      const updateResponse = await fetch(
+        'https://api.github.com/repos/ramirotule/ecommerce-ram/contents/public/productos_ram.json',
+        {
+          method: 'PUT',
+          headers: {
+            'Authorization': `token ${githubToken}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: commitMessage,
+            content: encodedContent,
+            ...(sha && { sha }),
+            branch: 'main'
+          })
+        }
+      );
+
+      if (updateResponse.ok) {
+        const result = await updateResponse.json();
+        
+        // Actualizar el estado local con los datos más recientes
+        setProductos(productosData);
+        
+        alert(
+          `✅ ¡Archivo productos_ram.json actualizado en main!\n\n` +
+          `📝 Mensaje: "${commitMessage}"\n` +
+          `📊 ${productosData.length} productos\n` +
+          `🔗 Commit: ${result.commit.html_url}\n` +
+          `🚀 GitHub Actions se ejecutará automáticamente`
+        );
+
+        const abrirCommit = window.confirm('¿Quieres ver el commit en GitHub?');
+        if (abrirCommit) {
+          window.open(result.commit.html_url, '_blank');
+        }
+      } else {
+        const error = await updateResponse.json();
+        throw new Error(`Error al actualizar: ${error.message || 'Error desconocido'}`);
+      }
+
+    } catch (error) {
+      console.error('Error:', error);
+      alert(`❌ Error al crear commit: ${error.message}`);
+    }
   };
-  */
  
   return (
     <div style={{ 
       padding: '30px',
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)',
-      color: "black"
+      color: COLORS.text.white
     }}>
       {/* Header con botón de logout y estadísticas */}
       <div style={{
@@ -177,7 +403,7 @@ const Admin = () => {
         alignItems: 'center',
         marginBottom: '30px',
         padding: '20px',
-        background: 'rgba(255, 202, 9, 0.1)',
+        background: 'rgba(255, 255, 255, 0.1)',
         borderRadius: '15px',
         backdropFilter: 'blur(10px)',
         gap: '20px'
@@ -192,7 +418,7 @@ const Admin = () => {
         </h2>
         
         <div style={{ display: 'flex', gap: '10px' }}>
-          {/* <button
+          <button
             onClick={gestionarToken}
             style={{
               padding: '10px 20px',
@@ -215,7 +441,7 @@ const Admin = () => {
             }}
           >
             🔑 Gestionar Token
-          </button> */}
+          </button>
 
           <button
             onClick={handleLogout}
@@ -246,50 +472,70 @@ const Admin = () => {
 
       {/* Contenido principal */}
       <div style={{
-        background: 'rgb(255, 255, 255)',
+        background: 'rgba(255, 255, 255, 0.1)',
         borderRadius: '15px',
         padding: '20px',
         backdropFilter: 'blur(10px)'
       }}>
-      {/* Menu debajo del H2 (dentro del contenido principal) */}
-      <div style={{ marginBottom: 12 }}>
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center', color: 'black' }}>
-<button onClick={() => setActiveSection('buscar')} style={{ textAlign: 'left', padding: 8, borderRadius: 8, background: activeSection === 'buscar' ? 'rgba(0,241,0,0.08)' : 'transparent' }}>Buscador</button>
-          <button onClick={() => setActiveSection('proveedores')} style={{ textAlign: 'left', padding: 8, borderRadius: 8, background: activeSection === 'proveedores' ? 'rgba(0,241,0,0.08)' : 'transparent' }}>Proveedores</button>
-          <button onClick={() => setActiveSection('categorias')} style={{ textAlign: 'left', padding: 8, borderRadius: 8, background: activeSection === 'categorias' ? 'rgba(0,241,0,0.08)' : 'transparent' }}>Categorías</button>
-          <button onClick={() => setActiveSection('carga')} style={{ textAlign: 'left', padding: 8, borderRadius: 8, background: activeSection === 'carga' ? 'rgba(0,241,0,0.08)' : 'transparent' }}>Carga de precios</button>
-          
-        </div>
-      </div>
-
-
-      {/* Main area (secciones) */}
-      <div>
-        {activeSection === 'proveedores' && (
-          <ProvidersManager onSelectProvider={(p) => alert(`Proveedor: ${p.name}`)} />
-        )}
-
-        {activeSection === 'categorias' && (
-          <CategoriesManager />
-        )}
-
-        {activeSection === 'carga' && (
-          <UploadPriceList onProvidersUpdate={(list) => setProveedores(list)} />
-        )}
-
-        {activeSection === 'buscar' && (
-          <PriceSearch productos={productos} />
-        )}
-      </div>
      
           <div style={{ marginTop: '30px' }}>
           
 
-            {/** Botón de actualización a GitHub deshabilitado temporalmente */}
+            <button 
+              onClick={actualizarJSONAutomatico}
+              style={{
+                padding: '12px 24px',
+                borderRadius: '8px',
+                border: 'none',
+                background: 'linear-gradient(135deg, #ff6b35 0%, #f7931e 100%)',
+                color: '#fff',
+                fontSize: '16px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                marginBottom: '20px',
+                marginRight: '15px',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 5px 15px rgba(255, 107, 53, 0.4)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+              }}
+            >
+              🔄 Actualizar GitHub (Automático)
+            </button>
 
-            {/** Botón de commit a main deshabilitado temporalmente */}
+            <button 
+              onClick={commitAutomaticoMain}
+              style={{
+                padding: '12px 24px',
+                borderRadius: '8px',
+                border: 'none',
+                background: 'linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%)',
+                color: '#fff',
+                fontSize: '16px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                marginBottom: '20px',
+                marginRight: '15px',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 5px 15px rgba(142, 68, 173, 0.4)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+              }}
+            >
+              🚀 Commit a Main + GitHub Actions
+            </button>
 
-            {/* <div style={{ 
+            <div style={{ 
               background: 'rgba(0, 241, 0, 0.1)', 
               border: '1px solid rgba(0, 241, 0, 0.3)',
               borderRadius: '8px', 
@@ -317,9 +563,9 @@ const Admin = () => {
             
             <h3 style={{ color: '#00F100', marginBottom: '15px' }}>
               🧾 Productos procesados ({productos.length}):
-            </h3> */}
+            </h3>
             
-            {/* <ul style={{
+            <ul style={{
               listStyle: 'none',
               padding: 0,
               maxHeight: '400px',
@@ -340,7 +586,7 @@ const Admin = () => {
                   </span>
                 </li>
               ))}
-            </ul> */}
+            </ul>
           </div>
       </div>
     </div>
