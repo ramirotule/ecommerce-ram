@@ -41,8 +41,8 @@ const Login = () => {
         localStorage.setItem('isAdminAuthenticated', 'true');
         localStorage.setItem('adminLoginTime', Date.now().toString());
         
-        // Redirigir a admin
-        navigate('/admin');
+        // Redirigir a dashboard
+        navigate('/dashboard');
       } else {
         setError('Usuario o contraseña incorrectos');
       }

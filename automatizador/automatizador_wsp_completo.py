@@ -17,7 +17,8 @@ class AutomatizadorWSP:
         self.driver = None
         self.mensaje_objetivo_encontrado = False
         self.elemento_mensaje_objetivo = None
-        self.fecha_hoy = self.obtener_fecha_hoy()
+        # Permitir al usuario indicar un día específico; si se deja vacío, usar hoy
+        self.fecha_hoy = self.solicitar_fecha_objetivo()
         self.proveedores = {
             "Rodrigo Provee": {
                 "archivo_salida": "output/lista_rodrigo.txt",
@@ -58,11 +59,54 @@ class AutomatizadorWSP:
         dia_semana = dias_semana[fecha_actual.weekday()]
         dia = fecha_actual.day
         mes = meses[fecha_actual.month]
-        
         # Formato: "VIERNES 14 DE NOVIEMBRE" (sin acentos para coincidencia flexible)
-        fecha_formateada = f"{dia_semana} {dia} DE {mes}"
+        fecha_formateada = f"{dia_semana} {dia:02d} DE {mes}"
         print(f"🗓️ Fecha objetivo: {fecha_formateada}")
         
+        return fecha_formateada
+
+    def solicitar_fecha_objetivo(self):
+        """Pide al usuario un día (número) para buscar la lista de ese día. Si está vacío, usa hoy."""
+        try:
+            entrada = input("Ingrese el día del mes a extraer (ej: 6) o ENTER para hoy: ").strip()
+        except Exception:
+            entrada = ""
+
+        if entrada == "":
+            return self.obtener_fecha_hoy()
+
+        # Intentar interpretar como número de día
+        try:
+            dia_int = int(entrada)
+        except ValueError:
+            print("Valor inválido, se usará la fecha de hoy.")
+            return self.obtener_fecha_hoy()
+
+        # Usar el mismo mes y año actuales
+        hoy = datetime.now()
+        try:
+            fecha_objetivo = datetime(hoy.year, hoy.month, dia_int)
+        except Exception as e:
+            print(f"Fecha inválida: {e}. Usando fecha de hoy.")
+            return self.obtener_fecha_hoy()
+
+        # Mapear días y meses (sin acentos)
+        dias_semana = {
+            0: "LUNES", 1: "MARTES", 2: "MIERCOLES", 3: "JUEVES", 
+            4: "VIERNES", 5: "SABADO", 6: "DOMINGO"
+        }
+        meses = {
+            1: "ENERO", 2: "FEBRERO", 3: "MARZO", 4: "ABRIL",
+            5: "MAYO", 6: "JUNIO", 7: "JULIO", 8: "AGOSTO", 
+            9: "SEPTIEMBRE", 10: "OCTUBRE", 11: "NOVIEMBRE", 12: "DICIEMBRE"
+        }
+
+        dia_semana = dias_semana[fecha_objetivo.weekday()]
+        dia = fecha_objetivo.day
+        mes = meses[fecha_objetivo.month]
+
+        fecha_formateada = f"{dia_semana} {dia:02d} DE {mes}"
+        print(f"🗓️ Fecha objetivo seleccionada: {fecha_formateada}")
         return fecha_formateada
     
     def normalizar_texto(self, texto):
@@ -337,8 +381,9 @@ class AutomatizadorWSP:
             # PASO 4: Si no se encontró con la clase específica, búsqueda alternativa MÁS FLEXIBLE
             print("🔄 Búsqueda alternativa: buscando mensaje más reciente del día...")
             
-            # Buscar simplemente por "LISTA DE HOY" y el número del día
-            dia_numero = str(datetime.now().day)
+            # Buscar simplemente por "LISTA DE HOY" y el número del día (usar día seleccionado)
+            m = re.search(r"\b(\d{1,2})\b", self.fecha_hoy)
+            dia_numero = m.group(1).lstrip('0') if m else str(datetime.now().day)
             selector_alternativo = f'//div[contains(text(), "LISTA DE HOY") and contains(text(), "{dia_numero}")]'
             elementos_alternativos = self.driver.find_elements(By.XPATH, selector_alternativo)
             
