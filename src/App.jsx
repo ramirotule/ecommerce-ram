@@ -43,7 +43,7 @@ function App() {
           <Route path="/precios" element={<Prices />} />
           <Route path="/otros-productos" element={<OtherProducts />} />
 
-          <Route path="/admin" element={
+          <Route path="/dashboard" element={
 
             <ProtectedRoute>
               <Admin />
