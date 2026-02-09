@@ -1793,6 +1793,19 @@ class AutomatizadorWSP:
 
 def main():
     """Función principal"""
+    # Borrar productos_ram.json antes de iniciar, si existe
+    try:
+        ruta_json = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "..", "public", "productos_ram.json")
+        )
+        if os.path.isfile(ruta_json):
+            os.remove(ruta_json)
+            print(f"🗑️ Eliminado antes de iniciar: {ruta_json}")
+        else:
+            print(f"ℹ️ No existe productos_ram.json para borrar: {ruta_json}")
+    except Exception as e:
+        print(f"⚠️ No se pudo borrar productos_ram.json antes de iniciar: {e}")
+
     automatizador = AutomatizadorWSP()
     automatizador.procesar_todos_proveedores()
 
