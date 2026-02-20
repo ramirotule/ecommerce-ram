@@ -1,17 +1,17 @@
 {
   "metadatos": {
-    "ultima_actualizacion": "19/02/2026 10:52",
-    "total_productos": 163
+    "ultima_actualizacion": "20/02/2026 11:44",
+    "total_productos": 144
   },
   "productos": [
     {
       "nombre": "IPHONE 15 128 GB SIM/ESIM",
-      "precio": 710,
+      "precio": 705,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
       "nombre": "IPHONE 15 256 GB SIM/ESIM",
-      "precio": 820,
+      "precio": 840,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -36,7 +36,7 @@
     },
     {
       "nombre": "IPHONE 17 256 GB SIM/ESIM",
-      "precio": 1010,
+      "precio": 1005,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -46,7 +46,7 @@
     },
     {
       "nombre": "IPHONE 17 PRO 256 GB ESIM SILVER",
-      "precio": 1405,
+      "precio": 1415,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -65,8 +65,18 @@
       "categoria": "CELULARES IPHONE NEW"
     },
     {
-      "nombre": "IPHONE 17 PRO MAX 512 GB ESIM",
-      "precio": 1800,
+      "nombre": "IPHONE 17 PRO MAX 256 GB ESIM SILVER",
+      "precio": 1540,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 17 PRO MAX 512 GB ESIM ORANG/BLUE",
+      "precio": 1760,
+      "categoria": "CELULARES IPHONE NEW"
+    },
+    {
+      "nombre": "IPHONE 17 PRO MAX 512 GB ESIM SILVER",
+      "precio": 1770,
       "categoria": "CELULARES IPHONE NEW"
     },
     {
@@ -95,26 +105,6 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
-      "nombre": "SAMSUNG A17 4/128 GB",
-      "precio": 210,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG A17 8/256 GB",
-      "precio": 250,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG A17 5G 8/256 GB",
-      "precio": 260,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG A26 5G 8/256 GB",
-      "precio": 275,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
       "nombre": "SAMSUNG A36 5G 8/128 GB",
       "precio": 320,
       "categoria": "CELULARES SAMSUNG"
@@ -135,11 +125,6 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
-      "nombre": "SAMSUNG A56 5G 8/256 GB",
-      "precio": 440,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
       "nombre": "SAMSUNG A56 5G 12/256 GB",
       "precio": 435,
       "categoria": "CELULARES SAMSUNG"
@@ -151,7 +136,7 @@
     },
     {
       "nombre": "SAMSUNG S25 12/256 GB",
-      "precio": 790,
+      "precio": 805,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -172,11 +157,6 @@
     {
       "nombre": "SAMSUNG S25 PLUS 12/256 GB",
       "precio": 905,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "SAMSUNG S25 PLUS 12/512 GB",
-      "precio": 990,
       "categoria": "CELULARES SAMSUNG"
     },
     {
@@ -210,16 +190,6 @@
       "categoria": "CELULARES SAMSUNG"
     },
     {
-      "nombre": "TABLET XIAOMI REDMI PAD SE 8,7\" 6/128 GB LTE GRIS",
-      "precio": 205,
-      "categoria": "CELULARES SAMSUNG"
-    },
-    {
-      "nombre": "MOTOROLA G04 4/128 GB",
-      "precio": 150,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
       "nombre": "MOTOROLA G05 4/128 GB",
       "precio": 155,
       "categoria": "CELULARES MOTOROLA"
@@ -232,11 +202,6 @@
     {
       "nombre": "MOTOROLA G06 4/128 GB",
       "precio": 155,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G06 4/256 GB",
-      "precio": 160,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -260,11 +225,6 @@
       "categoria": "CELULARES MOTOROLA"
     },
     {
-      "nombre": "MOTOROLA G56 5G 8/256 GB",
-      "precio": 230,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
       "nombre": "MOTOROLA G56 5G 12/256 GB",
       "precio": 235,
       "categoria": "CELULARES MOTOROLA"
@@ -272,21 +232,6 @@
     {
       "nombre": "MOTOROLA G75 5G 8/256 GB",
       "precio": 255,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G86 5G 8/256 GB",
-      "precio": 290,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G86 5G 8/512 GB",
-      "precio": 315,
-      "categoria": "CELULARES MOTOROLA"
-    },
-    {
-      "nombre": "MOTOROLA G86 POWER 5G 8/512 GB",
-      "precio": 325,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -306,7 +251,7 @@
     },
     {
       "nombre": "MOTOROLA EDGE 60 PRO 5G 16/512 GB",
-      "precio": 500,
+      "precio": 510,
       "categoria": "CELULARES MOTOROLA"
     },
     {
@@ -380,11 +325,6 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "XIAOMI REDMI 15C 8/256 GB",
-      "precio": 185,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
       "nombre": "XIAOMI NOTE 13 PRO 5G 12/512 GB",
       "precio": 335,
       "categoria": "CELULARES XIAOMI"
@@ -407,11 +347,6 @@
     {
       "nombre": "XIAOMI NOTE 14S 8/256 GB",
       "precio": 265,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 14 PRO 8/256 GB",
-      "precio": 310,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -445,18 +380,8 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "XIAOMI NOTE 15 PRO 8/256 GB",
-      "precio": 325,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
       "nombre": "XIAOMI NOTE 15 PRO 5G 8/256 GB",
       "precio": 385,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
-      "nombre": "XIAOMI NOTE 15 PRO 5G 8/512 GB",
-      "precio": 405,
       "categoria": "CELULARES XIAOMI"
     },
     {
@@ -520,11 +445,6 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "XIAOMI POCO X7 PRO 5G 8/256 GB",
-      "precio": 380,
-      "categoria": "CELULARES XIAOMI"
-    },
-    {
       "nombre": "XIAOMI POCO F7 5G 12/512 GB",
       "precio": 535,
       "categoria": "CELULARES XIAOMI"
@@ -570,7 +490,7 @@
       "categoria": "CELULARES XIAOMI"
     },
     {
-      "nombre": "AURICULAR JBL TUNE T520BT BLACK/ WHITE",
+      "nombre": "AURICULAR JBL TUNE T520BT WHITE",
       "precio": 65,
       "categoria": "JBL PARLANTES/AURICULARES"
     },
@@ -616,11 +536,6 @@
     },
     {
       "nombre": "JOYSTICK PS5 BLACK",
-      "precio": 105,
-      "categoria": "VIDEO JUEGOS"
-    },
-    {
-      "nombre": "JOYSTICK PS5 WHITE",
       "precio": 105,
       "categoria": "VIDEO JUEGOS"
     },
@@ -671,7 +586,7 @@
     },
     {
       "nombre": "AIRPODS PRO 3RA USBC",
-      "precio": 290,
+      "precio": 300,
       "categoria": "AIRPODS"
     },
     {
@@ -710,11 +625,6 @@
       "categoria": "IPAD"
     },
     {
-      "nombre": "MACBOOK AIR M4 13.6” 16/512 GB",
-      "precio": 1455,
-      "categoria": "MACBOOK"
-    },
-    {
       "nombre": "MACBOOK PRO M5 14.2\" 16/512 GB",
       "precio": 1940,
       "categoria": "MACBOOK"
@@ -727,11 +637,6 @@
     {
       "nombre": "75” Smart TV UHD 4K Samsung U8000F",
       "precio": 1220,
-      "categoria": "TELEVISORES"
-    },
-    {
-      "nombre": "75” Smart TV LG UHD AI UHD 4K Procesador Alpha 7 8va Gen con Inteligencia Artificial 75UA8550PSA",
-      "precio": 1155,
       "categoria": "TELEVISORES"
     },
     {
